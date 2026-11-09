@@ -1,0 +1,198 @@
+{
+  "complete": true,
+  "source_log_sha256": "b36fcde81f3e869f7674e94785431fedfce4a4b1d88c6979e1ae58bed571ff36",
+  "rows": [
+    {
+      "h": 256,
+      "residual": false,
+      "centered": false,
+      "relative_l2": 0.0016577280734514398,
+      "exact": true,
+      "graph": true
+    },
+    {
+      "h": 256,
+      "residual": false,
+      "centered": true,
+      "relative_l2": 0.0016578480423106614,
+      "exact": true,
+      "graph": true
+    },
+    {
+      "h": 256,
+      "residual": true,
+      "centered": false,
+      "relative_l2": 0.0016516925111348675,
+      "exact": true,
+      "graph": true
+    },
+    {
+      "h": 256,
+      "residual": true,
+      "centered": true,
+      "relative_l2": 0.0016689170636103893,
+      "exact": true,
+      "graph": true
+    },
+    {
+      "h": 512,
+      "residual": false,
+      "centered": false,
+      "relative_l2": 0.0015423116812717857,
+      "exact": true,
+      "graph": true
+    },
+    {
+      "h": 512,
+      "residual": false,
+      "centered": true,
+      "relative_l2": 0.0016736008885757034,
+      "exact": true,
+      "graph": true
+    },
+    {
+      "h": 512,
+      "residual": true,
+      "centered": false,
+      "relative_l2": 0.0017090732117691157,
+      "exact": true,
+      "graph": true
+    },
+    {
+      "h": 512,
+      "residual": true,
+      "centered": true,
+      "relative_l2": 0.0016241786521407847,
+      "exact": true,
+      "graph": true
+    },
+    {
+      "h": 768,
+      "residual": false,
+      "centered": false,
+      "relative_l2": 0.0016756262989312003,
+      "exact": true,
+      "graph": true
+    },
+    {
+      "h": 768,
+      "residual": false,
+      "centered": true,
+      "relative_l2": 0.0016223469935033902,
+      "exact": true,
+      "graph": true
+    },
+    {
+      "h": 768,
+      "residual": true,
+      "centered": false,
+      "relative_l2": 0.0016466342266151515,
+      "exact": true,
+      "graph": true
+    },
+    {
+      "h": 768,
+      "residual": true,
+      "centered": true,
+      "relative_l2": 0.001610654089658367,
+      "exact": true,
+      "graph": true
+    },
+    {
+      "h": 4096,
+      "residual": false,
+      "centered": false,
+      "relative_l2": 0.0016491888067405687,
+      "exact": true,
+      "graph": true
+    },
+    {
+      "h": 4096,
+      "residual": false,
+      "centered": true,
+      "relative_l2": 0.0016400218068847547,
+      "exact": true,
+      "graph": true
+    },
+    {
+      "h": 4096,
+      "residual": true,
+      "centered": false,
+      "relative_l2": 0.0016644669649383177,
+      "exact": true,
+      "graph": true
+    },
+    {
+      "h": 4096,
+      "residual": true,
+      "centered": true,
+      "relative_l2": 0.0016120510406911817,
+      "exact": true,
+      "graph": true
+    },
+    {
+      "h": 5120,
+      "residual": false,
+      "centered": false,
+      "relative_l2": 0.0016451750381350667,
+      "exact": true,
+      "graph": true
+    },
+    {
+      "h": 5120,
+      "residual": false,
+      "centered": true,
+      "relative_l2": 0.001638835886491216,
+      "exact": true,
+      "graph": true
+    },
+    {
+      "h": 5120,
+      "residual": true,
+      "centered": false,
+      "relative_l2": 0.0016397721293920958,
+      "exact": true,
+      "graph": true
+    },
+    {
+      "h": 5120,
+      "residual": true,
+      "centered": true,
+      "relative_l2": 0.0016553188625077016,
+      "exact": true,
+      "graph": true
+    },
+    {
+      "h": 10240,
+      "residual": false,
+      "centered": false,
+      "relative_l2": 0.0016505601116657998,
+      "exact": true,
+      "graph": true
+    },
+    {
+      "h": 10240,
+      "residual": false,
+      "centered": true,
+      "relative_l2": 0.0016522254051813644,
+      "exact": true,
+      "graph": true
+    },
+    {
+      "h": 10240,
+      "residual": true,
+      "centered": false,
+      "relative_l2": 0.0016488736622729194,
+      "exact": true,
+      "graph": true
+    },
+    {
+      "h": 10240,
+      "residual": true,
+      "centered": true,
+      "relative_l2": 0.0016419166244245028,
+      "exact": true,
+      "graph": true
+    }
+  ]
+}

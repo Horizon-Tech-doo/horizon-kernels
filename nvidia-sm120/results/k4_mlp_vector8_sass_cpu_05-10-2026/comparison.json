@@ -1,0 +1,130 @@
+{
+  "decision": "HARDWARE_WIDE_LOAD_CONFIRMED_NO_TIMING",
+  "comparison_order": [
+    4,
+    8
+  ],
+  "pairs": [
+    {
+      "rows": 1,
+      "grid": 272,
+      "packed_loads_vector4_vector8": [
+        16,
+        16
+      ],
+      "store128_vector4_vector8": [
+        0,
+        2
+      ]
+    },
+    {
+      "rows": 1,
+      "grid": 376,
+      "packed_loads_vector4_vector8": [
+        8,
+        8
+      ],
+      "store128_vector4_vector8": [
+        0,
+        1
+      ]
+    },
+    {
+      "rows": 4,
+      "grid": 272,
+      "packed_loads_vector4_vector8": [
+        16,
+        16
+      ],
+      "store128_vector4_vector8": [
+        0,
+        2
+      ]
+    },
+    {
+      "rows": 4,
+      "grid": 376,
+      "packed_loads_vector4_vector8": [
+        8,
+        8
+      ],
+      "store128_vector4_vector8": [
+        0,
+        1
+      ]
+    },
+    {
+      "rows": 8,
+      "grid": 272,
+      "packed_loads_vector4_vector8": [
+        32,
+        16
+      ],
+      "store128_vector4_vector8": [
+        0,
+        2
+      ]
+    },
+    {
+      "rows": 8,
+      "grid": 376,
+      "packed_loads_vector4_vector8": [
+        16,
+        8
+      ],
+      "store128_vector4_vector8": [
+        0,
+        1
+      ]
+    },
+    {
+      "rows": 16,
+      "grid": 272,
+      "packed_loads_vector4_vector8": [
+        16,
+        8
+      ],
+      "store128_vector4_vector8": [
+        0,
+        2
+      ]
+    },
+    {
+      "rows": 16,
+      "grid": 376,
+      "packed_loads_vector4_vector8": [
+        16,
+        8
+      ],
+      "store128_vector4_vector8": [
+        0,
+        2
+      ]
+    },
+    {
+      "rows": 32,
+      "grid": 272,
+      "packed_loads_vector4_vector8": [
+        32,
+        16
+      ],
+      "store128_vector4_vector8": [
+        0,
+        4
+      ]
+    },
+    {
+      "rows": 32,
+      "grid": 376,
+      "packed_loads_vector4_vector8": [
+        32,
+        16
+      ],
+      "store128_vector4_vector8": [
+        0,
+        4
+      ]
+    }
+  ],
+  "GPU_speed_correctness": "UNTESTED_WINDOW_PENDING"
+}

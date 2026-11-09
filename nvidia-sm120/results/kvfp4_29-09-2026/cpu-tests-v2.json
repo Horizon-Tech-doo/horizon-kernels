@@ -1,0 +1,120 @@
+{
+ "V1_sf117_exhaustive": {
+  "ok": true,
+  "bytes": 256
+ },
+ "V2_k_unpack_exhaustive": {
+  "ok": true,
+  "combos": 262144,
+  "exact_products": true
+ },
+ "V3_v_unpack_exhaustive": {
+  "ok": true,
+  "checked_values": 1048576,
+  "exact_products": true
+ },
+ "V4_lane_emulation_vs_reference": {
+  "ok": true,
+  "worst_rel_l2": 0.002067987888577088,
+  "gate": 0.0025,
+  "negative_controls_rel_l2": {
+   "k_pairs": 0.7759197311141836,
+   "v_tokens": 1.0868212017479042
+  },
+  "negative_controls_detected": true,
+  "cases": [
+   {
+    "KVH": 4,
+    "G": 6,
+    "QL": 1,
+    "lens": [
+     37,
+     200
+    ],
+    "S": 2,
+    "NCW": 2,
+    "rel_l2": 0.00198,
+    "finite": true
+   },
+   {
+    "KVH": 4,
+    "G": 6,
+    "QL": 4,
+    "lens": [
+     300,
+     17
+    ],
+    "S": 3,
+    "NCW": 2,
+    "rel_l2": 0.001936,
+    "finite": true
+   },
+   {
+    "KVH": 4,
+    "G": 6,
+    "QL": 4,
+    "lens": [
+     150
+    ],
+    "S": 8,
+    "NCW": 2,
+    "rel_l2": 0.00188,
+    "finite": true
+   },
+   {
+    "KVH": 2,
+    "G": 8,
+    "QL": 1,
+    "lens": [
+     130,
+     64
+    ],
+    "S": 2,
+    "NCW": 2,
+    "rel_l2": 0.002068,
+    "finite": true
+   },
+   {
+    "KVH": 2,
+    "G": 8,
+    "QL": 4,
+    "lens": [
+     96,
+     250
+    ],
+    "S": 3,
+    "NCW": 4,
+    "rel_l2": 0.002006,
+    "finite": true
+   },
+   {
+    "KVH": 4,
+    "G": 6,
+    "QL": 4,
+    "lens": [
+     1000
+    ],
+    "S": 4,
+    "NCW": 2,
+    "rel_l2": 0.002013,
+    "finite": true
+   }
+  ]
+ },
+ "V5_bank_conflicts": {
+  "ok": true,
+  "worst_ways": {
+   "K_data_ncw2": 1,
+   "K_data_ncw2_row8": 1,
+   "K_scale_ncw2": 1,
+   "V_data_ncw2": 1,
+   "V_scale_ncw2": 1,
+   "K_data_ncw4": 1,
+   "K_data_ncw4_row8": 1,
+   "K_scale_ncw4": 1,
+   "V_data_ncw4": 1,
+   "V_scale_ncw4": 1
+  },
+  "note": "data loads must be conflict-free; 1-byte scale loads are same-word broadcasts or small"
+ }
+}

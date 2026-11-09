@@ -1,0 +1,64 @@
+--- a/vllm/model_executor/models/qwen3_5_mtp.py	(vLLM 0.30.0)
++++ b/vllm/model_executor/models/qwen3_5_mtp.py	(Horizon K1a draft head, 29-09-2026)
+@@ -2,6 +2,7 @@
+ # SPDX-FileCopyrightText: Copyright contributors to the vLLM project
+ """Inference-only Qwen3_5 MTP model."""
+ 
++import os
+ from collections.abc import Iterable
+ 
+ import torch
+@@ -306,6 +307,53 @@
+         spec_step_idx: int = 0,
+     ) -> torch.Tensor | None:
+         return self.logits_processor(self.lm_head, hidden_states)
++
++    # HORIZON PATCH (25-09-2026): fused FP8 draft head (TileLang, horizon_kernels.draft_head).
++    # Enabled with HORIZON_FP8_DRAFT_HEAD=1 plus "use_local_argmax_reduction": true in the
++    # speculative config. Drafts only propose ids; the target model verifies with its own
++    # BF16 lm_head, so this can change acceptance but never output.
++    def get_top_tokens(self, hidden_states: torch.Tensor) -> torch.Tensor:
++        head = getattr(self, "_horizon_draft_head", None)
++        if (head is None and os.environ.get("HORIZON_FP8_DRAFT_HEAD") == "1"
++                and getattr(self.lm_head, "tp_size", 1) == 1):   # fused head assumes an unsharded lm_head
++            if torch.cuda.is_current_stream_capturing():
++                raise RuntimeError("horizon_kernels draft head must be built before CUDA graph capture")
++            from horizon_kernels.draft_head import DraftHeadFP8
++
++            weight = self.lm_head.weight[: self.config.vocab_size]
++            act = os.environ.get("HORIZON_DRAFT_HEAD_ACT", "fp8")  # fp8 = K1a v1, bf16 = K1a v2
++            # optional draft vocabulary (MTP plan): score only those rows; optional separately trained head
++            vocab_ids = None
++            vpath = os.environ.get("HORIZON_DRAFT_VOCAB")
++            if vpath:
++                vocab_ids = torch.load(vpath, map_location=weight.device).to(torch.long)
++                wpath = os.environ.get("HORIZON_DRAFT_HEAD_WEIGHTS")
++                if wpath:
++                    from safetensors.torch import load_file
++                    weight = load_file(wpath, device=str(weight.device))["weight"].to(weight.dtype)
++                    assert weight.shape == (vocab_ids.numel(), self.config.hidden_size), weight.shape
++            head = self._horizon_draft_head = DraftHeadFP8(weight, act=act, vocab_ids=vocab_ids)
++            logger.info("horizon_kernels: fused FP8 draft head active (%s x %s, act=%s, draft vocab=%s, trained head=%s)",
++                        head.N, head.K, act, None if vocab_ids is None else vocab_ids.numel(),
++                        bool(vpath and os.environ.get("HORIZON_DRAFT_HEAD_WEIGHTS")))
++        dump = os.environ.get("HORIZON_DUMP_DRAFT_H")
++        if dump and hidden_states.shape[0] <= 16 and not torch.cuda.is_current_stream_capturing():
++            # Debug only (needs --enforce-eager): save real draft hidden states for offline analysis.
++            # needs --enforce-eager (captured calls are invisible here); skips all-zero dummy/profile rows
++            buf = self.__dict__.setdefault("_horizon_dump", [])
++            n_have = sum(x.shape[0] for x in buf)
++            if n_have < 20000 and bool(hidden_states.abs().amax() > 0):
++                buf.append(hidden_states.detach().to("cpu", torch.bfloat16))
++                n_have += hidden_states.shape[0]
++                if len(buf) % 200 == 0 or n_have >= 20000:
++                    torch.save(torch.cat(buf), dump)
++        if head is None or hidden_states.shape[0] > head.BM:
++            return super().get_top_tokens(hidden_states)
++        top = head(hidden_states)
++        d2t = getattr(self, "draft_id_to_target_id", None)   # same remap as LocalArgmaxMixin (draft vocab)
++        if d2t is not None:
++            top = top + d2t[top]
++        return top
+ 
+     def load_weights(self, weights: Iterable[tuple[str, torch.Tensor]]) -> set[str]:
+         def remap_weight_names(weights):

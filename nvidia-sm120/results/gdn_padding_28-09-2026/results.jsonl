@@ -1,0 +1,31 @@
+{"part": "padding_reuse", "R": 1, "T": 4, "M": 4, "hw": 0, "graph_replays": 2, "ok": true, "t": 49.5}
+{"part": "A", "R": 1, "T": 4, "M": 4, "hw": 0, "sched": {"tasks": 1760, "max_per_cta": 5, "min_per_cta": 4, "counters": 75}, "bit_identical": true, "err": 0, "mismatches": [], "ok": true, "t": 49.5}
+{"part": "padding_reuse", "R": 1, "T": 4, "M": 4, "hw": 2, "graph_replays": 2, "ok": true, "t": 68.8}
+{"part": "A", "R": 1, "T": 4, "M": 4, "hw": 2, "sched": {"tasks": 1760, "max_per_cta": 5, "min_per_cta": 4, "counters": 75}, "bit_identical": true, "err": 0, "mismatches": [], "ok": true, "t": 68.8}
+{"part": "B", "R": 1, "T": 4, "M": 4, "us_per_layer_median": {"per_op": 178.87, "k4_hw0": 187.93, "k4_hw2": 188.19}, "paired_vs_per_op": {"k4_hw0": {"median_diff_us": 8.52, "ci95": [8.23, 9.53], "pct": 4.76}, "k4_hw2": {"median_diff_us": 9.3, "ci95": [8.84, 9.64], "pct": 5.2}}, "t": 68.9}
+{"part": "padding_reuse", "R": 2, "T": 4, "M": 8, "hw": 0, "graph_replays": 2, "ok": true, "t": 71.2}
+{"part": "A", "R": 2, "T": 4, "M": 8, "hw": 0, "sched": {"tasks": 2176, "max_per_cta": 6, "min_per_cta": 5, "counters": 124}, "bit_identical": true, "err": 0, "mismatches": [], "ok": true, "t": 71.2}
+{"part": "padding_reuse", "R": 2, "T": 4, "M": 8, "hw": 2, "graph_replays": 2, "ok": true, "t": 71.3}
+{"part": "A", "R": 2, "T": 4, "M": 8, "hw": 2, "sched": {"tasks": 2176, "max_per_cta": 6, "min_per_cta": 5, "counters": 124}, "bit_identical": true, "err": 0, "mismatches": [], "ok": true, "t": 71.3}
+{"part": "B", "R": 2, "T": 4, "M": 8, "us_per_layer_median": {"per_op": 187.79, "k4_hw0": 199.28, "k4_hw2": 198.68}, "paired_vs_per_op": {"k4_hw0": {"median_diff_us": 11.32, "ci95": [10.74, 12.13], "pct": 6.03}, "k4_hw2": {"median_diff_us": 10.73, "ci95": [10.4, 11.55], "pct": 5.71}}, "t": 71.4}
+{"part": "padding_reuse", "R": 8, "T": 4, "M": 32, "hw": 0, "graph_replays": 2, "ok": true, "t": 111.4}
+{"part": "A", "R": 8, "T": 4, "M": 32, "hw": 0, "sched": {"tasks": 4048, "max_per_cta": 11, "min_per_cta": 10, "counters": 408}, "bit_identical": true, "err": 0, "mismatches": [], "ok": true, "t": 111.4}
+{"part": "padding_reuse", "R": 8, "T": 4, "M": 32, "hw": 2, "graph_replays": 2, "ok": true, "t": 130.6}
+{"part": "A", "R": 8, "T": 4, "M": 32, "hw": 2, "sched": {"tasks": 4048, "max_per_cta": 11, "min_per_cta": 10, "counters": 408}, "bit_identical": true, "err": 0, "mismatches": [], "ok": true, "t": 130.6}
+{"part": "B", "R": 8, "T": 4, "M": 32, "us_per_layer_median": {"per_op": 247.98, "k4_hw0": 277.34, "k4_hw2": 278.38}, "paired_vs_per_op": {"k4_hw0": {"median_diff_us": 29.98, "ci95": [28.39, 30.98], "pct": 12.09}, "k4_hw2": {"median_diff_us": 30.89, "ci95": [29.97, 31.86], "pct": 12.46}}, "t": 131.0}
+{"part": "padding_reuse", "R": 4, "T": 2, "M": 8, "hw": 0, "graph_replays": 2, "ok": true, "t": 152.9}
+{"part": "A", "R": 4, "T": 2, "M": 8, "hw": 0, "sched": {"tasks": 2736, "max_per_cta": 8, "min_per_cta": 7, "counters": 222}, "bit_identical": true, "err": 0, "mismatches": [], "ok": true, "t": 152.9}
+{"part": "padding_reuse", "R": 4, "T": 2, "M": 8, "hw": 2, "graph_replays": 2, "ok": true, "t": 172.1}
+{"part": "A", "R": 4, "T": 2, "M": 8, "hw": 2, "sched": {"tasks": 2736, "max_per_cta": 8, "min_per_cta": 7, "counters": 222}, "bit_identical": true, "err": 0, "mismatches": [], "ok": true, "t": 172.1}
+{"part": "B", "R": 4, "T": 2, "M": 8, "us_per_layer_median": {"per_op": 186.77, "k4_hw0": 199.58, "k4_hw2": 199.52}, "paired_vs_per_op": {"k4_hw0": {"median_diff_us": 12.82, "ci95": [12.01, 13.06], "pct": 6.86}, "k4_hw2": {"median_diff_us": 12.58, "ci95": [12.33, 13.1], "pct": 6.74}}, "t": 172.3}
+{"part": "padding_reuse", "R": 16, "T": 2, "M": 32, "hw": 0, "graph_replays": 2, "ok": true, "t": 193.0}
+{"part": "A", "R": 16, "T": 2, "M": 32, "hw": 0, "sched": {"tasks": 6288, "max_per_cta": 17, "min_per_cta": 16, "counters": 800}, "bit_identical": true, "err": 0, "mismatches": [], "ok": true, "t": 193.0}
+{"part": "padding_reuse", "R": 16, "T": 2, "M": 32, "hw": 2, "graph_replays": 2, "ok": true, "t": 212.6}
+{"part": "A", "R": 16, "T": 2, "M": 32, "hw": 2, "sched": {"tasks": 6288, "max_per_cta": 17, "min_per_cta": 16, "counters": 800}, "bit_identical": true, "err": 0, "mismatches": [], "ok": true, "t": 212.6}
+{"part": "B", "R": 16, "T": 2, "M": 32, "us_per_layer_median": {"per_op": 260.12, "k4_hw0": 294.52, "k4_hw2": 295.98}, "paired_vs_per_op": {"k4_hw0": {"median_diff_us": 34.28, "ci95": [33.95, 35.53], "pct": 13.18}, "k4_hw2": {"median_diff_us": 36.26, "ci95": [35.38, 38.8], "pct": 13.94}}, "t": 212.9}
+{"part": "padding_reuse", "R": 32, "T": 1, "M": 32, "hw": 0, "graph_replays": 2, "ok": true, "t": 235.9}
+{"part": "A", "R": 32, "T": 1, "M": 32, "hw": 0, "sched": {"tasks": 10768, "max_per_cta": 29, "min_per_cta": 28, "counters": 1584}, "bit_identical": true, "err": 0, "mismatches": [], "ok": true, "t": 235.9}
+{"part": "padding_reuse", "R": 32, "T": 1, "M": 32, "hw": 2, "graph_replays": 2, "ok": true, "t": 255.4}
+{"part": "A", "R": 32, "T": 1, "M": 32, "hw": 2, "sched": {"tasks": 10768, "max_per_cta": 29, "min_per_cta": 28, "counters": 1584}, "bit_identical": true, "err": 0, "mismatches": [], "ok": true, "t": 255.4}
+{"part": "B", "R": 32, "T": 1, "M": 32, "us_per_layer_median": {"per_op": 292.37, "k4_hw0": 332.06, "k4_hw2": 334.7}, "paired_vs_per_op": {"k4_hw0": {"median_diff_us": 40.63, "ci95": [39.53, 41.71], "pct": 13.9}, "k4_hw2": {"median_diff_us": 42.74, "ci95": [41.55, 44.69], "pct": 14.62}}, "t": 255.9}
+{"part": "END", "ok_all": true, "t": 255.9}

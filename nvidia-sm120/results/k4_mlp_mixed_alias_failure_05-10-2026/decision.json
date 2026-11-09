@@ -1,0 +1,4 @@
+{
+  "decision": "CPU_LOWERING_FAILED",
+  "limitation": "Shared alias declaration rejected as non-SSA; no GPU test."
+}

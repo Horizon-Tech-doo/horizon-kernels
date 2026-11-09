@@ -1,0 +1,15 @@
+tilelang_contrib: TileLang kernels for NVIDIA SM120 (RTX PRO 6000 Blackwell), part of horizon-kernels
+Copyright 2026 Horizon Tech d.o.o.
+Licensed under the Apache License, Version 2.0 (LICENSES/Apache-2.0.txt at the repository root).
+
+These modules are written for TileLang (https://github.com/tile-ai/tilelang), MIT License, Copyright (c) Tile-AI.
+They are separate source files that run on an unmodified TileLang install; they do not modify
+TileLang.
+
+third_party/tilelang/ holds two unmodified TileLang files (examples/gemm_sm120/sm120_nvfp4_blockscaled_gemm.py,
+maint/gemm/gemm_sm120/tilelang_nvfp4_quantizer.py) under TileLang's MIT License; see third_party/tilelang/LICENSE.
+
+Several kernels reproduce the numerics or data formats of vLLM (Apache-2.0), FlashInfer (Apache-2.0), Marlin
+(Apache-2.0), flash-linear-attention (MIT) and PyTorch Inductor/Triton (BSD-3-Clause / MIT) so that their
+outputs are bit-identical. They are independent TileLang implementations; those projects are credited here
+for the formats and algorithms they define.

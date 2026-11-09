@@ -1,0 +1,118 @@
+# SPDX licence information for every file, in the REUSE format (https://reuse.software).
+# AMD sources carry no per-file header; apart from the comment wording listed in kernels/RELEASE-EDITS.md their bytes match the md5 values in
+# amd-mi250x/results/RESEARCH-LOG.md; this file licenses them.
+version = 1
+
+[[annotations]]
+path = "**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Horizon Tech d.o.o."
+SPDX-License-Identifier = "Apache-2.0"
+
+[[annotations]]
+path = "amd-mi250x/tilelang-patches/*.patch"
+precedence = "override"
+SPDX-FileCopyrightText = ["2026 Horizon Tech d.o.o.", "Tile-AI"]
+SPDX-License-Identifier = "Apache-2.0 AND MIT"
+
+[[annotations]]
+path = "nvidia-sm120/scripts/kernels/rega/rs_b_pingpong_experiment.patch"
+precedence = "override"
+SPDX-FileCopyrightText = ["2026 Horizon Tech d.o.o.", "Tile-AI"]
+SPDX-License-Identifier = "Apache-2.0 AND MIT"
+
+[[annotations]]
+path = "nvidia-sm120/horizon_kernels/fp4_quant.py"
+precedence = "override"
+SPDX-FileCopyrightText = ["2026 Horizon Tech d.o.o.", "Tile-AI"]
+SPDX-License-Identifier = "Apache-2.0 AND MIT"
+
+[[annotations]]
+path = "nvidia-sm120/vllm032-port/hk/horizon_kernels/fp4_quant.py"
+precedence = "override"
+SPDX-FileCopyrightText = ["2026 Horizon Tech d.o.o.", "Tile-AI"]
+SPDX-License-Identifier = "Apache-2.0 AND MIT"
+
+[[annotations]]
+path = "nvidia-sm120/horizon_kernels/_nvfp4_tl.py"
+precedence = "override"
+SPDX-FileCopyrightText = ["2026 Horizon Tech d.o.o.", "Tile-AI"]
+SPDX-License-Identifier = "Apache-2.0 AND MIT"
+
+[[annotations]]
+path = "nvidia-sm120/vllm032-port/hk/horizon_kernels/_nvfp4_tl.py"
+precedence = "override"
+SPDX-FileCopyrightText = ["2026 Horizon Tech d.o.o.", "Tile-AI"]
+SPDX-License-Identifier = "Apache-2.0 AND MIT"
+
+[[annotations]]
+path = "nvidia-sm120/horizon_kernels/pmu_mtp_fix.py"
+precedence = "override"
+SPDX-FileCopyrightText = ["2026 Horizon Tech d.o.o.", "contributors to the vLLM project"]
+SPDX-License-Identifier = "Apache-2.0"
+
+[[annotations]]
+path = "nvidia-sm120/vllm032-port/hk/horizon_kernels/pmu_mtp_fix.py"
+precedence = "override"
+SPDX-FileCopyrightText = ["2026 Horizon Tech d.o.o.", "contributors to the vLLM project"]
+SPDX-License-Identifier = "Apache-2.0"
+
+[[annotations]]
+path = "nvidia-sm120/tilelang_contrib/third_party/tilelang/**"
+precedence = "override"
+SPDX-FileCopyrightText = ["Tile-AI"]
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = "nvidia-sm120/vllm032-port/hk/horizon_kernels/gdn_round_ops/chunk_delta_h*.py"
+precedence = "override"
+SPDX-FileCopyrightText = ["2026 Horizon Tech d.o.o.", "contributors to the vLLM project", "2023-2025 Songlin Yang, Yu Zhang"]
+SPDX-License-Identifier = "Apache-2.0 AND MIT"
+
+[[annotations]]
+path = "nvidia-sm120/patches/*.patch"
+precedence = "override"
+SPDX-FileCopyrightText = ["2026 Horizon Tech d.o.o.", "contributors to the vLLM project"]
+SPDX-License-Identifier = "Apache-2.0"
+
+[[annotations]]
+path = "nvidia-sm120/docs/upstream/*.patch"
+precedence = "override"
+SPDX-FileCopyrightText = ["2026 Horizon Tech d.o.o.", "contributors to the vLLM project"]
+SPDX-License-Identifier = "Apache-2.0"
+
+[[annotations]]
+path = "nvidia-sm120/docs/upstream/vllm-fla-blackwell-warps.patch"
+precedence = "override"
+SPDX-FileCopyrightText = ["2026 Horizon Tech d.o.o.", "contributors to the vLLM project", "2023-2025 Songlin Yang, Yu Zhang"]
+SPDX-License-Identifier = "Apache-2.0 AND MIT"
+
+[[annotations]]
+path = "nvidia-sm120/results/stable_align_28-09-2026/*.cu"
+precedence = "override"
+SPDX-FileCopyrightText = ["2026 Horizon Tech d.o.o.", "Tile-AI"]
+SPDX-License-Identifier = "Apache-2.0 AND MIT"
+
+[[annotations]]
+path = "amd-mi250x/experiments/n4/src/pad_8k.cu"
+precedence = "override"
+SPDX-FileCopyrightText = ["2026 Horizon Tech d.o.o.", "Tile-AI"]
+SPDX-License-Identifier = "Apache-2.0 AND MIT"
+
+[[annotations]]
+path = "amd-mi250x/experiments/n4/src/rs2_8k.cu"
+precedence = "override"
+SPDX-FileCopyrightText = ["2026 Horizon Tech d.o.o.", "Tile-AI"]
+SPDX-License-Identifier = "Apache-2.0 AND MIT"
+
+[[annotations]]
+path = "amd-mi250x/kernels/gqa_fa.py"
+precedence = "override"
+SPDX-FileCopyrightText = ["2026 Horizon Tech d.o.o.", "Tile-AI"]
+SPDX-License-Identifier = "Apache-2.0 AND MIT"
+
+[[annotations]]
+path = "amd-mi250x/experiments/e2/e2run.py"
+precedence = "override"
+SPDX-FileCopyrightText = ["2026 Horizon Tech d.o.o.", "contributors to the vLLM project"]
+SPDX-License-Identifier = "Apache-2.0"

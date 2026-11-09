@@ -1,0 +1,439 @@
+{
+  "eligible": [],
+  "decision": "NO_SPEED_WIN",
+  "eager_candidates": 25,
+  "graph_candidates": 25,
+  "numerical_mismatches": 0,
+  "primary_rows": [
+    1,
+    4,
+    8,
+    16,
+    32
+  ],
+  "kernel_branch": "horizon/k4-mlp-0410",
+  "candidate_manifest_sha256": "d2d47b3ae49a8b35d22f5276260db54c879bc4ae267f9ce5444901ceb429acd8",
+  "kernel_source_hashes": {
+    "contrib/horizon_k4/__init__.py": "00dc94ecbf81da75bff2eef399148d177088b49bc6eab467992b509a2e0c62f0",
+    "contrib/horizon_k4/hkt.py": "a7065e6c3ae14133d28d1b76a17a4a28a41b9c2404467c13064b5c7a6523a1fb",
+    "contrib/horizon_k4/mlp.py": "5c729d7d0c476fe67703ee04cfe354149b7a4c7c838a6a2da9c455a7c5fe3e4e",
+    "contrib/horizon_k4/mlp_activation_epilogue.py": "fe25f05d1b88068ec81be688fe6ef168b11d065f77de5674f1331f343427d893",
+    "contrib/horizon_k4/mlp_mixed.py": "88d1e2140cd1edb1e09128a2c5ab016c98af99012e5d48bdd456b6417322e6b2",
+    "contrib/horizon_k4/mlp_mixed_lut.py": "9fd5ca846135faae2f2bf6cf8847c13d7dd88ad3c3dd6d2a1b5a0b0b46a74c4b",
+    "contrib/horizon_k4/mlp_mixed_trace.py": "7042d1efed724e687ea15d4bf4f6e77fc1e35fe2b03a3bd1d4a009bbb6fab150",
+    "contrib/horizon_k4/mlp_native_tasks.py": "6a6a11b0dc398317d1a70f4363ce8c055520853faa1a74dbfdc401be17b4b8ab",
+    "contrib/horizon_k4/mlp_pair_tasks.py": "982a0629170e9572147baf37689c27f922bda3c381372f5b5da8975662705c12",
+    "contrib/horizon_k4/mlp_prepare.py": "368da415d17e3f622b30361b7b31d7be6c5d7032048efd1cbd949c877f8fca2e",
+    "contrib/horizon_k4/mlp_schedule.py": "74cda92e15d4a12f35e80ca48eeba6619ed5dddd778f5212338f7569f01d00df",
+    "contrib/horizon_k4/mlp_static_plan.py": "d2724d238174901d56cb2e443634dbec74ced33985890b7650476af476454334",
+    "contrib/horizon_k4/mlp_up_fusion.py": "d87f041cd9ec5f500289f3eb9ff960684042f737edfefefd08dec94a00654b7f",
+    "contrib/horizon_k4/mlp_wide.py": "2867546b91edc87e1b446ff7bee2b7d92cf318acd0aa1f9ad080f20022648cf0",
+    "contrib/horizon_k4/mlp_wide_plan.py": "03e42339cb80b03839b7fe818a2d3b80f5b6ad70ce2c389e709255573cd3a36a",
+    "contrib/horizon_k4/pdl.py": "062d3c20b7d5f1a69921965356eceee5cfc28fb933b43aa239c0ca63a60a970a",
+    "contrib/horizon_k4/runtime.py": "efc7762e897836f3dcaab266f54cbd9a4ba649c8c9dd8f5ae1b69708774b23dd",
+    "contrib/horizon_k4/segment.py": "36151e5b7c231ee450271b17a297353f9ca09bd4502b30d3fb8443db622a7562",
+    "contrib/horizon_k4/selftest.py": "faa9e64c0c7375aa61061fffe269d4f9b5c6bd08304a7515a047232b4f00aa43",
+    "contrib/horizon_k4/silu_factor_table.py": "77a5139c0762db19ab957983df50a4d1acfd76134d2735e47c7c875da5d3cdef",
+    "contrib/horizon_k4/tasks.py": "81a898a9db1ea3bb5b69209f564e0e23a87e7af44a4756ddc95f46804d1fa42e"
+  },
+  "best_by_bucket": [
+    {
+      "rows": 1,
+      "name": "gu128-down128-k64-sg4-sd4-up1-static1-hw1-stages4-grid320-init00-operation",
+      "baseline_us": [
+        106.49599879980087,
+        106.49599879980087,
+        106.49599879980087
+      ],
+      "candidate_us": [
+        107.00800269842148,
+        107.00800269842148,
+        107.00800269842148
+      ],
+      "ratios": [
+        0.9952152746924585,
+        0.9952152746924585,
+        0.9952152746924585
+      ],
+      "conservative_latency_increase_pct": 0.4807728970016134
+    },
+    {
+      "rows": 4,
+      "name": "gu128-down128-k64-sg4-sd4-up1-static1-hw1-stages4-grid320-init00-operation",
+      "baseline_us": [
+        107.00800269842148,
+        107.00800269842148,
+        107.00800269842148
+      ],
+      "candidate_us": [
+        108.03200304508209,
+        108.03200304508209,
+        108.03200304508209
+      ],
+      "ratios": [
+        0.9905213240725224,
+        0.9905213240725224,
+        0.9905213240725224
+      ],
+      "conservative_latency_increase_pct": 0.9569380988696086
+    },
+    {
+      "rows": 8,
+      "name": "gu128-down128-k64-sg4-sd4-up1-static1-hw1-stages4-grid320-init00-operation",
+      "baseline_us": [
+        107.51999914646149,
+        107.51999914646149,
+        107.51999914646149
+      ],
+      "candidate_us": [
+        109.56799983978271,
+        109.0560033917427,
+        109.56799983978271
+      ],
+      "ratios": [
+        0.98130840485985,
+        0.9859154544682542,
+        0.98130840485985
+      ],
+      "conservative_latency_increase_pct": 1.9047625647127253
+    },
+    {
+      "rows": 16,
+      "name": "gu128-down128-k64-sg4-sd4-up1-static1-hw1-stages4-grid272-init00-operation",
+      "baseline_us": [
+        109.0560033917427,
+        109.0560033917427,
+        109.56799983978271
+      ],
+      "candidate_us": [
+        114.68800157308578,
+        114.68800157308578,
+        115.1999980211258
+      ],
+      "ratios": [
+        0.9508928736738512,
+        0.9508928736738512,
+        0.9511111260582638
+      ],
+      "conservative_latency_increase_pct": 5.164317420575415
+    },
+    {
+      "rows": 32,
+      "name": "gu128-down128-k64-sg4-sd4-up1-static1-hw1-stages4-grid272-init00-operation",
+      "baseline_us": [
+        115.96399918198586,
+        116.74399673938751,
+        118.78400295972824
+      ],
+      "candidate_us": [
+        125.70400536060333,
+        127.75199860334396,
+        129.04000282287598
+      ],
+      "ratios": [
+        0.922516341856597,
+        0.9138330360048996,
+        0.9205207715531019
+      ],
+      "conservative_latency_increase_pct": 9.429180233164436
+    }
+  ],
+  "limitation": "Exploratory synthetic MLP only; per-bucket best is descriptive, not a fixed deployable policy.",
+  "changed_input_graph_candidates": 25,
+  "changed_input_replays_per_candidate": 64,
+  "changed_input_stages_per_layer": [
+    "GU",
+    "ACT",
+    "DOWN"
+  ],
+  "negative_fixture": {
+    "test": "missing_producer_negative_control",
+    "rejected": true,
+    "device_error": 1,
+    "mirror_error": 1
+  },
+  "matched_grid_effects": [
+    {
+      "rows": 1,
+      "grid": 236,
+      "grid188_over_candidate": [
+        0.9574596446016133,
+        0.9554656583622555,
+        0.957489935906764
+      ],
+      "grid376_over_candidate": [
+        0.8461271360078594,
+        0.8461539050684853,
+        0.8461539050684853
+      ]
+    },
+    {
+      "rows": 1,
+      "grid": 272,
+      "grid188_over_candidate": [
+        1.0372806976953914,
+        1.0373626659006283,
+        1.0418502510461833
+      ],
+      "grid376_over_candidate": [
+        0.916666671985349,
+        0.9186813393467603,
+        0.9207048819624906
+      ]
+    },
+    {
+      "rows": 1,
+      "grid": 320,
+      "grid188_over_candidate": [
+        1.131578936374781,
+        1.1291866085342037,
+        1.131578936374781
+      ],
+      "grid376_over_candidate": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "rows": 1,
+      "grid": 376,
+      "grid188_over_candidate": [
+        1.131578936374781,
+        1.1291866085342037,
+        1.131578936374781
+      ],
+      "grid376_over_candidate": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "rows": 4,
+      "grid": 236,
+      "grid188_over_candidate": [
+        0.9561753112776535,
+        0.9599999301508102,
+        0.9540918155556081
+      ],
+      "grid376_over_candidate": [
+        0.8406375060961512,
+        0.8439999837018557,
+        0.8423153892050582
+      ]
+    },
+    {
+      "rows": 4,
+      "grid": 272,
+      "grid188_over_candidate": [
+        1.0389610209623805,
+        1.0389610209623805,
+        1.0346320466311403
+      ],
+      "grid376_over_candidate": [
+        0.9134199464174538,
+        0.9134199464174538,
+        0.9134199464174538
+      ]
+    },
+    {
+      "rows": 4,
+      "grid": 320,
+      "grid188_over_candidate": [
+        1.1374406974987947,
+        1.1374406974987947,
+        1.1327013940182664
+      ],
+      "grid376_over_candidate": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "rows": 4,
+      "grid": 376,
+      "grid188_over_candidate": [
+        1.1374406974987947,
+        1.1374406974987947,
+        1.1327013940182664
+      ],
+      "grid376_over_candidate": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "rows": 8,
+      "grid": 236,
+      "grid188_over_candidate": [
+        0.9568627576302542,
+        0.9568627576302542,
+        0.9570312637667655
+      ],
+      "grid376_over_candidate": [
+        0.839215712234098,
+        0.839215712234098,
+        0.8359375008881784
+      ]
+    },
+    {
+      "rows": 8,
+      "grid": 272,
+      "grid188_over_candidate": [
+        1.0427349938353363,
+        1.0427349938353363,
+        1.047008530531472
+      ],
+      "grid376_over_candidate": [
+        0.914529887953987,
+        0.914529887953987,
+        0.914529887953987
+      ]
+    },
+    {
+      "rows": 8,
+      "grid": 320,
+      "grid188_over_candidate": [
+        1.1401868955515204,
+        1.145539848369048,
+        1.1448598283363598
+      ],
+      "grid376_over_candidate": [
+        1.0,
+        1.0046948029646827,
+        1.0
+      ]
+    },
+    {
+      "rows": 8,
+      "grid": 376,
+      "grid188_over_candidate": [
+        1.1401868955515204,
+        1.1401868955515204,
+        1.1448598283363598
+      ],
+      "grid376_over_candidate": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "rows": 16,
+      "grid": 236,
+      "grid188_over_candidate": [
+        0.9601594055119178,
+        0.9543650779901819,
+        0.9603174465684852
+      ],
+      "grid376_over_candidate": [
+        0.8964143615697703,
+        0.8928571346077577,
+        0.894872286154407
+      ]
+    },
+    {
+      "rows": 16,
+      "grid": 272,
+      "grid188_over_candidate": [
+        1.0758928493123863,
+        1.0736606894892233,
+        1.0755555500940959
+      ],
+      "grid376_over_candidate": [
+        1.0044642546824196,
+        1.0044642546824196,
+        1.0022569697530999
+      ]
+    },
+    {
+      "rows": 16,
+      "grid": 320,
+      "grid188_over_candidate": [
+        1.071148303360791,
+        1.068888897224801,
+        1.0755555500940959
+      ],
+      "grid376_over_candidate": [
+        1.0000346994380276,
+        1.0,
+        1.0022569697530999
+      ]
+    },
+    {
+      "rows": 16,
+      "grid": 376,
+      "grid188_over_candidate": [
+        1.0711111364062926,
+        1.068888897224801,
+        1.0731335201979715
+      ],
+      "grid376_over_candidate": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "rows": 32,
+      "grid": 236,
+      "grid188_over_candidate": [
+        0.9111262772235571,
+        0.9183516769893324,
+        0.9262588479378283
+      ],
+      "grid376_over_candidate": [
+        0.8289114718119635,
+        0.823580474944075,
+        0.823772505524809
+      ]
+    },
+    {
+      "rows": 32,
+      "grid": 272,
+      "grid188_over_candidate": [
+        1.105899545665388,
+        1.1262445701280541,
+        1.1466831290774953
+      ],
+      "grid376_over_candidate": [
+        1.006109518503938,
+        1.0100194306935673,
+        1.0198078392300542
+      ]
+    },
+    {
+      "rows": 32,
+      "grid": 320,
+      "grid188_over_candidate": [
+        1.01305893062475,
+        1.0236197608732571,
+        1.0192879124127752
+      ],
+      "grid376_over_candidate": [
+        0.9216463076614514,
+        0.9179852010352787,
+        0.9065083257545119
+      ]
+    },
+    {
+      "rows": 32,
+      "grid": 376,
+      "grid188_over_candidate": [
+        1.0991840603096923,
+        1.115072181685333,
+        1.1244109772123645
+      ],
+      "grid376_over_candidate": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  ],
+  "frozen_configuration_count": 25,
+  "gate_unchanged": true
+}

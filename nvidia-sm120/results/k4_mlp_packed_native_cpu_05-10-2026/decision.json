@@ -1,0 +1,9 @@
+{
+  "decision": "OFFLINE_COMPILE_PASS",
+  "builds": 30,
+  "peak_registers": 112,
+  "zero_spills": true,
+  "source_matches_committed_fork": true,
+  "kernel_commit": "552b3ed1f47eb7b779b8f708abd3ad2667bd60db",
+  "GPU_pending_at_CPU_freeze": true
+}

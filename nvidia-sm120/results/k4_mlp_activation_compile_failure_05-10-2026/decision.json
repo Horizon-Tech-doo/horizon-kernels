@@ -1,0 +1,6 @@
+{
+  "decision": "OFFLINE_COMPILE_FAILED",
+  "gpu_measurement": false,
+  "failure": "BF16 CUDA helper type/conversion identifiers unavailable in generated prelude",
+  "next": "v22 bit conversion fixes helper compilation; frozen v21 retained"
+}

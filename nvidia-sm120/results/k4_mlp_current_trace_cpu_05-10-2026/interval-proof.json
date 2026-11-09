@@ -1,0 +1,6 @@
+{
+  "decision": "INTERVAL_COUNTING_PROOF_PASS",
+  "cases": 10000,
+  "independent_reference": "discrete occupied-time sets",
+  "seed": 20261005
+}

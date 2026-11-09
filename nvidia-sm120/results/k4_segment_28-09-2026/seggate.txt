@@ -1,0 +1,2 @@
+seg gate ra: PASS
+{"variant": "ra", "sizes": [4, 8, 16, 32], "pass": true, "errors": [], "all_variants_ok": true}

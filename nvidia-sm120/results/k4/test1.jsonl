@@ -1,0 +1,60 @@
+{"part": "A", "kernel": "regfrag_xl.qkvz", "M": 4, "cfg": "(1, 16, 4, 1, 64, 4, 4)", "pdl": 1, "equal": true, "t": 9.5}
+{"part": "A", "kernel": "regfrag_xl.qkvz", "M": 4, "cfg": "(1, 16, 4, 1, 64, 4, 4)", "pdl": 3, "equal": true, "t": 13.8}
+{"part": "A", "kernel": "regfrag_xl.qkvz", "M": 4, "cfg": "(1, 16, 4, 1, 64, 4, 4)", "pdl": 7, "equal": true, "t": 18.1}
+{"part": "A", "kernel": "regfrag_xl.out", "M": 4, "cfg": "('rf',)", "pdl": 1, "equal": true, "t": 25.8}
+{"part": "A", "kernel": "regfrag_xl.out", "M": 4, "cfg": "('rf',)", "pdl": 3, "equal": true, "t": 29.8}
+{"part": "A", "kernel": "regfrag_xl.out", "M": 4, "cfg": "('rf',)", "pdl": 7, "equal": true, "t": 33.7}
+{"part": "A", "kernel": "regfrag_xl.gu", "M": 4, "cfg": "(1, 16, 8, 1, 64, 1, 6)", "pdl": 1, "equal": true, "t": 40.6}
+{"part": "A", "kernel": "regfrag_xl.gu", "M": 4, "cfg": "(1, 16, 8, 1, 64, 1, 6)", "pdl": 3, "equal": true, "t": 44.1}
+{"part": "A", "kernel": "regfrag_xl.gu", "M": 4, "cfg": "(1, 16, 8, 1, 64, 1, 6)", "pdl": 7, "equal": true, "t": 47.7}
+{"part": "A", "kernel": "regfrag_xl.down", "M": 4, "cfg": "('rf',)", "pdl": 1, "equal": true, "t": 55.6}
+{"part": "A", "kernel": "regfrag_xl.down", "M": 4, "cfg": "('rf',)", "pdl": 3, "equal": true, "t": 59.8}
+{"part": "A", "kernel": "regfrag_xl.down", "M": 4, "cfg": "('rf',)", "pdl": 7, "equal": true, "t": 63.8}
+{"part": "A", "kernel": "skinny.ba", "M": 4, "pdl": 1, "equal": true, "t": 71.0}
+{"part": "A", "kernel": "add_rmsnorm", "M": 4, "pdl": 1, "equal": true, "t": 72.8}
+{"part": "A", "kernel": "silu_mul", "M": 4, "pdl": 1, "equal": true, "t": 74.3}
+{"part": "A", "kernel": "skinny.ba", "M": 4, "pdl": 3, "equal": true, "t": 76.3}
+{"part": "A", "kernel": "add_rmsnorm", "M": 4, "pdl": 3, "equal": true, "t": 78.0}
+{"part": "A", "kernel": "silu_mul", "M": 4, "pdl": 3, "equal": true, "t": 78.1}
+{"part": "A", "kernel": "skinny.ba", "M": 4, "pdl": 7, "equal": true, "t": 78.1}
+{"part": "A", "kernel": "add_rmsnorm", "M": 4, "pdl": 7, "equal": true, "t": 78.1}
+{"part": "A", "kernel": "silu_mul", "M": 4, "pdl": 7, "equal": true, "t": 78.1}
+{"part": "A", "kernel": "regfrag_xl.qkvz", "M": 32, "cfg": "(1, 32, 8, 1, 64, 2, 4)", "pdl": 1, "equal": true, "t": 86.9}
+{"part": "A", "kernel": "regfrag_xl.qkvz", "M": 32, "cfg": "(1, 32, 8, 1, 64, 2, 4)", "pdl": 3, "equal": true, "t": 91.3}
+{"part": "A", "kernel": "regfrag_xl.qkvz", "M": 32, "cfg": "(1, 32, 8, 1, 64, 2, 4)", "pdl": 7, "equal": true, "t": 95.8}
+{"part": "A", "kernel": "regfrag_xl.out", "M": 32, "cfg": "(1, 32, 4, 1, 64, 4, 4)", "pdl": 1, "equal": true, "t": 104.4}
+{"part": "A", "kernel": "regfrag_xl.out", "M": 32, "cfg": "(1, 32, 4, 1, 64, 4, 4)", "pdl": 3, "equal": true, "t": 108.7}
+{"part": "A", "kernel": "regfrag_xl.out", "M": 32, "cfg": "(1, 32, 4, 1, 64, 4, 4)", "pdl": 7, "equal": true, "t": 113.2}
+{"part": "A", "kernel": "regfrag_xl.gu", "M": 32, "cfg": "(1, 32, 8, 1, 64, 1, 4)", "pdl": 1, "equal": true, "t": 119.7}
+{"part": "A", "kernel": "regfrag_xl.gu", "M": 32, "cfg": "(1, 32, 8, 1, 64, 1, 4)", "pdl": 3, "equal": true, "t": 123.0}
+{"part": "A", "kernel": "regfrag_xl.gu", "M": 32, "cfg": "(1, 32, 8, 1, 64, 1, 4)", "pdl": 7, "equal": true, "t": 126.4}
+{"part": "A", "kernel": "regfrag_xl.down", "M": 32, "cfg": "(1, 32, 4, 1, 64, 4, 4)", "pdl": 1, "equal": true, "t": 135.2}
+{"part": "A", "kernel": "regfrag_xl.down", "M": 32, "cfg": "(1, 32, 4, 1, 64, 4, 4)", "pdl": 3, "equal": true, "t": 139.6}
+{"part": "A", "kernel": "regfrag_xl.down", "M": 32, "cfg": "(1, 32, 4, 1, 64, 4, 4)", "pdl": 7, "equal": true, "t": 144.1}
+{"part": "A", "kernel": "skinny.ba", "M": 32, "pdl": 1, "equal": true, "t": 149.4}
+{"part": "A", "kernel": "add_rmsnorm", "M": 32, "pdl": 1, "equal": true, "t": 149.4}
+{"part": "A", "kernel": "silu_mul", "M": 32, "pdl": 1, "equal": true, "t": 149.4}
+{"part": "A", "kernel": "skinny.ba", "M": 32, "pdl": 3, "equal": true, "t": 152.1}
+{"part": "A", "kernel": "add_rmsnorm", "M": 32, "pdl": 3, "equal": true, "t": 152.1}
+{"part": "A", "kernel": "silu_mul", "M": 32, "pdl": 3, "equal": true, "t": 152.1}
+{"part": "A", "kernel": "skinny.ba", "M": 32, "pdl": 7, "equal": true, "t": 152.2}
+{"part": "A", "kernel": "add_rmsnorm", "M": 32, "pdl": 7, "equal": true, "t": 152.2}
+{"part": "A", "kernel": "silu_mul", "M": 32, "pdl": 7, "equal": true, "t": 152.2}
+{"part": "A", "kernel": "regfrag_xl.gu", "M": 80, "cfg": "(1, 80, 4, 1, 64, -2, 3, 2, 1)", "pdl": 1, "equal": true, "t": 164.6}
+{"part": "A", "kernel": "regfrag_xl.gu", "M": 80, "cfg": "(1, 80, 4, 1, 64, -2, 3, 2, 1)", "pdl": 3, "equal": true, "t": 170.9}
+{"part": "A", "kernel": "regfrag_xl.gu", "M": 80, "cfg": "(1, 80, 4, 1, 64, -2, 3, 2, 1)", "pdl": 7, "equal": true, "t": 177.3}
+{"part": "A", "kernel": "regfrag_xl.down", "M": 80, "cfg": "(1, 80, 4, 1, 64, -2, 3, 2)", "pdl": 1, "equal": true, "t": 189.4}
+{"part": "A", "kernel": "regfrag_xl.down", "M": 80, "cfg": "(1, 80, 4, 1, 64, -2, 3, 2)", "pdl": 3, "equal": true, "t": 195.5}
+{"part": "A", "kernel": "regfrag_xl.down", "M": 80, "cfg": "(1, 80, 4, 1, 64, -2, 3, 2)", "pdl": 7, "equal": true, "t": 201.6}
+{"part": "A", "kernel": "prefill_rsN3.qkvz", "M": 256, "pdl": 1, "equal": true, "t": 218.7}
+{"part": "A", "kernel": "prefill_rsN3.qkvz", "M": 256, "pdl": 3, "equal": true, "t": 222.1}
+{"part": "A", "kernel": "prefill_rsN3.qkvz", "M": 256, "pdl": 7, "equal": true, "t": 225.5}
+{"part": "B", "M": 4, "pdl": 0, "eager_equal": true, "graph_captured": true, "graph_equal": true, "equal": true, "t": 225.5}
+{"part": "B", "M": 4, "pdl": 1, "eager_equal": true, "graph_captured": true, "graph_equal": true, "equal": true, "t": 225.5}
+{"part": "B", "M": 4, "pdl": 3, "eager_equal": true, "graph_captured": true, "graph_equal": true, "equal": true, "t": 225.5}
+{"part": "B", "M": 4, "pdl": 7, "eager_equal": true, "graph_captured": true, "graph_equal": true, "equal": true, "t": 225.5}
+{"part": "B", "M": 32, "pdl": 0, "eager_equal": true, "graph_captured": true, "graph_equal": true, "equal": true, "t": 225.5}
+{"part": "B", "M": 32, "pdl": 1, "eager_equal": true, "graph_captured": true, "graph_equal": true, "equal": true, "t": 225.5}
+{"part": "B", "M": 32, "pdl": 3, "eager_equal": true, "graph_captured": true, "graph_equal": true, "equal": true, "t": 225.5}
+{"part": "B", "M": 32, "pdl": 7, "eager_equal": true, "graph_captured": true, "graph_equal": true, "equal": true, "t": 225.5}
+{"part": "C", "M": 4, "pdl": 0, "stamped_equal": true, "kernels_entering_before_previous_exit": [], "gaps_us": {"L0.norm1": 0, "L0.qkvz": 0.77, "L0.ba": 0.51, "L0.out": 0.51, "L0.norm2": 0.77, "L0.gu": 0.77, "L0.silu": 0.77, "L0.down": 0.51, "L1.norm1": 0.51, "L1.qkvz": 0.51, "L1.ba": 0.51, "L1.out": 0.51, "L1.norm2": 0.51, "L1.gu": 0.51, "L1.silu": 0.77, "L1.down": 0.51}, "ready_us": {"L0.norm1": 0, "L0.qkvz": 0.77, "L0.ba": 0.51, "L0.out": 0.77, "L0.norm2": 0.77, "L0.gu": 0.77, "L0.silu": 0.77, "L0.down": 0.77, "L1.norm1": 0.51, "L1.qkvz": 0.77, "L1.ba": 0.51, "L1.out": 0.77, "L1.norm2": 0.77, "L1.gu": 0.77, "L1.silu": 0.77, "L1.down": 0.51}, "t": 248.3}

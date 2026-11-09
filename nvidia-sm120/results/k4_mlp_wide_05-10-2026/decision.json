@@ -1,0 +1,138 @@
+{
+  "eligible": [],
+  "decision": "NO_SPEED_WIN",
+  "eager_candidates": 30,
+  "graph_candidates": 30,
+  "numerical_mismatches": 0,
+  "primary_rows": [
+    1,
+    4,
+    8,
+    16,
+    32
+  ],
+  "kernel_branch": "horizon/k4-mlp-0410",
+  "candidate_manifest_sha256": "473bb17a16dd3b2e27860661a1162118fefb6cfaca140025130b7c56a6a28698",
+  "kernel_source_hashes": {
+    "contrib/horizon_k4/__init__.py": "00dc94ecbf81da75bff2eef399148d177088b49bc6eab467992b509a2e0c62f0",
+    "contrib/horizon_k4/hkt.py": "a7065e6c3ae14133d28d1b76a17a4a28a41b9c2404467c13064b5c7a6523a1fb",
+    "contrib/horizon_k4/mlp.py": "5c729d7d0c476fe67703ee04cfe354149b7a4c7c838a6a2da9c455a7c5fe3e4e",
+    "contrib/horizon_k4/mlp_activation_epilogue.py": "fe25f05d1b88068ec81be688fe6ef168b11d065f77de5674f1331f343427d893",
+    "contrib/horizon_k4/mlp_native_tasks.py": "aaa97969dcca66e8102361ce748d07c2d216237dad6655e505869f154e20c95a",
+    "contrib/horizon_k4/mlp_pair_tasks.py": "982a0629170e9572147baf37689c27f922bda3c381372f5b5da8975662705c12",
+    "contrib/horizon_k4/mlp_prepare.py": "368da415d17e3f622b30361b7b31d7be6c5d7032048efd1cbd949c877f8fca2e",
+    "contrib/horizon_k4/mlp_schedule.py": "74cda92e15d4a12f35e80ca48eeba6619ed5dddd778f5212338f7569f01d00df",
+    "contrib/horizon_k4/mlp_static_plan.py": "d2724d238174901d56cb2e443634dbec74ced33985890b7650476af476454334",
+    "contrib/horizon_k4/mlp_up_fusion.py": "d114a074b8f6474b75e9f0ded30d825145b223022db070a1a94474085cc6ed70",
+    "contrib/horizon_k4/mlp_wide.py": "bc03e8f9c39cdca158f4e42a1559d9b2c79d084dbfc04d1299d6b7610b4e2b5f",
+    "contrib/horizon_k4/mlp_wide_plan.py": "bed02fa6b0de4ce2eb96a276b187af972631134aa63e57a4a3aeb64cb45d181a",
+    "contrib/horizon_k4/pdl.py": "062d3c20b7d5f1a69921965356eceee5cfc28fb933b43aa239c0ca63a60a970a",
+    "contrib/horizon_k4/runtime.py": "efc7762e897836f3dcaab266f54cbd9a4ba649c8c9dd8f5ae1b69708774b23dd",
+    "contrib/horizon_k4/segment.py": "36151e5b7c231ee450271b17a297353f9ca09bd4502b30d3fb8443db622a7562",
+    "contrib/horizon_k4/selftest.py": "faa9e64c0c7375aa61061fffe269d4f9b5c6bd08304a7515a047232b4f00aa43",
+    "contrib/horizon_k4/tasks.py": "103395b4583001067bd3e10ca512edbcf67611608b368a5a929fcc3e0a4d1843"
+  },
+  "best_by_bucket": [
+    {
+      "rows": 1,
+      "name": "n256-k64-up1-static1-hw1-stages4-grid188-operation",
+      "baseline_us": [
+        106.49599879980087,
+        106.49599879980087,
+        106.49599879980087
+      ],
+      "candidate_us": [
+        109.0560033917427,
+        108.5439994931221,
+        109.0560033917427
+      ],
+      "ratios": [
+        0.97652578022004,
+        0.9811320689961217,
+        0.97652578022004
+      ],
+      "conservative_latency_increase_pct": 2.403850492781734
+    },
+    {
+      "rows": 4,
+      "name": "n256-k64-up1-static1-hw1-stages4-grid188-operation",
+      "baseline_us": [
+        107.00800269842148,
+        106.49599879980087,
+        107.00800269842148
+      ],
+      "candidate_us": [
+        109.56799983978271,
+        110.07999628782272,
+        109.56799983978271
+      ],
+      "ratios": [
+        0.9766355400746146,
+        0.9674418821867428,
+        0.9766355400746146
+      ],
+      "conservative_latency_increase_pct": 3.3653822945586054
+    },
+    {
+      "rows": 8,
+      "name": "n256-k64-up1-static1-hw1-stages4-grid188-operation",
+      "baseline_us": [
+        107.51999914646149,
+        107.51999914646149,
+        107.51999914646149
+      ],
+      "candidate_us": [
+        111.10399663448334,
+        111.10399663448334,
+        111.6119995713234
+      ],
+      "ratios": [
+        0.967741957115974,
+        0.967741957115974,
+        0.9633372716143572
+      ],
+      "conservative_latency_increase_pct": 3.8058039967874935
+    },
+    {
+      "rows": 16,
+      "name": "n256-k64-up1-static1-hw1-stages4-grid188-operation",
+      "baseline_us": [
+        108.8000014424324,
+        109.0560033917427,
+        109.0560033917427
+      ],
+      "candidate_us": [
+        117.24799871444702,
+        117.24799871444702,
+        117.25199967622757
+      ],
+      "ratios": [
+        0.9279476207300613,
+        0.9301310434930697,
+        0.9300993048552112
+      ],
+      "conservative_latency_increase_pct": 7.764703272071705
+    },
+    {
+      "rows": 32,
+      "name": "n128-k64-up1-static1-hw1-stages3-grid376-operation",
+      "baseline_us": [
+        115.1999980211258,
+        116.74399673938751,
+        117.76799708604813
+      ],
+      "candidate_us": [
+        131.071999669075,
+        133.37600231170654,
+        134.92000102996826
+      ],
+      "ratios": [
+        0.8789062371214129,
+        0.875299864413021,
+        0.8728727852580556
+      ],
+      "conservative_latency_increase_pct": 14.5642316828976
+    }
+  ],
+  "limitation": "Exploratory synthetic MLP only; per-bucket best is descriptive, not a fixed deployable policy."
+}

@@ -1,0 +1,29 @@
+{
+  "decision": "PASS",
+  "cases": 50,
+  "sd": [
+    4,
+    8
+  ],
+  "rows": [
+    1,
+    4,
+    8,
+    16,
+    32
+  ],
+  "grids": [
+    188,
+    236,
+    272,
+    320,
+    376
+  ],
+  "actual_kernel_assignment_expressions_checked": true,
+  "wide_plan_equals_independent_arithmetic": true,
+  "adversarial_orders": [
+    "forward",
+    "reverse",
+    "seeded_shuffle"
+  ]
+}

@@ -1,0 +1,3 @@
+==WARNING== Note: Running with uncontrolled GPU caches. Profiling results may be inconsistent.
+==PROF== Connected to process 3954751 (/usr/bin/python3.12)
+==ERROR== The application returned an error code (11).

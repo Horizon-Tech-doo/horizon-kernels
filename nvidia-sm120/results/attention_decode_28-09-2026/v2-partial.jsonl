@@ -1,0 +1,4 @@
+{"test": "configuration", "page_size": 64, "kernel_package": "horizon_ops", "quick": true}
+{"test": "attn_correct", "page_size": 64, "B": 1, "lens": [37], "QL": 1, "xqa_max_abs": 0.0001811556605890094, "ours_max_abs": 0.00018847261545244798, "xqa_rel_l2": 0.00211541218873258, "ours_rel_l2": 0.0021278497973131077, "ours_vs_xqa_max_abs": 0.000244140625, "deterministic": true, "pipe_rel_l2": 0.002128210755730351}
+{"test": "attn_gate", "B": 1, "KVH": 4, "QL": 1, "page_size": 64, "ok": true}
+{"test": "attn_correct", "page_size": 64, "B": 1, "lens": [1000], "QL": 4, "xqa_max_abs": 5.01702592925965e-05, "ours_max_abs": 3.9119850865123804e-05, "xqa_rel_l2": 0.0030211627996608245, "ours_rel_l2": 0.002212633320420099, "ours_vs_xqa_max_abs": 6.103515625e-05, "deterministic": true, "pipe_rel_l2": 0.002204412557323941}

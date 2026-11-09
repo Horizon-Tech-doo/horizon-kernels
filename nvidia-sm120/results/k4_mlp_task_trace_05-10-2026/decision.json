@@ -1,0 +1,81 @@
+{
+  "decision": "DIAGNOSTIC_ONLY",
+  "exact_configurations": 6,
+  "profiles": 72,
+  "raw_recomputed": true,
+  "summary": [
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 6,
+      "grid": 188,
+      "task_span_us": 117.696,
+      "up_gemm_median_us": 29.664,
+      "up_wait_median_us": 0.288,
+      "activation_median_us": 0.896,
+      "down_gemm_median_us": 17.288000000000004,
+      "down_wait_median_us": 3.2800000000000002
+    },
+    {
+      "rows": 4,
+      "width": 256,
+      "stages": 3,
+      "grid": 188,
+      "task_span_us": 113.55199999999999,
+      "up_gemm_median_us": 68.168,
+      "up_wait_median_us": 0.792,
+      "activation_median_us": 0.896,
+      "down_gemm_median_us": 17.632,
+      "down_wait_median_us": 1.904
+    },
+    {
+      "rows": 4,
+      "width": 256,
+      "stages": 4,
+      "grid": 188,
+      "task_span_us": 111.632,
+      "up_gemm_median_us": 65.856,
+      "up_wait_median_us": 0.856,
+      "activation_median_us": 0.896,
+      "down_gemm_median_us": 17.808,
+      "down_wait_median_us": 1.88
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 6,
+      "grid": 188,
+      "task_span_us": 136.688,
+      "up_gemm_median_us": 38.048,
+      "up_wait_median_us": 0.352,
+      "activation_median_us": 7.04,
+      "down_gemm_median_us": 31.927999999999997,
+      "down_wait_median_us": 14.616
+    },
+    {
+      "rows": 32,
+      "width": 256,
+      "stages": 3,
+      "grid": 188,
+      "task_span_us": 124.816,
+      "up_gemm_median_us": 69.36,
+      "up_wait_median_us": 1.072,
+      "activation_median_us": 7.344,
+      "down_gemm_median_us": 36.536,
+      "down_wait_median_us": 11.456
+    },
+    {
+      "rows": 32,
+      "width": 256,
+      "stages": 4,
+      "grid": 188,
+      "task_span_us": 123.088,
+      "up_gemm_median_us": 68.592,
+      "up_wait_median_us": 1.12,
+      "activation_median_us": 7.408,
+      "down_gemm_median_us": 36.848,
+      "down_wait_median_us": 11.015999999999998
+    }
+  ],
+  "limitation": "Instrumentation changes execution; CTA phase medians overlap and cannot be added into wall time. No speed/deployment claim."
+}

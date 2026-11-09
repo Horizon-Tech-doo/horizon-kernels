@@ -1,0 +1,11 @@
+{"boundary": 0, "vr": 32, "layers": 2, "requests": 7, "graph_replays": 2, "ok": true}
+{"boundary": 0, "vr": 128, "layers": 2, "requests": 7, "graph_replays": 2, "ok": true}
+{"boundary": 1, "vr": 32, "layers": 2, "requests": 7, "graph_replays": 2, "ok": true}
+{"boundary": 1, "vr": 128, "layers": 2, "requests": 7, "graph_replays": 2, "ok": true}
+{"boundary": 2, "vr": 32, "layers": 2, "requests": 7, "graph_replays": 2, "ok": true}
+{"boundary": 2, "vr": 128, "layers": 2, "requests": 7, "graph_replays": 2, "ok": true}
+{"boundary": 3, "vr": 32, "layers": 2, "requests": 7, "graph_replays": 2, "ok": true}
+{"boundary": 3, "vr": 128, "layers": 2, "requests": 7, "graph_replays": 2, "ok": true}
+{"boundary": 4, "vr": 32, "layers": 2, "requests": 7, "graph_replays": 2, "ok": true}
+{"boundary": 4, "vr": 128, "layers": 2, "requests": 7, "graph_replays": 2, "ok": true}
+{"complete": true, "cases": 10}

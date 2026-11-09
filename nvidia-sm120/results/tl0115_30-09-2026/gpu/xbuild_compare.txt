@@ -1,0 +1,18 @@
+old: <data>/tl-pkgs-cand-29-09-2026/tilelang/__init__.py 0.1.14  new: <data>/tl-pkgs-0115-30-09-2026/tilelang/__init__.py 0.1.15
+| family | cases | bit-identical |
+|---|---|---|
+| adaptive | 60 | 60 |
+| k1a | 6 | 6 |
+| k3 | 55 | 55 |
+| k3prep | 5 | 5 |
+| k5norm | 12 | 12 |
+| k5rms | 12 | 12 |
+| k5skinny | 48 | 48 |
+| nat | 110 | 110 |
+| natprep | 5 | 5 |
+| rsq_rowscale | 55 | 55 |
+| rsq_torch | 55 | 55 |
+| xl | 1782 | 1782 |
+total 2205 cases, identical 2205; differing 0, missing 0, variant changes 0, in-build identity failures 0
+IN_BUILD_IDENTITIES OK
+XBUILD_V2 PASS

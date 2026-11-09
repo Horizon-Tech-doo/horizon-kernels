@@ -1,0 +1,17 @@
+{
+  "sha256": {
+    "policy.json": "e2361331dfcdff1cda59f7052ca1f236abf4500a3d4a6af17f108e3bb19ab682",
+    "bench_mlp_pair_04-10-2026.py": "9180f3954e20551501584fde0945e159860153ad26b6a986489471b24f9ef1d8",
+    "run_k4_mlp_v4_04-10-2026.sh": "3b356d51961cfc212811b84e94e112b2617a493b88ff79419c6ddb3facab7a1e",
+    "guard_k4_mlp_v4_04-10-2026.sh": "acc45b09b660da91be343876cdd1e345e9e2bd7189e37ddaca0864960590c4e4",
+    "test_mlp_pair_schedule_cpu_04-10-2026.py": "5e59408b560861bf34d9ae8ff5e7ea36acc65c8dae4273dc46d04a126d06bfb3",
+    "lower_mlp_pair_04-10-2026.py": "f6ca4eaecc7b67bee6282219438e6742f4fdce30d37dd59d4d1946126474b7cd",
+    "contrib/horizon_k4/mlp_schedule.py": "b7eaed7db690128689ac329623c7c46e03269d400a1a2007f0aed22641f8b212",
+    "contrib/horizon_k4/tasks.py": "68e5954f202b08f9b75932c5f4239c83e626be8398285d0c0913a0c9f03ba1b3",
+    "contrib/horizon_k4/pdl.py": "062d3c20b7d5f1a69921965356eceee5cfc28fb933b43aa239c0ca63a60a970a",
+    "contrib/horizon_k4/__init__.py": "00dc94ecbf81da75bff2eef399148d177088b49bc6eab467992b509a2e0c62f0",
+    "contrib/horizon_k4/mlp.py": "d604773d83bf4e8392d64867ea96edf8045e78b848a47663e129134e479aad6f",
+    "contrib/horizon_k4/runtime.py": "efc7762e897836f3dcaab266f54cbd9a4ba649c8c9dd8f5ae1b69708774b23dd",
+    "contrib/horizon_k4/hkt.py": "a7065e6c3ae14133d28d1b76a17a4a28a41b9c2404467c13064b5c7a6523a1fb"
+  }
+}

@@ -1,0 +1,96 @@
+[
+ {
+  "kernel": "tile_lower_max",
+  "args": [
+   248320,
+   128
+  ],
+  "sha": "3e59f19a9e618943",
+  "nvcc_rc": 0,
+  "regs": 42,
+  "stack": 0,
+  "spill_st": 0,
+  "spill_ld": 0
+ },
+ {
+  "kernel": "tile_lower_max_t16",
+  "args": [
+   248320,
+   16,
+   64
+  ],
+  "sha": "4c8d6e179403c9d8",
+  "nvcc_rc": 0,
+  "regs": 42,
+  "stack": 0,
+  "spill_st": 0,
+  "spill_ld": 0
+ },
+ {
+  "kernel": "compact_k4096",
+  "args": [
+   248320,
+   4096
+  ],
+  "sha": "047617d5cd68ecbf",
+  "nvcc_rc": 0,
+  "regs": 40,
+  "stack": 0,
+  "spill_st": 0,
+  "spill_ld": 0
+ },
+ {
+  "kernel": "compact_k16384",
+  "args": [
+   248320,
+   16384
+  ],
+  "sha": "f9ce8a38b102c9bb",
+  "nvcc_rc": 0,
+  "regs": 40,
+  "stack": 0,
+  "spill_st": 0,
+  "spill_ld": 0
+ },
+ {
+  "kernel": "recheck_k4096",
+  "args": [
+   248320,
+   5120,
+   4096
+  ],
+  "sha": "35537be4f8fdbe63",
+  "nvcc_rc": 0,
+  "regs": 61,
+  "stack": 0,
+  "spill_st": 0,
+  "spill_ld": 0
+ },
+ {
+  "kernel": "recheck_k16384",
+  "args": [
+   248320,
+   5120,
+   16384
+  ],
+  "sha": "fd02a5d51765e603",
+  "nvcc_rc": 0,
+  "regs": 61,
+  "stack": 0,
+  "spill_st": 0,
+  "spill_ld": 0
+ },
+ {
+  "kernel": "full_rows",
+  "args": [
+   248320,
+   5120
+  ],
+  "sha": "505bbe722e4a7342",
+  "nvcc_rc": 0,
+  "regs": 84,
+  "stack": 0,
+  "spill_st": 0,
+  "spill_ld": 0
+ }
+]

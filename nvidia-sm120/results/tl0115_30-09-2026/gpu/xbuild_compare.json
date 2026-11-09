@@ -1,0 +1,73 @@
+{
+ "pass": true,
+ "families": {
+  "adaptive": [
+   60,
+   60
+  ],
+  "k1a": [
+   6,
+   6
+  ],
+  "k3": [
+   55,
+   55
+  ],
+  "k3prep": [
+   5,
+   5
+  ],
+  "k5norm": [
+   12,
+   12
+  ],
+  "k5rms": [
+   12,
+   12
+  ],
+  "k5skinny": [
+   48,
+   48
+  ],
+  "nat": [
+   110,
+   110
+  ],
+  "natprep": [
+   5,
+   5
+  ],
+  "rsq_rowscale": [
+   55,
+   55
+  ],
+  "rsq_torch": [
+   55,
+   55
+  ],
+  "xl": [
+   1782,
+   1782
+  ]
+ },
+ "diff": [],
+ "missing": [],
+ "variant": [],
+ "inner": [],
+ "old_meta": {
+  "tilelang_file": "<data>/tl-pkgs-cand-29-09-2026/tilelang/__init__.py",
+  "tilelang_version": "0.1.14",
+  "torch": "2.13.0+cu130",
+  "start": "30-09-2026 15:17:01",
+  "table": "<data>/horizon-pkgs/adaptive-natpf-07ee3f21/qwen3_8_nvfp4_linear_nomarlin__NVIDIA_RTX_PRO_6000_Blackwell_Max-Q_Workstation_Edition_sm120_drv570.124.04_libcuda13.0_cuda13.0.json",
+  "secs": 51
+ },
+ "new_meta": {
+  "tilelang_file": "<data>/tl-pkgs-0115-30-09-2026/tilelang/__init__.py",
+  "tilelang_version": "0.1.15",
+  "torch": "2.13.0+cu130",
+  "start": "30-09-2026 15:17:57",
+  "table": "<data>/horizon-pkgs/adaptive-natpf-07ee3f21/qwen3_8_nvfp4_linear_nomarlin__NVIDIA_RTX_PRO_6000_Blackwell_Max-Q_Workstation_Edition_sm120_drv570.124.04_libcuda13.0_cuda13.0.json",
+  "secs": 348
+ }
+}

@@ -1,0 +1,10 @@
+{
+  "decision": "CPU_COMPILE_PASS_GPU_PENDING",
+  "offline_builds": 4,
+  "output_coordinates": 30720,
+  "gu_row_warps": 2,
+  "activation_pair": true,
+  "limitation": "Rows32 GU128 only; default one row warp retained; GPU correctness, changed-input replay and speed pending.",
+  "kernel_commit": "24f2c41e",
+  "actual_emitter_binding_checked": true
+}

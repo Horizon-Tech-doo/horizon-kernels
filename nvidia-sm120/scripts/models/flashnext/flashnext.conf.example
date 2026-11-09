@@ -1,0 +1,36 @@
+# Flash-Next rented-GPU settings (03-10-2026). Copy to $FN_ROOT/flashnext.conf on the rented box; the rented-GPU
+# runner scripts source it (they are not in this release). No secrets in here: the HF token (only needed if a repo becomes gated) goes in
+# ~/.cache/huggingface/token via `hf auth login`, never into this file.
+
+FN_ROOT=/workspace/flashnext          # on the PERSISTENT volume (for example /workspace), so a stopped pod keeps the weights
+FN_REPO=$FN_ROOT/repo                  # copy of the horizon-kernels repo's scripts (copy them there yourself)
+FN_MODELS=$FN_ROOT/models
+FN_VENV=${FN_VENV:-$FN_ROOT/venv}     # overridable: the lil fallback uses a second venv
+FN_HOME=$FN_ROOT/home                  # HOME for the eval harnesses (they write ~/evals_*, read $HK_WORK/...)
+
+# vLLM build: release = vllm==0.30.0 from PyPI (NVIDIA checkpoint, and the pruned ones made from it)
+#             pr56273 = vLLM main + PR #56273 (NVFP4 n-gram table: local-inference-lab checkpoint only; Python-only PR,
+#                       installed with VLLM_USE_PRECOMPILED=1 on top of the nightly wheel of its merge base)
+VLLM_SOURCE=${VLLM_SOURCE:-release}
+VLLM_VERSION=0.30.0
+PR56273_SHA=e1c46d6d66d98a604eef8261e273a6a6c51841a6
+
+# what to serve: nvidia | lil | p35 | p50 | <absolute model dir>
+MODEL=${MODEL:-nvidia}
+PORT=8000                             # 127.0.0.1 only; our eval scripts use localhost:8000 unchanged
+SERVED_NAMES="qwen3.8-flash-next qwen3.8"
+MAX_MODEL_LEN=${MAX_MODEL_LEN:-262144}
+MAX_NUM_SEQS=${MAX_NUM_SEQS:-64}
+MAX_NUM_BATCHED_TOKENS=8192
+GPU_MEMORY_UTILIZATION=${GPU_MEMORY_UTILIZATION:-0.92}           # no gpushare on a rented box: vLLM's own accounting is valid there
+MTP_DRAFTS=${MTP_DRAFTS:-3}                      # 0 = no speculative decoding (required if a pruned checkpoint dropped the MTP layer)
+MOE_BACKEND=${MOE_BACKEND:-marlin}                  # = our SM120 box on driver 570 (FlashInfer FP4 crashes there); set auto to let a
+                                       #   newer driver pick FlashInfer, for comparison only
+PREFIX_CACHE=1                         # --enable-prefix-caching --mamba-cache-mode align (Qwen4Exp refuses 'all')
+INDEXER_FP8=0                          # 1 = --attention-config.indexer_kv_dtype fp8 (smaller QSA indexer cache; long-context risk)
+LANGUAGE_ONLY=0                        # 1 = --language-model-only (saves ~0.9 GB; images then fail)
+THINKING_DEFAULT=false                 # default (chat template kwargs enable_thinking)
+EXTRA_ARGS=${EXTRA_ARGS:-}
+
+# results go here
+RESULTS=$FN_ROOT/results

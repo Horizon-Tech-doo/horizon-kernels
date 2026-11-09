@@ -1,0 +1,14 @@
+{"test": "gdnpf_correct", "lens": [1], "initial_state": false, "fla_max_abs": 0.00010850927108801284, "ours_max_abs": 0.00010850927108801284, "ours_state_rel": 0.001651504839328763, "ref_absmax": 0.028995428133465152, "deterministic_output_and_state": true, "pass": true}
+{"test": "gdnpf_graph", "lens": [1], "pass": true}
+{"test": "gdnpf_correct", "lens": [63, 64, 65], "initial_state": true, "fla_max_abs": 0.0002671979258039997, "ours_max_abs": 0.0002671979258039997, "ours_state_rel": 0.0024313281300582697, "ref_absmax": 0.05429360686503976, "deterministic_output_and_state": true, "pass": true}
+{"test": "gdnpf_graph", "lens": [63, 64, 65], "pass": true}
+{"test": "gdnpf_correct", "lens": [100], "initial_state": false, "fla_max_abs": 0.00019281009174613659, "ours_max_abs": 0.00019281009174613659, "ours_state_rel": 0.0025078812839598973, "ref_absmax": 0.035094562006174106, "deterministic_output_and_state": true, "pass": true}
+{"test": "gdnpf_graph", "lens": [100], "pass": true}
+{"test": "gdnpf_correct", "lens": [300, 17, 1000], "initial_state": true, "fla_max_abs": 0.00029293468490545344, "ours_max_abs": 0.00029293468490545344, "ours_state_rel": 0.002502653280857564, "ref_absmax": 0.04874828126472525, "deterministic_output_and_state": true, "pass": true}
+{"test": "gdnpf_graph", "lens": [300, 17, 1000], "pass": true}
+{"test": "gdnpf_correct", "lens": [2048], "initial_state": true, "fla_max_abs": 0.0002465382314127268, "ours_max_abs": 0.0002465382314127268, "ours_state_rel": 0.0025826246511295396, "ref_absmax": 0.04345942885641273, "deterministic_output_and_state": true, "pass": true}
+{"test": "gdnpf_graph", "lens": [2048], "pass": true}
+{"test": "gdnpf_bench", "lens": [8192], "fla_ms": 1.5, "ours_ms": 3.005}
+{"test": "gdnpf_bench", "lens": [16384], "fla_ms": 2.947, "ours_ms": 5.954}
+{"test": "gdnpf_bench", "lens": [4096, 4096, 4096, 4096], "fla_ms": 3.043, "ours_ms": 4.728}
+{"test": "gdnpf_summary", "checks": 10, "pass": true}

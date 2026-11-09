@@ -1,0 +1,7 @@
+Final hidden states (lm_head input, S3 L0 capture, 64,895 unique rows; PCA fit on 32,768, evaluated on 1,024 held out):
+fraction of ||x|| left outside the subspace (median / p99 / max)
+  top channels 8: 0.931 / 0.997 / 0.999      64: 0.846 / 0.985 / 0.994     256: 0.792 / 0.958 / 0.971
+  PCA 16: 0.727 / 0.974 / 0.991             64: 0.625 / 0.916 / 0.968      256: 0.502 / 0.843 / 0.918    1024: 0.344 / 0.667 / 0.793
+=> hidden states are high-rank: an exact low-rank correction of the quantization error (U^T E, r x V) would shrink the
+   Cauchy-Schwarz bound by <= 2x at r = 256 while reading ~250 MB extra per call. Not worth it.
+||x|| p50 121.6, p90 138.0, p99 141.0 (2,048 rows).

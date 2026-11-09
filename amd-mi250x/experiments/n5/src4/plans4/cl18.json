@@ -1,0 +1,1 @@
+[{"case": "d128_16384", "P": 0, "bN": 32, "th": 512, "rows": 128, "lb": 4}, {"case": "d128_16384", "P": 32, "bN": 96, "th": 768}, {"case": "mha_8192", "P": 128, "bN": 32, "th": 512, "rev": false, "swap": false, "lb": 4}, {"case": "mha_16384", "P": 128, "bN": 32, "th": 512, "rev": false, "swap": false, "lb": 4}]

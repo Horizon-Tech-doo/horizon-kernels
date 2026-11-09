@@ -1,0 +1,123 @@
+[ROCm] Honour compile_flags and tl.device_compile_flags on HIP
+
+tilelang.compile(..., compile_flags=...) and the tl.device_compile_flags pass
+config reached the kernel cache key but not hipcc, so a per-kernel flag had no
+effect on HIP and only HIPCC_COMPILE_FLAGS_APPEND, which is global to the
+process, could change code generation. Pass the pass config to the compile
+callback as the CUDA and Ascend backends do, and split each entry like a shell,
+so one string can hold "-mllvm <option>".
+
+diff --git a/src/rocm/codegen/rt_mod_hip.cc b/src/rocm/codegen/rt_mod_hip.cc
+index e0d3c82..f3c1bfa 100644
+--- a/src/rocm/codegen/rt_mod_hip.cc
++++ b/src/rocm/codegen/rt_mod_hip.cc
+@@ -83,7 +83,10 @@ Module BuildTileLangHIP(IRModule mod, Target target) {
+   std::string ptx;
+ 
+   if (auto f = Function::GetGlobal("tilelang_callback_hip_compile")) {
+-    ptx = (*f)(code, target).cast<std::string>();
++    // Fetch current pass context config and pass into the compile callback
++    tvm::transform::PassContext pass_ctx =
++        tvm::transform::PassContext::Current();
++    ptx = (*f)(code, target, pass_ctx->config).cast<std::string>();
+     if (ptx[0] != '/')
+       fmt = "hsaco";
+   } else {
+diff --git a/testing/python/amd/test_tilelang_hip_compile_flags.py b/testing/python/amd/test_tilelang_hip_compile_flags.py
+new file mode 100644
+index 0000000..3656cc5
+--- /dev/null
++++ b/testing/python/amd/test_tilelang_hip_compile_flags.py
+@@ -0,0 +1,51 @@
++"""compile_flags and tl.device_compile_flags reach hipcc on HIP."""
++
++import pytest
++import tilelang
++import tilelang.rocm.language as T
++import tilelang.testing
++from tilelang.transform import PassConfigKey
++
++# The kernel only compiles when the flag defines the macro, and its result is the macro's value.
++_PRELUDE = """
++#ifndef TL_TEST_FLAG_VALUE
++#error "compile flag did not reach hipcc"
++#endif
++"""
++
++
++def _make():
++    @T.prim_func
++    def main(out: T.Tensor((1,), T.int32)):
++        with T.Kernel(1, threads=64, prelude=_PRELUDE):
++            for i in T.Parallel(1):
++                out[i] = 0
++
++    return main
++
++
++@tilelang.testing.requires_rocm
++def test_missing_flag_fails_to_compile():
++    with pytest.raises(Exception, match="compile flag did not reach hipcc"):
++        tilelang.compile(_make(), out_idx=[0], target="hip")
++
++
++@tilelang.testing.requires_rocm
++@pytest.mark.parametrize("flags", [["-DTL_TEST_FLAG_VALUE=1"], "-DTL_TEST_FLAG_VALUE=1", ["-O3 -DTL_TEST_FLAG_VALUE=1"]])
++def test_compile_flags_reach_hipcc(flags):
++    assert tilelang.compile(_make(), out_idx=[0], target="hip", compile_flags=flags) is not None
++
++
++@tilelang.testing.requires_rocm
++def test_pass_config_flags_reach_hipcc():
++    kernel = tilelang.compile(
++        _make(),
++        out_idx=[0],
++        target="hip",
++        pass_configs={PassConfigKey.TL_DEVICE_COMPILE_FLAGS: ["-DTL_TEST_FLAG_VALUE=1"]},
++    )
++    assert kernel is not None
++
++
++if __name__ == "__main__":
++    tilelang.testing.main()
+diff --git a/tilelang/rocm/backend.py b/tilelang/rocm/backend.py
+index e76d637..54157a1 100644
+--- a/tilelang/rocm/backend.py
++++ b/tilelang/rocm/backend.py
+@@ -1,5 +1,7 @@
+ from __future__ import annotations
+ 
++import shlex
++
+ from tilelang.backend.device_codegen import DeviceCodegen
+ from tilelang.backend.host_codegen import STANDARD_HOST_CODEGENS
+ from tilelang.backend.pass_pipeline import PassPipeline
+@@ -7,13 +9,18 @@ from tilelang.backend.module import BackendModule, register_backend
+ from tilelang.contrib import hipcc
+ from tilelang.env import TILELANG_TEMPLATE_PATH
+ from tilelang.rocm.target import target_get_mcpu
++from tilelang.transform import PassConfigKey
+ 
+ from . import codegen, execution_backend, pipeline
+ 
+ 
+-def tilelang_callback_hip_compile(code, target):
++def tilelang_callback_hip_compile(code, target, pass_config=None):
+     """Compile generated HIP source into an HSACO binary."""
+ 
++    cfg = pass_config or {}
++    extra_flags = cfg.get(PassConfigKey.TL_DEVICE_COMPILE_FLAGS) or []
++    if isinstance(extra_flags, str):
++        extra_flags = [extra_flags]
+     return hipcc.compile_hip(
+         code,
+         target_format="hsaco",
+@@ -21,6 +28,8 @@ def tilelang_callback_hip_compile(code, target):
+         options=[
+             "-std=c++17",
+             "-I" + TILELANG_TEMPLATE_PATH,
++            # Split like a shell, so one string can hold "-mllvm <option>".
++            *(token for flag in extra_flags for token in shlex.split(str(flag))),
+         ],
+         verbose=False,
+     )

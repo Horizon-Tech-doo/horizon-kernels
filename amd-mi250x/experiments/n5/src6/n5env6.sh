@@ -1,0 +1,4 @@
+# Round 6. FM6_I: C2P's FM_I (fork-main, vLLM image, clang 22) with this round's own cache and c6.py (C2P's c3.py plus longer case list, CK post, compile count, GCD id). Hand-edited arms use round 5's n5_r5.py and landed module unchanged (TL_I, TL_L, flavour r5).
+source /scratch/project_XXXXXXXXX/tilelang/exp/N5/src5/n5env5.sh
+S6=$E/src6
+FM6_I() { singularity exec -B "$TL_BIND" "$IMG" bash -c "export VLLM_NO_USAGE_STATS=1 PYTHONNOUSERSITE=1 TILELANG_CACHE_DIR=$E/cache/Ic6 TRITON_CACHE_DIR=$E/cache/Ic6/triton HF_HUB_OFFLINE=1 LD_LIBRARY_PATH=$F/build/lib:\$LD_LIBRARY_PATH $FM_ENV; cd $S6; python3 -I -c 'import sys,runpy; sys.path.insert(0,\"$VENV\"); sys.path.insert(0,\"$F\"); sys.path.insert(0,\"$C\"); sys.path.insert(0,\"$S\"); sc=sys.argv[1]; sys.argv=sys.argv[1:]; runpy.run_path(sc, run_name=\"__main__\")' $1"; }

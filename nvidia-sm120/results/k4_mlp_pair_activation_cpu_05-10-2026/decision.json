@@ -1,0 +1,7 @@
+{
+  "decision": "CPU_COMPILE_PASS_GPU_PENDING",
+  "offline_builds": 4,
+  "conversion_lanes": 131072,
+  "kernel_commit": "06115fb5",
+  "limitation": "Aligned pair loads are optional and disabled by default; GPU correctness, changed-input replay and speed gates pending."
+}

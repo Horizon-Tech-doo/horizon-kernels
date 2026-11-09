@@ -1,0 +1,4 @@
+{
+  "decision": "CPU_COMPILE_PASS",
+  "limitation": "Two M4 packed-arena builds only; no GPU test."
+}

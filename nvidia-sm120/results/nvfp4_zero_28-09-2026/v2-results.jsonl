@@ -1,0 +1,15 @@
+{"case": "synthetic-0.0", "shape": [128, 256], "finite_normal_denominators": true, "zero_codes_exact": true, "deterministic": true, "old_bytes_equal": false}
+{"case": "synthetic-1e-40", "shape": [128, 256], "finite_normal_denominators": true, "zero_codes_exact": true, "deterministic": true, "old_bytes_equal": false}
+{"case": "synthetic-1e-35", "shape": [128, 256], "finite_normal_denominators": true, "zero_codes_exact": true, "deterministic": true, "old_bytes_equal": false}
+{"case": "synthetic-1e-06", "shape": [128, 256], "finite_normal_denominators": true, "zero_codes_exact": true, "deterministic": true, "old_bytes_equal": true}
+{"case": "synthetic-0.03", "shape": [128, 256], "finite_normal_denominators": true, "zero_codes_exact": true, "deterministic": true, "old_bytes_equal": true}
+{"case": "synthetic-100.0", "shape": [128, 256], "finite_normal_denominators": true, "zero_codes_exact": true, "deterministic": true, "old_bytes_equal": true}
+{"case": "mtp.fc.weight", "shape": [5120, 10240], "finite_normal_denominators": true, "zero_codes_exact": true, "deterministic": true, "old_bytes_equal": true}
+{"case": "mtp.layers.0.mlp.down_proj.weight", "shape": [5120, 17408], "finite_normal_denominators": true, "zero_codes_exact": true, "deterministic": true, "old_bytes_equal": true}
+{"case": "mtp.layers.0.mlp.gate_proj.weight", "shape": [17408, 5120], "finite_normal_denominators": true, "zero_codes_exact": true, "deterministic": true, "old_bytes_equal": true}
+{"case": "mtp.layers.0.mlp.up_proj.weight", "shape": [17408, 5120], "finite_normal_denominators": true, "zero_codes_exact": true, "deterministic": true, "old_bytes_equal": true}
+{"case": "mtp.layers.0.self_attn.k_proj.weight", "shape": [1024, 5120], "finite_normal_denominators": true, "zero_codes_exact": true, "deterministic": true, "old_bytes_equal": true}
+{"case": "mtp.layers.0.self_attn.o_proj.weight", "shape": [5120, 6144], "finite_normal_denominators": true, "zero_codes_exact": true, "deterministic": true, "old_bytes_equal": true}
+{"case": "mtp.layers.0.self_attn.q_proj.weight", "shape": [12288, 5120], "finite_normal_denominators": true, "zero_codes_exact": true, "deterministic": true, "old_bytes_equal": true}
+{"case": "mtp.layers.0.self_attn.v_proj.weight", "shape": [1024, 5120], "finite_normal_denominators": true, "zero_codes_exact": true, "deterministic": true, "old_bytes_equal": true}
+{"complete": true, "cases": 14, "real_weights": 8, "candidate_sha256": "98c65c2f31b2ab00131ce8ed06ef319eeb7e329d0e6f60482dc7ac9390e1b683", "baseline_sha256": "b3b310fda81c8cbd9810254c6f1f4283ea6d3f3938c8f3d63678fb4226249f50"}

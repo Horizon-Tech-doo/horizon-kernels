@@ -1,0 +1,97 @@
+[ROCm] Add occupancy_report to hip_resource_info
+
+The compiler's resource usage already records Occupancy and ScratchSize per
+kernel, but nothing converts them to blocks per compute unit, which is the
+number that decides whether a kernel can use the LDS it was sized for. Add a
+small helper with warnings for scratch use and for register-limited kernels.
+
+diff --git a/testing/python/amd/test_tilelang_hip_occupancy_report.py b/testing/python/amd/test_tilelang_hip_occupancy_report.py
+new file mode 100644
+index 0000000..048ddaa
+--- /dev/null
++++ b/testing/python/amd/test_tilelang_hip_occupancy_report.py
+@@ -0,0 +1,29 @@
++"""occupancy_report: blocks per compute unit from clang's resource usage remarks."""
++
++import pytest
++from tilelang.contrib.hip_resource_info import KernelResourceUsage, occupancy_report
++
++
++def _usage(occupancy, scratch=0):
++    return KernelResourceUsage(scratch_bytes=scratch, extra={"Occupancy [waves/SIMD]": str(occupancy)})
++
++
++@pytest.mark.parametrize(
++    ("occupancy", "threads", "lds_bytes", "by_regs", "by_lds", "blocks"),
++    [
++        (1, 256, 24576, 1, 2, 1),  # 256x128x32 without the attribute: registers bind
++        (3, 256, 24576, 3, 2, 2),  # with it: LDS binds
++        (3, 768, 0, 1, None, 1),
++        (4, 512, 21000, 2, 3, 2),
++        (2, 128, 16384, 4, 4, 4),
++    ],
++)
++def test_blocks_per_cu(occupancy, threads, lds_bytes, by_regs, by_lds, blocks):
++    report = occupancy_report(_usage(occupancy), threads, lds_bytes)
++    assert (report.blocks_by_registers, report.blocks_by_lds, report.blocks_per_cu) == (by_regs, by_lds, blocks)
++
++
++def test_warnings():
++    assert "registers limit" in occupancy_report(_usage(1), 256, 24576).warnings[0]
++    assert "scratch" in occupancy_report(_usage(3, scratch=184), 256).warnings[0]
++    assert occupancy_report(_usage(3), 256, 24576).warnings == []
+diff --git a/tilelang/contrib/hip_resource_info.py b/tilelang/contrib/hip_resource_info.py
+index 15823d3..63fa1a9 100644
+--- a/tilelang/contrib/hip_resource_info.py
++++ b/tilelang/contrib/hip_resource_info.py
+@@ -120,6 +120,50 @@ def filter_and_record(output: str) -> str:
+     return "".join(kept_lines)
+ 
+ 
++@dataclass
++class OccupancyReport:
++    """How many blocks of a kernel fit on one compute unit, and what limits it."""
++
++    occupancy: int  # waves per SIMD the register allocation allows
++    waves_per_block: int
++    blocks_by_registers: int
++    blocks_by_lds: int | None  # None when the LDS size per block is not given
++    blocks_per_cu: int
++    warnings: list[str] = field(default_factory=list)
++
++
++def occupancy_report(
++    usage: KernelResourceUsage,
++    threads: int,
++    lds_bytes: int = 0,
++    wave_size: int = 64,
++    simds_per_cu: int = 4,
++    lds_bytes_per_cu: int = 65536,
++) -> OccupancyReport:
++    """Blocks per compute unit from the compiler's occupancy and the LDS size.
++
++    A block needs ``ceil(threads / wave_size)`` wavefronts, a compute unit holds
++    ``occupancy * simds_per_cu`` of them, and the blocks on it share the LDS.
++    The defaults describe CDNA, including MI200's 64 KB of LDS per compute unit.
++    """
++    occupancy = int(usage.extra["Occupancy [waves/SIMD]"])
++    waves_per_block = (threads + wave_size - 1) // wave_size
++    by_registers = occupancy * simds_per_cu // waves_per_block
++    by_lds = lds_bytes_per_cu // lds_bytes if lds_bytes > 0 else None
++    blocks = by_registers if by_lds is None else min(by_registers, by_lds)
++    warnings = []
++    if usage.scratch_bytes > 0:
++        warnings.append(f"kernel spills to scratch ({usage.scratch_bytes} bytes/lane), which is usually slow")
++    if by_registers == 0:
++        warnings.append(f"occupancy {occupancy} does not fit a block of {waves_per_block} wavefronts on one compute unit")
++    elif by_lds is not None and by_registers < by_lds:
++        warnings.append(
++            f"registers limit this kernel to {by_registers} blocks per compute unit while LDS allows {by_lds}; "
++            "see T.annotate_min_blocks_per_sm"
++        )
++    return OccupancyReport(occupancy, waves_per_block, by_registers, by_lds, blocks, warnings)
++
++
+ def dump_to_file(usage: dict[str, KernelResourceUsage], path: str) -> None:
+     """Persist parsed resource usage so it survives kernel-cache hits."""
+     data = {name: asdict(u) for name, u in usage.items()}

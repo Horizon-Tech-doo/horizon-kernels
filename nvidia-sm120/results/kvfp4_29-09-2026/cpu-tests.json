@@ -1,0 +1,132 @@
+{
+ "T1_e4m3_rne_satfinite": {
+  "ok": true,
+  "probes": 40514,
+  "mismatches": 0
+ },
+ "T2_e2m1_rne_and_packing": {
+  "ok": true,
+  "probes": 50031,
+  "mismatches": 0,
+  "packing_ok": true
+ },
+ "T3_format_edges": {
+  "ok": true,
+  "exact_grid": true,
+  "zero_ok": true,
+  "finite": true,
+  "huge_saturates_2688": true,
+  "negative_ok": true,
+  "global_scale_invariant": true
+ },
+ "T3b_scale_search": {
+  "ok": true,
+  "blocks": 65536,
+  "blocks_worse": 0,
+  "deterministic": true,
+  "fraction_of_blocks_with_other_scale": 0.6449
+ },
+ "T4_hadamard": {
+  "ok": true,
+  "rel_vs_dense": 1.1531915392811168e-07,
+  "inverse_err": 4.76837158203125e-07,
+  "dot_rel_err": 1.200817236358343e-07,
+  "deterministic": true
+ },
+ "T5_roundtrip_error_stats": {
+  "ok": true,
+  "hadamard_reduces_outlier_key_error": true,
+  "nvfp4_beats_int4_tokenhead_gaussian": true,
+  "scale_search_reduces_error": true,
+  "table": {
+   "gaussian/fp8_e4m3_scale1 (today)": {
+    "k_rel_l2": 0.0267,
+    "v_rel_l2": 0.0266,
+    "attn_out_rel_l2": 0.0555
+   },
+   "gaussian/nvfp4 RN scale (K,V plain)": {
+    "k_rel_l2": 0.0951,
+    "v_rel_l2": 0.0951,
+    "attn_out_rel_l2": 0.2108
+   },
+   "gaussian/nvfp4 (K,V plain)": {
+    "k_rel_l2": 0.0827,
+    "v_rel_l2": 0.0827,
+    "attn_out_rel_l2": 0.1796
+   },
+   "gaussian/nvfp4 (K Hadamard, V plain)": {
+    "k_rel_l2": 0.0827,
+    "v_rel_l2": 0.0827,
+    "attn_out_rel_l2": 0.1823
+   },
+   "gaussian/fp8 K + nvfp4 V (K8V4-like)": {
+    "k_rel_l2": 0.0267,
+    "v_rel_l2": 0.0827,
+    "attn_out_rel_l2": 0.0966
+   },
+   "gaussian/int4 token-head asym": {
+    "k_rel_l2": 0.1088,
+    "v_rel_l2": 0.1089,
+    "attn_out_rel_l2": 0.2212
+   },
+   "gaussian/int4 token-head asym + RHT": {
+    "k_rel_l2": 0.109,
+    "v_rel_l2": 0.1091,
+    "attn_out_rel_l2": 0.241
+   },
+   "outlier/fp8_e4m3_scale1 (today)": {
+    "k_rel_l2": 0.0268,
+    "v_rel_l2": 0.0266,
+    "attn_out_rel_l2": 0.2034
+   },
+   "outlier/nvfp4 RN scale (K,V plain)": {
+    "k_rel_l2": 0.0957,
+    "v_rel_l2": 0.0951,
+    "attn_out_rel_l2": 0.4122
+   },
+   "outlier/nvfp4 (K,V plain)": {
+    "k_rel_l2": 0.089,
+    "v_rel_l2": 0.0827,
+    "attn_out_rel_l2": 0.32
+   },
+   "outlier/nvfp4 (K Hadamard, V plain)": {
+    "k_rel_l2": 0.0833,
+    "v_rel_l2": 0.0827,
+    "attn_out_rel_l2": 0.2519
+   },
+   "outlier/fp8 K + nvfp4 V (K8V4-like)": {
+    "k_rel_l2": 0.0268,
+    "v_rel_l2": 0.0827,
+    "attn_out_rel_l2": 0.2181
+   },
+   "outlier/int4 token-head asym": {
+    "k_rel_l2": 0.1845,
+    "v_rel_l2": 0.1089,
+    "attn_out_rel_l2": 0.5522
+   },
+   "outlier/int4 token-head asym + RHT": {
+    "k_rel_l2": 0.089,
+    "v_rel_l2": 0.1091,
+    "attn_out_rel_l2": 0.2435
+   }
+  }
+ },
+ "T6_paged_reference_equals_dense": {
+  "ok": true,
+  "worst_rel_l2": 0.0
+ },
+ "T7_kernel_algorithm_emulation": {
+  "ok": true,
+  "worst_rel_l2": 0.002135225887136996,
+  "gate": 0.0025
+ },
+ "T8_kernel_formulas": {
+  "ok": true,
+  "e4m3_dec": true,
+  "e2m1_val": true,
+  "nibble_formula": true,
+  "fwht_pairs": true,
+  "dequant_port": true,
+  "bf16_exact": true
+ }
+}

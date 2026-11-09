@@ -1,0 +1,31 @@
+{
+  "scope": "offline nvdisasm, M32 stage4; static counts are not dynamic timings",
+  "records": [
+    {
+      "lookup": false,
+      "static_instruction_counts": {
+        "LDG": 172,
+        "MUFU": 64,
+        "FADD": 128,
+        "FMUL": 256,
+        "FSETP": 64,
+        "ISETP": 71,
+        "BRA": 55
+      }
+    },
+    {
+      "lookup": true,
+      "static_instruction_counts": {
+        "LDG": 204,
+        "MUFU": 0,
+        "FADD": 96,
+        "FMUL": 96,
+        "FSETP": 0,
+        "ISETP": 71,
+        "BRA": 55
+      }
+    }
+  ],
+  "table_load_instruction": "LDG.E.CONSTANT",
+  "note": "table bounds condition folds away at activation loads; no guard removal change warranted"
+}

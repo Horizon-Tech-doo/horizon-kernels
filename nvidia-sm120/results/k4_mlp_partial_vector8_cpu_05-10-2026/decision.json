@@ -1,0 +1,175 @@
+{
+  "decision": "CPU_PREPARATION_PASS_GPU_UNTESTED",
+  "candidate": "mlp-v55-05-10-2026",
+  "kernel_commit": "c02222c9",
+  "builds": 20,
+  "peak_registers": 128,
+  "zero_spills": true,
+  "gpu_correctness_and_speed": "NOT_RUN_GPU_WINDOW_CLOSED",
+  "comparison_order": [
+    "vector4",
+    "vector8"
+  ],
+  "pairs": [
+    {
+      "rows": 1,
+      "grid": 272,
+      "registers": [
+        96,
+        128
+      ],
+      "packed_static_ptx_loads": [
+        16,
+        16
+      ],
+      "output_vector128_stores": [
+        0,
+        2
+      ]
+    },
+    {
+      "rows": 1,
+      "grid": 376,
+      "registers": [
+        66,
+        72
+      ],
+      "packed_static_ptx_loads": [
+        8,
+        8
+      ],
+      "output_vector128_stores": [
+        0,
+        1
+      ]
+    },
+    {
+      "rows": 4,
+      "grid": 272,
+      "registers": [
+        96,
+        128
+      ],
+      "packed_static_ptx_loads": [
+        16,
+        16
+      ],
+      "output_vector128_stores": [
+        0,
+        2
+      ]
+    },
+    {
+      "rows": 4,
+      "grid": 376,
+      "registers": [
+        71,
+        72
+      ],
+      "packed_static_ptx_loads": [
+        8,
+        8
+      ],
+      "output_vector128_stores": [
+        0,
+        1
+      ]
+    },
+    {
+      "rows": 8,
+      "grid": 272,
+      "registers": [
+        96,
+        128
+      ],
+      "packed_static_ptx_loads": [
+        32,
+        16
+      ],
+      "output_vector128_stores": [
+        0,
+        2
+      ]
+    },
+    {
+      "rows": 8,
+      "grid": 376,
+      "registers": [
+        66,
+        72
+      ],
+      "packed_static_ptx_loads": [
+        16,
+        8
+      ],
+      "output_vector128_stores": [
+        0,
+        1
+      ]
+    },
+    {
+      "rows": 16,
+      "grid": 272,
+      "registers": [
+        80,
+        81
+      ],
+      "packed_static_ptx_loads": [
+        16,
+        8
+      ],
+      "output_vector128_stores": [
+        0,
+        2
+      ]
+    },
+    {
+      "rows": 16,
+      "grid": 376,
+      "registers": [
+        66,
+        66
+      ],
+      "packed_static_ptx_loads": [
+        16,
+        8
+      ],
+      "output_vector128_stores": [
+        0,
+        2
+      ]
+    },
+    {
+      "rows": 32,
+      "grid": 272,
+      "registers": [
+        112,
+        113
+      ],
+      "packed_static_ptx_loads": [
+        32,
+        16
+      ],
+      "output_vector128_stores": [
+        0,
+        4
+      ]
+    },
+    {
+      "rows": 32,
+      "grid": 376,
+      "registers": [
+        95,
+        95
+      ],
+      "packed_static_ptx_loads": [
+        32,
+        16
+      ],
+      "output_vector128_stores": [
+        0,
+        4
+      ]
+    }
+  ]
+}

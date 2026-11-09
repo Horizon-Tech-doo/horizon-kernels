@@ -1,0 +1,905 @@
+{
+  "tilelang_version": "0.1.15",
+  "records": [
+    {
+      "name": "mlp-m1-s4-grid272-downorder0",
+      "rows": 1,
+      "stages": 4,
+      "down_split_major": false,
+      "grid": 272,
+      "block_n": 128,
+      "splits": [
+        1,
+        8
+      ],
+      "returncode": 0,
+      "registers": [
+        "96"
+      ],
+      "spill_stores": [
+        "0"
+      ],
+      "spill_loads": [
+        "0"
+      ],
+      "seconds": 3.5,
+      "kernel_parameters": [
+        "KernelParam(dtype=dtype('int32'), shape=[272, MAXT, 8])",
+        "KernelParam(dtype=dtype('int32'), shape=[272, MAXT])",
+        "KernelParam(dtype=dtype('int32'), shape=[272])",
+        "KernelParam(dtype=dtype('int32'), shape=[n_counters])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[1, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[34816])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[5120])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[1, 34816])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[1, 17408])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[1, 5120])",
+        "KernelParam(dtype=dtype('float32'), shape=[1, 1, 34816])",
+        "KernelParam(dtype=dtype('float32'), shape=[8, 1, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[312])"
+      ]
+    },
+    {
+      "name": "mlp-m1-s4-grid272-downorder1",
+      "rows": 1,
+      "stages": 4,
+      "down_split_major": true,
+      "grid": 272,
+      "block_n": 128,
+      "splits": [
+        1,
+        8
+      ],
+      "returncode": 0,
+      "registers": [
+        "88"
+      ],
+      "spill_stores": [
+        "0"
+      ],
+      "spill_loads": [
+        "0"
+      ],
+      "seconds": 3.2,
+      "kernel_parameters": [
+        "KernelParam(dtype=dtype('int32'), shape=[272, MAXT, 8])",
+        "KernelParam(dtype=dtype('int32'), shape=[272, MAXT])",
+        "KernelParam(dtype=dtype('int32'), shape=[272])",
+        "KernelParam(dtype=dtype('int32'), shape=[n_counters])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[1, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[34816])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[5120])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[1, 34816])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[1, 17408])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[1, 5120])",
+        "KernelParam(dtype=dtype('float32'), shape=[1, 1, 34816])",
+        "KernelParam(dtype=dtype('float32'), shape=[8, 1, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[312])"
+      ]
+    },
+    {
+      "name": "mlp-m1-s4-grid376-downorder0",
+      "rows": 1,
+      "stages": 4,
+      "down_split_major": false,
+      "grid": 376,
+      "block_n": 128,
+      "splits": [
+        1,
+        8
+      ],
+      "returncode": 0,
+      "registers": [
+        "66"
+      ],
+      "spill_stores": [
+        "0"
+      ],
+      "spill_loads": [
+        "0"
+      ],
+      "seconds": 3.1,
+      "kernel_parameters": [
+        "KernelParam(dtype=dtype('int32'), shape=[376, MAXT, 8])",
+        "KernelParam(dtype=dtype('int32'), shape=[376, MAXT])",
+        "KernelParam(dtype=dtype('int32'), shape=[376])",
+        "KernelParam(dtype=dtype('int32'), shape=[n_counters])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[1, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[34816])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[5120])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[1, 34816])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[1, 17408])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[1, 5120])",
+        "KernelParam(dtype=dtype('float32'), shape=[1, 1, 34816])",
+        "KernelParam(dtype=dtype('float32'), shape=[8, 1, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[312])"
+      ]
+    },
+    {
+      "name": "mlp-m1-s4-grid376-downorder1",
+      "rows": 1,
+      "stages": 4,
+      "down_split_major": true,
+      "grid": 376,
+      "block_n": 128,
+      "splits": [
+        1,
+        8
+      ],
+      "returncode": 0,
+      "registers": [
+        "66"
+      ],
+      "spill_stores": [
+        "0"
+      ],
+      "spill_loads": [
+        "0"
+      ],
+      "seconds": 3.2,
+      "kernel_parameters": [
+        "KernelParam(dtype=dtype('int32'), shape=[376, MAXT, 8])",
+        "KernelParam(dtype=dtype('int32'), shape=[376, MAXT])",
+        "KernelParam(dtype=dtype('int32'), shape=[376])",
+        "KernelParam(dtype=dtype('int32'), shape=[n_counters])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[1, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[34816])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[5120])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[1, 34816])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[1, 17408])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[1, 5120])",
+        "KernelParam(dtype=dtype('float32'), shape=[1, 1, 34816])",
+        "KernelParam(dtype=dtype('float32'), shape=[8, 1, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[312])"
+      ]
+    },
+    {
+      "name": "mlp-m4-s4-grid272-downorder0",
+      "rows": 4,
+      "stages": 4,
+      "down_split_major": false,
+      "grid": 272,
+      "block_n": 128,
+      "splits": [
+        1,
+        8
+      ],
+      "returncode": 0,
+      "registers": [
+        "96"
+      ],
+      "spill_stores": [
+        "0"
+      ],
+      "spill_loads": [
+        "0"
+      ],
+      "seconds": 3.3,
+      "kernel_parameters": [
+        "KernelParam(dtype=dtype('int32'), shape=[272, MAXT, 8])",
+        "KernelParam(dtype=dtype('int32'), shape=[272, MAXT])",
+        "KernelParam(dtype=dtype('int32'), shape=[272])",
+        "KernelParam(dtype=dtype('int32'), shape=[n_counters])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[4, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[34816])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[5120])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[4, 34816])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[4, 17408])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[4, 5120])",
+        "KernelParam(dtype=dtype('float32'), shape=[1, 4, 34816])",
+        "KernelParam(dtype=dtype('float32'), shape=[8, 4, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[312])"
+      ]
+    },
+    {
+      "name": "mlp-m4-s4-grid272-downorder1",
+      "rows": 4,
+      "stages": 4,
+      "down_split_major": true,
+      "grid": 272,
+      "block_n": 128,
+      "splits": [
+        1,
+        8
+      ],
+      "returncode": 0,
+      "registers": [
+        "88"
+      ],
+      "spill_stores": [
+        "0"
+      ],
+      "spill_loads": [
+        "0"
+      ],
+      "seconds": 3.3,
+      "kernel_parameters": [
+        "KernelParam(dtype=dtype('int32'), shape=[272, MAXT, 8])",
+        "KernelParam(dtype=dtype('int32'), shape=[272, MAXT])",
+        "KernelParam(dtype=dtype('int32'), shape=[272])",
+        "KernelParam(dtype=dtype('int32'), shape=[n_counters])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[4, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[34816])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[5120])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[4, 34816])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[4, 17408])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[4, 5120])",
+        "KernelParam(dtype=dtype('float32'), shape=[1, 4, 34816])",
+        "KernelParam(dtype=dtype('float32'), shape=[8, 4, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[312])"
+      ]
+    },
+    {
+      "name": "mlp-m4-s4-grid376-downorder0",
+      "rows": 4,
+      "stages": 4,
+      "down_split_major": false,
+      "grid": 376,
+      "block_n": 128,
+      "splits": [
+        1,
+        8
+      ],
+      "returncode": 0,
+      "registers": [
+        "71"
+      ],
+      "spill_stores": [
+        "0"
+      ],
+      "spill_loads": [
+        "0"
+      ],
+      "seconds": 3.1,
+      "kernel_parameters": [
+        "KernelParam(dtype=dtype('int32'), shape=[376, MAXT, 8])",
+        "KernelParam(dtype=dtype('int32'), shape=[376, MAXT])",
+        "KernelParam(dtype=dtype('int32'), shape=[376])",
+        "KernelParam(dtype=dtype('int32'), shape=[n_counters])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[4, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[34816])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[5120])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[4, 34816])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[4, 17408])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[4, 5120])",
+        "KernelParam(dtype=dtype('float32'), shape=[1, 4, 34816])",
+        "KernelParam(dtype=dtype('float32'), shape=[8, 4, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[312])"
+      ]
+    },
+    {
+      "name": "mlp-m4-s4-grid376-downorder1",
+      "rows": 4,
+      "stages": 4,
+      "down_split_major": true,
+      "grid": 376,
+      "block_n": 128,
+      "splits": [
+        1,
+        8
+      ],
+      "returncode": 0,
+      "registers": [
+        "71"
+      ],
+      "spill_stores": [
+        "0"
+      ],
+      "spill_loads": [
+        "0"
+      ],
+      "seconds": 3.2,
+      "kernel_parameters": [
+        "KernelParam(dtype=dtype('int32'), shape=[376, MAXT, 8])",
+        "KernelParam(dtype=dtype('int32'), shape=[376, MAXT])",
+        "KernelParam(dtype=dtype('int32'), shape=[376])",
+        "KernelParam(dtype=dtype('int32'), shape=[n_counters])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[4, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[34816])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[5120])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[4, 34816])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[4, 17408])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[4, 5120])",
+        "KernelParam(dtype=dtype('float32'), shape=[1, 4, 34816])",
+        "KernelParam(dtype=dtype('float32'), shape=[8, 4, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[312])"
+      ]
+    },
+    {
+      "name": "mlp-m8-s4-grid272-downorder0",
+      "rows": 8,
+      "stages": 4,
+      "down_split_major": false,
+      "grid": 272,
+      "block_n": 128,
+      "splits": [
+        1,
+        8
+      ],
+      "returncode": 0,
+      "registers": [
+        "95"
+      ],
+      "spill_stores": [
+        "0"
+      ],
+      "spill_loads": [
+        "0"
+      ],
+      "seconds": 3.3,
+      "kernel_parameters": [
+        "KernelParam(dtype=dtype('int32'), shape=[272, MAXT, 8])",
+        "KernelParam(dtype=dtype('int32'), shape=[272, MAXT])",
+        "KernelParam(dtype=dtype('int32'), shape=[272])",
+        "KernelParam(dtype=dtype('int32'), shape=[n_counters])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[8, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[34816])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[5120])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[8, 34816])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[8, 17408])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[8, 5120])",
+        "KernelParam(dtype=dtype('float32'), shape=[1, 8, 34816])",
+        "KernelParam(dtype=dtype('float32'), shape=[8, 8, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[312])"
+      ]
+    },
+    {
+      "name": "mlp-m8-s4-grid272-downorder1",
+      "rows": 8,
+      "stages": 4,
+      "down_split_major": true,
+      "grid": 272,
+      "block_n": 128,
+      "splits": [
+        1,
+        8
+      ],
+      "returncode": 0,
+      "registers": [
+        "86"
+      ],
+      "spill_stores": [
+        "0"
+      ],
+      "spill_loads": [
+        "0"
+      ],
+      "seconds": 3.3,
+      "kernel_parameters": [
+        "KernelParam(dtype=dtype('int32'), shape=[272, MAXT, 8])",
+        "KernelParam(dtype=dtype('int32'), shape=[272, MAXT])",
+        "KernelParam(dtype=dtype('int32'), shape=[272])",
+        "KernelParam(dtype=dtype('int32'), shape=[n_counters])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[8, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[34816])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[5120])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[8, 34816])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[8, 17408])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[8, 5120])",
+        "KernelParam(dtype=dtype('float32'), shape=[1, 8, 34816])",
+        "KernelParam(dtype=dtype('float32'), shape=[8, 8, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[312])"
+      ]
+    },
+    {
+      "name": "mlp-m8-s4-grid376-downorder0",
+      "rows": 8,
+      "stages": 4,
+      "down_split_major": false,
+      "grid": 376,
+      "block_n": 128,
+      "splits": [
+        1,
+        8
+      ],
+      "returncode": 0,
+      "registers": [
+        "66"
+      ],
+      "spill_stores": [
+        "0"
+      ],
+      "spill_loads": [
+        "0"
+      ],
+      "seconds": 3.2,
+      "kernel_parameters": [
+        "KernelParam(dtype=dtype('int32'), shape=[376, MAXT, 8])",
+        "KernelParam(dtype=dtype('int32'), shape=[376, MAXT])",
+        "KernelParam(dtype=dtype('int32'), shape=[376])",
+        "KernelParam(dtype=dtype('int32'), shape=[n_counters])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[8, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[34816])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[5120])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[8, 34816])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[8, 17408])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[8, 5120])",
+        "KernelParam(dtype=dtype('float32'), shape=[1, 8, 34816])",
+        "KernelParam(dtype=dtype('float32'), shape=[8, 8, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[312])"
+      ]
+    },
+    {
+      "name": "mlp-m8-s4-grid376-downorder1",
+      "rows": 8,
+      "stages": 4,
+      "down_split_major": true,
+      "grid": 376,
+      "block_n": 128,
+      "splits": [
+        1,
+        8
+      ],
+      "returncode": 0,
+      "registers": [
+        "66"
+      ],
+      "spill_stores": [
+        "0"
+      ],
+      "spill_loads": [
+        "0"
+      ],
+      "seconds": 3.2,
+      "kernel_parameters": [
+        "KernelParam(dtype=dtype('int32'), shape=[376, MAXT, 8])",
+        "KernelParam(dtype=dtype('int32'), shape=[376, MAXT])",
+        "KernelParam(dtype=dtype('int32'), shape=[376])",
+        "KernelParam(dtype=dtype('int32'), shape=[n_counters])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[8, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[34816])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[5120])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[8, 34816])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[8, 17408])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[8, 5120])",
+        "KernelParam(dtype=dtype('float32'), shape=[1, 8, 34816])",
+        "KernelParam(dtype=dtype('float32'), shape=[8, 8, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[312])"
+      ]
+    },
+    {
+      "name": "mlp-m16-s4-grid272-downorder0",
+      "rows": 16,
+      "stages": 4,
+      "down_split_major": false,
+      "grid": 272,
+      "block_n": 128,
+      "splits": [
+        1,
+        4
+      ],
+      "returncode": 0,
+      "registers": [
+        "80"
+      ],
+      "spill_stores": [
+        "0"
+      ],
+      "spill_loads": [
+        "0"
+      ],
+      "seconds": 3.0,
+      "kernel_parameters": [
+        "KernelParam(dtype=dtype('int32'), shape=[272, MAXT, 8])",
+        "KernelParam(dtype=dtype('int32'), shape=[272, MAXT])",
+        "KernelParam(dtype=dtype('int32'), shape=[272])",
+        "KernelParam(dtype=dtype('int32'), shape=[n_counters])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[16, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[34816])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[5120])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[16, 34816])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[16, 17408])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[16, 5120])",
+        "KernelParam(dtype=dtype('float32'), shape=[1, 16, 34816])",
+        "KernelParam(dtype=dtype('float32'), shape=[4, 16, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[312])"
+      ]
+    },
+    {
+      "name": "mlp-m16-s4-grid272-downorder1",
+      "rows": 16,
+      "stages": 4,
+      "down_split_major": true,
+      "grid": 272,
+      "block_n": 128,
+      "splits": [
+        1,
+        4
+      ],
+      "returncode": 0,
+      "registers": [
+        "80"
+      ],
+      "spill_stores": [
+        "0"
+      ],
+      "spill_loads": [
+        "0"
+      ],
+      "seconds": 3.0,
+      "kernel_parameters": [
+        "KernelParam(dtype=dtype('int32'), shape=[272, MAXT, 8])",
+        "KernelParam(dtype=dtype('int32'), shape=[272, MAXT])",
+        "KernelParam(dtype=dtype('int32'), shape=[272])",
+        "KernelParam(dtype=dtype('int32'), shape=[n_counters])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[16, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[34816])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[5120])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[16, 34816])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[16, 17408])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[16, 5120])",
+        "KernelParam(dtype=dtype('float32'), shape=[1, 16, 34816])",
+        "KernelParam(dtype=dtype('float32'), shape=[4, 16, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[312])"
+      ]
+    },
+    {
+      "name": "mlp-m16-s4-grid376-downorder0",
+      "rows": 16,
+      "stages": 4,
+      "down_split_major": false,
+      "grid": 376,
+      "block_n": 128,
+      "splits": [
+        1,
+        4
+      ],
+      "returncode": 0,
+      "registers": [
+        "66"
+      ],
+      "spill_stores": [
+        "0"
+      ],
+      "spill_loads": [
+        "0"
+      ],
+      "seconds": 3.2,
+      "kernel_parameters": [
+        "KernelParam(dtype=dtype('int32'), shape=[376, MAXT, 8])",
+        "KernelParam(dtype=dtype('int32'), shape=[376, MAXT])",
+        "KernelParam(dtype=dtype('int32'), shape=[376])",
+        "KernelParam(dtype=dtype('int32'), shape=[n_counters])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[16, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[34816])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[5120])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[16, 34816])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[16, 17408])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[16, 5120])",
+        "KernelParam(dtype=dtype('float32'), shape=[1, 16, 34816])",
+        "KernelParam(dtype=dtype('float32'), shape=[4, 16, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[312])"
+      ]
+    },
+    {
+      "name": "mlp-m16-s4-grid376-downorder1",
+      "rows": 16,
+      "stages": 4,
+      "down_split_major": true,
+      "grid": 376,
+      "block_n": 128,
+      "splits": [
+        1,
+        4
+      ],
+      "returncode": 0,
+      "registers": [
+        "70"
+      ],
+      "spill_stores": [
+        "0"
+      ],
+      "spill_loads": [
+        "0"
+      ],
+      "seconds": 3.2,
+      "kernel_parameters": [
+        "KernelParam(dtype=dtype('int32'), shape=[376, MAXT, 8])",
+        "KernelParam(dtype=dtype('int32'), shape=[376, MAXT])",
+        "KernelParam(dtype=dtype('int32'), shape=[376])",
+        "KernelParam(dtype=dtype('int32'), shape=[n_counters])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[16, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[34816])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[5120])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[16, 34816])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[16, 17408])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[16, 5120])",
+        "KernelParam(dtype=dtype('float32'), shape=[1, 16, 34816])",
+        "KernelParam(dtype=dtype('float32'), shape=[4, 16, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[312])"
+      ]
+    },
+    {
+      "name": "mlp-m32-s4-grid272-downorder0",
+      "rows": 32,
+      "stages": 4,
+      "down_split_major": false,
+      "grid": 272,
+      "block_n": 128,
+      "splits": [
+        1,
+        4
+      ],
+      "returncode": 0,
+      "registers": [
+        "111"
+      ],
+      "spill_stores": [
+        "0"
+      ],
+      "spill_loads": [
+        "0"
+      ],
+      "seconds": 3.1,
+      "kernel_parameters": [
+        "KernelParam(dtype=dtype('int32'), shape=[272, MAXT, 8])",
+        "KernelParam(dtype=dtype('int32'), shape=[272, MAXT])",
+        "KernelParam(dtype=dtype('int32'), shape=[272])",
+        "KernelParam(dtype=dtype('int32'), shape=[n_counters])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[32, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[34816])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[5120])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[32, 34816])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[32, 17408])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[32, 5120])",
+        "KernelParam(dtype=dtype('float32'), shape=[1, 32, 34816])",
+        "KernelParam(dtype=dtype('float32'), shape=[4, 32, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[312])"
+      ]
+    },
+    {
+      "name": "mlp-m32-s4-grid272-downorder1",
+      "rows": 32,
+      "stages": 4,
+      "down_split_major": true,
+      "grid": 272,
+      "block_n": 128,
+      "splits": [
+        1,
+        4
+      ],
+      "returncode": 0,
+      "registers": [
+        "111"
+      ],
+      "spill_stores": [
+        "0"
+      ],
+      "spill_loads": [
+        "0"
+      ],
+      "seconds": 3.1,
+      "kernel_parameters": [
+        "KernelParam(dtype=dtype('int32'), shape=[272, MAXT, 8])",
+        "KernelParam(dtype=dtype('int32'), shape=[272, MAXT])",
+        "KernelParam(dtype=dtype('int32'), shape=[272])",
+        "KernelParam(dtype=dtype('int32'), shape=[n_counters])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[32, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[34816])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[5120])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[32, 34816])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[32, 17408])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[32, 5120])",
+        "KernelParam(dtype=dtype('float32'), shape=[1, 32, 34816])",
+        "KernelParam(dtype=dtype('float32'), shape=[4, 32, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[312])"
+      ]
+    },
+    {
+      "name": "mlp-m32-s4-grid376-downorder0",
+      "rows": 32,
+      "stages": 4,
+      "down_split_major": false,
+      "grid": 376,
+      "block_n": 128,
+      "splits": [
+        1,
+        4
+      ],
+      "returncode": 0,
+      "registers": [
+        "95"
+      ],
+      "spill_stores": [
+        "0"
+      ],
+      "spill_loads": [
+        "0"
+      ],
+      "seconds": 3.3,
+      "kernel_parameters": [
+        "KernelParam(dtype=dtype('int32'), shape=[376, MAXT, 8])",
+        "KernelParam(dtype=dtype('int32'), shape=[376, MAXT])",
+        "KernelParam(dtype=dtype('int32'), shape=[376])",
+        "KernelParam(dtype=dtype('int32'), shape=[n_counters])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[32, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[34816])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[5120])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[32, 34816])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[32, 17408])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[32, 5120])",
+        "KernelParam(dtype=dtype('float32'), shape=[1, 32, 34816])",
+        "KernelParam(dtype=dtype('float32'), shape=[4, 32, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[312])"
+      ]
+    },
+    {
+      "name": "mlp-m32-s4-grid376-downorder1",
+      "rows": 32,
+      "stages": 4,
+      "down_split_major": true,
+      "grid": 376,
+      "block_n": 128,
+      "splits": [
+        1,
+        4
+      ],
+      "returncode": 0,
+      "registers": [
+        "96"
+      ],
+      "spill_stores": [
+        "0"
+      ],
+      "spill_loads": [
+        "0"
+      ],
+      "seconds": 3.4,
+      "kernel_parameters": [
+        "KernelParam(dtype=dtype('int32'), shape=[376, MAXT, 8])",
+        "KernelParam(dtype=dtype('int32'), shape=[376, MAXT])",
+        "KernelParam(dtype=dtype('int32'), shape=[376])",
+        "KernelParam(dtype=dtype('int32'), shape=[n_counters])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[32, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[34816])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[5120])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[32, 34816])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[32, 17408])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[32, 5120])",
+        "KernelParam(dtype=dtype('float32'), shape=[1, 32, 34816])",
+        "KernelParam(dtype=dtype('float32'), shape=[4, 32, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[312])"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4808 @@
+{
+  "decision": "DIAGNOSTIC_ONLY",
+  "profiles": [
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 1,
+      "seed": 1043426,
+      "trial": 0,
+      "layer": 0,
+      "producer_window_us": 87.04,
+      "gu_task_sm_time_fraction": 0.7277593085106383,
+      "down_wait_sm_time_fraction": 0.2071964956195244,
+      "down_gemm_sm_time_fraction": 0.04643890801001251,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 124.768,
+      "up_wait_sm_time_fraction": 0.004990613266583229,
+      "activation_sm_time_fraction": 0.004181007509386734,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 34.288,
+      "up_wait_median_us": 0.288,
+      "activation_median_us": 0.512,
+      "down_wait_median_us": 2.2560000000000002,
+      "down_gemm_median_us": 17.504
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 1,
+      "seed": 1043426,
+      "trial": 0,
+      "layer": 1,
+      "producer_window_us": 86.528,
+      "gu_task_sm_time_fraction": 0.7218010355029586,
+      "down_wait_sm_time_fraction": 0.20501148810273195,
+      "down_gemm_sm_time_fraction": 0.05405703134835704,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 121.088,
+      "up_wait_sm_time_fraction": 0.005820769860254312,
+      "activation_sm_time_fraction": 0.003971657434218809,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 34.496,
+      "up_wait_median_us": 0.288,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 2.7359999999999998,
+      "down_gemm_median_us": 17.04
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 1,
+      "seed": 1043426,
+      "trial": 0,
+      "layer": 2,
+      "producer_window_us": 79.968,
+      "gu_task_sm_time_fraction": 0.7271014788894281,
+      "down_wait_sm_time_fraction": 0.1983410385430768,
+      "down_gemm_sm_time_fraction": 0.055711646360671926,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 112.224,
+      "up_wait_sm_time_fraction": 0.0046976237303432014,
+      "activation_sm_time_fraction": 0.004259150468698117,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 29.536,
+      "up_wait_median_us": 0.288,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 2.816,
+      "down_gemm_median_us": 16.0
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 1,
+      "seed": 1043426,
+      "trial": 0,
+      "layer": 3,
+      "producer_window_us": 80.896,
+      "gu_task_sm_time_fraction": 0.7162103588742257,
+      "down_wait_sm_time_fraction": 0.20301137893886345,
+      "down_gemm_sm_time_fraction": 0.0610481753299219,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 112.384,
+      "up_wait_sm_time_fraction": 0.0058535887422569354,
+      "activation_sm_time_fraction": 0.004170313762456235,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 30.592,
+      "up_wait_median_us": 0.288,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 3.12,
+      "down_gemm_median_us": 15.584
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 1,
+      "seed": 1043427,
+      "trial": 1,
+      "layer": 0,
+      "producer_window_us": 89.056,
+      "gu_task_sm_time_fraction": 0.7139891896850942,
+      "down_wait_sm_time_fraction": 0.2107648259569881,
+      "down_gemm_sm_time_fraction": 0.053900581799833334,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 126.624,
+      "up_wait_sm_time_fraction": 0.005936498956429997,
+      "activation_sm_time_fraction": 0.003979327375172973,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 35.616,
+      "up_wait_median_us": 0.288,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 2.896,
+      "down_gemm_median_us": 17.408
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 1,
+      "seed": 1043427,
+      "trial": 1,
+      "layer": 1,
+      "producer_window_us": 86.56,
+      "gu_task_sm_time_fraction": 0.7118358437880993,
+      "down_wait_sm_time_fraction": 0.2154029181578637,
+      "down_gemm_sm_time_fraction": 0.05500648916506076,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 123.328,
+      "up_wait_sm_time_fraction": 0.004902269241357612,
+      "activation_sm_time_fraction": 0.003901364691076415,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 35.232,
+      "up_wait_median_us": 0.288,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 2.992,
+      "down_gemm_median_us": 16.768
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 1,
+      "seed": 1043427,
+      "trial": 1,
+      "layer": 2,
+      "producer_window_us": 85.056,
+      "gu_task_sm_time_fraction": 0.7179270127915726,
+      "down_wait_sm_time_fraction": 0.20532755391191584,
+      "down_gemm_sm_time_fraction": 0.058558666730704576,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 117.632,
+      "up_wait_sm_time_fraction": 0.005243103917519172,
+      "activation_sm_time_fraction": 0.003968349262763556,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 32.736,
+      "up_wait_median_us": 0.288,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 3.232,
+      "down_gemm_median_us": 16.064
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 1,
+      "seed": 1043427,
+      "trial": 1,
+      "layer": 3,
+      "producer_window_us": 80.416,
+      "gu_task_sm_time_fraction": 0.7174395272243906,
+      "down_wait_sm_time_fraction": 0.20731134271998375,
+      "down_gemm_sm_time_fraction": 0.0548615285621153,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 113.056,
+      "up_wait_sm_time_fraction": 0.006752123002937914,
+      "activation_sm_time_fraction": 0.004207906122207076,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 30.607999999999997,
+      "up_wait_median_us": 0.288,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 3.232,
+      "down_gemm_median_us": 16.064
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 1,
+      "seed": 1043428,
+      "trial": 2,
+      "layer": 0,
+      "producer_window_us": 92.256,
+      "gu_task_sm_time_fraction": 0.6911351207740164,
+      "down_wait_sm_time_fraction": 0.2128526726740024,
+      "down_gemm_sm_time_fraction": 0.0744422550387082,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 128.96,
+      "up_wait_sm_time_fraction": 0.005804385207489243,
+      "activation_sm_time_fraction": 0.003793329938524439,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 36.224000000000004,
+      "up_wait_median_us": 0.288,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 3.152,
+      "down_gemm_median_us": 16.816000000000003
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 1,
+      "seed": 1043428,
+      "trial": 2,
+      "layer": 1,
+      "producer_window_us": 87.264,
+      "gu_task_sm_time_fraction": 0.7093427427849168,
+      "down_wait_sm_time_fraction": 0.21872683722272937,
+      "down_gemm_sm_time_fraction": 0.05445739609421935,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 124.416,
+      "up_wait_sm_time_fraction": 0.00467351699708978,
+      "activation_sm_time_fraction": 0.0038932971311315527,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 35.888000000000005,
+      "up_wait_median_us": 0.256,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 3.424,
+      "down_gemm_median_us": 16.544
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 1,
+      "seed": 1043428,
+      "trial": 2,
+      "layer": 2,
+      "producer_window_us": 84.832,
+      "gu_task_sm_time_fraction": 0.7178804465597085,
+      "down_wait_sm_time_fraction": 0.20402778558071222,
+      "down_gemm_sm_time_fraction": 0.058356140195991876,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 117.376,
+      "up_wait_sm_time_fraction": 0.00682400057786303,
+      "activation_sm_time_fraction": 0.0039968859603361235,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 32.528,
+      "up_wait_median_us": 0.288,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 2.992,
+      "down_gemm_median_us": 15.856
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 1,
+      "seed": 1043428,
+      "trial": 2,
+      "layer": 3,
+      "producer_window_us": 79.584,
+      "gu_task_sm_time_fraction": 0.7251259742148534,
+      "down_wait_sm_time_fraction": 0.2026773263523514,
+      "down_gemm_sm_time_fraction": 0.05135641506044196,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 112.64,
+      "up_wait_sm_time_fraction": 0.006931789988792786,
+      "activation_sm_time_fraction": 0.00425189709895713,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 30.064,
+      "up_wait_median_us": 0.288,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 2.64,
+      "down_gemm_median_us": 16.416
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 256,
+      "seed": 1298426,
+      "trial": 0,
+      "layer": 0,
+      "producer_window_us": 93.824,
+      "gu_task_sm_time_fraction": 0.696988113552582,
+      "down_wait_sm_time_fraction": 0.21914639633102087,
+      "down_gemm_sm_time_fraction": 0.06128087718789005,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 131.744,
+      "up_wait_sm_time_fraction": 0.006324199587820383,
+      "activation_sm_time_fraction": 0.0037263069286813154,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 36.623999999999995,
+      "up_wait_median_us": 0.288,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 4.176,
+      "down_gemm_median_us": 16.768
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 256,
+      "seed": 1298426,
+      "trial": 0,
+      "layer": 1,
+      "producer_window_us": 86.368,
+      "gu_task_sm_time_fraction": 0.7118357468881303,
+      "down_wait_sm_time_fraction": 0.22005392067984203,
+      "down_gemm_sm_time_fraction": 0.04912575973764909,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 124.096,
+      "up_wait_sm_time_fraction": 0.006048339416489953,
+      "activation_sm_time_fraction": 0.003949453304218268,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 35.328,
+      "up_wait_median_us": 0.256,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 2.88,
+      "down_gemm_median_us": 17.056
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 256,
+      "seed": 1298426,
+      "trial": 0,
+      "layer": 2,
+      "producer_window_us": 82.208,
+      "gu_task_sm_time_fraction": 0.7353490471497313,
+      "down_wait_sm_time_fraction": 0.19790795325608937,
+      "down_gemm_sm_time_fraction": 0.047215987676304215,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 115.296,
+      "up_wait_sm_time_fraction": 0.0057870849655880675,
+      "activation_sm_time_fraction": 0.0041058280811309975,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 31.84,
+      "up_wait_median_us": 0.288,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 2.656,
+      "down_gemm_median_us": 16.736
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 256,
+      "seed": 1298426,
+      "trial": 0,
+      "layer": 3,
+      "producer_window_us": 80.512,
+      "gu_task_sm_time_fraction": 0.7116370124818185,
+      "down_wait_sm_time_fraction": 0.2044236038291107,
+      "down_gemm_sm_time_fraction": 0.0632610864932517,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 112.544,
+      "up_wait_sm_time_fraction": 0.006600311199810574,
+      "activation_sm_time_fraction": 0.0042050028752156415,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 29.648000000000003,
+      "up_wait_median_us": 0.288,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 2.816,
+      "down_gemm_median_us": 16.128
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 256,
+      "seed": 1298427,
+      "trial": 1,
+      "layer": 0,
+      "producer_window_us": 90.976,
+      "gu_task_sm_time_fraction": 0.7035514627191833,
+      "down_wait_sm_time_fraction": 0.21445917932061578,
+      "down_gemm_sm_time_fraction": 0.060997148651783774,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 128.064,
+      "up_wait_sm_time_fraction": 0.005517471056196256,
+      "activation_sm_time_fraction": 0.0038916038646619917,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 36.256,
+      "up_wait_median_us": 0.288,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 3.712,
+      "down_gemm_median_us": 17.504
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 256,
+      "seed": 1298427,
+      "trial": 1,
+      "layer": 1,
+      "producer_window_us": 88.064,
+      "gu_task_sm_time_fraction": 0.6984765431716972,
+      "down_wait_sm_time_fraction": 0.21559755380999504,
+      "down_gemm_sm_time_fraction": 0.06762006741712023,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 123.264,
+      "up_wait_sm_time_fraction": 0.0059144606630381,
+      "activation_sm_time_fraction": 0.0038231382978723403,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 35.248000000000005,
+      "up_wait_median_us": 0.256,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 3.728,
+      "down_gemm_median_us": 16.32
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 256,
+      "seed": 1298427,
+      "trial": 1,
+      "layer": 2,
+      "producer_window_us": 83.264,
+      "gu_task_sm_time_fraction": 0.7289932457847482,
+      "down_wait_sm_time_fraction": 0.2032049814381736,
+      "down_gemm_sm_time_fraction": 0.04993294846844489,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 116.352,
+      "up_wait_sm_time_fraction": 0.00447078352167727,
+      "activation_sm_time_fraction": 0.0040660212275336486,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 32.4,
+      "up_wait_median_us": 0.288,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 2.448,
+      "down_gemm_median_us": 16.464
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 256,
+      "seed": 1298427,
+      "trial": 1,
+      "layer": 3,
+      "producer_window_us": 79.392,
+      "gu_task_sm_time_fraction": 0.7250186523965113,
+      "down_wait_sm_time_fraction": 0.2016281183805432,
+      "down_gemm_sm_time_fraction": 0.05178291183205125,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 113.024,
+      "up_wait_sm_time_fraction": 0.0073559048770656995,
+      "activation_sm_time_fraction": 0.00426003584690456,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 29.904000000000003,
+      "up_wait_median_us": 0.288,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 2.752,
+      "down_gemm_median_us": 16.512
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 256,
+      "seed": 1298428,
+      "trial": 2,
+      "layer": 0,
+      "producer_window_us": 91.104,
+      "gu_task_sm_time_fraction": 0.7144399853522558,
+      "down_wait_sm_time_fraction": 0.2136739681187364,
+      "down_gemm_sm_time_fraction": 0.050265677196601126,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 128.736,
+      "up_wait_sm_time_fraction": 0.005780627610997765,
+      "activation_sm_time_fraction": 0.0038562428536197116,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 35.52,
+      "up_wait_median_us": 0.288,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 3.776,
+      "down_gemm_median_us": 17.28
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 256,
+      "seed": 1298428,
+      "trial": 2,
+      "layer": 1,
+      "producer_window_us": 86.368,
+      "gu_task_sm_time_fraction": 0.7160059281215265,
+      "down_wait_sm_time_fraction": 0.2194252402387015,
+      "down_gemm_sm_time_fraction": 0.04628585843456599,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 124.192,
+      "up_wait_sm_time_fraction": 0.005492578023381395,
+      "activation_sm_time_fraction": 0.003917920742907145,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 35.664,
+      "up_wait_median_us": 0.256,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 3.136,
+      "down_gemm_median_us": 17.056
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 256,
+      "seed": 1298428,
+      "trial": 2,
+      "layer": 2,
+      "producer_window_us": 86.336,
+      "gu_task_sm_time_fraction": 0.7042036654416983,
+      "down_wait_sm_time_fraction": 0.2039946847940949,
+      "down_gemm_sm_time_fraction": 0.07315111272337271,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 118.176,
+      "up_wait_sm_time_fraction": 0.005502499881709067,
+      "activation_sm_time_fraction": 0.003919372900335946,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 32.128,
+      "up_wait_median_us": 0.288,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 3.2,
+      "down_gemm_median_us": 15.344
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 256,
+      "seed": 1298428,
+      "trial": 2,
+      "layer": 3,
+      "producer_window_us": 79.616,
+      "gu_task_sm_time_fraction": 0.7219547444756106,
+      "down_wait_sm_time_fraction": 0.2075836354929192,
+      "down_gemm_sm_time_fraction": 0.049561298488061845,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 113.12,
+      "up_wait_sm_time_fraction": 0.006956796880344804,
+      "activation_sm_time_fraction": 0.004260877745091332,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 30.415999999999997,
+      "up_wait_median_us": 0.288,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 2.928,
+      "down_gemm_median_us": 16.416
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 1,
+      "seed": 1043426,
+      "trial": 0,
+      "layer": 0,
+      "producer_window_us": 76.48,
+      "gu_task_sm_time_fraction": 0.8961052256743524,
+      "down_wait_sm_time_fraction": 0.572222469509481,
+      "down_gemm_sm_time_fraction": 0.030804326537879463,
+      "gu_and_down_wait_same_sm_fraction": 0.49330098815988604,
+      "task_span_us": 109.504,
+      "up_wait_sm_time_fraction": 0.024156503160331168,
+      "activation_sm_time_fraction": 0.004756075847948011,
+      "gu_and_up_wait_same_sm_fraction": 0.004023858274726253,
+      "gu_and_activation_same_sm_fraction": 0.0003115819460518116,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 68.384,
+      "up_wait_median_us": 1.792,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 5.552,
+      "down_gemm_median_us": 30.56
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 1,
+      "seed": 1043426,
+      "trial": 0,
+      "layer": 1,
+      "producer_window_us": 71.264,
+      "gu_task_sm_time_fraction": 0.9205782036706188,
+      "down_wait_sm_time_fraction": 0.5813039199763063,
+      "down_gemm_sm_time_fraction": 0.005280933227603206,
+      "gu_and_down_wait_same_sm_fraction": 0.5071964956195244,
+      "task_span_us": 104.928,
+      "up_wait_sm_time_fraction": 0.017089587174808206,
+      "activation_sm_time_fraction": 0.004929826405143834,
+      "gu_and_up_wait_same_sm_fraction": 0.004385252558063992,
+      "gu_and_activation_same_sm_fraction": 0.0005899550010031624,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 65.856,
+      "up_wait_median_us": 0.432,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 5.536,
+      "down_gemm_median_us": 29.952
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 1,
+      "seed": 1043426,
+      "trial": 0,
+      "layer": 2,
+      "producer_window_us": 71.744,
+      "gu_task_sm_time_fraction": 0.907223318845256,
+      "down_wait_sm_time_fraction": 0.5792700286598212,
+      "down_gemm_sm_time_fraction": 0.022427259096171732,
+      "gu_and_down_wait_same_sm_fraction": 0.5003701102738816,
+      "task_span_us": 104.384,
+      "up_wait_sm_time_fraction": 0.016496004707043484,
+      "activation_sm_time_fraction": 0.004880236111374722,
+      "gu_and_up_wait_same_sm_fraction": 0.003886157875756828,
+      "gu_and_activation_same_sm_fraction": 0.0007354755442519027,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 65.072,
+      "up_wait_median_us": 0.784,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 5.504,
+      "down_gemm_median_us": 29.200000000000003
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 1,
+      "seed": 1043426,
+      "trial": 0,
+      "layer": 3,
+      "producer_window_us": 72.64,
+      "gu_task_sm_time_fraction": 0.8975021089136751,
+      "down_wait_sm_time_fraction": 0.5851790233386447,
+      "down_gemm_sm_time_fraction": 0.022640359921267224,
+      "gu_and_down_wait_same_sm_fraction": 0.49686240509888463,
+      "task_span_us": 104.512,
+      "up_wait_sm_time_fraction": 0.017789858468460023,
+      "activation_sm_time_fraction": 0.004798950229637267,
+      "gu_and_up_wait_same_sm_fraction": 0.004494329365451307,
+      "gu_and_activation_same_sm_fraction": 0.0008880869809729121,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 64.70400000000001,
+      "up_wait_median_us": 0.6080000000000001,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 6.896,
+      "down_gemm_median_us": 29.28
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 1,
+      "seed": 1043427,
+      "trial": 1,
+      "layer": 0,
+      "producer_window_us": 78.848,
+      "gu_task_sm_time_fraction": 0.9020145413097541,
+      "down_wait_sm_time_fraction": 0.5807802569770655,
+      "down_gemm_sm_time_fraction": 0.016125828958275766,
+      "gu_and_down_wait_same_sm_fraction": 0.49478015335728104,
+      "task_span_us": 112.608,
+      "up_wait_sm_time_fraction": 0.02732324191765681,
+      "activation_sm_time_fraction": 0.004716858938933407,
+      "gu_and_up_wait_same_sm_fraction": 0.006169694667035093,
+      "gu_and_activation_same_sm_fraction": 0.000559115087040619,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 71.072,
+      "up_wait_median_us": 2.08,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 6.496,
+      "down_gemm_median_us": 30.144
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 1,
+      "seed": 1043427,
+      "trial": 1,
+      "layer": 1,
+      "producer_window_us": 71.232,
+      "gu_task_sm_time_fraction": 0.9144682762707652,
+      "down_wait_sm_time_fraction": 0.5850466441092695,
+      "down_gemm_sm_time_fraction": 0.008583280763128214,
+      "gu_and_down_wait_same_sm_fraction": 0.5044397927778096,
+      "task_span_us": 104.832,
+      "up_wait_sm_time_fraction": 0.016005237904073714,
+      "activation_sm_time_fraction": 0.004874691747433618,
+      "gu_and_up_wait_same_sm_fraction": 0.004016841582076427,
+      "gu_and_activation_same_sm_fraction": 0.000647569344879662,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 65.19999999999999,
+      "up_wait_median_us": 0.688,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 6.352,
+      "down_gemm_median_us": 29.6
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 1,
+      "seed": 1043427,
+      "trial": 1,
+      "layer": 2,
+      "producer_window_us": 71.936,
+      "gu_task_sm_time_fraction": 0.9012952411599909,
+      "down_wait_sm_time_fraction": 0.5869377981373514,
+      "down_gemm_sm_time_fraction": 0.02316006663133187,
+      "gu_and_down_wait_same_sm_fraction": 0.499032236692663,
+      "task_span_us": 104.128,
+      "up_wait_sm_time_fraction": 0.01709320814719467,
+      "activation_sm_time_fraction": 0.0048388165366850915,
+      "gu_and_up_wait_same_sm_fraction": 0.004502820473991065,
+      "gu_and_activation_same_sm_fraction": 0.0007477095479669872,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 64.512,
+      "up_wait_median_us": 0.72,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 6.496,
+      "down_gemm_median_us": 28.928
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 1,
+      "seed": 1043427,
+      "trial": 1,
+      "layer": 3,
+      "producer_window_us": 72.576,
+      "gu_task_sm_time_fraction": 0.8917407782656009,
+      "down_wait_sm_time_fraction": 0.5791680738489249,
+      "down_gemm_sm_time_fraction": 0.03446423880821044,
+      "gu_and_down_wait_same_sm_fraction": 0.4937966715448985,
+      "task_span_us": 103.808,
+      "up_wait_sm_time_fraction": 0.01881637209651394,
+      "activation_sm_time_fraction": 0.004768002551690495,
+      "gu_and_up_wait_same_sm_fraction": 0.004573342339299786,
+      "gu_and_activation_same_sm_fraction": 0.0006684115726668918,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 64.576,
+      "up_wait_median_us": 0.768,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 6.208,
+      "down_gemm_median_us": 29.024
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 1,
+      "seed": 1043428,
+      "trial": 2,
+      "layer": 0,
+      "producer_window_us": 73.888,
+      "gu_task_sm_time_fraction": 0.925725422260719,
+      "down_wait_sm_time_fraction": 0.5797572864738351,
+      "down_gemm_sm_time_fraction": 0.004399988942436165,
+      "gu_and_down_wait_same_sm_fraction": 0.5108594491490284,
+      "task_span_us": 110.272,
+      "up_wait_sm_time_fraction": 0.019825290491416566,
+      "activation_sm_time_fraction": 0.005065746431632004,
+      "gu_and_up_wait_same_sm_fraction": 0.004510564580780111,
+      "gu_and_activation_same_sm_fraction": 0.0006910977396496596,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 68.52799999999999,
+      "up_wait_median_us": 1.072,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 5.376,
+      "down_gemm_median_us": 32.096
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 1,
+      "seed": 1043428,
+      "trial": 2,
+      "layer": 1,
+      "producer_window_us": 70.976,
+      "gu_task_sm_time_fraction": 0.9220593595917349,
+      "down_wait_sm_time_fraction": 0.5815594842967596,
+      "down_gemm_sm_time_fraction": 0.00917781017976709,
+      "gu_and_down_wait_same_sm_fraction": 0.5087029718166645,
+      "task_span_us": 104.352,
+      "up_wait_sm_time_fraction": 0.015962243155612687,
+      "activation_sm_time_fraction": 0.004877885002781882,
+      "gu_and_up_wait_same_sm_fraction": 0.003594862152984287,
+      "gu_and_activation_same_sm_fraction": 0.0005252000076741553,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 65.472,
+      "up_wait_median_us": 0.56,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 5.248,
+      "down_gemm_median_us": 29.632
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 1,
+      "seed": 1043428,
+      "trial": 2,
+      "layer": 2,
+      "producer_window_us": 71.424,
+      "gu_task_sm_time_fraction": 0.9094243308167468,
+      "down_wait_sm_time_fraction": 0.5812147296575917,
+      "down_gemm_sm_time_fraction": 0.017847269884847097,
+      "gu_and_down_wait_same_sm_fraction": 0.5044636048196446,
+      "task_span_us": 104.096,
+      "up_wait_sm_time_fraction": 0.017716197666437887,
+      "activation_sm_time_fraction": 0.004875886524822695,
+      "gu_and_up_wait_same_sm_fraction": 0.0045041180507892934,
+      "gu_and_activation_same_sm_fraction": 0.000607698467169984,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 64.656,
+      "up_wait_median_us": 0.8320000000000001,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 5.68,
+      "down_gemm_median_us": 29.36
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 1,
+      "seed": 1043428,
+      "trial": 2,
+      "layer": 3,
+      "producer_window_us": 72.704,
+      "gu_task_sm_time_fraction": 0.9023285323643991,
+      "down_wait_sm_time_fraction": 0.5877659574468085,
+      "down_gemm_sm_time_fraction": 0.02163947782439317,
+      "gu_and_down_wait_same_sm_fraction": 0.4995551768055139,
+      "task_span_us": 105.184,
+      "up_wait_sm_time_fraction": 0.019349808960143842,
+      "activation_sm_time_fraction": 0.004907102187593647,
+      "gu_and_up_wait_same_sm_fraction": 0.005539219358705424,
+      "gu_and_activation_same_sm_fraction": 0.0008194111477374887,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 65.376,
+      "up_wait_median_us": 0.704,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 6.864,
+      "down_gemm_median_us": 28.96
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 256,
+      "seed": 1298426,
+      "trial": 0,
+      "layer": 0,
+      "producer_window_us": 80.608,
+      "gu_task_sm_time_fraction": 0.8515663932833867,
+      "down_wait_sm_time_fraction": 0.5667966011504059,
+      "down_gemm_sm_time_fraction": 0.06924395867998953,
+      "gu_and_down_wait_same_sm_fraction": 0.46752552938096004,
+      "task_span_us": 111.936,
+      "up_wait_sm_time_fraction": 0.017152618820369447,
+      "activation_sm_time_fraction": 0.004761683545479884,
+      "gu_and_up_wait_same_sm_fraction": 0.002379785967075756,
+      "gu_and_activation_same_sm_fraction": 0.0005236796094363687,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 68.896,
+      "up_wait_median_us": 0.8480000000000001,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 7.536,
+      "down_gemm_median_us": 28.992
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 256,
+      "seed": 1298426,
+      "trial": 0,
+      "layer": 1,
+      "producer_window_us": 72.768,
+      "gu_task_sm_time_fraction": 0.9019770205280787,
+      "down_wait_sm_time_fraction": 0.5845613690375943,
+      "down_gemm_sm_time_fraction": 0.017798330807088456,
+      "gu_and_down_wait_same_sm_fraction": 0.4979064915136885,
+      "task_span_us": 105.344,
+      "up_wait_sm_time_fraction": 0.015536405995621175,
+      "activation_sm_time_fraction": 0.004792847920058384,
+      "gu_and_up_wait_same_sm_fraction": 0.004165964931978517,
+      "gu_and_activation_same_sm_fraction": 0.0004257190441437901,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 65.75999999999999,
+      "up_wait_median_us": 0.576,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 6.816,
+      "down_gemm_median_us": 29.12
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 256,
+      "seed": 1298426,
+      "trial": 0,
+      "layer": 2,
+      "producer_window_us": 71.808,
+      "gu_task_sm_time_fraction": 0.9048171009216065,
+      "down_wait_sm_time_fraction": 0.5842459324155194,
+      "down_gemm_sm_time_fraction": 0.020555998027837828,
+      "gu_and_down_wait_same_sm_fraction": 0.5006897826828991,
+      "task_span_us": 104.128,
+      "up_wait_sm_time_fraction": 0.016580858649068914,
+      "activation_sm_time_fraction": 0.004866404975916866,
+      "gu_and_up_wait_same_sm_fraction": 0.0045345507642128415,
+      "gu_and_activation_same_sm_fraction": 0.0007798573975044563,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 64.832,
+      "up_wait_median_us": 0.704,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 6.176,
+      "down_gemm_median_us": 29.28
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 256,
+      "seed": 1298426,
+      "trial": 0,
+      "layer": 3,
+      "producer_window_us": 73.376,
+      "gu_task_sm_time_fraction": 0.8985487747167605,
+      "down_wait_sm_time_fraction": 0.5840717818337029,
+      "down_gemm_sm_time_fraction": 0.026489036939436397,
+      "gu_and_down_wait_same_sm_fraction": 0.4953744513830251,
+      "task_span_us": 106.528,
+      "up_wait_sm_time_fraction": 0.024869862950144286,
+      "activation_sm_time_fraction": 0.004899277171038591,
+      "gu_and_up_wait_same_sm_fraction": 0.007399949893756206,
+      "gu_and_activation_same_sm_fraction": 0.0006379267149789832,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 65.408,
+      "up_wait_median_us": 1.408,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 6.176,
+      "down_gemm_median_us": 29.056
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 256,
+      "seed": 1298427,
+      "trial": 1,
+      "layer": 0,
+      "producer_window_us": 73.472,
+      "gu_task_sm_time_fraction": 0.9219757765586775,
+      "down_wait_sm_time_fraction": 0.5793887612128401,
+      "down_gemm_sm_time_fraction": 0.0034495700200163097,
+      "gu_and_down_wait_same_sm_fraction": 0.5073671139446957,
+      "task_span_us": 108.224,
+      "up_wait_sm_time_fraction": 0.02464276447475721,
+      "activation_sm_time_fraction": 0.004992493883905404,
+      "gu_and_up_wait_same_sm_fraction": 0.004617188079175625,
+      "gu_and_activation_same_sm_fraction": 0.00018996960486322188,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 67.6,
+      "up_wait_median_us": 1.968,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 5.056,
+      "down_gemm_median_us": 30.496
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 256,
+      "seed": 1298427,
+      "trial": 1,
+      "layer": 1,
+      "producer_window_us": 72.672,
+      "gu_task_sm_time_fraction": 0.8991563375399346,
+      "down_wait_sm_time_fraction": 0.5831482990902873,
+      "down_gemm_sm_time_fraction": 0.015484321275658863,
+      "gu_and_down_wait_same_sm_fraction": 0.49457545181146184,
+      "task_span_us": 105.12,
+      "up_wait_sm_time_fraction": 0.01981974385639469,
+      "activation_sm_time_fraction": 0.004806205907979426,
+      "gu_and_up_wait_same_sm_fraction": 0.005255909384749431,
+      "gu_and_activation_same_sm_fraction": 0.0006792396263713613,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 65.24799999999999,
+      "up_wait_median_us": 1.024,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 6.5120000000000005,
+      "down_gemm_median_us": 29.792
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 256,
+      "seed": 1298427,
+      "trial": 1,
+      "layer": 2,
+      "producer_window_us": 71.648,
+      "gu_task_sm_time_fraction": 0.9063577965086997,
+      "down_wait_sm_time_fraction": 0.5828090998070947,
+      "down_gemm_sm_time_fraction": 0.020105385192857754,
+      "gu_and_down_wait_same_sm_fraction": 0.5006913230640578,
+      "task_span_us": 103.968,
+      "up_wait_sm_time_fraction": 0.015161593796622732,
+      "activation_sm_time_fraction": 0.004855891212832477,
+      "gu_and_up_wait_same_sm_fraction": 0.0030408712096015506,
+      "gu_and_activation_same_sm_fraction": 0.0006153012838178138,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 64.72,
+      "up_wait_median_us": 0.432,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 6.432,
+      "down_gemm_median_us": 29.216
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 256,
+      "seed": 1298427,
+      "trial": 1,
+      "layer": 3,
+      "producer_window_us": 73.248,
+      "gu_task_sm_time_fraction": 0.8954388704535103,
+      "down_wait_sm_time_fraction": 0.5893775038807246,
+      "down_gemm_sm_time_fraction": 0.02530371898905961,
+      "gu_and_down_wait_same_sm_fraction": 0.49492717250866775,
+      "task_span_us": 105.056,
+      "up_wait_sm_time_fraction": 0.022868389987265647,
+      "activation_sm_time_fraction": 0.004803268174339812,
+      "gu_and_up_wait_same_sm_fraction": 0.007131702964222972,
+      "gu_and_activation_same_sm_fraction": 0.0005693278677858026,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 64.832,
+      "up_wait_median_us": 1.536,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 6.704,
+      "down_gemm_median_us": 28.768
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 256,
+      "seed": 1298428,
+      "trial": 2,
+      "layer": 0,
+      "producer_window_us": 76.32,
+      "gu_task_sm_time_fraction": 0.884861055354833,
+      "down_wait_sm_time_fraction": 0.5744167893304786,
+      "down_gemm_sm_time_fraction": 0.04010883625496231,
+      "gu_and_down_wait_same_sm_fraction": 0.4865114411882778,
+      "task_span_us": 109.76,
+      "up_wait_sm_time_fraction": 0.019577144386457915,
+      "activation_sm_time_fraction": 0.0049355457424506,
+      "gu_and_up_wait_same_sm_fraction": 0.004420357732280655,
+      "gu_and_activation_same_sm_fraction": 0.00031892591105758507,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 67.664,
+      "up_wait_median_us": 1.072,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 6.32,
+      "down_gemm_median_us": 31.008
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 256,
+      "seed": 1298428,
+      "trial": 2,
+      "layer": 1,
+      "producer_window_us": 71.488,
+      "gu_task_sm_time_fraction": 0.9162031657745862,
+      "down_wait_sm_time_fraction": 0.5817325091906512,
+      "down_gemm_sm_time_fraction": 0.009921617554620088,
+      "gu_and_down_wait_same_sm_fraction": 0.5058572544238938,
+      "task_span_us": 104.64,
+      "up_wait_sm_time_fraction": 0.014833615878397684,
+      "activation_sm_time_fraction": 0.0048834263509781135,
+      "gu_and_up_wait_same_sm_fraction": 0.0029429131983466352,
+      "gu_and_activation_same_sm_fraction": 0.0006047734242557001,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 65.888,
+      "up_wait_median_us": 0.32,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 6.064,
+      "down_gemm_median_us": 29.824
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 256,
+      "seed": 1298428,
+      "trial": 2,
+      "layer": 2,
+      "producer_window_us": 72.896,
+      "gu_task_sm_time_fraction": 0.8907496310686867,
+      "down_wait_sm_time_fraction": 0.5798432742420563,
+      "down_gemm_sm_time_fraction": 0.031242411222983955,
+      "gu_and_down_wait_same_sm_fraction": 0.49182046588085854,
+      "task_span_us": 104.0,
+      "up_wait_sm_time_fraction": 0.018939252423738628,
+      "activation_sm_time_fraction": 0.0047704219827022585,
+      "gu_and_up_wait_same_sm_fraction": 0.0052677787532923615,
+      "gu_and_activation_same_sm_fraction": 0.0007331926101656922,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 64.17599999999999,
+      "up_wait_median_us": 1.12,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 6.432,
+      "down_gemm_median_us": 29.152
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 256,
+      "seed": 1298428,
+      "trial": 2,
+      "layer": 3,
+      "producer_window_us": 72.896,
+      "gu_task_sm_time_fraction": 0.8933928604785834,
+      "down_wait_sm_time_fraction": 0.5770692843666524,
+      "down_gemm_sm_time_fraction": 0.03668998561634879,
+      "gu_and_down_wait_same_sm_fraction": 0.4934129415500719,
+      "task_span_us": 103.648,
+      "up_wait_sm_time_fraction": 0.017187996189266433,
+      "activation_sm_time_fraction": 0.004777427007640147,
+      "gu_and_up_wait_same_sm_fraction": 0.0039625091065324195,
+      "gu_and_activation_same_sm_fraction": 0.0006117721779089533,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 188,
+          "tasks": 320,
+          "max_tasks_per_sm": 2
+        }
+      },
+      "up_gemm_median_us": 64.624,
+      "up_wait_median_us": 1.088,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 6.096,
+      "down_gemm_median_us": 28.976
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 1,
+      "seed": 1046226,
+      "trial": 0,
+      "layer": 0,
+      "producer_window_us": 113.824,
+      "gu_task_sm_time_fraction": 0.7612723487997894,
+      "down_wait_sm_time_fraction": 0.15218119500654986,
+      "down_gemm_sm_time_fraction": 0.04182193935841224,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 154.176,
+      "up_wait_sm_time_fraction": 0.004519108261205056,
+      "activation_sm_time_fraction": 0.022268048020385334,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 36.928,
+      "up_wait_median_us": 0.384,
+      "activation_median_us": 3.52,
+      "down_wait_median_us": 6.176,
+      "down_gemm_median_us": 32.0
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 1,
+      "seed": 1046226,
+      "trial": 0,
+      "layer": 1,
+      "producer_window_us": 92.672,
+      "gu_task_sm_time_fraction": 0.6886718290819325,
+      "down_wait_sm_time_fraction": 0.20716395321499942,
+      "down_gemm_sm_time_fraction": 0.05018477430351475,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 131.936,
+      "up_wait_sm_time_fraction": 0.005833431291877278,
+      "activation_sm_time_fraction": 0.027732676031503468,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 38.367999999999995,
+      "up_wait_median_us": 0.352,
+      "activation_median_us": 3.552,
+      "down_wait_median_us": 9.44,
+      "down_gemm_median_us": 31.536
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 1,
+      "seed": 1046226,
+      "trial": 0,
+      "layer": 2,
+      "producer_window_us": 92.768,
+      "gu_task_sm_time_fraction": 0.6725264764812517,
+      "down_wait_sm_time_fraction": 0.2089128312771095,
+      "down_gemm_sm_time_fraction": 0.06198395631655817,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 131.168,
+      "up_wait_sm_time_fraction": 0.004717327324902938,
+      "activation_sm_time_fraction": 0.027999383499812847,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 37.2,
+      "up_wait_median_us": 0.352,
+      "activation_median_us": 3.584,
+      "down_wait_median_us": 11.632,
+      "down_gemm_median_us": 30.912
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 1,
+      "seed": 1046226,
+      "trial": 0,
+      "layer": 3,
+      "producer_window_us": 91.616,
+      "gu_task_sm_time_fraction": 0.6834595462281047,
+      "down_wait_sm_time_fraction": 0.20822898165144432,
+      "down_gemm_sm_time_fraction": 0.051439495842034465,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 130.368,
+      "up_wait_sm_time_fraction": 0.006562079651607821,
+      "activation_sm_time_fraction": 0.028414622364578146,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 37.408,
+      "up_wait_median_us": 0.352,
+      "activation_median_us": 3.584,
+      "down_wait_median_us": 10.16,
+      "down_gemm_median_us": 31.136
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 1,
+      "seed": 1046227,
+      "trial": 1,
+      "layer": 0,
+      "producer_window_us": 109.984,
+      "gu_task_sm_time_fraction": 0.7425559771943617,
+      "down_wait_sm_time_fraction": 0.16724908536019165,
+      "down_gemm_sm_time_fraction": 0.04532806319217031,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 149.952,
+      "up_wait_sm_time_fraction": 0.004234271600047047,
+      "activation_sm_time_fraction": 0.02315075616414612,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 37.712,
+      "up_wait_median_us": 0.384,
+      "activation_median_us": 3.52,
+      "down_wait_median_us": 8.48,
+      "down_gemm_median_us": 31.6
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 1,
+      "seed": 1046227,
+      "trial": 1,
+      "layer": 1,
+      "producer_window_us": 94.048,
+      "gu_task_sm_time_fraction": 0.6833667552286564,
+      "down_wait_sm_time_fraction": 0.21009099925434183,
+      "down_gemm_sm_time_fraction": 0.05222140980069932,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 133.504,
+      "up_wait_sm_time_fraction": 0.0055200422780943,
+      "activation_sm_time_fraction": 0.02749524009469135,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 38.768,
+      "up_wait_median_us": 0.352,
+      "activation_median_us": 3.552,
+      "down_wait_median_us": 10.992,
+      "down_gemm_median_us": 31.823999999999998
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 1,
+      "seed": 1046227,
+      "trial": 1,
+      "layer": 2,
+      "producer_window_us": 90.752,
+      "gu_task_sm_time_fraction": 0.6888504186297753,
+      "down_wait_sm_time_fraction": 0.20201700027008374,
+      "down_gemm_sm_time_fraction": 0.054358101011313505,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 128.96,
+      "up_wait_sm_time_fraction": 0.005052816373075654,
+      "activation_sm_time_fraction": 0.028475077273954926,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 37.135999999999996,
+      "up_wait_median_us": 0.352,
+      "activation_median_us": 3.568,
+      "down_wait_median_us": 9.52,
+      "down_gemm_median_us": 31.104
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 1,
+      "seed": 1046227,
+      "trial": 1,
+      "layer": 3,
+      "producer_window_us": 93.76,
+      "gu_task_sm_time_fraction": 0.6684028029917943,
+      "down_wait_sm_time_fraction": 0.21065645196427274,
+      "down_gemm_sm_time_fraction": 0.06129910681867693,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 132.096,
+      "up_wait_sm_time_fraction": 0.00625226926149154,
+      "activation_sm_time_fraction": 0.02783929997821509,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 37.168,
+      "up_wait_median_us": 0.352,
+      "activation_median_us": 3.584,
+      "down_wait_median_us": 12.224,
+      "down_gemm_median_us": 31.136
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 1,
+      "seed": 1046228,
+      "trial": 2,
+      "layer": 0,
+      "producer_window_us": 109.28,
+      "gu_task_sm_time_fraction": 0.746389520575683,
+      "down_wait_sm_time_fraction": 0.16306657113485562,
+      "down_gemm_sm_time_fraction": 0.04130400922089655,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 150.048,
+      "up_wait_sm_time_fraction": 0.00635961496526588,
+      "activation_sm_time_fraction": 0.023427619077287312,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 37.92,
+      "up_wait_median_us": 0.384,
+      "activation_median_us": 3.536,
+      "down_wait_median_us": 6.432,
+      "down_gemm_median_us": 32.016
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 1,
+      "seed": 1046228,
+      "trial": 2,
+      "layer": 1,
+      "producer_window_us": 94.528,
+      "gu_task_sm_time_fraction": 0.6761333352540371,
+      "down_wait_sm_time_fraction": 0.20823009550699376,
+      "down_gemm_sm_time_fraction": 0.057435644420115534,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 134.88,
+      "up_wait_sm_time_fraction": 0.004710525936703208,
+      "activation_sm_time_fraction": 0.027303403967213587,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 38.528,
+      "up_wait_median_us": 0.352,
+      "activation_median_us": 3.584,
+      "down_wait_median_us": 9.184,
+      "down_gemm_median_us": 31.823999999999998
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 1,
+      "seed": 1046228,
+      "trial": 2,
+      "layer": 2,
+      "producer_window_us": 92.448,
+      "gu_task_sm_time_fraction": 0.6776437403798709,
+      "down_wait_sm_time_fraction": 0.21122489560548816,
+      "down_gemm_sm_time_fraction": 0.054780421702274956,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 130.688,
+      "up_wait_sm_time_fraction": 0.004619503177864681,
+      "activation_sm_time_fraction": 0.028053953735003644,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 37.216,
+      "up_wait_median_us": 0.352,
+      "activation_median_us": 3.584,
+      "down_wait_median_us": 10.848,
+      "down_gemm_median_us": 30.64
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 1,
+      "seed": 1046228,
+      "trial": 2,
+      "layer": 3,
+      "producer_window_us": 91.392,
+      "gu_task_sm_time_fraction": 0.6816165295905596,
+      "down_wait_sm_time_fraction": 0.2089162792776685,
+      "down_gemm_sm_time_fraction": 0.05212430716967638,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 130.624,
+      "up_wait_sm_time_fraction": 0.006090202038262113,
+      "activation_sm_time_fraction": 0.028469366469992253,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 37.024,
+      "up_wait_median_us": 0.352,
+      "activation_median_us": 3.584,
+      "down_wait_median_us": 9.968,
+      "down_gemm_median_us": 30.96
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 256,
+      "seed": 1301226,
+      "trial": 0,
+      "layer": 0,
+      "producer_window_us": 110.752,
+      "gu_task_sm_time_fraction": 0.7569205800807786,
+      "down_wait_sm_time_fraction": 0.15794537306276013,
+      "down_gemm_sm_time_fraction": 0.0407058592093049,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 151.456,
+      "up_wait_sm_time_fraction": 0.004536875949024695,
+      "activation_sm_time_fraction": 0.023136223081510077,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 37.408,
+      "up_wait_median_us": 0.352,
+      "activation_median_us": 3.52,
+      "down_wait_median_us": 6.464,
+      "down_gemm_median_us": 32.032
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 256,
+      "seed": 1301226,
+      "trial": 0,
+      "layer": 1,
+      "producer_window_us": 94.848,
+      "gu_task_sm_time_fraction": 0.6751227495908347,
+      "down_wait_sm_time_fraction": 0.21512942544577482,
+      "down_gemm_sm_time_fraction": 0.05249698509776897,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 134.016,
+      "up_wait_sm_time_fraction": 0.006361802624400609,
+      "activation_sm_time_fraction": 0.027315373130042783,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 38.432,
+      "up_wait_median_us": 0.352,
+      "activation_median_us": 3.584,
+      "down_wait_median_us": 11.344000000000001,
+      "down_gemm_median_us": 31.472
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 256,
+      "seed": 1301226,
+      "trial": 0,
+      "layer": 2,
+      "producer_window_us": 91.392,
+      "gu_task_sm_time_fraction": 0.6843710888610763,
+      "down_wait_sm_time_fraction": 0.21175278622087132,
+      "down_gemm_sm_time_fraction": 0.050807557065379344,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 129.28,
+      "up_wait_sm_time_fraction": 0.005808972525180285,
+      "activation_sm_time_fraction": 0.028422805292329698,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 37.152,
+      "up_wait_median_us": 0.352,
+      "activation_median_us": 3.584,
+      "down_wait_median_us": 12.544,
+      "down_gemm_median_us": 30.704
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 256,
+      "seed": 1301226,
+      "trial": 0,
+      "layer": 3,
+      "producer_window_us": 93.536,
+      "gu_task_sm_time_fraction": 0.6708351227607894,
+      "down_wait_sm_time_fraction": 0.21459481296540278,
+      "down_gemm_sm_time_fraction": 0.056770950859289133,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 131.872,
+      "up_wait_sm_time_fraction": 0.005371921881482883,
+      "activation_sm_time_fraction": 0.02808248593328044,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 37.28,
+      "up_wait_median_us": 0.352,
+      "activation_median_us": 3.616,
+      "down_wait_median_us": 12.416,
+      "down_gemm_median_us": 31.104
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 256,
+      "seed": 1301227,
+      "trial": 1,
+      "layer": 0,
+      "producer_window_us": 110.272,
+      "gu_task_sm_time_fraction": 0.7412247934700732,
+      "down_wait_sm_time_fraction": 0.16678449265877182,
+      "down_gemm_sm_time_fraction": 0.04582556402119015,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 149.728,
+      "up_wait_sm_time_fraction": 0.003412837579185241,
+      "activation_sm_time_fraction": 0.023272434274706412,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 38.288,
+      "up_wait_median_us": 0.352,
+      "activation_median_us": 3.536,
+      "down_wait_median_us": 6.944,
+      "down_gemm_median_us": 32.111999999999995
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 256,
+      "seed": 1301227,
+      "trial": 1,
+      "layer": 1,
+      "producer_window_us": 94.816,
+      "gu_task_sm_time_fraction": 0.6767149453185026,
+      "down_wait_sm_time_fraction": 0.2135217325740875,
+      "down_gemm_sm_time_fraction": 0.052511112228118426,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 134.208,
+      "up_wait_sm_time_fraction": 0.006143141295840185,
+      "activation_sm_time_fraction": 0.027487954272912014,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 38.608000000000004,
+      "up_wait_median_us": 0.352,
+      "activation_median_us": 3.616,
+      "down_wait_median_us": 11.728,
+      "down_gemm_median_us": 31.776
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 256,
+      "seed": 1301227,
+      "trial": 1,
+      "layer": 2,
+      "producer_window_us": 91.552,
+      "gu_task_sm_time_fraction": 0.6857797824001428,
+      "down_wait_sm_time_fraction": 0.20491830709393383,
+      "down_gemm_sm_time_fraction": 0.05214104575843887,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 129.6,
+      "up_wait_sm_time_fraction": 0.006224575546416593,
+      "activation_sm_time_fraction": 0.028568347624324184,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 37.152,
+      "up_wait_median_us": 0.352,
+      "activation_median_us": 3.6,
+      "down_wait_median_us": 10.352,
+      "down_gemm_median_us": 31.168
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 256,
+      "seed": 1301227,
+      "trial": 1,
+      "layer": 3,
+      "producer_window_us": 94.016,
+      "gu_task_sm_time_fraction": 0.6703793288240661,
+      "down_wait_sm_time_fraction": 0.21426140231449967,
+      "down_gemm_sm_time_fraction": 0.05605926741306143,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 132.224,
+      "up_wait_sm_time_fraction": 0.005978158538881567,
+      "activation_sm_time_fraction": 0.02807851628695161,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 37.584,
+      "up_wait_median_us": 0.352,
+      "activation_median_us": 3.648,
+      "down_wait_median_us": 12.08,
+      "down_gemm_median_us": 31.168
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 256,
+      "seed": 1301228,
+      "trial": 2,
+      "layer": 0,
+      "producer_window_us": 109.824,
+      "gu_task_sm_time_fraction": 0.7392795590933888,
+      "down_wait_sm_time_fraction": 0.16270830233596192,
+      "down_gemm_sm_time_fraction": 0.04176275851807767,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 150.496,
+      "up_wait_sm_time_fraction": 0.007980273272826464,
+      "activation_sm_time_fraction": 0.023314672915736745,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 37.984,
+      "up_wait_median_us": 0.384,
+      "activation_median_us": 3.52,
+      "down_wait_median_us": 8.016,
+      "down_gemm_median_us": 32.096
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 256,
+      "seed": 1301228,
+      "trial": 2,
+      "layer": 1,
+      "producer_window_us": 96.0,
+      "gu_task_sm_time_fraction": 0.6675106382978724,
+      "down_wait_sm_time_fraction": 0.21450886524822696,
+      "down_gemm_sm_time_fraction": 0.06046276595744681,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 135.808,
+      "up_wait_sm_time_fraction": 0.004884751773049646,
+      "activation_sm_time_fraction": 0.027099290780141845,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 38.848,
+      "up_wait_median_us": 0.352,
+      "activation_median_us": 3.584,
+      "down_wait_median_us": 11.968,
+      "down_gemm_median_us": 31.904
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 256,
+      "seed": 1301228,
+      "trial": 2,
+      "layer": 2,
+      "producer_window_us": 92.096,
+      "gu_task_sm_time_fraction": 0.6816864548371357,
+      "down_wait_sm_time_fraction": 0.20840972602132096,
+      "down_gemm_sm_time_fraction": 0.05450371859890882,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 130.688,
+      "up_wait_sm_time_fraction": 0.004552141705971937,
+      "activation_sm_time_fraction": 0.028277615956707525,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 37.424,
+      "up_wait_median_us": 0.352,
+      "activation_median_us": 3.584,
+      "down_wait_median_us": 12.08,
+      "down_gemm_median_us": 31.104
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 256,
+      "seed": 1301228,
+      "trial": 2,
+      "layer": 3,
+      "producer_window_us": 92.352,
+      "gu_task_sm_time_fraction": 0.6799811267896374,
+      "down_wait_sm_time_fraction": 0.20623405729788707,
+      "down_gemm_sm_time_fraction": 0.055040105572020465,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 131.616,
+      "up_wait_sm_time_fraction": 0.005991875672726737,
+      "activation_sm_time_fraction": 0.028324560239453858,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "cta_per_sm_histogram": {
+        "1": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 37.184,
+      "up_wait_median_us": 0.352,
+      "activation_median_us": 3.6,
+      "down_wait_median_us": 10.224,
+      "down_gemm_median_us": 31.152
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 1,
+      "seed": 1046226,
+      "trial": 0,
+      "layer": 0,
+      "producer_window_us": 80.928,
+      "gu_task_sm_time_fraction": 0.8585619578842869,
+      "down_wait_sm_time_fraction": 0.578781874931644,
+      "down_gemm_sm_time_fraction": 0.003676501518554975,
+      "gu_and_down_wait_same_sm_fraction": 0.46417093628799544,
+      "task_span_us": 123.2,
+      "up_wait_sm_time_fraction": 0.02369114022025357,
+      "activation_sm_time_fraction": 0.03622447691880568,
+      "gu_and_up_wait_same_sm_fraction": 0.0008413046953215046,
+      "gu_and_activation_same_sm_fraction": 0.0004353751798288786,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 69.744,
+      "up_wait_median_us": 1.488,
+      "activation_median_us": 3.904,
+      "down_wait_median_us": 79.664,
+      "down_gemm_median_us": 35.168
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 1,
+      "seed": 1046226,
+      "trial": 0,
+      "layer": 1,
+      "producer_window_us": 77.28,
+      "gu_task_sm_time_fraction": 0.8471873485749526,
+      "down_wait_sm_time_fraction": 0.5909893837275891,
+      "down_gemm_sm_time_fraction": 0.0021386723051847936,
+      "gu_and_down_wait_same_sm_fraction": 0.45911854103343464,
+      "task_span_us": 121.024,
+      "up_wait_sm_time_fraction": 0.017556495308576715,
+      "activation_sm_time_fraction": 0.03603145235892692,
+      "gu_and_up_wait_same_sm_fraction": 0.0002841284524910797,
+      "gu_and_activation_same_sm_fraction": 0.0002929386370644465,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 67.024,
+      "up_wait_median_us": 0.576,
+      "activation_median_us": 3.84,
+      "down_wait_median_us": 76.768,
+      "down_gemm_median_us": 35.52
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 1,
+      "seed": 1046226,
+      "trial": 0,
+      "layer": 2,
+      "producer_window_us": 77.824,
+      "gu_task_sm_time_fraction": 0.8446926616741322,
+      "down_wait_sm_time_fraction": 0.5911932215845465,
+      "down_gemm_sm_time_fraction": 0.005067626679731243,
+      "gu_and_down_wait_same_sm_fraction": 0.457761758118701,
+      "task_span_us": 121.92,
+      "up_wait_sm_time_fraction": 0.01768310820268757,
+      "activation_sm_time_fraction": 0.03712468505039194,
+      "gu_and_up_wait_same_sm_fraction": 0.00029745240761478163,
+      "gu_and_activation_same_sm_fraction": 0.00028432950727883536,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 67.68,
+      "up_wait_median_us": 0.64,
+      "activation_median_us": 4.0,
+      "down_wait_median_us": 76.736,
+      "down_gemm_median_us": 35.872
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 1,
+      "seed": 1046226,
+      "trial": 0,
+      "layer": 3,
+      "producer_window_us": 80.384,
+      "gu_task_sm_time_fraction": 0.8187212020598997,
+      "down_wait_sm_time_fraction": 0.5806935221574739,
+      "down_gemm_sm_time_fraction": 0.020181850521750914,
+      "gu_and_down_wait_same_sm_fraction": 0.4411717373627863,
+      "task_span_us": 123.872,
+      "up_wait_sm_time_fraction": 0.018517498983602113,
+      "activation_sm_time_fraction": 0.03694182816099743,
+      "gu_and_up_wait_same_sm_fraction": 0.00030280187017211004,
+      "gu_and_activation_same_sm_fraction": 0.0009041706193251118,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 67.98400000000001,
+      "up_wait_median_us": 0.608,
+      "activation_median_us": 4.096,
+      "down_wait_median_us": 77.6,
+      "down_gemm_median_us": 36.256
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 1,
+      "seed": 1046227,
+      "trial": 1,
+      "layer": 0,
+      "producer_window_us": 82.816,
+      "gu_task_sm_time_fraction": 0.8521695879509356,
+      "down_wait_sm_time_fraction": 0.5723223387812818,
+      "down_gemm_sm_time_fraction": 0.010075142227629978,
+      "gu_and_down_wait_same_sm_fraction": 0.4581045085336578,
+      "task_span_us": 125.664,
+      "up_wait_sm_time_fraction": 0.03130035515801243,
+      "activation_sm_time_fraction": 0.03489509684632839,
+      "gu_and_up_wait_same_sm_fraction": 0.0012496300437370516,
+      "gu_and_activation_same_sm_fraction": 0.00014181656746357985,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 71.05600000000001,
+      "up_wait_median_us": 3.008,
+      "activation_median_us": 3.872,
+      "down_wait_median_us": 80.656,
+      "down_gemm_median_us": 34.992000000000004
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 1,
+      "seed": 1046227,
+      "trial": 1,
+      "layer": 1,
+      "producer_window_us": 77.184,
+      "gu_task_sm_time_fraction": 0.8508388906531174,
+      "down_wait_sm_time_fraction": 0.5903880420592075,
+      "down_gemm_sm_time_fraction": 0.002059736777107371,
+      "gu_and_down_wait_same_sm_fraction": 0.46144499135528033,
+      "task_span_us": 121.44,
+      "up_wait_sm_time_fraction": 0.01814729543770509,
+      "activation_sm_time_fraction": 0.0362041741646378,
+      "gu_and_up_wait_same_sm_fraction": 0.0007983133975512509,
+      "gu_and_activation_same_sm_fraction": 0.0005005998376909777,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 67.31200000000001,
+      "up_wait_median_us": 0.576,
+      "activation_median_us": 3.84,
+      "down_wait_median_us": 76.448,
+      "down_gemm_median_us": 35.712
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 1,
+      "seed": 1046227,
+      "trial": 1,
+      "layer": 2,
+      "producer_window_us": 80.192,
+      "gu_task_sm_time_fraction": 0.8219910512641999,
+      "down_wait_sm_time_fraction": 0.5805683381161807,
+      "down_gemm_sm_time_fraction": 0.022242363009627956,
+      "gu_and_down_wait_same_sm_fraction": 0.44565171248577884,
+      "task_span_us": 123.328,
+      "up_wait_sm_time_fraction": 0.018290146202305953,
+      "activation_sm_time_fraction": 0.03662274371296123,
+      "gu_and_up_wait_same_sm_fraction": 0.00048606748059975207,
+      "gu_and_activation_same_sm_fraction": 0.0007620009848703537,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 67.616,
+      "up_wait_median_us": 0.64,
+      "activation_median_us": 4.032,
+      "down_wait_median_us": 76.224,
+      "down_gemm_median_us": 36.111999999999995
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 1,
+      "seed": 1046227,
+      "trial": 1,
+      "layer": 3,
+      "producer_window_us": 78.592,
+      "gu_task_sm_time_fraction": 0.8366354217201469,
+      "down_wait_sm_time_fraction": 0.5863040578002634,
+      "down_gemm_sm_time_fraction": 0.008992307159193292,
+      "gu_and_down_wait_same_sm_fraction": 0.4508433536627625,
+      "task_span_us": 122.176,
+      "up_wait_sm_time_fraction": 0.019634936586042,
+      "activation_sm_time_fraction": 0.037799310416522285,
+      "gu_and_up_wait_same_sm_fraction": 0.0004309896735740523,
+      "gu_and_activation_same_sm_fraction": 0.0004894656594358584,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 67.56800000000001,
+      "up_wait_median_us": 0.608,
+      "activation_median_us": 4.096,
+      "down_wait_median_us": 76.64,
+      "down_gemm_median_us": 35.888000000000005
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 1,
+      "seed": 1046228,
+      "trial": 2,
+      "layer": 0,
+      "producer_window_us": 85.792,
+      "gu_task_sm_time_fraction": 0.862565174950598,
+      "down_wait_sm_time_fraction": 0.5705536200369821,
+      "down_gemm_sm_time_fraction": 0.010967644654662042,
+      "gu_and_down_wait_same_sm_fraction": 0.460101422936821,
+      "task_span_us": 129.408,
+      "up_wait_sm_time_fraction": 0.022338044711801727,
+      "activation_sm_time_fraction": 0.030926853270056426,
+      "gu_and_up_wait_same_sm_fraction": 0.00039481933543374575,
+      "gu_and_activation_same_sm_fraction": 0.0002281619275119636,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 75.616,
+      "up_wait_median_us": 0.912,
+      "activation_median_us": 3.648,
+      "down_wait_median_us": 82.896,
+      "down_gemm_median_us": 34.976
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 1,
+      "seed": 1046228,
+      "trial": 2,
+      "layer": 1,
+      "producer_window_us": 76.8,
+      "gu_task_sm_time_fraction": 0.850354609929078,
+      "down_wait_sm_time_fraction": 0.5908333333333333,
+      "down_gemm_sm_time_fraction": 0.0012322695035460994,
+      "gu_and_down_wait_same_sm_fraction": 0.45981382978723406,
+      "task_span_us": 120.768,
+      "up_wait_sm_time_fraction": 0.018158244680851063,
+      "activation_sm_time_fraction": 0.03610372340425532,
+      "gu_and_up_wait_same_sm_fraction": 0.0008599290780141844,
+      "gu_and_activation_same_sm_fraction": 0.0005984042553191489,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 66.976,
+      "up_wait_median_us": 0.576,
+      "activation_median_us": 3.808,
+      "down_wait_median_us": 76.48,
+      "down_gemm_median_us": 35.632000000000005
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 1,
+      "seed": 1046228,
+      "trial": 2,
+      "layer": 2,
+      "producer_window_us": 78.176,
+      "gu_task_sm_time_fraction": 0.8383505630503131,
+      "down_wait_sm_time_fraction": 0.5915228921538743,
+      "down_gemm_sm_time_fraction": 0.007158969178112018,
+      "gu_and_down_wait_same_sm_fraction": 0.45509532228425115,
+      "task_span_us": 122.4,
+      "up_wait_sm_time_fraction": 0.017377047752588814,
+      "activation_sm_time_fraction": 0.03692922026458575,
+      "gu_and_up_wait_same_sm_fraction": 0.0005160205885682932,
+      "gu_and_activation_same_sm_fraction": 0.0004223965999251008,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 67.50399999999999,
+      "up_wait_median_us": 0.688,
+      "activation_median_us": 4.0,
+      "down_wait_median_us": 76.032,
+      "down_gemm_median_us": 35.536
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 1,
+      "seed": 1046228,
+      "trial": 2,
+      "layer": 3,
+      "producer_window_us": 77.92,
+      "gu_task_sm_time_fraction": 0.8483987941806108,
+      "down_wait_sm_time_fraction": 0.5919065926864433,
+      "down_gemm_sm_time_fraction": 0.0024815413517410108,
+      "gu_and_down_wait_same_sm_fraction": 0.46054218183406875,
+      "task_span_us": 121.632,
+      "up_wait_sm_time_fraction": 0.017853554108960636,
+      "activation_sm_time_fraction": 0.037970204028135786,
+      "gu_and_up_wait_same_sm_fraction": 0.0005373760321551837,
+      "gu_and_activation_same_sm_fraction": 0.00038009524225610553,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 67.75999999999999,
+      "up_wait_median_us": 0.608,
+      "activation_median_us": 4.08,
+      "down_wait_median_us": 76.976,
+      "down_gemm_median_us": 35.856
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 256,
+      "seed": 1301226,
+      "trial": 0,
+      "layer": 0,
+      "producer_window_us": 82.56,
+      "gu_task_sm_time_fraction": 0.8450787563912254,
+      "down_wait_sm_time_fraction": 0.5752803892462477,
+      "down_gemm_sm_time_fraction": 0.008374567046016823,
+      "gu_and_down_wait_same_sm_fraction": 0.45227610094012866,
+      "task_span_us": 124.736,
+      "up_wait_sm_time_fraction": 0.029906811809335312,
+      "activation_sm_time_fraction": 0.034149760844466436,
+      "gu_and_up_wait_same_sm_fraction": 0.0012699983506514927,
+      "gu_and_activation_same_sm_fraction": 0.0001669965363681346,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 70.144,
+      "up_wait_median_us": 2.832,
+      "activation_median_us": 3.84,
+      "down_wait_median_us": 80.72,
+      "down_gemm_median_us": 35.024
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 256,
+      "seed": 1301226,
+      "trial": 0,
+      "layer": 1,
+      "producer_window_us": 77.184,
+      "gu_task_sm_time_fraction": 0.8480800783317455,
+      "down_wait_sm_time_fraction": 0.5907541194735542,
+      "down_gemm_sm_time_fraction": 0.0023684767651106172,
+      "gu_and_down_wait_same_sm_fraction": 0.4601129988356092,
+      "task_span_us": 121.312,
+      "up_wait_sm_time_fraction": 0.018841960410712396,
+      "activation_sm_time_fraction": 0.03636295472989662,
+      "gu_and_up_wait_same_sm_fraction": 0.001010020817896334,
+      "gu_and_activation_same_sm_fraction": 0.0007850816837796831,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 66.736,
+      "up_wait_median_us": 0.576,
+      "activation_median_us": 3.872,
+      "down_wait_median_us": 76.352,
+      "down_gemm_median_us": 35.696
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 256,
+      "seed": 1301226,
+      "trial": 0,
+      "layer": 2,
+      "producer_window_us": 78.432,
+      "gu_task_sm_time_fraction": 0.837196281153155,
+      "down_wait_sm_time_fraction": 0.5891429464308966,
+      "down_gemm_sm_time_fraction": 0.010091408630433084,
+      "gu_and_down_wait_same_sm_fraction": 0.4542587914615832,
+      "task_span_us": 122.208,
+      "up_wait_sm_time_fraction": 0.015853277429099717,
+      "activation_sm_time_fraction": 0.03746842365686606,
+      "gu_and_up_wait_same_sm_fraction": 0.00037544380496019864,
+      "gu_and_activation_same_sm_fraction": 0.00023655129907896908,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 66.992,
+      "up_wait_median_us": 0.608,
+      "activation_median_us": 4.064,
+      "down_wait_median_us": 75.84,
+      "down_gemm_median_us": 35.712
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 256,
+      "seed": 1301226,
+      "trial": 0,
+      "layer": 3,
+      "producer_window_us": 77.952,
+      "gu_task_sm_time_fraction": 0.847102854347902,
+      "down_wait_sm_time_fraction": 0.5877135520385703,
+      "down_gemm_sm_time_fraction": 0.005423959752646473,
+      "gu_and_down_wait_same_sm_fraction": 0.4569555078084058,
+      "task_span_us": 122.432,
+      "up_wait_sm_time_fraction": 0.01950136254061419,
+      "activation_sm_time_fraction": 0.038015756559410266,
+      "gu_and_up_wait_same_sm_fraction": 0.00035373650560737867,
+      "gu_and_activation_same_sm_fraction": 0.00046291443943681656,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 68.144,
+      "up_wait_median_us": 0.64,
+      "activation_median_us": 4.096,
+      "down_wait_median_us": 76.27199999999999,
+      "down_gemm_median_us": 35.936
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 256,
+      "seed": 1301227,
+      "trial": 1,
+      "layer": 0,
+      "producer_window_us": 87.328,
+      "gu_task_sm_time_fraction": 0.8299061303727497,
+      "down_wait_sm_time_fraction": 0.5680184464732619,
+      "down_gemm_sm_time_fraction": 0.01834316989311025,
+      "gu_and_down_wait_same_sm_fraction": 0.4339988928997451,
+      "task_span_us": 129.792,
+      "up_wait_sm_time_fraction": 0.03296741850728581,
+      "activation_sm_time_fraction": 0.031164482352666008,
+      "gu_and_up_wait_same_sm_fraction": 0.0005613466081410851,
+      "gu_and_activation_same_sm_fraction": 0.000278724183903386,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 76.03200000000001,
+      "up_wait_median_us": 1.952,
+      "activation_median_us": 3.712,
+      "down_wait_median_us": 83.552,
+      "down_gemm_median_us": 35.296
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 256,
+      "seed": 1301227,
+      "trial": 1,
+      "layer": 1,
+      "producer_window_us": 78.752,
+      "gu_task_sm_time_fraction": 0.8337555223183795,
+      "down_wait_sm_time_fraction": 0.5848664701254463,
+      "down_gemm_sm_time_fraction": 0.01219665073011317,
+      "gu_and_down_wait_same_sm_fraction": 0.451243656358339,
+      "task_span_us": 123.2,
+      "up_wait_sm_time_fraction": 0.017682225699637753,
+      "activation_sm_time_fraction": 0.03541632444863271,
+      "gu_and_up_wait_same_sm_fraction": 0.0008645508226201077,
+      "gu_and_activation_same_sm_fraction": 0.0007024475433788375,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 66.75200000000001,
+      "up_wait_median_us": 0.592,
+      "activation_median_us": 3.84,
+      "down_wait_median_us": 76.416,
+      "down_gemm_median_us": 35.648
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 256,
+      "seed": 1301227,
+      "trial": 1,
+      "layer": 2,
+      "producer_window_us": 78.752,
+      "gu_task_sm_time_fraction": 0.8364810187866893,
+      "down_wait_sm_time_fraction": 0.583368635825257,
+      "down_gemm_sm_time_fraction": 0.01556839893833159,
+      "gu_and_down_wait_same_sm_fraction": 0.45470185964881943,
+      "task_span_us": 122.624,
+      "up_wait_sm_time_fraction": 0.01759577061737574,
+      "activation_sm_time_fraction": 0.03685147881418209,
+      "gu_and_up_wait_same_sm_fraction": 4.755029524410593e-05,
+      "gu_and_activation_same_sm_fraction": 0.00015129639395851884,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 67.47200000000001,
+      "up_wait_median_us": 0.64,
+      "activation_median_us": 4.0,
+      "down_wait_median_us": 75.136,
+      "down_gemm_median_us": 35.648
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 256,
+      "seed": 1301227,
+      "trial": 1,
+      "layer": 3,
+      "producer_window_us": 79.456,
+      "gu_task_sm_time_fraction": 0.8288639343278978,
+      "down_wait_sm_time_fraction": 0.5848321779590577,
+      "down_gemm_sm_time_fraction": 0.014903471264170829,
+      "gu_and_down_wait_same_sm_fraction": 0.44860369662642136,
+      "task_span_us": 122.816,
+      "up_wait_sm_time_fraction": 0.017435583242645734,
+      "activation_sm_time_fraction": 0.037210478059313976,
+      "gu_and_up_wait_same_sm_fraction": 0.00036203631502729195,
+      "gu_and_activation_same_sm_fraction": 0.00023778716549129828,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 67.47200000000001,
+      "up_wait_median_us": 0.608,
+      "activation_median_us": 4.064,
+      "down_wait_median_us": 76.736,
+      "down_gemm_median_us": 35.904
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 256,
+      "seed": 1301228,
+      "trial": 2,
+      "layer": 0,
+      "producer_window_us": 83.36,
+      "gu_task_sm_time_fraction": 0.8474578347694696,
+      "down_wait_sm_time_fraction": 0.5741107526442603,
+      "down_gemm_sm_time_fraction": 0.010858823048964756,
+      "gu_and_down_wait_same_sm_fraction": 0.4516825254216523,
+      "task_span_us": 126.464,
+      "up_wait_sm_time_fraction": 0.025687099277167478,
+      "activation_sm_time_fraction": 0.03378119001919386,
+      "gu_and_up_wait_same_sm_fraction": 0.0006758688283579042,
+      "gu_and_activation_same_sm_fraction": 0.00022052517662433127,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 72.288,
+      "up_wait_median_us": 1.312,
+      "activation_median_us": 3.872,
+      "down_wait_median_us": 80.048,
+      "down_gemm_median_us": 35.248000000000005
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 256,
+      "seed": 1301228,
+      "trial": 2,
+      "layer": 1,
+      "producer_window_us": 77.728,
+      "gu_task_sm_time_fraction": 0.843567968606291,
+      "down_wait_sm_time_fraction": 0.5816420381384512,
+      "down_gemm_sm_time_fraction": 0.013750076644797351,
+      "gu_and_down_wait_same_sm_fraction": 0.4585001270113785,
+      "task_span_us": 120.928,
+      "up_wait_sm_time_fraction": 0.016973537836251676,
+      "activation_sm_time_fraction": 0.03714425864772299,
+      "gu_and_up_wait_same_sm_fraction": 0.0006503858518083792,
+      "gu_and_activation_same_sm_fraction": 0.0008102450005693613,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 67.024,
+      "up_wait_median_us": 0.608,
+      "activation_median_us": 3.968,
+      "down_wait_median_us": 75.744,
+      "down_gemm_median_us": 36.0
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 256,
+      "seed": 1301228,
+      "trial": 2,
+      "layer": 2,
+      "producer_window_us": 81.024,
+      "gu_task_sm_time_fraction": 0.8111302981412389,
+      "down_wait_sm_time_fraction": 0.5782557729151961,
+      "down_gemm_sm_time_fraction": 0.027734361870189236,
+      "gu_and_down_wait_same_sm_fraction": 0.43922893348122755,
+      "task_span_us": 124.64,
+      "up_wait_sm_time_fraction": 0.01810653423414339,
+      "activation_sm_time_fraction": 0.03625088232328325,
+      "gu_and_up_wait_same_sm_fraction": 0.00020167389331451045,
+      "gu_and_activation_same_sm_fraction": 0.0002625962152532688,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 67.936,
+      "up_wait_median_us": 0.64,
+      "activation_median_us": 4.064,
+      "down_wait_median_us": 76.848,
+      "down_gemm_median_us": 36.096
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 256,
+      "seed": 1301228,
+      "trial": 2,
+      "layer": 3,
+      "producer_window_us": 78.496,
+      "gu_task_sm_time_fraction": 0.8403973423771153,
+      "down_wait_sm_time_fraction": 0.5839224223920341,
+      "down_gemm_sm_time_fraction": 0.012086806428949354,
+      "gu_and_down_wait_same_sm_fraction": 0.45469290751229496,
+      "task_span_us": 122.4,
+      "up_wait_sm_time_fraction": 0.018164904459151192,
+      "activation_sm_time_fraction": 0.037826022846536154,
+      "gu_and_up_wait_same_sm_fraction": 0.00028840065573201726,
+      "gu_and_activation_same_sm_fraction": 0.00041416936274297215,
+      "cta_per_sm_histogram": {
+        "2": 188
+      },
+      "sms_used": 188,
+      "operation_placement": {
+        "0": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "1": {
+          "sms_used": 136,
+          "tasks": 136,
+          "max_tasks_per_sm": 1
+        },
+        "2": {
+          "sms_used": 160,
+          "tasks": 160,
+          "max_tasks_per_sm": 1
+        }
+      },
+      "up_gemm_median_us": 67.84,
+      "up_wait_median_us": 0.576,
+      "activation_median_us": 4.096,
+      "down_wait_median_us": 75.888,
+      "down_gemm_median_us": 36.032
+    }
+  ],
+  "summary": [
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 1,
+      "placement_variants": [
+        {
+          "histogram": {
+            "1": 188
+          },
+          "profiles": 12
+        }
+      ],
+      "sms_used_median": 188.0,
+      "operation_placement_medians": {
+        "0": {
+          "sms_used": 136.0,
+          "tasks": 136.0,
+          "max_tasks_per_sm": 1.0
+        },
+        "1": {
+          "sms_used": 136.0,
+          "tasks": 136.0,
+          "max_tasks_per_sm": 1.0
+        },
+        "2": {
+          "sms_used": 188.0,
+          "tasks": 320.0,
+          "max_tasks_per_sm": 2.0
+        }
+      },
+      "producer_window_us": 85.792,
+      "gu_task_sm_time_fraction": 0.7176599868920496,
+      "down_wait_sm_time_fraction": 0.20626202476572014,
+      "down_gemm_sm_time_fraction": 0.05493400886358803,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 119.36,
+      "up_wait_sm_time_fraction": 0.005812577533871778,
+      "activation_sm_time_fraction": 0.003988106667754548,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "up_gemm_median_us": 33.512,
+      "up_wait_median_us": 0.288,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 2.992,
+      "down_gemm_median_us": 16.48
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 256,
+      "placement_variants": [
+        {
+          "histogram": {
+            "1": 188
+          },
+          "profiles": 12
+        }
+      ],
+      "sms_used_median": 188.0,
+      "operation_placement_medians": {
+        "0": {
+          "sms_used": 136.0,
+          "tasks": 136.0,
+          "max_tasks_per_sm": 1.0
+        },
+        "1": {
+          "sms_used": 136.0,
+          "tasks": 136.0,
+          "max_tasks_per_sm": 1.0
+        },
+        "2": {
+          "sms_used": 188.0,
+          "tasks": 320.0,
+          "max_tasks_per_sm": 2.0
+        }
+      },
+      "producer_window_us": 86.352,
+      "gu_task_sm_time_fraction": 0.713137866120193,
+      "down_wait_sm_time_fraction": 0.2106288018058278,
+      "down_gemm_sm_time_fraction": 0.05102429451432619,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 120.72,
+      "up_wait_sm_time_fraction": 0.005850772814313084,
+      "activation_sm_time_fraction": 0.003934413102277107,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "up_gemm_median_us": 33.824,
+      "up_wait_median_us": 0.288,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 3.032,
+      "down_gemm_median_us": 16.624000000000002
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 1,
+      "placement_variants": [
+        {
+          "histogram": {
+            "2": 188
+          },
+          "profiles": 12
+        }
+      ],
+      "sms_used_median": 188.0,
+      "operation_placement_medians": {
+        "0": {
+          "sms_used": 136.0,
+          "tasks": 136.0,
+          "max_tasks_per_sm": 1.0
+        },
+        "1": {
+          "sms_used": 136.0,
+          "tasks": 136.0,
+          "max_tasks_per_sm": 1.0
+        },
+        "2": {
+          "sms_used": 188.0,
+          "tasks": 320.0,
+          "max_tasks_per_sm": 2.0
+        }
+      },
+      "producer_window_us": 72.256,
+      "gu_task_sm_time_fraction": 0.9047759256048276,
+      "down_wait_sm_time_fraction": 0.581259324816949,
+      "down_gemm_sm_time_fraction": 0.019743373854620133,
+      "gu_and_down_wait_same_sm_fraction": 0.49996264353969777,
+      "task_span_us": 104.672,
+      "up_wait_sm_time_fraction": 0.017753028067448953,
+      "activation_sm_time_fraction": 0.004875289136128157,
+      "gu_and_up_wait_same_sm_fraction": 0.004498574919721186,
+      "gu_and_activation_same_sm_fraction": 0.000657990458773277,
+      "up_gemm_median_us": 65.288,
+      "up_wait_median_us": 0.744,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 5.944,
+      "down_gemm_median_us": 29.48
+    },
+    {
+      "rows": 4,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 256,
+      "placement_variants": [
+        {
+          "histogram": {
+            "2": 188
+          },
+          "profiles": 12
+        }
+      ],
+      "sms_used_median": 188.0,
+      "operation_placement_medians": {
+        "0": {
+          "sms_used": 136.0,
+          "tasks": 136.0,
+          "max_tasks_per_sm": 1.0
+        },
+        "1": {
+          "sms_used": 136.0,
+          "tasks": 136.0,
+          "max_tasks_per_sm": 1.0
+        },
+        "2": {
+          "sms_used": 188.0,
+          "tasks": 320.0,
+          "max_tasks_per_sm": 2.0
+        }
+      },
+      "producer_window_us": 72.896,
+      "gu_task_sm_time_fraction": 0.8988525561283476,
+      "down_wait_sm_time_fraction": 0.5822708044988729,
+      "down_gemm_sm_time_fraction": 0.022929858508448718,
+      "gu_and_down_wait_same_sm_fraction": 0.4951508119458464,
+      "task_span_us": 105.088,
+      "up_wait_sm_time_fraction": 0.018063624306502532,
+      "activation_sm_time_fraction": 0.004831048560405952,
+      "gu_and_up_wait_same_sm_fraction": 0.004477454248246748,
+      "gu_and_activation_same_sm_fraction": 0.0006082728010823268,
+      "up_gemm_median_us": 65.328,
+      "up_wait_median_us": 1.048,
+      "activation_median_us": 0.48,
+      "down_wait_median_us": 6.376,
+      "down_gemm_median_us": 29.184
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 1,
+      "placement_variants": [
+        {
+          "histogram": {
+            "1": 188
+          },
+          "profiles": 12
+        }
+      ],
+      "sms_used_median": 188.0,
+      "operation_placement_medians": {
+        "0": {
+          "sms_used": 136.0,
+          "tasks": 136.0,
+          "max_tasks_per_sm": 1.0
+        },
+        "1": {
+          "sms_used": 136.0,
+          "tasks": 136.0,
+          "max_tasks_per_sm": 1.0
+        },
+        "2": {
+          "sms_used": 160.0,
+          "tasks": 160.0,
+          "max_tasks_per_sm": 1.0
+        }
+      },
+      "producer_window_us": 93.26400000000001,
+      "gu_task_sm_time_fraction": 0.6834131507283805,
+      "down_wait_sm_time_fraction": 0.20822953857921905,
+      "down_gemm_sm_time_fraction": 0.05217285848518785,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 132.01600000000002,
+      "up_wait_sm_time_fraction": 0.005286429325584977,
+      "activation_sm_time_fraction": 0.027785988004859277,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "up_gemm_median_us": 37.312,
+      "up_wait_median_us": 0.352,
+      "activation_median_us": 3.576,
+      "down_wait_median_us": 9.744,
+      "down_gemm_median_us": 31.336
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 188,
+      "input_scale": 256,
+      "placement_variants": [
+        {
+          "histogram": {
+            "1": 188
+          },
+          "profiles": 12
+        }
+      ],
+      "sms_used_median": 188.0,
+      "operation_placement_medians": {
+        "0": {
+          "sms_used": 136.0,
+          "tasks": 136.0,
+          "max_tasks_per_sm": 1.0
+        },
+        "1": {
+          "sms_used": 136.0,
+          "tasks": 136.0,
+          "max_tasks_per_sm": 1.0
+        },
+        "2": {
+          "sms_used": 160.0,
+          "tasks": 160.0,
+          "max_tasks_per_sm": 1.0
+        }
+      },
+      "producer_window_us": 94.416,
+      "gu_task_sm_time_fraction": 0.6808337908133866,
+      "down_wait_sm_time_fraction": 0.21008125612109613,
+      "down_gemm_sm_time_fraction": 0.0525040486629437,
+      "gu_and_down_wait_same_sm_fraction": 0.0,
+      "task_span_us": 133.12,
+      "up_wait_sm_time_fraction": 0.005893565532030926,
+      "activation_sm_time_fraction": 0.02778323527993181,
+      "gu_and_up_wait_same_sm_fraction": 0.0,
+      "gu_and_activation_same_sm_fraction": 0.0,
+      "up_gemm_median_us": 37.504000000000005,
+      "up_wait_median_us": 0.352,
+      "activation_median_us": 3.584,
+      "down_wait_median_us": 11.536000000000001,
+      "down_gemm_median_us": 31.32
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 1,
+      "placement_variants": [
+        {
+          "histogram": {
+            "2": 188
+          },
+          "profiles": 12
+        }
+      ],
+      "sms_used_median": 188.0,
+      "operation_placement_medians": {
+        "0": {
+          "sms_used": 136.0,
+          "tasks": 136.0,
+          "max_tasks_per_sm": 1.0
+        },
+        "1": {
+          "sms_used": 136.0,
+          "tasks": 136.0,
+          "max_tasks_per_sm": 1.0
+        },
+        "2": {
+          "sms_used": 160.0,
+          "tasks": 160.0,
+          "max_tasks_per_sm": 1.0
+        }
+      },
+      "producer_window_us": 78.384,
+      "gu_task_sm_time_fraction": 0.8477930713777817,
+      "down_wait_sm_time_fraction": 0.5883460499297355,
+      "down_gemm_sm_time_fraction": 0.006113297928921631,
+      "gu_and_down_wait_same_sm_fraction": 0.4586115247835462,
+      "task_span_us": 122.28800000000001,
+      "up_wait_sm_time_fraction": 0.01822419544157851,
+      "activation_sm_time_fraction": 0.03642361031588345,
+      "gu_and_up_wait_same_sm_fraction": 0.0005010440345840227,
+      "gu_and_activation_same_sm_fraction": 0.00042888588987698975,
+      "up_gemm_median_us": 67.648,
+      "up_wait_median_us": 0.624,
+      "activation_median_us": 3.952,
+      "down_wait_median_us": 76.75200000000001,
+      "down_gemm_median_us": 35.672000000000004
+    },
+    {
+      "rows": 32,
+      "width": 128,
+      "stages": 4,
+      "grid": 376,
+      "input_scale": 256,
+      "placement_variants": [
+        {
+          "histogram": {
+            "2": 188
+          },
+          "profiles": 12
+        }
+      ],
+      "sms_used_median": 188.0,
+      "operation_placement_medians": {
+        "0": {
+          "sms_used": 136.0,
+          "tasks": 136.0,
+          "max_tasks_per_sm": 1.0
+        },
+        "1": {
+          "sms_used": 136.0,
+          "tasks": 136.0,
+          "max_tasks_per_sm": 1.0
+        },
+        "2": {
+          "sms_used": 160.0,
+          "tasks": 160.0,
+          "max_tasks_per_sm": 1.0
+        }
+      },
+      "producer_window_us": 78.752,
+      "gu_task_sm_time_fraction": 0.8387968117651352,
+      "down_wait_sm_time_fraction": 0.5836455291086455,
+      "down_gemm_sm_time_fraction": 0.01214172857953126,
+      "gu_and_down_wait_same_sm_fraction": 0.4532674462008559,
+      "task_span_us": 122.72,
+      "up_wait_sm_time_fraction": 0.01813571934664729,
+      "activation_sm_time_fraction": 0.036607216772039354,
+      "gu_and_up_wait_same_sm_fraction": 0.00046839520655064186,
+      "gu_and_activation_same_sm_fraction": 0.00027066019957832743,
+      "up_gemm_median_us": 67.656,
+      "up_wait_median_us": 0.624,
+      "activation_median_us": 3.984,
+      "down_wait_median_us": 76.384,
+      "down_gemm_median_us": 35.704
+    }
+  ],
+  "limitation": "Instrumented task labels include copy/memory/math waits. SM-time fractions are interval unions, not utilization counters or speed evidence. Matched paired-read width128/stage4 traces compare grid188/376 at normal/stress inputs; instrumentation can change placement. No speed-gate claim."
+}

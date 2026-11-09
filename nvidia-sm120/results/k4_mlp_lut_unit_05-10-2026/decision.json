@@ -1,0 +1,10 @@
+{
+  "decision": "UNIT_BITS_PASS",
+  "finite_gate_patterns": 65280,
+  "product_comparisons": 2083350,
+  "multiplier_sweeps": 32,
+  "table_bytes": 262144,
+  "offline_builds": 11,
+  "speed_evidence": false,
+  "full_mlp_and_serving_pending": true
+}

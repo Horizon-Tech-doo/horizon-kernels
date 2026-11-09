@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "horizon-flashnext"
+version = "0.1.0"
+description = "Horizon Tech: vLLM hooks for Qwen3.8-Flash-Next expert pruning (REAP calibration, runtime expert mask)"
+requires-python = ">=3.10"
+
+[project.entry-points."vllm.general_plugins"]
+horizon_flashnext = "horizon_flashnext.plugin:register"
+
+[tool.setuptools]
+packages = ["horizon_flashnext"]

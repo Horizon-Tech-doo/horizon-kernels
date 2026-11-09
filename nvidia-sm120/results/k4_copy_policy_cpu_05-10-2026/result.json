@@ -1,0 +1,32 @@
+{
+  "decision": "NO_DEFAULT_L2_PREFETCH_DIFFERENCE",
+  "gpu_context_created": false,
+  "scope": "Deployed template preprocessed with backend default flags; production RF/XL decorators contain no compile-flag override. This is static evidence, not a performance measurement.",
+  "template": "<work>/gdnstate/fp16-pi-metadata-v3-04-10-2026/tl/tilelang/3rdparty/../src/tl_templates/cuda/copy.h",
+  "template_sha256": "540e0b2dce35cde5cb59bd8eca1673a864248d23069d59d6ba7cbb79db730757",
+  "default_compile_options": [
+    "['-std=c++20', '-I' + TILELANG_TEMPLATE_PATH, '-I' + CUTLASS_INCLUDE_DIR]"
+  ],
+  "preprocessed_copy_instructions": [
+    "cp.async.ca.shared.global [%0], [%1], %2, %3;",
+    "cp.async.ca.shared.global [%0], [%1], %2;",
+    "cp.async.cg.shared.global [%0], [%1], %2, %3;",
+    "cp.async.cg.shared.global [%0], [%1], %2;"
+  ],
+  "production_factories": {
+    "decode_regfrag.py": {
+      "sha256": "c7cb438490f61a69337c6d586fec9f4cd17e81fcb81663c96a78b84b5daaa4ef",
+      "jit_decorators": [
+        "tilelang.jit(pass_configs={tilelang.PassConfigKey.TL_DISABLE_WARP_SPECIALIZED: True})"
+      ]
+    },
+    "decode_regfrag_xl.py": {
+      "sha256": "2f00db338bff4c89f18eb9e3e179187f4f9a44c54939c7cc6e5fbc22faee8bef",
+      "jit_decorators": [
+        "tilelang.jit(pass_configs={tilelang.PassConfigKey.TL_DISABLE_WARP_SPECIALIZED: True})",
+        "tilelang.jit(pass_configs={tilelang.PassConfigKey.TL_DISABLE_WARP_SPECIALIZED: True})"
+      ]
+    }
+  },
+  "next_action": "Do not attribute the K4 gap to a missing production L2 hint. Any added hint would be a new tuning experiment requiring a fresh GPU window."
+}

@@ -1,0 +1,5 @@
+{
+  "source_candidate": "mlp-v24-05-10-2026",
+  "identical_kernel_and_harness_hashes": true,
+  "builds": 30
+}

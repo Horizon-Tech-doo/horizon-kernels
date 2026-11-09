@@ -1,0 +1,24 @@
+{
+  "sha256": {
+    "bench_mlp_up_fusion_05-10-2026.py": "6423666c2c26b6809338d6f22bf30401990c66eaab0671cdf9c77cedd68d3b72",
+    "contrib/horizon_k4/__init__.py": "00dc94ecbf81da75bff2eef399148d177088b49bc6eab467992b509a2e0c62f0",
+    "contrib/horizon_k4/hkt.py": "a7065e6c3ae14133d28d1b76a17a4a28a41b9c2404467c13064b5c7a6523a1fb",
+    "contrib/horizon_k4/mlp.py": "5c729d7d0c476fe67703ee04cfe354149b7a4c7c838a6a2da9c455a7c5fe3e4e",
+    "contrib/horizon_k4/mlp_native_tasks.py": "aaa97969dcca66e8102361ce748d07c2d216237dad6655e505869f154e20c95a",
+    "contrib/horizon_k4/mlp_pair_tasks.py": "982a0629170e9572147baf37689c27f922bda3c381372f5b5da8975662705c12",
+    "contrib/horizon_k4/mlp_prepare.py": "368da415d17e3f622b30361b7b31d7be6c5d7032048efd1cbd949c877f8fca2e",
+    "contrib/horizon_k4/mlp_schedule.py": "74cda92e15d4a12f35e80ca48eeba6619ed5dddd778f5212338f7569f01d00df",
+    "contrib/horizon_k4/mlp_static_plan.py": "c8915ed0ef91c562cb8b2f25f45f0569c75e0de00a606548bfa04204b0b4867e",
+    "contrib/horizon_k4/mlp_up_fusion.py": "b7e859e14e450cc32ca0ed2fc9f9acb5bbf4fbf102fcae6dd262111fb6f88262",
+    "contrib/horizon_k4/pdl.py": "062d3c20b7d5f1a69921965356eceee5cfc28fb933b43aa239c0ca63a60a970a",
+    "contrib/horizon_k4/runtime.py": "efc7762e897836f3dcaab266f54cbd9a4ba649c8c9dd8f5ae1b69708774b23dd",
+    "contrib/horizon_k4/segment.py": "36151e5b7c231ee450271b17a297353f9ca09bd4502b30d3fb8443db622a7562",
+    "contrib/horizon_k4/selftest.py": "faa9e64c0c7375aa61061fffe269d4f9b5c6bd08304a7515a047232b4f00aa43",
+    "contrib/horizon_k4/tasks.py": "eb72bb7e57b2438919f3fa82540ef759bf807ca1915c92f3236ae0cc685c15d3",
+    "guard_k4_mlp_v15_05-10-2026.sh": "dcd2ff9376ccfb3b3ddc8a6a894fe5c423c64a5a04e7632e28f7aadb07b299e6",
+    "lower_mlp_up_fusion_05-10-2026.py": "80f57e7e8a4ee6411be7a4f825808be1593800403e72d263b6d09a231fb7c792",
+    "policy.json": "890ca8c466cc6874e26b5dad30f4776e0b1fb5ce98cdc08ccb5032b7d29d62b7",
+    "run_k4_mlp_v15_05-10-2026.sh": "e51a5ef43db6ae67a73940bf147dc0aaa4b19514cb3932c98a07f76aed2e77ff",
+    "test_mlp_up_fusion_cpu_05-10-2026.py": "e9dc0df6f4bf7fac94e41a455db5ab133022c1a0fb49ef14bd06c2fff4648715"
+  }
+}

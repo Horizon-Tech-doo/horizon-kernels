@@ -1,0 +1,11 @@
+{
+  "sha256": {
+    "policy.json": "e2aeb30a38f6720aa0c9940d582cb58879e823dcf333a6b3d6ba299f8561ba22",
+    "guard_k4_mlp_v20_05-10-2026.sh": "b4c66a159ed6d687fbed635438be29ceeabcc9cee8b55a569e1fc0b3235dd27e",
+    "run_k4_mlp_v20_05-10-2026.sh": "bca4d408592680907e2890afc7eccd880acfe4067d43951933be90085e51bf1c",
+    "probe_ncu_driver_05-10-2026.cu": "74dc1016176bf214dce225fce1a81fd39d2ac86774bd83ce527bdc2b273f9059",
+    "probe_ncu_driver_05-10-2026.cpp": "8d40b0c727acc427064ee993c6a70158f63d8d2895edc5a677e935c17e0d83dc",
+    "probe-driver": "7835a5b923bc4ef5edfa4accbc805c73c7b71f6493f852fc4b2bbe732f56e17c",
+    "probe-driver.cubin": "2439090f70a10fb52b534fbc8a48f15bddee7537380425d6033a0131a7802999"
+  }
+}

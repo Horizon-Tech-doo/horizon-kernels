@@ -1,0 +1,176 @@
+diff --git a/tests/v1/core/prefix_cache/test_partial_prefix_cache_hits.py b/tests/v1/core/prefix_cache/test_partial_prefix_cache_hits.py
+index 1d5a139..124f501 100644
+--- a/tests/v1/core/prefix_cache/test_partial_prefix_cache_hits.py
++++ b/tests/v1/core/prefix_cache/test_partial_prefix_cache_hits.py
+@@ -2046,3 +2046,69 @@ def test_boundary_states_offered_past_prompt_for_resumed_prefill():
+     offered = [b for _, _, b in drain_boundary_state_offloads(manager).get("0", [])]
+     assert 2 * block_size in offered
+     assert req0.num_prompt_tokens < 2 * block_size
++
++
++def _prefill_like_scheduler(manager, mock, request):
++    """Prefix lookup + Mamba-aligned chunking + allocation, as the scheduler
++    does it. Returns (hit, shared_prefix_boundary, chunk ends)."""
++    blocks, hit, boundary = manager.get_computed_blocks(request)
++    request.shared_prefix_boundary = boundary
++    ends, pos = [], hit
++    while pos < request.num_prompt_tokens:
++        want = min(mock.max_num_scheduled_tokens, request.num_prompt_tokens - pos)
++        if not ends:
++            n = Scheduler._mamba_block_aligned_split(mock, request, want, hit, 0)
++            assert manager.allocate_slots(request, n, hit, blocks, 1) is not None
++            request.num_computed_tokens = hit + n
++        else:
++            n = Scheduler._mamba_block_aligned_split(mock, request, want)
++            assert manager.allocate_slots(request, n, num_lookahead_tokens=1)
++            request.num_computed_tokens += n
++        pos += n
++        ends.append(pos)
++        _, retained = manager.take_kv_cache_block_copies()
++        manager.block_pool.free_blocks(retained)
++        manager.new_step_starts()
++    return hit, boundary, ends
++
++
++@pytest.mark.parametrize("prompt_len", [21, 27, 29, 35])
++def test_eagle_partial_tail_is_reachable_by_exact_repeat(prompt_len: int):
++    """With Eagle, full attention drops one hash unit from every hit, so the
++    Mamba partial tail must sit one unit before the last prompt hash
++    boundary. Otherwise an exact repeat misses it, falls back to a block
++    boundary, gets a shared-prefix junction, and is chunked differently from
++    the original request (different kernel shapes -> different logits)."""
++    hash_block_size, block_size = 2, 8
++    manager = make_full_mamba_manager(
++        dcp_world_size=1,
++        hash_block_size=hash_block_size,
++        full_block_size=block_size,
++        mamba_block_size=block_size,
++        num_blocks=64,
++        use_eagle=True,
++    )
++    mock = SimpleNamespace(
++        cache_config=SimpleNamespace(block_size=block_size),
++        max_num_scheduled_tokens=64,
++        scheduler_config=SimpleNamespace(long_prefill_token_threshold=0),
++        use_eagle=True,
++        hash_block_size=hash_block_size,
++        mamba_partial_cache_hit=manager.coordinator.enable_partial_hash_hits,
++        mamba_has_prefill_checkpoint_blocks=False,
++    )
++    assert mock.mamba_partial_cache_hit
++    token_ids = list(range(prompt_len))
++
++    first = make_request("first", token_ids, hash_block_size, sha256)
++    hit, _, first_ends = _prefill_like_scheduler(manager, mock, first)
++    assert hit == 0
++    manager.free(first)
++    manager.new_step_starts()
++
++    repeat = make_request("repeat", token_ids, hash_block_size, sha256)
++    hit, boundary, repeat_ends = _prefill_like_scheduler(manager, mock, repeat)
++    assert hit == prompt_len // hash_block_size * hash_block_size - hash_block_size
++    assert boundary == 0
++    # The repeat recomputes exactly the original request's last chunk(s).
++    assert repeat_ends == [e for e in first_ends if e > hit]
+diff --git a/tests/v1/core/test_mamba_align_chunk_split.py b/tests/v1/core/test_mamba_align_chunk_split.py
+index bc809fc..a6c2fc5 100644
+--- a/tests/v1/core/test_mamba_align_chunk_split.py
++++ b/tests/v1/core/test_mamba_align_chunk_split.py
+@@ -265,7 +265,11 @@ def test_unaligned_resume_never_runs_past_its_block(
+     """
+     prompt_len = 3602
+     (request,) = create_requests(1, num_tokens=prompt_len, block_size=ATTN_BLOCK_SIZE)
+-    tail_boundary = prompt_len // ATTN_BLOCK_SIZE * ATTN_BLOCK_SIZE
++    # With Eagle the partial-tail entry sits one hash unit earlier, where an
++    # Eagle lookup (which drops one unit) can reach it.
++    tail_boundary = prompt_len // ATTN_BLOCK_SIZE * ATTN_BLOCK_SIZE - (
++        ATTN_BLOCK_SIZE if use_eagle else 0
++    )
+ 
+     pos, ends = resume_at, []
+     while pos < prompt_len:
+diff --git a/vllm/v1/core/kv_cache_coordinator.py b/vllm/v1/core/kv_cache_coordinator.py
+index b3a9b4c..f79d87e 100644
+--- a/vllm/v1/core/kv_cache_coordinator.py
++++ b/vllm/v1/core/kv_cache_coordinator.py
+@@ -15,6 +15,7 @@ from vllm.v1.core.kv_cache_utils import (
+ )
+ from vllm.v1.core.single_type_kv_cache_manager import (
+     CrossAttentionManager,
++    MambaManager,
+     SingleTypeKVCacheManager,
+     get_manager_for_kv_cache_spec,
+ )
+@@ -661,6 +662,26 @@ class HybridKVCacheCoordinator(KVCacheCoordinator):
+         for manager in self.single_type_managers:
+             manager.cache_hit_alignment_tokens = cache_hit_alignment_tokens
+         self.verify_and_split_kv_cache_groups()
++        # With EAGLE/MTP, every non-Mamba hit drops one hash unit (see
++        # FullAttentionManager.find_longest_cache_hit), so the attention side
++        # can offer at most (last prompt hash boundary - hash_block_size). A
++        # Mamba partial tail stored at the boundary itself is unreachable: the
++        # lookup falls back to a block boundary and the gap is reported as an
++        # uncached shared prefix, which adds a chunk stop the uncached request
++        # never had. Store the tail one unit earlier instead (the scheduler's
++        # partial-tail chunk stop applies the same offset).
++        self.partial_tail_backoff_tokens = (
++            self.hash_block_size
++            if self.enable_partial_hash_hits
++            and any(
++                group.use_eagle and not isinstance(group.spec, MambaSpec)
++                for group in self.attention_groups
++            )
++            else 0
++        )
++        for manager in self.single_type_managers:
++            if isinstance(manager, MambaManager):
++                manager.partial_tail_backoff_tokens = self.partial_tail_backoff_tokens
+ 
+     @property
+     def _cache_hit_alignment_tokens(self) -> int:
+diff --git a/vllm/v1/core/sched/scheduler.py b/vllm/v1/core/sched/scheduler.py
+index 83ed597..e90d7ac 100644
+--- a/vllm/v1/core/sched/scheduler.py
++++ b/vllm/v1/core/sched/scheduler.py
+@@ -438,8 +438,12 @@ class Scheduler(SchedulerInterface):
+                 end = aligned_end
+ 
+         next_block_boundary = (start // block_size + 1) * block_size
++        # With Eagle, every full-attention hit drops one hash unit, so the
++        # tail entry sits one unit before the last hash boundary (it must
++        # match MambaManager._cache_partial_tail_block).
+         tail_boundary = (
+             request.num_prompt_tokens // self.hash_block_size * self.hash_block_size
++            - (self.hash_block_size if self.use_eagle else 0)
+             if self.mamba_partial_cache_hit
+             else 0
+         )
+diff --git a/vllm/v1/core/single_type_kv_cache_manager.py b/vllm/v1/core/single_type_kv_cache_manager.py
+index 4430170..b8fe081 100644
+--- a/vllm/v1/core/single_type_kv_cache_manager.py
++++ b/vllm/v1/core/single_type_kv_cache_manager.py
+@@ -1374,6 +1374,9 @@ class MambaManager(SingleTypeKVCacheManager):
+         self.mamba_cache_mode = kv_cache_spec.mamba_cache_mode
+         self.num_speculative_blocks: int = kv_cache_spec.num_speculative_blocks
+         self.cached_blocks_this_step: set[BlockHashWithGroupId] = set()
++        # Hash units the partial-tail state sits before the last prompt hash
++        # boundary: one unit with EAGLE/MTP (set by the hybrid coordinator).
++        self.partial_tail_backoff_tokens = 0
+         if self.mamba_cache_mode == "align":
+             # Mapping from request ID to the index of the block
+             # allocated in the previous step
+@@ -1867,9 +1870,13 @@ class MambaManager(SingleTypeKVCacheManager):
+             return None
+         if num_tokens % hash_block_size != 0:
+             return None
++        # With EAGLE/MTP every full-attention hit drops one hash unit, so a
++        # state at the last prompt hash boundary could never be reused; store
++        # it where an EAGLE lookup lands instead (see
++        # HybridKVCacheCoordinator.partial_tail_backoff_tokens).
+         latest_prompt_hash_boundary = (
+             request.num_prompt_tokens // hash_block_size
+-        ) * hash_block_size
++        ) * hash_block_size - self.partial_tail_backoff_tokens
+         if num_tokens != latest_prompt_hash_boundary:
+             return None
+ 

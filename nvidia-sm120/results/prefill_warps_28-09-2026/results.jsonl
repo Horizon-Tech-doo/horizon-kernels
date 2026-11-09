@@ -1,0 +1,16 @@
+{"test": "planned_gate", "variant": "v3_baseline", "qlens": [17, 63], "kvlens": [100, 129], "rel_l2": 0.002186142042347794, "ok": true}
+{"test": "planned_gate", "variant": "q8_k32_w8", "qlens": [17, 63], "kvlens": [100, 129], "rel_l2": 0.0021864997065144426, "ok": true}
+{"test": "planned_gate", "variant": "q4_k64_w4", "qlens": [17, 63], "kvlens": [100, 129], "rel_l2": 0.002216337138804082, "ok": true}
+{"test": "planned_gate", "variant": "q4_k32_w4", "qlens": [17, 63], "kvlens": [100, 129], "rel_l2": 0.0021864997065144426, "ok": true}
+{"test": "planned_timing", "qlens": [17, 63], "kvlens": [100, 129], "page_size": 64, "flashinfer_backend": "fa2", "ms": {"flashinfer": [0.22204799950122833, 0.18486399948596954, 0.17315199971199036], "v3_baseline": [0.10214400291442871, 0.08489599823951721, 0.0915519967675209], "q8_k32_w8": [0.1120000034570694, 0.06697600334882736, 0.0761599987745285], "q4_k64_w4": [0.06854400038719177, 0.06966400146484375, 0.06681600213050842], "q4_k32_w4": [0.06563200056552887, 0.06371200084686279, 0.06406400352716446]}, "measurement": "prepared eager, warm cache; diagnostic only"}
+{"test": "planned_gate", "variant": "v3_baseline", "qlens": [1024], "kvlens": [4096], "rel_l2": 0.002244046958349363, "ok": true}
+{"test": "planned_gate", "variant": "q8_k32_w8", "qlens": [1024], "kvlens": [4096], "rel_l2": 0.002244046958349363, "ok": true}
+{"test": "planned_gate", "variant": "q4_k64_w4", "qlens": [1024], "kvlens": [4096], "rel_l2": 0.002256081675484336, "ok": true}
+{"test": "planned_gate", "variant": "q4_k32_w4", "qlens": [1024], "kvlens": [4096], "rel_l2": 0.002244046958349363, "ok": true}
+{"test": "planned_timing", "qlens": [1024], "kvlens": [4096], "page_size": 64, "flashinfer_backend": "fa2", "ms": {"flashinfer": [0.7246720194816589, 0.7071359753608704, 0.6997439861297607], "v3_baseline": [1.595744013786316, 1.5932480096817017, 1.5877439975738525], "q8_k32_w8": [1.1821759939193726, 1.172287940979004, 1.185439944267273], "q4_k64_w4": [1.630911946296692, 1.6226880550384521, 1.6249279975891113], "q4_k32_w4": [1.8435519933700562, 1.8437440395355225, 1.8440639972686768]}, "measurement": "prepared eager, warm cache; diagnostic only"}
+{"test": "planned_gate", "variant": "v3_baseline", "qlens": [8192], "kvlens": [16384], "rel_l2": 0.002350001774597933, "ok": true}
+{"test": "planned_gate", "variant": "q8_k32_w8", "qlens": [8192], "kvlens": [16384], "rel_l2": 0.002350001774597933, "ok": true}
+{"test": "planned_gate", "variant": "q4_k64_w4", "qlens": [8192], "kvlens": [16384], "rel_l2": 0.0023560897345845867, "ok": true}
+{"test": "planned_gate", "variant": "q4_k32_w4", "qlens": [8192], "kvlens": [16384], "rel_l2": 0.002350001774597933, "ok": true}
+{"test": "planned_timing", "qlens": [8192], "kvlens": [16384], "page_size": 64, "flashinfer_backend": "fa2", "ms": {"flashinfer": [13.02729606628418, 12.965056419372559, 12.960736274719238], "v3_baseline": [29.358976364135742, 29.247360229492188, 29.234495162963867], "q8_k32_w8": [27.264991760253906, 27.35977554321289, 27.261856079101562], "q4_k64_w4": [39.52595138549805, 39.537376403808594, 39.524383544921875], "q4_k32_w4": [45.28192138671875, 45.28688049316406, 45.26668930053711]}, "measurement": "prepared eager, warm cache; diagnostic only"}
+{"test": "complete", "ok": true}

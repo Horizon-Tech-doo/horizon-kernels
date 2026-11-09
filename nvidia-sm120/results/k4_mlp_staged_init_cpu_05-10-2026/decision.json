@@ -1,0 +1,11 @@
+{
+  "decision": "CPU_PROOF_AND_COMPILE_PASS",
+  "builds": 40,
+  "ring_cases": 144,
+  "peak_initial_groups": 6,
+  "peak_registers": 95,
+  "zero_spills": true,
+  "committed_source_matches_frozen": true,
+  "kernel_commit": "95e351849a32c9c51153ea85504f27daf8682896",
+  "GPU_pending_at_CPU_freeze": true
+}

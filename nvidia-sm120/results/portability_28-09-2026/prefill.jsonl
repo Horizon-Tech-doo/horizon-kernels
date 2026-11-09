@@ -1,0 +1,13 @@
+{"test": "planned_gate", "variant": "v1", "qlens": [17, 63], "kvlens": [100, 129], "rel_l2": 0.002186142042347794, "ok": true}
+{"test": "planned_gate", "variant": "v2", "qlens": [17, 63], "kvlens": [100, 129], "rel_l2": 0.002186142042347794, "ok": true}
+{"test": "planned_gate", "variant": "v3", "qlens": [17, 63], "kvlens": [100, 129], "rel_l2": 0.002186142042347794, "ok": true}
+{"test": "planned_timing", "qlens": [17, 63], "kvlens": [100, 129], "page_size": 64, "flashinfer_backend": "fa2", "ms": {"flashinfer": [0.10592000186443329, 0.08959999680519104, 0.08441600203514099], "v1": [0.17084799706935883, 0.1578879952430725, 0.16742399334907532], "v2": [0.07900799810886383, 0.0570559985935688, 0.058111999183893204], "v3": [0.06809599697589874, 0.06678400188684464, 0.06425599753856659]}, "measurement": "prepared eager, warm cache; diagnostic only"}
+{"test": "planned_gate", "variant": "v1", "qlens": [1024], "kvlens": [4096], "rel_l2": 0.002244046958349363, "ok": true}
+{"test": "planned_gate", "variant": "v2", "qlens": [1024], "kvlens": [4096], "rel_l2": 0.002244046958349363, "ok": true}
+{"test": "planned_gate", "variant": "v3", "qlens": [1024], "kvlens": [4096], "rel_l2": 0.002244046958349363, "ok": true}
+{"test": "planned_timing", "qlens": [1024], "kvlens": [4096], "page_size": 64, "flashinfer_backend": "fa2", "ms": {"flashinfer": [0.7177280187606812, 0.7156479954719543, 0.7130560278892517], "v1": [6.717311859130859, 6.700255870819092, 6.697184085845947], "v2": [1.83843195438385, 1.8382400274276733, 1.8356159925460815], "v3": [1.6057920455932617, 1.6047040224075317, 1.6064000129699707]}, "measurement": "prepared eager, warm cache; diagnostic only"}
+{"test": "planned_gate", "variant": "v1", "qlens": [8192], "kvlens": [16384], "rel_l2": 0.002350001774597933, "ok": true}
+{"test": "planned_gate", "variant": "v2", "qlens": [8192], "kvlens": [16384], "rel_l2": 0.002350001774597933, "ok": true}
+{"test": "planned_gate", "variant": "v3", "qlens": [8192], "kvlens": [16384], "rel_l2": 0.002350001774597933, "ok": true}
+{"test": "planned_timing", "qlens": [8192], "kvlens": [16384], "page_size": 64, "flashinfer_backend": "fa2", "ms": {"flashinfer": [13.00812816619873, 12.922207832336426, 12.9302396774292], "v1": [134.92259216308594, 134.9786834716797, 134.79986572265625], "v2": [42.94502258300781, 42.96099090576172, 42.94451141357422], "v3": [29.264768600463867, 29.25446319580078, 29.263103485107422]}, "measurement": "prepared eager, warm cache; diagnostic only"}
+{"test": "complete", "ok": true}

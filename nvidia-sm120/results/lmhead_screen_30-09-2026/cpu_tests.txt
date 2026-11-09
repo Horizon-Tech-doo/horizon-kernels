@@ -1,0 +1,8 @@
+PASS bound_and_ties: ok
+PASS kernel_emulation: ok
+PASS vllm_masks_equal: ok (rows with a tie swap at the top-p cut: 8)
+PASS eligibility: ok
+PASS real_class_hooks: ok
+PASS real_weights: ok rows 192 greedy mean 46.4 overflow 1 | top20 mean 2319.0 overflow 1
+PASS extra_compare: ok
+7/7 passed

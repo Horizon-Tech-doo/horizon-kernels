@@ -1,0 +1,457 @@
+[Lang] Add T.reducer_scale for sums rescaled at each step
+
+Online softmax keeps a row sum that is rescaled whenever the running maximum
+moves, so flash attention reduced it across threads at every K step: the scale has
+to apply to the sum of all threads, and reducers could only accumulate.
+Multiplication distributes over the sum, so each thread can scale its own partial
+and the sum can be reduced once at the end.
+
+T.reducer_scale(acc[i], factor) does that, on sum reducers only. Its loop must run
+on every thread that holds a partial of acc[i]; ReducerPlanAndMaterialize compares
+the two thread sets and rejects a mismatch instead of returning a partly scaled
+sum. A scale site proposes no plan, so the update sites still choose the layout.
+
+Measured on MI250X, ROCm 7.2.3, same process, 2 rounds: reducing once instead of per
+step adds 0 to 4% to flash attention at d128 and d256, depending on tile.
+
+diff --git a/src/op/reducer.cc b/src/op/reducer.cc
+index 64ec23a..c3e933e 100644
+--- a/src/op/reducer.cc
++++ b/src/op/reducer.cc
+@@ -423,7 +423,8 @@ TIR_REGISTER_TL_TILE_OP(ReducerInitOp, reducer_init)
+ // ---------------------------------------------------------------------------
+ 
+ ReducerUpdateArgs ParseReducerUpdate(const tirx::CallNode *call) {
+-  ICHECK(call->op.same_as(reducer_update()));
++  ICHECK(call->op.same_as(reducer_update()) ||
++         call->op.same_as(reducer_scale()));
+   ICHECK_EQ(call->args.size(), 2)
+       << "reducer_update expects (acc[indices], contribution value)";
+   const auto *load = call->args[0].as<BufferLoadNode>();
+@@ -445,6 +446,11 @@ TIR_DEFINE_TL_BUILTIN(reducer_update)
+     .set_attr<TCallEffectKind>("TCallEffectKind",
+                                Integer(CallEffectKind::kOpaque));
+ 
++TIR_DEFINE_TL_BUILTIN(reducer_scale)
++    .set_num_inputs(2)
++    .set_attr<TCallEffectKind>("TCallEffectKind",
++                               Integer(CallEffectKind::kOpaque));
++
+ // ---------------------------------------------------------------------------
+ // FinalizeReducerV2Op
+ // ---------------------------------------------------------------------------
+diff --git a/src/op/reducer.h b/src/op/reducer.h
+index 734e699..6a0359d 100644
+--- a/src/op/reducer.h
++++ b/src/op/reducer.h
+@@ -168,14 +168,23 @@ public:
+ /// straight-line code, so no cross-statement write ordering is lost).
+ TVM_DLL const Op &reducer_update();
+ 
+-/*! \brief Parsed form of a tl.reducer_update call. */
++/// tl.reducer_scale(acc[indices], factor): multiply the accumulated sum of the
++/// logical output selected by `indices` by `factor`, as if every contribution
++/// so far had been scaled, without communicating. Same argument shape as
++/// tl.reducer_update. Valid on "sum" reducers only, since multiplication
++/// distributes over the sum, and only in a T.Parallel nest that runs on every
++/// thread holding a partial of that output, with a factor those threads agree
++/// on; ReducerPlanAndMaterialize checks the thread sets.
++TVM_DLL const Op &reducer_scale();
++
++/*! \brief Parsed form of a tl.reducer_update or tl.reducer_scale call. */
+ struct ReducerUpdateArgs {
+   Buffer reducer;
+   ffi::Array<PrimExpr> indices; ///< logical output indices
+   PrimExpr value;               ///< contribution expression
+ };
+ 
+-/*! \brief Parse and validate a tl.reducer_update call. */
++/*! \brief Parse and validate a tl.reducer_update or tl.reducer_scale call. */
+ ReducerUpdateArgs ParseReducerUpdate(const tirx::CallNode *call);
+ 
+ /// T.finalize_reducer(acc, dst): complete the epoch's cross-participant
+diff --git a/src/transform/reducer_plan_materialize.cc b/src/transform/reducer_plan_materialize.cc
+index 70b254e..c480522 100644
+--- a/src/transform/reducer_plan_materialize.cc
++++ b/src/transform/reducer_plan_materialize.cc
+@@ -130,6 +130,7 @@ struct EpochInfo {
+   int64_t thread_extent{-1}; // participant extent at the init site
+   int64_t thread_min{0};
+   std::vector<UpdateSite> updates;
++  std::vector<UpdateSite> scales; // tl.reducer_scale sites; never propose a plan
+   Buffer dst;
+   int64_t batch{1};
+   // False when some structural prerequisite for plan analysis is missing
+@@ -232,7 +233,7 @@ private:
+       }
+       return;
+     }
+-    if (op->op.same_as(reducer_update())) {
++    if (op->op.same_as(reducer_update()) || op->op.same_as(reducer_scale())) {
+       const auto *load = op->args[0].as<BufferLoadNode>();
+       auto it = load != nullptr ? epochs_.find(load->buffer->data.get())
+                                 : epochs_.end();
+@@ -240,9 +241,10 @@ private:
+         EpochInfo *epoch = &it->second;
+         if (cur_loop_layout_.defined()) {
+           ReducerUpdateArgs update = ParseReducerUpdate(op);
+-          epoch->updates.push_back(UpdateSite{
+-              cur_loop_layout_.value(), cur_loop_vars_, update.indices,
+-              update.value, cur_serial_vars_, cur_serial_extents_});
++          (op->op.same_as(reducer_scale()) ? epoch->scales : epoch->updates)
++              .push_back(UpdateSite{
++                  cur_loop_layout_.value(), cur_loop_vars_, update.indices,
++                  update.value, cur_serial_vars_, cur_serial_extents_});
+         } else {
+           epoch->analyzable = false;
+         }
+@@ -597,6 +599,63 @@ DeriveNarrowLowering(const EpochInfo &epoch, const PartialFragment &partial,
+ // Phase C: materialization
+ // ---------------------------------------------------------------------------
+ 
++/*! \brief Every thread holding a partial of logical output i must run the
++ *  tl.reducer_scale for i, or part of the sum would not be scaled. The storage
++ *  layout says which threads hold it, the scale site's loop layout which threads
++ *  run it. Both are enumerated: tiles are small and these are constants. */
++void CheckScaleSites(const EpochInfo &epoch, const Fragment &storage) {
++  arith::Analyzer analyzer;
++  auto thread_of = [&](const Fragment &layout, const Array<PrimExpr> &vars,
++                       int64_t rep) -> int64_t {
++    PrimExpr thread = analyzer.Simplify(layout->ForwardThread(
++        vars, Optional<PrimExpr>(IntImm(DataType::Int(32), rep))));
++    const int64_t *value = as_const_int(thread);
++    ICHECK(value) << "T.reducer_scale needs constant thread mappings, got "
++                  << thread;
++    return *value;
++  };
++  for (const UpdateSite &site : epoch.scales) {
++    ICHECK_EQ(site.indices.size(), site.loop_vars.size())
++        << "T.reducer_scale indices must be the enclosing T.Parallel loop "
++           "variables, in order.";
++    for (size_t i = 0; i < site.indices.size(); ++i) {
++      ICHECK(site.indices[i].same_as(site.loop_vars[i]))
++          << "T.reducer_scale indices must be the enclosing T.Parallel loop "
++             "variables, in order.";
++    }
++    const int64_t *n_storage_rep = as_const_int(storage->ReplicateExtent());
++    const int64_t *n_site_rep = as_const_int(site.loop_layout->ReplicateExtent());
++    ICHECK(n_storage_rep && n_site_rep)
++        << "T.reducer_scale needs constant replication";
++    std::vector<int64_t> index(site.indices.size(), 0);
++    Array<PrimExpr> shape = storage->InputShape();
++    while (true) {
++      Array<PrimExpr> vars;
++      for (int64_t v : index) {
++        vars.push_back(IntImm(DataType::Int(32), v));
++      }
++      std::unordered_set<int64_t> runs;
++      for (int64_t rep = 0; rep < *n_site_rep; ++rep) {
++        runs.insert(thread_of(site.loop_layout, vars, rep));
++      }
++      for (int64_t rep = 0; rep < *n_storage_rep; ++rep) {
++        ICHECK(runs.count(thread_of(storage, vars, rep)))
++            << "T.reducer_scale on `" << epoch.buffer
++            << "` does not run on every thread holding a partial of the "
++               "scaled output; thread "
++            << thread_of(storage, vars, rep) << " would keep its unscaled.";
++      }
++      int d = static_cast<int>(index.size()) - 1;
++      while (d >= 0 && ++index[d] == *as_const_int(shape[d])) {
++        index[d--] = 0;
++      }
++      if (d < 0) {
++        break;
++      }
++    }
++  }
++}
++
+ class ReducerPlanAndMaterializeRewriter : public IRMutatorWithAnalyzer {
+ public:
+   static PrimFunc Substitute(PrimFunc f) {
+@@ -753,6 +812,7 @@ public:
+         } else {
+           DLOG(INFO) << msg;
+         }
++        CheckScaleSites(epoch, decision->storage_layout);
+         rewriter.narrow_decisions_.emplace(var, *decision);
+         // Destination-layout overrides must be registered BEFORE traversal:
+         // LayoutInference publishes the stale entry on every block, and the
+@@ -953,6 +1013,9 @@ private:
+     if (call->op.same_as(reducer_update())) {
+       return MaterializeUpdate(call);
+     }
++    if (call->op.same_as(reducer_scale())) {
++      return MaterializeScale(call);
++    }
+     if (call->op.same_as(FinalizeReducerV2Op::Get())) {
+       return MaterializeFinalize(call);
+     }
+@@ -1114,6 +1177,34 @@ private:
+                     IntImm(DataType::Int(32), 1), store);
+   }
+ 
++  Stmt MaterializeScale(const CallNode *call) {
++    ReducerUpdateArgs scale = ParseReducerUpdate(call);
++    auto it = plans_.find(scale.reducer->data.get());
++    ICHECK(it != plans_.end())
++        << "reducer_scale on `" << scale.reducer
++        << "` before reducer_init (should have been rejected by "
++           "VerifyReducerEpoch)";
++    const Plan &plan = it->second;
++    ICHECK(plan.narrow) << "T.reducer_scale on `" << scale.reducer
++                        << "` needs per-thread partials, but this reducer "
++                           "fell back to the wide plan.";
++    // Every replica multiplies its own partial: no multiplicity guard.
++    PrimExpr factor = VisitExpr(scale.value);
++    auto scale_one = [&](const Buffer &target, const Array<PrimExpr> &indices) {
++      return BufferStore(target, BufferLoad(target, indices) * factor, indices);
++    };
++    if (!plan.packed) {
++      return scale_one(plan.new_buffer, scale.indices);
++    }
++    Array<Stmt> seq;
++    for (int lane = 0; lane < 2; ++lane) {
++      Array<PrimExpr> indices = scale.indices;
++      indices.push_back(IntImm(DataType::Int(32), lane));
++      seq.push_back(scale_one(plan.packed_buffer, indices));
++    }
++    return SeqStmt(seq);
++  }
++
+   Stmt MaterializeFinalize(const CallNode *call) {
+     Buffer old_buffer = RegionArgBuffer(call->args[0]);
+     Buffer dst = RegionArgBuffer(call->args[1]);
+diff --git a/src/transform/verify_reducer_consumed.cc b/src/transform/verify_reducer_consumed.cc
+index c08cddd..69552c7 100644
+--- a/src/transform/verify_reducer_consumed.cc
++++ b/src/transform/verify_reducer_consumed.cc
+@@ -53,6 +53,7 @@ void CheckFunc(const PrimFunc &f) {
+     } else if (const auto *call = obj.as<CallNode>()) {
+       ICHECK(!call->op.same_as(ReducerInitOp::Get()) &&
+              !call->op.same_as(reducer_update()) &&
++             !call->op.same_as(reducer_scale()) &&
+              !call->op.same_as(FinalizeReducerV2Op::Get()))
+           << "internal error: first-class reducer op `" << call->op
+           << "` survived past ReducerPlanAndMaterialize.";
+diff --git a/src/transform/verify_reducer_epoch.cc b/src/transform/verify_reducer_epoch.cc
+index 2920f26..28879eb 100644
+--- a/src/transform/verify_reducer_epoch.cc
++++ b/src/transform/verify_reducer_epoch.cc
+@@ -172,6 +172,33 @@ private:
+       }
+       return;
+     }
++    if (op->op.same_as(reducer_scale())) {
++      const auto *load = op->args[0].as<BufferLoadNode>();
++      ICHECK(load) << "reducer_scale target must be written as "
++                      "`acc[indices]` in the first argument position, got "
++                   << op->args[0];
++      Var var = load->buffer->data;
++      RequireReducer(var, "reducer_scale");
++      auto op_str = info_.at(var.get()).Get("op");
++      if (!op_str || op_str.value().cast<String>() != "sum") {
++        LOG(FATAL) << "T.reducer_scale on reducer `" << var
++                   << "`: only a sum reducer can be scaled.";
++      }
++      if (state_.at(var) != EpochState::kActive) {
++        LOG(FATAL) << "T.reducer_scale on reducer `" << var
++                   << "` outside its epoch: call it after T.reducer_init and "
++                      "before T.finalize_reducer.";
++      }
++      if (parallel_depth_ == 0) {
++        LOG(FATAL) << "T.reducer_scale on reducer `" << var
++                   << "` outside any T.Parallel loop is not supported.";
++      }
++      for (const auto &index : load->indices) {
++        VisitExpr(index);
++      }
++      VisitExpr(op->args[1]);
++      return;
++    }
+     if (op->op.same_as(reducer_update())) {
+       const auto *load = op->args[0].as<BufferLoadNode>();
+       ICHECK(load) << "reducer_update target must be written as "
+diff --git a/testing/python/amd/test_tilelang_hip_reducer_scale.py b/testing/python/amd/test_tilelang_hip_reducer_scale.py
+new file mode 100644
+index 0000000..2ad1307
+--- /dev/null
++++ b/testing/python/amd/test_tilelang_hip_reducer_scale.py
+@@ -0,0 +1,102 @@
++"""T.reducer_scale: a running sum rescaled per step, reduced once at the end."""
++
++import pytest
++import tilelang
++import tilelang.rocm.language as T
++import tilelang.testing
++import torch
++from tilelang.tileop.base import GemmWarpPolicy
++
++
++@tilelang.jit(out_idx=[-1], target="hip")
++def _scaled_sum(M, N, steps, threads, one_thread_per_row=False):
++    layout = T.Fragment((M,), forward_fn=lambda i: (i, 0)) if one_thread_per_row else None
++
++    @T.prim_func
++    def main(
++        A: T.Tensor((steps, M, 32), T.float16),
++        B: T.Tensor((N, 32), T.float16),
++        out: T.Tensor((M, N), T.float32),
++    ):
++        with T.Kernel(1, threads=threads):
++            A_s = T.alloc_shared((M, 32), T.float16)
++            B_s = T.alloc_shared((N, 32), T.float16)
++            s = T.alloc_fragment((M, N), T.float32)
++            m = T.alloc_fragment((M,), T.float32)
++            f = T.alloc_fragment((M,), T.float32)
++            r = T.alloc_fragment((M,), T.float32)
++            acc = T.alloc_reducer((M,), T.float32, op="sum")
++            T.reducer_init(acc)
++            T.copy(B[0, 0], B_s)
++            for k in T.serial(steps):
++                T.copy(A[k, 0, 0], A_s)
++                T.clear(s)
++                T.gemm(A_s, B_s, s, transpose_B=True, policy=GemmWarpPolicy.FullRow)
++                # The row maximum is replicated over the row's threads, as a factor must be.
++                T.reduce_max(s, m, dim=1)
++                for i in T.Parallel(M):
++                    f[i] = T.exp(-T.abs(m[i]))
++                for i in T.Parallel(M, loop_layout=layout):
++                    T.reducer_scale(acc[i], f[i])
++                for i, j in T.Parallel(M, N):
++                    T.reducer_update(acc[i], s[i, j])
++            T.finalize_reducer(acc, r)
++            for i, j in T.Parallel(M, N):
++                out[i, j] = r[i]
++
++    return main
++
++
++@tilelang.testing.requires_rocm
++@pytest.mark.parametrize(("threads", "M", "N"), [(64, 64, 64), (256, 128, 64), (256, 64, 64)])
++def test_scaled_sum_matches_reference(threads, M, N):
++    steps = 3
++    kernel = _scaled_sum(M, N, steps, threads)
++    src = kernel.get_kernel_source()
++    assert "workspace" not in src
++    A = torch.randn(steps, M, 32, dtype=torch.float16, device="cuda")
++    B = torch.randn(N, 32, dtype=torch.float16, device="cuda")
++    out = kernel(A, B)
++    ref = torch.zeros(M, device="cuda")
++    for k in range(steps):
++        scores = A[k].float() @ B.float().T
++        ref = ref * torch.exp(-scores.max(dim=1).values.abs()) + scores.sum(dim=1)
++    assert (out - ref[:, None]).abs().max() <= 1e-2 * ref.abs().max()
++
++
++@tilelang.jit(out_idx=[-1], target="hip")
++def _scale_max():
++    @T.prim_func
++    def main(A: T.Tensor((64, 64), T.float32), out: T.Tensor((64,), T.float32)):
++        with T.Kernel(1, threads=64):
++            s = T.alloc_fragment((64, 64), T.float32)
++            r = T.alloc_fragment((64,), T.float32)
++            acc = T.alloc_reducer((64,), T.float32, op="max")
++            T.reducer_init(acc)
++            for i in T.Parallel(64):
++                T.reducer_scale(acc[i], 2.0)
++            for i, j in T.Parallel(64, 64):
++                s[i, j] = A[i, j]
++            for i, j in T.Parallel(64, 64):
++                T.reducer_update(acc[i], s[i, j])
++            T.finalize_reducer(acc, r)
++            for i in T.Parallel(64):
++                out[i] = r[i]
++
++    return main
++
++
++@tilelang.testing.requires_rocm
++def test_only_sum_can_be_scaled():
++    with pytest.raises(Exception, match="only a sum reducer can be scaled"):
++        _scale_max().get_kernel_source()
++
++
++@tilelang.testing.requires_rocm
++def test_scale_must_reach_every_partial():
++    with pytest.raises(Exception, match="does not run on every thread"):
++        _scaled_sum(64, 64, 2, 64, one_thread_per_row=True).get_kernel_source()
++
++
++if __name__ == "__main__":
++    tilelang.testing.main()
+diff --git a/tilelang/language/common.py b/tilelang/language/common.py
+index 7cf89ba..23559bb 100644
+--- a/tilelang/language/common.py
++++ b/tilelang/language/common.py
+@@ -96,6 +96,7 @@ from .reduce_op import (
+     reduce_bitxor,  # noqa: F401
+     reducer_init,  # noqa: F401
+     reducer_update,  # noqa: F401
++    reducer_scale,  # noqa: F401
+     finalize_reducer,  # noqa: F401
+     warp_reduce_sum,  # noqa: F401
+     warp_reduce_max,  # noqa: F401
+@@ -268,6 +269,7 @@ _LOCAL_EXPORTS = (
+     "fill",
+     "reducer_init",
+     "reducer_update",
++    "reducer_scale",
+     "finalize_reducer",
+     "gemm",
+     "gemm_blockscaled",
+diff --git a/tilelang/language/reduce_op.py b/tilelang/language/reduce_op.py
+index 406e3c8..6f16d7b 100644
+--- a/tilelang/language/reduce_op.py
++++ b/tilelang/language/reduce_op.py
+@@ -440,6 +440,50 @@ def reducer_update(target: tirx.BufferLoad, value) -> tirx.PrimExpr:
+     )
+ 
+ 
++def reducer_scale(target: tirx.BufferLoad, factor) -> tirx.PrimExpr:
++    """Multiply the sum accumulated so far for one logical output by `factor`.
++
++    The result is what scaling every earlier contribution would have given, so
++    no thread has to communicate. It lets a running sum that is rescaled at each
++    step, as in online softmax, be reduced once at the end::
++
++        for k in T.serial(n):
++            for i in T.Parallel(M):
++                T.reducer_scale(acc[i], scale[i])
++            for i, j in T.Parallel(M, N):
++                T.reducer_update(acc[i], x[i, j])
++        T.finalize_reducer(acc, dst)
++
++    Only "sum" reducers can be scaled. The enclosing `T.Parallel` must run on
++    every thread holding a partial of `acc[indices]`, with its loop variables as
++    `indices`; the compiler rejects anything else. Each replica applies the
++    factor to its own partial, so `factor` must be equal on all of them, which a
++    fragment read with the same indices gives.
++
++    Args:
++        target (tirx.BufferLoad): `acc[indices]` selecting the logical output.
++        factor: Scale expression (cast to the reducer dtype if needed).
++
++    Returns:
++        tirx.Call: Handle to the reducer_scale intrinsic call.
++    """
++    if not isinstance(target, tirx.BufferLoad):
++        raise ValueError(
++            f"reducer_scale expects `acc[indices]` as its first argument, got {type(target)}; the reducer cannot be read or aliased."
++        )
++    dtype = target.buffer.dtype
++    if isinstance(factor, (int, float)):
++        factor = tirx.const(factor, dtype)
++    elif isinstance(factor, tirx.PrimExpr) and factor.dtype != dtype:
++        factor = tirx.Cast(dtype, factor)
++    return tirx.call_intrin(
++        "handle",
++        tirx.op.Op.get("tl.reducer_scale"),
++        target,
++        factor,
++    )
++
++
+ def finalize_reducer(
+     reducer: tirx.Buffer, dst: tirx.Buffer | None = None, batch: int = 1, annotations: dict | None = None
+ ) -> tirx.PrimExpr:

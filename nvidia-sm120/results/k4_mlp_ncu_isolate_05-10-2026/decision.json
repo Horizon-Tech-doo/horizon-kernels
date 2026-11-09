@@ -1,0 +1,27 @@
+{
+  "decision": "PROFILER_CUDA_INITIALIZATION_FAILURE",
+  "exit_codes": {
+    "full-ncu-single": 11,
+    "torch-ncu": 11,
+    "native-ncu": 11,
+    "torch-normal": 0,
+    "full-normal": 0,
+    "full-ncu": 11,
+    "native-normal": 0,
+    "cpu-normal": 0,
+    "cpu-ncu": 0
+  },
+  "hardware_counters_available": false,
+  "plain_full_reference": {
+    "rows": 4,
+    "kind": "baseline",
+    "weight_bytes": 602259456,
+    "graph_layers": 4,
+    "grid": null,
+    "shared_bound": null,
+    "exact": true,
+    "counters_reset": true,
+    "pid": 0
+  },
+  "next": "Compare pure CUDA driver API under compatibility and system library paths; preserve provider interception."
+}

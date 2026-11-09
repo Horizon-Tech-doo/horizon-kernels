@@ -1,0 +1,65 @@
+{
+  "decision": "NO_DIAGNOSTIC_SPEED_WIN",
+  "eligible_stages": [],
+  "matched_effects": [
+    {
+      "rows": 4,
+      "stages": 3,
+      "control_over_lookup": [
+        0.9953703351258912,
+        0.9953703351258912,
+        0.9953917368992188
+      ],
+      "production_over_lookup": [
+        0.9675926153611499,
+        0.9675926153611499,
+        0.967741957115974
+      ]
+    },
+    {
+      "rows": 4,
+      "stages": 4,
+      "control_over_lookup": [
+        0.9929411912944076,
+        0.9976415257847927,
+        0.9906103257517858
+      ],
+      "production_over_lookup": [
+        0.9835294235270843,
+        0.9858490860676462,
+        0.9859154544682542
+      ]
+    },
+    {
+      "rows": 32,
+      "stages": 3,
+      "control_over_lookup": [
+        0.9576948644564979,
+        0.9561094851950307,
+        0.962965146622006
+      ],
+      "production_over_lookup": [
+        0.8653325824996426,
+        0.860635727510189,
+        0.8555060615460828
+      ]
+    },
+    {
+      "rows": 32,
+      "stages": 4,
+      "control_over_lookup": [
+        0.961091791520543,
+        0.9613176607698101,
+        0.9700391963147769
+      ],
+      "production_over_lookup": [
+        0.8754331054615621,
+        0.8722877234625409,
+        0.8651179066698044
+      ]
+    }
+  ],
+  "verified_configurations": 8,
+  "full_five_row_gate_pending": true,
+  "serving_gate_pending": true
+}

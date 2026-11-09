@@ -1,0 +1,177 @@
+{
+  "tilelang_version": "0.1.15",
+  "records": [
+    {
+      "rows": 4,
+      "hw": 0,
+      "fused": 5,
+      "reset": false,
+      "splits": [
+        1,
+        8
+      ],
+      "returncode": 0,
+      "registers": [
+        "182"
+      ],
+      "spill_stores": [
+        "0"
+      ],
+      "spill_loads": [
+        "0"
+      ],
+      "seconds": 7.6,
+      "kernel_parameters": [
+        "KernelParam(dtype=dtype('int32'), shape=[188, MAXT, 8])",
+        "KernelParam(dtype=dtype('int32'), shape=[188, MAXT])",
+        "KernelParam(dtype=dtype('int32'), shape=[188])",
+        "KernelParam(dtype=dtype('int32'), shape=[n_counters])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[M, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[34816])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[5120])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[M, 34816])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[M, 17408])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[M, 5120])",
+        "KernelParam(dtype=dtype('float32'), shape=[1, M, 34816])",
+        "KernelParam(dtype=dtype('float32'), shape=[8, M, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[312])"
+      ]
+    },
+    {
+      "rows": 4,
+      "hw": 0,
+      "fused": 5,
+      "reset": true,
+      "splits": [
+        1,
+        8
+      ],
+      "returncode": 0,
+      "registers": [
+        "180"
+      ],
+      "spill_stores": [
+        "0"
+      ],
+      "spill_loads": [
+        "0"
+      ],
+      "seconds": 6.3,
+      "kernel_parameters": [
+        "KernelParam(dtype=dtype('int32'), shape=[188, MAXT, 8])",
+        "KernelParam(dtype=dtype('int32'), shape=[188, MAXT])",
+        "KernelParam(dtype=dtype('int32'), shape=[188])",
+        "KernelParam(dtype=dtype('int32'), shape=[NC])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[M, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[34816])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[5120])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[M, 34816])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[M, 17408])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[M, 5120])",
+        "KernelParam(dtype=dtype('float32'), shape=[1, M, 34816])",
+        "KernelParam(dtype=dtype('float32'), shape=[8, M, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[312])"
+      ]
+    },
+    {
+      "rows": 32,
+      "hw": 0,
+      "fused": 5,
+      "reset": false,
+      "splits": [
+        1,
+        4
+      ],
+      "returncode": 0,
+      "registers": [
+        "186"
+      ],
+      "spill_stores": [
+        "0"
+      ],
+      "spill_loads": [
+        "0"
+      ],
+      "seconds": 6.0,
+      "kernel_parameters": [
+        "KernelParam(dtype=dtype('int32'), shape=[188, MAXT, 8])",
+        "KernelParam(dtype=dtype('int32'), shape=[188, MAXT])",
+        "KernelParam(dtype=dtype('int32'), shape=[188])",
+        "KernelParam(dtype=dtype('int32'), shape=[n_counters])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[M, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[34816])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[5120])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[M, 34816])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[M, 17408])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[M, 5120])",
+        "KernelParam(dtype=dtype('float32'), shape=[1, M, 34816])",
+        "KernelParam(dtype=dtype('float32'), shape=[4, M, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[312])"
+      ]
+    },
+    {
+      "rows": 32,
+      "hw": 0,
+      "fused": 5,
+      "reset": true,
+      "splits": [
+        1,
+        4
+      ],
+      "returncode": 0,
+      "registers": [
+        "193"
+      ],
+      "spill_stores": [
+        "0"
+      ],
+      "spill_loads": [
+        "0"
+      ],
+      "seconds": 6.4,
+      "kernel_parameters": [
+        "KernelParam(dtype=dtype('int32'), shape=[188, MAXT, 8])",
+        "KernelParam(dtype=dtype('int32'), shape=[188, MAXT])",
+        "KernelParam(dtype=dtype('int32'), shape=[188])",
+        "KernelParam(dtype=dtype('int32'), shape=[NC])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('int32'), shape=[1])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[M, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[1088, 160, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[34816])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 128])",
+        "KernelParam(dtype=dtype('int32'), shape=[160, 544, 16])",
+        "KernelParam(dtype=dtype('float32'), shape=[5120])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[M, 34816])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[M, 17408])",
+        "KernelParam(dtype=dtype('bfloat16'), shape=[M, 5120])",
+        "KernelParam(dtype=dtype('float32'), shape=[1, M, 34816])",
+        "KernelParam(dtype=dtype('float32'), shape=[4, M, 5120])",
+        "KernelParam(dtype=dtype('int32'), shape=[312])"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+[ROCm] Do not allocate a reduce workspace within a wavefront
+
+AllReduceNeedsWorkspace returned true above 32 reducing threads. tl::AllReduce
+only touches the workspace when a step crosses a wavefront, so on wave64 targets
+a 64-thread reduce allocated LDS it never used. The cost was not the LDS: the
+workspace shows up as a shared access in the IR, so ThreadSync put barriers around
+every such reduce. A flash attention K step on gfx90a went from 4 barriers to 2
+with no kernel change, and the barrier count is what ThreadSync derives, so it
+stays correct by construction. Wave32 targets are unchanged.
+
+diff --git a/src/rocm/op/reduce.cc b/src/rocm/op/reduce.cc
+index 462708d..0b3d99d 100644
+--- a/src/rocm/op/reduce.cc
++++ b/src/rocm/op/reduce.cc
+@@ -6,6 +6,7 @@
+ #include "backend/common/op/reduce.h"
+ 
+ #include "backend/common/target_utils.h"
++#include "rocm/target_utils.h"
+ 
+ #include <sstream>
+ 
+@@ -17,8 +18,13 @@ using namespace tirx;
+ namespace rocm {
+ 
+ struct Reduce : backend::ReduceLowerer<Reduce> {
+-  static bool AllReduceNeedsWorkspace(int reducing_threads, int, Target) {
+-    return reducing_threads > 32;
++  static bool AllReduceNeedsWorkspace(int reducing_threads, int,
++                                      Target target) {
++    // tl::AllReduce exchanges through shared memory only when the step crosses
++    // a wavefront (offset = threads / 2 >= wave size). Within a wavefront it
++    // uses shfl_xor and never touches the workspace, but a workspace in the IR
++    // still costs LDS and makes ThreadSync add barriers around the reduce.
++    return reducing_threads > TargetRocmGetWarpSize(target);
+   }
+ 
+   static bool SupportsFp16Bf16NanReduce(Target) { return false; }
+diff --git a/testing/python/amd/test_tilelang_hip_reduce_workspace.py b/testing/python/amd/test_tilelang_hip_reduce_workspace.py
+new file mode 100644
+index 0000000..178d4bb
+--- /dev/null
++++ b/testing/python/amd/test_tilelang_hip_reduce_workspace.py
+@@ -0,0 +1,50 @@
++"""T.reduce within one wavefront needs no LDS workspace, and so no barriers around it."""
++
++import pytest
++import tilelang
++import tilelang.rocm.language as T
++import tilelang.testing
++import torch
++from tilelang.tileop.base import GemmWarpPolicy
++
++
++@tilelang.jit(out_idx=[-1], target="hip")
++def _row_sum(M, N, threads):
++    @T.prim_func
++    def main(
++        A: T.Tensor((M, 32), T.float16),
++        B: T.Tensor((N, 32), T.float16),
++        out: T.Tensor((M,), T.float32),
++    ):
++        with T.Kernel(1, threads=threads):
++            A_s = T.alloc_shared((M, 32), T.float16)
++            B_s = T.alloc_shared((N, 32), T.float16)
++            s = T.alloc_fragment((M, N), T.float32)
++            r = T.alloc_fragment((M,), T.float32)
++            T.copy(A[0, 0], A_s)
++            T.copy(B[0, 0], B_s)
++            T.clear(s)
++            T.gemm(A_s, B_s, s, transpose_B=True, policy=GemmWarpPolicy.FullRow)
++            T.reduce_sum(s, r, dim=1)
++            for i in T.Parallel(M):
++                out[i] = r[i]
++
++    return main
++
++
++# FullRow: one wavefront holds a row, so with several wavefronts the reduce stays inside one.
++# (threads, rows): 256 threads and 64 rows give one wavefront per 16 rows. A single 64-thread block is also in-wave.
++@tilelang.testing.requires_rocm
++@pytest.mark.parametrize(("threads", "M", "N"), [(64, 64, 64), (256, 128, 64), (256, 64, 64)])
++def test_in_wave_reduce_has_no_workspace(threads, M, N):
++    kernel = _row_sum(M, N, threads)
++    assert "workspace" not in kernel.get_kernel_source()
++    A = torch.randn(M, 32, dtype=torch.float16, device="cuda")
++    B = torch.randn(N, 32, dtype=torch.float16, device="cuda")
++    out = kernel(A, B)
++    ref = (A.float() @ B.float().T).sum(dim=1)
++    assert (out - ref).abs().max() <= 1e-2 * ref.abs().max()
++
++
++if __name__ == "__main__":
++    tilelang.testing.main()

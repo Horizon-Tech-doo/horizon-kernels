@@ -1,0 +1,118 @@
+{
+  "source_log_sha256": "46bdc668775655d2ed24f014293da63590729045aeae79bb2f35476286542e0a",
+  "records": [
+    {
+      "tag": "moe-fse-27-09-2026",
+      "check": "route_bitwise",
+      "cases": 60,
+      "failed": 0,
+      "pass": true
+    },
+    {
+      "tag": "moe-fse-27-09-2026",
+      "check": "align_case_fail",
+      "kind": "real_gate",
+      "M": 31,
+      "bs": 8,
+      "ntp": [
+        1160,
+        1160
+      ]
+    },
+    {
+      "tag": "moe-fse-27-09-2026",
+      "check": "align_case_fail",
+      "kind": "real_gate",
+      "M": 32,
+      "bs": 8,
+      "ntp": [
+        1144,
+        1144
+      ]
+    },
+    {
+      "tag": "moe-fse-27-09-2026",
+      "check": "align_case_fail",
+      "kind": "tied",
+      "M": 32,
+      "bs": 8,
+      "ntp": [
+        632,
+        632
+      ]
+    },
+    {
+      "tag": "moe-fse-27-09-2026",
+      "check": "align_case_fail",
+      "kind": "tied",
+      "M": 64,
+      "bs": 8,
+      "ntp": [
+        992,
+        992
+      ]
+    },
+    {
+      "tag": "moe-fse-27-09-2026",
+      "check": "align_case_fail",
+      "kind": "real_gate",
+      "M": 100,
+      "bs": 8,
+      "ntp": [
+        1880,
+        1880
+      ]
+    },
+    {
+      "tag": "moe-fse-27-09-2026",
+      "check": "align_case_fail",
+      "kind": "tied",
+      "M": 100,
+      "bs": 8,
+      "ntp": [
+        1304,
+        1304
+      ]
+    },
+    {
+      "tag": "moe-fse-27-09-2026",
+      "check": "align_case_fail",
+      "kind": "real_gate",
+      "M": 128,
+      "bs": 8,
+      "ntp": [
+        2040,
+        2040
+      ]
+    },
+    {
+      "tag": "moe-fse-27-09-2026",
+      "check": "align_case_fail",
+      "kind": "tied",
+      "M": 128,
+      "bs": 8,
+      "ntp": [
+        1568,
+        1568
+      ]
+    },
+    {
+      "tag": "moe-fse-27-09-2026",
+      "check": "align_contract",
+      "cases": 24,
+      "failed": 8,
+      "pass": false,
+      "reuse_stats": {
+        "reused": 24,
+        "fallback": 0
+      }
+    },
+    {
+      "tag": "moe-fse-27-09-2026",
+      "check": "summary",
+      "route_bitwise": false,
+      "accuracy": true,
+      "determinism": false
+    }
+  ]
+}

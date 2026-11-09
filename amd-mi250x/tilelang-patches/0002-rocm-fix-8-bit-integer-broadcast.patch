@@ -1,0 +1,119 @@
+[ROCm] Fix broadcast of 8-bit integers in HIP codegen
+
+LegalizeSafeMemoryAccess adds a zero else-branch to a dynamically indexed copy,
+and binds the zero to a variable. For uint8 vectors, HIP's Broadcast then failed
+in one of two ways:
+
+- 4 lanes: ICHECK(p) on as_const_int, since the value is a variable.
+- 8 and 16 lanes: make_uint2/make_uint4 with one argument per byte, for example
+  "no matching function for call to 'make_uint4'" with 16 arguments.
+
+Vectors of 8-bit integers are stored as 32-bit words, so emit one packed word
+per 4 lanes, for constant and non-constant values. The output for a constant
+4-lane broadcast is unchanged.
+
+diff --git a/src/rocm/codegen/codegen_hip.cc b/src/rocm/codegen/codegen_hip.cc
+index 5084d27..aba936c 100644
+--- a/src/rocm/codegen/codegen_hip.cc
++++ b/src/rocm/codegen/codegen_hip.cc
+@@ -14,6 +14,7 @@
+ #include <cmath>
+ #include <cstdint>
+ #include <optional>
++#include <sstream>
+ #include <string>
+ #include <utility>
+ #include <vector>
+@@ -2261,17 +2262,31 @@ void CodeGenTileLangHIP::VisitExpr_(const BroadcastNode *op,
+                                     std::ostream &os) { // NOLINT(*)
+   int lanes = static_cast<int>(Downcast<IntImm>(op->lanes)->value);
+   if ((op->dtype.is_int() || op->dtype.is_uint()) && op->dtype.bits() == 8 &&
+-      lanes == 4) {
+-    // make_int8x4
+-    const int64_t *p = as_const_int(op->value);
+-    ICHECK(p);
+-    int64_t v = *p & 0xFF;
+-    v = (v << 24) | (v << 16) | (v << 8) | v;
+-    if (op->dtype.is_uint()) {
+-      os << "(uint)" << v;
++      (lanes == 4 || lanes == 8 || lanes == 16)) {
++    // Vectors of 8-bit integers are stored as 32-bit words (see PrintType), so
++    // broadcast one packed word per 4 lanes. The value is not always constant:
++    // LegalizeSafeMemoryAccess binds it to a variable.
++    std::ostringstream word;
++    word << (op->dtype.is_uint() ? "(uint)" : "(int)");
++    if (const int64_t *p = as_const_int(op->value)) {
++      int64_t v = *p & 0xFF;
++      word << ((v << 24) | (v << 16) | (v << 8) | v);
+     } else {
+-      os << "(int)" << v;
++      word << "((uint)(uchar)(" << PrintExpr(op->value) << ") * 0x01010101u)";
++    }
++    if (lanes == 4) {
++      os << word.str();
++      return;
++    }
++    os << "make_";
++    PrintType(op->dtype, os);
++    os << '(';
++    for (int i = 0; i < lanes / 4; ++i) {
++      if (i != 0)
++        os << ", ";
++      os << word.str();
+     }
++    os << ')';
+     return;
+   }
+ 
+diff --git a/testing/python/amd/test_tilelang_hip_uint8_broadcast.py b/testing/python/amd/test_tilelang_hip_uint8_broadcast.py
+new file mode 100644
+index 0000000..2eac248
+--- /dev/null
++++ b/testing/python/amd/test_tilelang_hip_uint8_broadcast.py
+@@ -0,0 +1,46 @@
++"""Safe-memory zero else-branch on dynamically indexed uint8 copies (4, 8 and 16 byte lanes)."""
++
++import pytest
++import tilelang
++import tilelang.rocm.language as T
++import tilelang.testing
++import torch
++
++
++@tilelang.jit(target="hip")
++def _copy_row_tile(cols, threads):
++    @T.prim_func
++    def main(
++        A: T.Tensor((256, cols), T.uint8),
++        idx: T.Tensor((1,), T.int32),
++        out: T.Tensor((16, cols), T.uint8),
++    ):
++        with T.Kernel(1, threads=threads):
++            tile = T.alloc_shared((16, cols), T.uint8)
++            n = idx[0]
++            T.copy(A[n * 16, 0], tile)
++            for i, j in T.Parallel(16, cols):
++                out[i, j] = tile[i, j]
++
++    return main
++
++
++@tilelang.testing.requires_rocm
++@pytest.mark.parametrize(("cols", "threads"), [(64, 256), (64, 128), (128, 128)])
++def test_uint8_copy_with_safe_memory_else_branch(cols, threads):
++    kernel = _copy_row_tile(cols, threads)
++    A = torch.randint(1, 255, (256, cols), dtype=torch.uint8, device="cuda")
++    out = torch.zeros(16, cols, dtype=torch.uint8, device="cuda")
++
++    idx = torch.tensor([3], dtype=torch.int32, device="cuda")
++    kernel(A, idx, out)
++    assert torch.equal(out, A[48:64])
++
++    # Past the end of A: the copy must read the safe value, which is zero.
++    idx = torch.tensor([16], dtype=torch.int32, device="cuda")
++    kernel(A, idx, out)
++    assert torch.count_nonzero(out) == 0
++
++
++if __name__ == "__main__":
++    tilelang.testing.main()

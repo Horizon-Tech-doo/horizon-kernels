@@ -1,0 +1,225 @@
+{
+  "decision": "QUALITY_FAIL",
+  "failed_eager_configurations": 30,
+  "failed_configurations": [
+    {
+      "test": "eager_correctness",
+      "hidden": 5120,
+      "rows": 1,
+      "name": "k128-up0-static1-hw1-stages3-grid376-operation",
+      "exact": false
+    },
+    {
+      "test": "eager_correctness",
+      "hidden": 5120,
+      "rows": 1,
+      "name": "k128-up1-static1-hw1-stages3-grid376-operation",
+      "exact": false
+    },
+    {
+      "test": "eager_correctness",
+      "hidden": 5120,
+      "rows": 1,
+      "name": "k128-up0-static1-hw1-stages3-grid188-operation",
+      "exact": false
+    },
+    {
+      "test": "eager_correctness",
+      "hidden": 5120,
+      "rows": 1,
+      "name": "k128-up1-static1-hw1-stages3-grid188-operation",
+      "exact": false
+    },
+    {
+      "test": "eager_correctness",
+      "hidden": 5120,
+      "rows": 1,
+      "name": "k128-up0-static1-hw1-stages4-grid188-operation",
+      "exact": false
+    },
+    {
+      "test": "eager_correctness",
+      "hidden": 5120,
+      "rows": 1,
+      "name": "k128-up1-static1-hw1-stages4-grid188-operation",
+      "exact": false
+    },
+    {
+      "test": "eager_correctness",
+      "hidden": 5120,
+      "rows": 4,
+      "name": "k128-up0-static1-hw1-stages3-grid376-operation",
+      "exact": false
+    },
+    {
+      "test": "eager_correctness",
+      "hidden": 5120,
+      "rows": 4,
+      "name": "k128-up1-static1-hw1-stages3-grid376-operation",
+      "exact": false
+    },
+    {
+      "test": "eager_correctness",
+      "hidden": 5120,
+      "rows": 4,
+      "name": "k128-up0-static1-hw1-stages3-grid188-operation",
+      "exact": false
+    },
+    {
+      "test": "eager_correctness",
+      "hidden": 5120,
+      "rows": 4,
+      "name": "k128-up1-static1-hw1-stages3-grid188-operation",
+      "exact": false
+    },
+    {
+      "test": "eager_correctness",
+      "hidden": 5120,
+      "rows": 4,
+      "name": "k128-up0-static1-hw1-stages4-grid188-operation",
+      "exact": false
+    },
+    {
+      "test": "eager_correctness",
+      "hidden": 5120,
+      "rows": 4,
+      "name": "k128-up1-static1-hw1-stages4-grid188-operation",
+      "exact": false
+    },
+    {
+      "test": "eager_correctness",
+      "hidden": 5120,
+      "rows": 8,
+      "name": "k128-up0-static1-hw1-stages3-grid376-operation",
+      "exact": false
+    },
+    {
+      "test": "eager_correctness",
+      "hidden": 5120,
+      "rows": 8,
+      "name": "k128-up1-static1-hw1-stages3-grid376-operation",
+      "exact": false
+    },
+    {
+      "test": "eager_correctness",
+      "hidden": 5120,
+      "rows": 8,
+      "name": "k128-up0-static1-hw1-stages3-grid188-operation",
+      "exact": false
+    },
+    {
+      "test": "eager_correctness",
+      "hidden": 5120,
+      "rows": 8,
+      "name": "k128-up1-static1-hw1-stages3-grid188-operation",
+      "exact": false
+    },
+    {
+      "test": "eager_correctness",
+      "hidden": 5120,
+      "rows": 8,
+      "name": "k128-up0-static1-hw1-stages4-grid188-operation",
+      "exact": false
+    },
+    {
+      "test": "eager_correctness",
+      "hidden": 5120,
+      "rows": 8,
+      "name": "k128-up1-static1-hw1-stages4-grid188-operation",
+      "exact": false
+    },
+    {
+      "test": "eager_correctness",
+      "hidden": 5120,
+      "rows": 16,
+      "name": "k128-up0-static1-hw1-stages3-grid376-operation",
+      "exact": false
+    },
+    {
+      "test": "eager_correctness",
+      "hidden": 5120,
+      "rows": 16,
+      "name": "k128-up1-static1-hw1-stages3-grid376-operation",
+      "exact": false
+    },
+    {
+      "test": "eager_correctness",
+      "hidden": 5120,
+      "rows": 16,
+      "name": "k128-up0-static1-hw1-stages3-grid188-operation",
+      "exact": false
+    },
+    {
+      "test": "eager_correctness",
+      "hidden": 5120,
+      "rows": 16,
+      "name": "k128-up1-static1-hw1-stages3-grid188-operation",
+      "exact": false
+    },
+    {
+      "test": "eager_correctness",
+      "hidden": 5120,
+      "rows": 16,
+      "name": "k128-up0-static1-hw1-stages4-grid188-operation",
+      "exact": false
+    },
+    {
+      "test": "eager_correctness",
+      "hidden": 5120,
+      "rows": 16,
+      "name": "k128-up1-static1-hw1-stages4-grid188-operation",
+      "exact": false
+    },
+    {
+      "test": "eager_correctness",
+      "hidden": 5120,
+      "rows": 32,
+      "name": "k128-up0-static1-hw1-stages3-grid188-operation",
+      "exact": false
+    },
+    {
+      "test": "eager_correctness",
+      "hidden": 5120,
+      "rows": 32,
+      "name": "k128-up1-static1-hw1-stages3-grid188-operation",
+      "exact": false
+    },
+    {
+      "test": "eager_correctness",
+      "hidden": 5120,
+      "rows": 32,
+      "name": "k128-up0-static1-hw1-stages4-grid188-operation",
+      "exact": false
+    },
+    {
+      "test": "eager_correctness",
+      "hidden": 5120,
+      "rows": 32,
+      "name": "k128-up1-static1-hw1-stages4-grid188-operation",
+      "exact": false
+    },
+    {
+      "test": "eager_correctness",
+      "hidden": 4096,
+      "rows": 4,
+      "name": "k128-up0-static1-hw1-stages3-grid188-operation",
+      "exact": false
+    },
+    {
+      "test": "eager_correctness",
+      "hidden": 4096,
+      "rows": 32,
+      "name": "k128-up0-static1-hw1-stages3-grid188-operation",
+      "exact": false
+    }
+  ],
+  "new_path_timings_valid": false,
+  "cancel_requested": true,
+  "terminal": {
+    "test": "complete",
+    "primary_rows": 5,
+    "all_eager_exact": false,
+    "status": "exploratory; requires fresh confirmation and serving gates before deployment"
+  },
+  "diagnosis": "Tile width not forwarded to C++ loader; wider activation layout also needed. Fixed in frozen v17; no deployment."
+}

@@ -1,0 +1,34 @@
+{"test": "lut_factor_bits", "finite_gates": 65280, "mismatches": 0}
+{"test": "lut_product_bits", "trial": 0, "tested": 65280, "mismatches": 0, "source": "independent Torch/Inductor", "graph": true, "changed_input": true}
+{"test": "lut_product_bits", "trial": 1, "tested": 65280, "mismatches": 0, "source": "independent Torch/Inductor", "graph": true, "changed_input": true}
+{"test": "lut_product_bits", "trial": 2, "tested": 65280, "mismatches": 0, "source": "independent Torch/Inductor", "graph": true, "changed_input": true}
+{"test": "lut_product_bits", "trial": 3, "tested": 65280, "mismatches": 0, "source": "independent Torch/Inductor", "graph": true, "changed_input": true}
+{"test": "lut_product_bits", "trial": 4, "tested": 65280, "mismatches": 0, "source": "independent Torch/Inductor", "graph": true, "changed_input": true}
+{"test": "lut_product_bits", "trial": 5, "tested": 65280, "mismatches": 0, "source": "independent Torch/Inductor", "graph": true, "changed_input": true}
+{"test": "lut_product_bits", "trial": 6, "tested": 65280, "mismatches": 0, "source": "independent Torch/Inductor", "graph": true, "changed_input": true}
+{"test": "lut_product_bits", "trial": 7, "tested": 65280, "mismatches": 0, "source": "independent Torch/Inductor", "graph": true, "changed_input": true}
+{"test": "lut_product_bits", "trial": 8, "tested": 65280, "mismatches": 0, "source": "independent Torch/Inductor", "graph": true, "changed_input": true}
+{"test": "lut_product_bits", "trial": 9, "tested": 65280, "mismatches": 0, "source": "independent Torch/Inductor", "graph": true, "changed_input": true}
+{"test": "lut_product_bits", "trial": 10, "tested": 65026, "mismatches": 0, "source": "independent Torch/Inductor", "graph": true, "changed_input": true}
+{"test": "lut_product_bits", "trial": 11, "tested": 65024, "mismatches": 0, "source": "independent Torch/Inductor", "graph": true, "changed_input": true}
+{"test": "lut_product_bits", "trial": 12, "tested": 65024, "mismatches": 0, "source": "independent Torch/Inductor", "graph": true, "changed_input": true}
+{"test": "lut_product_bits", "trial": 13, "tested": 65026, "mismatches": 0, "source": "independent Torch/Inductor", "graph": true, "changed_input": true}
+{"test": "lut_product_bits", "trial": 14, "tested": 65026, "mismatches": 0, "source": "independent Torch/Inductor", "graph": true, "changed_input": true}
+{"test": "lut_product_bits", "trial": 15, "tested": 65024, "mismatches": 0, "source": "independent Torch/Inductor", "graph": true, "changed_input": true}
+{"test": "lut_product_bits", "trial": 16, "tested": 65024, "mismatches": 0, "source": "independent Torch/Inductor", "graph": true, "changed_input": true}
+{"test": "lut_product_bits", "trial": 17, "tested": 65026, "mismatches": 0, "source": "independent Torch/Inductor", "graph": true, "changed_input": true}
+{"test": "lut_product_bits", "trial": 18, "tested": 65026, "mismatches": 0, "source": "independent Torch/Inductor", "graph": true, "changed_input": true}
+{"test": "lut_product_bits", "trial": 19, "tested": 65024, "mismatches": 0, "source": "independent Torch/Inductor", "graph": true, "changed_input": true}
+{"test": "lut_product_bits", "trial": 20, "tested": 65024, "mismatches": 0, "source": "independent Torch/Inductor", "graph": true, "changed_input": true}
+{"test": "lut_product_bits", "trial": 21, "tested": 65026, "mismatches": 0, "source": "independent Torch/Inductor", "graph": true, "changed_input": true}
+{"test": "lut_product_bits", "trial": 22, "tested": 65026, "mismatches": 0, "source": "independent Torch/Inductor", "graph": true, "changed_input": true}
+{"test": "lut_product_bits", "trial": 23, "tested": 65024, "mismatches": 0, "source": "independent Torch/Inductor", "graph": true, "changed_input": true}
+{"test": "lut_product_bits", "trial": 24, "tested": 65024, "mismatches": 0, "source": "independent Torch/Inductor", "graph": true, "changed_input": true}
+{"test": "lut_product_bits", "trial": 25, "tested": 65026, "mismatches": 0, "source": "independent Torch/Inductor", "graph": true, "changed_input": true}
+{"test": "lut_product_bits", "trial": 26, "tested": 65026, "mismatches": 0, "source": "independent Torch/Inductor", "graph": true, "changed_input": true}
+{"test": "lut_product_bits", "trial": 27, "tested": 65024, "mismatches": 0, "source": "independent Torch/Inductor", "graph": true, "changed_input": true}
+{"test": "lut_product_bits", "trial": 28, "tested": 65024, "mismatches": 0, "source": "independent Torch/Inductor", "graph": true, "changed_input": true}
+{"test": "lut_product_bits", "trial": 29, "tested": 65026, "mismatches": 0, "source": "independent Torch/Inductor", "graph": true, "changed_input": true}
+{"test": "lut_product_bits", "trial": 30, "tested": 65026, "mismatches": 0, "source": "independent Torch/Inductor", "graph": true, "changed_input": true}
+{"test": "lut_product_bits", "trial": 31, "tested": 65024, "mismatches": 0, "source": "independent Torch/Inductor", "graph": true, "changed_input": true}
+{"test": "lut_table_check_complete", "finite_gate_patterns": 65280, "up_patterns": 32, "tested_products": 2083350, "table_bytes": 262144, "unchanged": true}

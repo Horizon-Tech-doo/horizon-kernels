@@ -1,0 +1,11 @@
+{
+  "decision": "PROFILER_DRIVER_INTERACTION_UNRESOLVED",
+  "hardware_counters_available": false,
+  "exit_codes": {
+    "driver-system-ncu": 1,
+    "driver-system-normal": 2,
+    "driver-compat-ncu": 11,
+    "driver-compat-normal": 0
+  },
+  "limitations": "System 12080 context passes but CUDA13 cubin rejects; provider preload remains. No causal attribution or speed claim."
+}

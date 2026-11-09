@@ -1,0 +1,4 @@
+{
+  "decision": "CPU_COMPILE_PASS_GPU_PENDING",
+  "limitation": "Explicit L2 cross-CTA reads align with the runtime contract; no reproduced stale-cache failure, GPU correctness/speed untested."
+}

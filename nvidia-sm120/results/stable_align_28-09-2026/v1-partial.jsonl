@@ -1,0 +1,12 @@
+{"pairs": 9, "experts": 257, "block_size": 8, "pattern": "spread", "exact": true, "repeat_launches": 20, "graph_replays": 3, "changed_inputs": true}
+{"pairs": 9, "experts": 257, "block_size": 8, "pattern": "skew", "exact": true, "repeat_launches": 20, "graph_replays": 3, "changed_inputs": true}
+{"pairs": 9, "experts": 257, "block_size": 8, "pattern": "invalid", "exact": true, "repeat_launches": 20, "graph_replays": 3, "changed_inputs": true}
+{"pairs": 288, "experts": 257, "block_size": 8, "pattern": "spread", "exact": true, "repeat_launches": 20, "graph_replays": 3, "changed_inputs": true}
+{"pairs": 288, "experts": 257, "block_size": 8, "pattern": "skew", "exact": true, "repeat_launches": 20, "graph_replays": 3, "changed_inputs": true}
+{"pairs": 288, "experts": 257, "block_size": 8, "pattern": "invalid", "exact": true, "repeat_launches": 20, "graph_replays": 3, "changed_inputs": true}
+{"pairs": 1152, "experts": 257, "block_size": 16, "pattern": "spread", "exact": true, "repeat_launches": 20, "graph_replays": 3, "changed_inputs": true}
+{"pairs": 1152, "experts": 257, "block_size": 16, "pattern": "skew", "exact": true, "repeat_launches": 20, "graph_replays": 3, "changed_inputs": true}
+{"pairs": 1152, "experts": 257, "block_size": 16, "pattern": "invalid", "exact": true, "repeat_launches": 20, "graph_replays": 3, "changed_inputs": true}
+{"pairs": 2304, "experts": 257, "block_size": 16, "pattern": "spread", "exact": true, "repeat_launches": 20, "graph_replays": 3, "changed_inputs": true}
+{"pairs": 2304, "experts": 257, "block_size": 16, "pattern": "skew", "exact": true, "repeat_launches": 20, "graph_replays": 3, "changed_inputs": true}
+{"pairs": 2304, "experts": 257, "block_size": 16, "pattern": "invalid", "exact": true, "repeat_launches": 20, "graph_replays": 3, "changed_inputs": true}

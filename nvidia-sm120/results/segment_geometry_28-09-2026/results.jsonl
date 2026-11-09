@@ -1,0 +1,8 @@
+{"tag": "legacy", "m": 4, "hw": 2, "geometry": [5120, 17408, 6144], "nq": 16384, "nba": -1, "splits": [4, 1, 8, 4], "exact": true, "graph": true, "counters_reset": true, "trials": 2}
+{"tag": "generic_m4_hw0", "m": 4, "hw": 0, "geometry": [4096, 14336, 4096], "nq": 12288, "nba": 80, "splits": [4, 2, 8, 4], "exact": true, "graph": true, "counters_reset": true, "trials": 2}
+{"tag": "generic_m4_hw1", "m": 4, "hw": 1, "geometry": [4096, 14336, 4096], "nq": 12288, "nba": 80, "splits": [4, 2, 8, 4], "exact": true, "graph": true, "counters_reset": true, "trials": 2}
+{"tag": "generic_m4_hw2", "m": 4, "hw": 2, "geometry": [4096, 14336, 4096], "nq": 12288, "nba": 80, "splits": [4, 2, 8, 4], "exact": true, "graph": true, "counters_reset": true, "trials": 2}
+{"tag": "generic_m32_hw0", "m": 32, "hw": 0, "geometry": [4096, 14336, 4096], "nq": 12288, "nba": 80, "splits": [4, 2, 8, 4], "exact": true, "graph": true, "counters_reset": true, "trials": 2}
+{"tag": "generic_m32_hw2", "m": 32, "hw": 2, "geometry": [4096, 14336, 4096], "nq": 12288, "nba": 80, "splits": [4, 2, 8, 4], "exact": true, "graph": true, "counters_reset": true, "trials": 2}
+{"tag": "no_aux_same_nq", "m": 4, "hw": 2, "geometry": [4096, 14336, 4096], "nq": 16384, "nba": 0, "splits": [4, 2, 8, 4], "exact": true, "graph": true, "counters_reset": true, "trials": 2}
+{"complete": true, "cases": 7}

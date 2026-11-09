@@ -1,0 +1,105 @@
+{
+  "log_sha256": "55477d83f25176b40d19cb5dc7e0c94618503814a443873241d573b35c2d1d41",
+  "rows": [
+    {
+      "check": "moe_determinism_isolation",
+      "M": 32,
+      "alignment": "fresh_stock",
+      "distinct_up": 11,
+      "distinct_down": 5,
+      "distinct_final": 5,
+      "finite": true,
+      "alignment_reused": 0,
+      "repeats": 20
+    },
+    {
+      "check": "moe_determinism_isolation",
+      "M": 32,
+      "alignment": "frozen_stock",
+      "distinct_up": 1,
+      "distinct_down": 1,
+      "distinct_final": 1,
+      "finite": true,
+      "alignment_reused": 20,
+      "repeats": 20
+    },
+    {
+      "check": "moe_determinism_isolation",
+      "M": 32,
+      "alignment": "canonical",
+      "distinct_up": 1,
+      "distinct_down": 1,
+      "distinct_final": 1,
+      "finite": true,
+      "alignment_reused": 20,
+      "repeats": 20
+    },
+    {
+      "check": "moe_determinism_isolation",
+      "M": 128,
+      "alignment": "fresh_stock",
+      "distinct_up": 20,
+      "distinct_down": 20,
+      "distinct_final": 20,
+      "finite": true,
+      "alignment_reused": 0,
+      "repeats": 20
+    },
+    {
+      "check": "moe_determinism_isolation",
+      "M": 128,
+      "alignment": "frozen_stock",
+      "distinct_up": 1,
+      "distinct_down": 1,
+      "distinct_final": 1,
+      "finite": true,
+      "alignment_reused": 20,
+      "repeats": 20
+    },
+    {
+      "check": "moe_determinism_isolation",
+      "M": 128,
+      "alignment": "canonical",
+      "distinct_up": 1,
+      "distinct_down": 1,
+      "distinct_final": 1,
+      "finite": true,
+      "alignment_reused": 20,
+      "repeats": 20
+    },
+    {
+      "check": "moe_determinism_isolation",
+      "M": 256,
+      "alignment": "fresh_stock",
+      "distinct_up": 20,
+      "distinct_down": 20,
+      "distinct_final": 20,
+      "finite": true,
+      "alignment_reused": 0,
+      "repeats": 20
+    },
+    {
+      "check": "moe_determinism_isolation",
+      "M": 256,
+      "alignment": "frozen_stock",
+      "distinct_up": 1,
+      "distinct_down": 1,
+      "distinct_final": 1,
+      "finite": true,
+      "alignment_reused": 20,
+      "repeats": 20
+    },
+    {
+      "check": "moe_determinism_isolation",
+      "M": 256,
+      "alignment": "canonical",
+      "distinct_up": 1,
+      "distinct_down": 1,
+      "distinct_final": 1,
+      "finite": true,
+      "alignment_reused": 20,
+      "repeats": 20
+    }
+  ],
+  "complete": true
+}

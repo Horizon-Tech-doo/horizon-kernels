@@ -1,0 +1,137 @@
+[
+  {
+    "rows": 1,
+    "name": "static1-pair0-hw1-cta2-operation",
+    "speed_gain_pct": [
+      1.8867931003878402,
+      1.6470576472915832,
+      1.4634648901579839
+    ]
+  },
+  {
+    "rows": 1,
+    "name": "static1-pair4-hw0-cta1-operation",
+    "speed_gain_pct": [
+      2.077336256413065,
+      2.300467730009048,
+      1.834862997723885
+    ]
+  },
+  {
+    "rows": 1,
+    "name": "static1-pair5-hw0-cta1-operation",
+    "speed_gain_pct": [
+      1.834862997723885,
+      1.3698668366826539,
+      1.8264846857699801
+    ]
+  },
+  {
+    "rows": 4,
+    "name": "static1-pair0-hw1-cta2-operation",
+    "speed_gain_pct": [
+      1.2265204029132004,
+      1.8779280177579905,
+      1.6393396811263061
+    ]
+  },
+  {
+    "rows": 4,
+    "name": "static1-pair4-hw0-cta1-operation",
+    "speed_gain_pct": [
+      2.0642192036417706,
+      1.8264846857699801,
+      1.8264846857699801
+    ]
+  },
+  {
+    "rows": 4,
+    "name": "static1-pair5-hw0-cta1-operation",
+    "speed_gain_pct": [
+      1.3636335073720307,
+      1.137366497123704,
+      1.3503980113523273
+    ]
+  },
+  {
+    "rows": 8,
+    "name": "static1-pair0-hw1-cta2-operation",
+    "speed_gain_pct": [
+      1.8691595140149841,
+      1.6242780642324206,
+      1.392554135419899
+    ]
+  },
+  {
+    "rows": 8,
+    "name": "static1-pair4-hw0-cta1-operation",
+    "speed_gain_pct": [
+      1.8181824195006246,
+      1.8181824195006246,
+      1.8170272425028555
+    ]
+  },
+  {
+    "rows": 8,
+    "name": "static1-pair5-hw0-cta1-operation",
+    "speed_gain_pct": [
+      1.357469847245718,
+      1.809955406609487,
+      1.8017356939554086
+    ]
+  },
+  {
+    "rows": 16,
+    "name": "static1-pair0-hw1-cta2-operation",
+    "speed_gain_pct": [
+      1.3392829011165563,
+      1.5590221955599226,
+      1.7777784101573157
+    ]
+  },
+  {
+    "rows": 16,
+    "name": "static1-pair4-hw0-cta1-operation",
+    "speed_gain_pct": [
+      2.314812226061047,
+      2.7777787134719123,
+      3.2183770082879537
+    ]
+  },
+  {
+    "rows": 16,
+    "name": "static1-pair5-hw0-cta1-operation",
+    "speed_gain_pct": [
+      2.304151668246357,
+      2.067803780907962,
+      2.5134987497288153
+    ]
+  },
+  {
+    "rows": 32,
+    "name": "static1-pair0-hw1-cta2-operation",
+    "speed_gain_pct": [
+      3.353814595814475,
+      3.4035658481514686,
+      3.54329950796195
+    ]
+  },
+  {
+    "rows": 32,
+    "name": "static1-pair4-hw0-cta1-operation",
+    "speed_gain_pct": [
+      2.136749691766804,
+      1.428524846958834,
+      1.6000004656612665
+    ]
+  },
+  {
+    "rows": 32,
+    "name": "static1-pair5-hw0-cta1-operation",
+    "speed_gain_pct": [
+      2.335455688430099,
+      2.4588538142600314,
+      2.0161326759153386
+    ]
+  }
+]

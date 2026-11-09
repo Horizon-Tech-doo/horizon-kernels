@@ -1,0 +1,7 @@
+{
+  "decision": "PROFILER_FAILED",
+  "exit": 11,
+  "hardware_counters_available": false,
+  "application_error": "Nsight reported target application exit11 before any per-PID completion evidence",
+  "next": "Isolate Nsight injection/target startup with a minimal synthetic CUDA target or compatible profiler; no counter-based speed claim."
+}

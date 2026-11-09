@@ -1,0 +1,130 @@
+{
+  "eligible": [],
+  "decision": "NO_SPEED_WIN",
+  "eager_candidates": 19,
+  "graph_candidates": 19,
+  "numerical_mismatches": 0,
+  "primary_rows": [
+    1,
+    4,
+    8,
+    16,
+    32
+  ],
+  "kernel_branch": "horizon/k4-mlp-0410",
+  "candidate_manifest_sha256": "7078e81467770e63d52e40362458a36553b14c7b978ff510fbf30ce2ccfe3c4c",
+  "kernel_source_hashes": {
+    "contrib/horizon_k4/mlp_schedule.py": "b7eaed7db690128689ac329623c7c46e03269d400a1a2007f0aed22641f8b212",
+    "contrib/horizon_k4/tasks.py": "eb72bb7e57b2438919f3fa82540ef759bf807ca1915c92f3236ae0cc685c15d3",
+    "contrib/horizon_k4/pdl.py": "062d3c20b7d5f1a69921965356eceee5cfc28fb933b43aa239c0ca63a60a970a",
+    "contrib/horizon_k4/mlp_native_tasks.py": "5c8d59c8836df1c5ddd77ac0662a273915b549632444c350e71f027e763b9fe4",
+    "contrib/horizon_k4/__init__.py": "00dc94ecbf81da75bff2eef399148d177088b49bc6eab467992b509a2e0c62f0",
+    "contrib/horizon_k4/mlp.py": "c25d114c9410037db6b4d4300cc451bda9739cd4a3eb53fa521d23bfb74795d9",
+    "contrib/horizon_k4/runtime.py": "efc7762e897836f3dcaab266f54cbd9a4ba649c8c9dd8f5ae1b69708774b23dd",
+    "contrib/horizon_k4/hkt.py": "a7065e6c3ae14133d28d1b76a17a4a28a41b9c2404467c13064b5c7a6523a1fb",
+    "contrib/horizon_k4/mlp_pair_tasks.py": "b182f997022206d72835ab6311d690fe41d7abcb54ce9b3b1548ea4850e23aa7"
+  },
+  "best_by_bucket": [
+    {
+      "rows": 1,
+      "name": "pair4-hw0-cta1-operation",
+      "baseline_us": [
+        106.49599879980087,
+        105.98400235176086,
+        105.98400235176086
+      ],
+      "candidate_us": [
+        113.66400122642517,
+        113.66400122642517,
+        113.66400122642517
+      ],
+      "ratios": [
+        0.9369369162682807,
+        0.9324324430620271,
+        0.9324324430620271
+      ],
+      "conservative_latency_increase_pct": 7.246375589001053
+    },
+    {
+      "rows": 4,
+      "name": "pair0-hw0-cta2-operation",
+      "baseline_us": [
+        106.49599879980087,
+        106.49599879980087,
+        106.49599879980087
+      ],
+      "candidate_us": [
+        111.87199875712395,
+        112.12799698114395,
+        112.12799698114395
+      ],
+      "ratios": [
+        0.9519450799391324,
+        0.949771704364877,
+        0.949771704364877
+      ],
+      "conservative_latency_increase_pct": 5.288459890338726
+    },
+    {
+      "rows": 8,
+      "name": "pair0-hw0-cta2-operation",
+      "baseline_us": [
+        107.00800269842148,
+        107.00800269842148,
+        107.00800269842148
+      ],
+      "candidate_us": [
+        112.64000087976456,
+        112.64000087976456,
+        113.15199732780457
+      ],
+      "ratios": [
+        0.9500000165362672,
+        0.9500000165362672,
+        0.945701403647487
+      ],
+      "conservative_latency_increase_pct": 5.741621630578964
+    },
+    {
+      "rows": 16,
+      "name": "pair4-hw0-cta1-operation",
+      "baseline_us": [
+        108.5439994931221,
+        108.5439994931221,
+        108.5439994931221
+      ],
+      "candidate_us": [
+        113.66400122642517,
+        113.66400122642517,
+        113.66400122642517
+      ],
+      "ratios": [
+        0.9549549401916291,
+        0.9549549401916291,
+        0.9549549401916291
+      ],
+      "conservative_latency_increase_pct": 4.716982750969567
+    },
+    {
+      "rows": 32,
+      "name": "pair4-hw0-cta1-operation",
+      "baseline_us": [
+        115.1999980211258,
+        115.1999980211258,
+        116.2320002913475
+      ],
+      "candidate_us": [
+        122.8799968957901,
+        122.6239986717701,
+        124.41600114107132
+      ],
+      "ratios": [
+        0.9375000075791227,
+        0.9394571965434249,
+        0.9342206727859366
+      ],
+      "conservative_latency_increase_pct": 7.04109094673564
+    }
+  ],
+  "limitation": "Exploratory synthetic MLP only; per-bucket best is descriptive, not a fixed deployable policy."
+}

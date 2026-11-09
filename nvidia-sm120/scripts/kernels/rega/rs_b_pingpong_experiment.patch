@@ -1,0 +1,63 @@
+diff --git a/tilelang/cuda/op/gemm/gemm_mma_sm120.py b/tilelang/cuda/op/gemm/gemm_mma_sm120.py
+index d503581a..a15f2263 100644
+--- a/tilelang/cuda/op/gemm/gemm_mma_sm120.py
++++ b/tilelang/cuda/op/gemm/gemm_mma_sm120.py
+@@ -132,28 +132,42 @@ class GemmMMASm120BlockScaled(GemmBlockScaledMixin, GemmMMA):
+ 
+         if self.is_gemm_rs():
+             A_buf = A_region.buffer
++            num_k_atoms = block_K // micro_size_k
++
++            @T.macro
++            def _mma_rs_atom(B_local, ki):
++                mma_emitter.mma(
++                    A_buf,
++                    B_local,
++                    C_buf,
++                    ki,
++                    SFA_buf=self.SFARegion,
++                    SFB_buf=self.SFBRegion,
++                    k_start=self.sf_k_start,
++                    sf_a_granularity_k=sf_a_granularity_k,
++                    sf_b_granularity_k=sf_b_granularity_k,
++                )
+ 
+             @T.prim_func
+             def _gemm_rs_blockscaled() -> None:
+-                B_local = T.alloc_local((warp_cols * local_size_b), b_dtype)
++                B_local_0 = T.alloc_local((warp_cols * local_size_b), b_dtype)
++                B_local_1 = T.alloc_local((warp_cols * local_size_b), b_dtype)
+                 if clear_accum:
+                     T.clear(C_buf)
+                 # Unroll in TIR so every access to the A fragment has a compile-time
+-                # index. A runtime K-atom index forces fragments that span more than
+-                # one atom into local memory.
+-                for ki in T.unroll(block_K // micro_size_k, explicit=True):
+-                    mma_emitter.ldmatrix_b(B_local, B_region, ki)
+-                    mma_emitter.mma(
+-                        A_buf,
+-                        B_local,
+-                        C_buf,
+-                        ki,
+-                        SFA_buf=self.SFARegion,
+-                        SFB_buf=self.SFBRegion,
+-                        k_start=self.sf_k_start,
+-                        sf_a_granularity_k=sf_a_granularity_k,
+-                        sf_b_granularity_k=sf_b_granularity_k,
+-                    )
++                # index (a runtime K-atom index forces fragments that span more than
++                # one atom into local memory), and ping-pong the B fragments so the
++                # next atom's ldmatrix is issued before this atom's MMAs.
++                mma_emitter.ldmatrix_b(B_local_0, B_region, 0)
++                for ki in T.unroll(num_k_atoms, explicit=True):
++                    if ki % 2 == 0:
++                        if ki + 1 < num_k_atoms:
++                            mma_emitter.ldmatrix_b(B_local_1, B_region, ki + 1)
++                        _mma_rs_atom(B_local_0, ki)
++                    else:
++                        if ki + 1 < num_k_atoms:
++                            mma_emitter.ldmatrix_b(B_local_0, B_region, ki + 1)
++                        _mma_rs_atom(B_local_1, ki)
+ 
+             return _Simplify(_gemm_rs_blockscaled, inline_let=True)
+ 

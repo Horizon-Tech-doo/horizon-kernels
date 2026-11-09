@@ -1,0 +1,36 @@
+{
+  "rows": [
+    {
+      "pairs": 9,
+      "experts": 257,
+      "block_size": 8,
+      "compiled": true
+    },
+    {
+      "pairs": 288,
+      "experts": 257,
+      "block_size": 8,
+      "compiled": true
+    },
+    {
+      "pairs": 1152,
+      "experts": 257,
+      "block_size": 16,
+      "compiled": true
+    },
+    {
+      "pairs": 2304,
+      "experts": 257,
+      "block_size": 16,
+      "compiled": true
+    },
+    {
+      "pairs": 33,
+      "experts": 32,
+      "block_size": 32,
+      "compiled": true
+    }
+  ],
+  "log_sha256": "c6eb6af7875d268475c60bd915ce90df6cc741dfa6452b9627c500fc365c369d",
+  "gpu_execution": "pending"
+}

@@ -1,0 +1,61 @@
+{
+  "decision": "NO_ROW_SPEED_WIN",
+  "eligible": [],
+  "rows": [
+    32
+  ],
+  "eager_candidates": 8,
+  "changed_input_replays": 64,
+  "best_name": "gu128-down128-k64-sg4-sd4-up1-static1-hw1-stages4-grid376-rw1-operation",
+  "best_production_ratios": [
+    0.9068252650519736,
+    0.9030461180941664,
+    0.9022747462236698
+  ],
+  "matched_effects": [
+    {
+      "control": "gu128-down128-k64-sg3-sd4-up1-static1-hw1-stages3-grid188-rw1-operation",
+      "candidate": "gu128-down128-k64-sg3-sd4-up1-static1-hw1-stages3-grid188-rw2-operation",
+      "control_over_candidate": [
+        0.9929632715843609,
+        0.9999473806901243,
+        1.001640546044811
+      ]
+    },
+    {
+      "control": "gu128-down128-k64-sg3-sd4-up1-static1-hw1-stages3-grid376-rw1-operation",
+      "candidate": "gu128-down128-k64-sg3-sd4-up1-static1-hw1-stages3-grid376-rw2-operation",
+      "control_over_candidate": [
+        0.9960319618772701,
+        0.9666028583279619,
+        0.9596806543616738
+      ]
+    },
+    {
+      "control": "gu128-down128-k64-sg4-sd4-up1-static1-hw1-stages4-grid188-rw1-operation",
+      "candidate": "gu128-down128-k64-sg4-sd4-up1-static1-hw1-stages4-grid188-rw2-operation",
+      "control_over_candidate": [
+        0.985535964276693,
+        0.9982281619738178,
+        1.0033746275600606
+      ]
+    },
+    {
+      "control": "gu128-down128-k64-sg4-sd4-up1-static1-hw1-stages4-grid376-rw1-operation",
+      "candidate": "gu128-down128-k64-sg4-sd4-up1-static1-hw1-stages4-grid376-rw2-operation",
+      "control_over_candidate": [
+        0.9880007743463659,
+        0.9608681397230446,
+        0.9595611608593952
+      ]
+    }
+  ],
+  "negative_fixture": {
+    "test": "missing_producer_negative_control",
+    "rejected": true,
+    "device_error": 1,
+    "mirror_error": 1
+  },
+  "candidate_manifest_sha256": "1ff12b765b02174e7dba94aae6d3574ae5fb418f36614908d9fc9a15dce68d18",
+  "limitation": "M32 diagnostic only. Original five-bucket gate, fresh confirmation and integrated serving validation remain required; no deployment."
+}

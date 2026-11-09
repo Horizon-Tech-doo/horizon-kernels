@@ -1,0 +1,56 @@
+[
+ {
+  "variant": "write_had1_search1",
+  "nvcc_rc": 0,
+  "ptxas_spill": "0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads",
+  "ptxas_usage": "ptxas info    : Used 44 registers, used 1 barriers"
+ },
+ {
+  "variant": "write_had1_search0",
+  "nvcc_rc": 0,
+  "ptxas_spill": "0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads",
+  "ptxas_usage": "ptxas info    : Used 40 registers, used 1 barriers"
+ },
+ {
+  "variant": "write_had0_search1",
+  "nvcc_rc": 0,
+  "ptxas_spill": "0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads",
+  "ptxas_usage": "ptxas info    : Used 44 registers, used 0 barriers"
+ },
+ {
+  "variant": "write_had0_search0",
+  "nvcc_rc": 0,
+  "ptxas_spill": "0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads",
+  "ptxas_usage": "ptxas info    : Used 40 registers, used 0 barriers"
+ },
+ {
+  "variant": "rotate_q_hq24",
+  "nvcc_rc": 0,
+  "ptxas_spill": "0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads",
+  "ptxas_usage": "ptxas info    : Used 63 registers, used 1 barriers"
+ },
+ {
+  "variant": "split_ql1_pipe1_bn32",
+  "nvcc_rc": 0,
+  "ptxas_spill": "0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads",
+  "ptxas_usage": "ptxas info    : Used 134 registers, used 3 barriers"
+ },
+ {
+  "variant": "split_ql1_pipe0_bn64",
+  "nvcc_rc": 0,
+  "ptxas_spill": "0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads",
+  "ptxas_usage": "ptxas info    : Used 131 registers, used 3 barriers"
+ },
+ {
+  "variant": "split_ql4_pipe1_bn32",
+  "nvcc_rc": 0,
+  "ptxas_spill": "0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads",
+  "ptxas_usage": "ptxas info    : Used 178 registers, used 3 barriers"
+ },
+ {
+  "variant": "split_ql4_pipe0_bn64",
+  "nvcc_rc": 0,
+  "ptxas_spill": "0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads",
+  "ptxas_usage": "ptxas info    : Used 186 registers, used 3 barriers"
+ }
+]

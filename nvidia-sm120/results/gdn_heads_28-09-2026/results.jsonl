@@ -1,0 +1,7 @@
+{"heads": [16, 48], "geometry": [5120, 17408, 6144], "hw": 2, "lengths": [4], "m": 4, "exact": true, "state_exact": true, "graph": true, "padding_checked": false}
+{"heads": [16, 48], "geometry": [5120, 17408, 6144], "hw": 2, "lengths": [1, 3], "m": 8, "exact": true, "state_exact": true, "graph": true, "padding_checked": true}
+{"heads": [8, 32], "geometry": [4096, 14336, 4096], "hw": 0, "lengths": [4], "m": 4, "exact": true, "state_exact": true, "graph": true, "padding_checked": false}
+{"heads": [8, 32], "geometry": [4096, 14336, 4096], "hw": 0, "lengths": [1, 3], "m": 8, "exact": true, "state_exact": true, "graph": true, "padding_checked": true}
+{"heads": [8, 32], "geometry": [4096, 14336, 4096], "hw": 2, "lengths": [4], "m": 4, "exact": true, "state_exact": true, "graph": true, "padding_checked": false}
+{"heads": [8, 32], "geometry": [4096, 14336, 4096], "hw": 2, "lengths": [1, 3], "m": 8, "exact": true, "state_exact": true, "graph": true, "padding_checked": true}
+{"complete": true, "cases": 6}

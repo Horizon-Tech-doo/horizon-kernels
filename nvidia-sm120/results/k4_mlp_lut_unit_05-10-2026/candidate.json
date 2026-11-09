@@ -1,0 +1,36 @@
+{
+  "kernel_commit": "24f2c41e63dc434a09d8f393deabb377c62e6aff",
+  "uncommitted_prototypes": [
+    "silu_factor_table.py",
+    "mlp_mixed_lut.py"
+  ],
+  "sha256": {
+    "bench_silu_factor_table_05-10-2026.py": "64d1f227c0c58846e5d5a337c3bc38c39e8e881151c3796d0260480e947932c9",
+    "check_silu_factor_table_05-10-2026.py": "5dbe4c34d2ea178f83c879672888c984d735fc51837d81b5f9468c4f64db9479",
+    "contrib/horizon_k4/__init__.py": "00dc94ecbf81da75bff2eef399148d177088b49bc6eab467992b509a2e0c62f0",
+    "contrib/horizon_k4/hkt.py": "a7065e6c3ae14133d28d1b76a17a4a28a41b9c2404467c13064b5c7a6523a1fb",
+    "contrib/horizon_k4/mlp.py": "5c729d7d0c476fe67703ee04cfe354149b7a4c7c838a6a2da9c455a7c5fe3e4e",
+    "contrib/horizon_k4/mlp_activation_epilogue.py": "fe25f05d1b88068ec81be688fe6ef168b11d065f77de5674f1331f343427d893",
+    "contrib/horizon_k4/mlp_mixed.py": "88565215e73696541c65900d3a1712d4be6fde92d4a714b9bb10ea0f542448af",
+    "contrib/horizon_k4/mlp_mixed_lut.py": "9fd5ca846135faae2f2bf6cf8847c13d7dd88ad3c3dd6d2a1b5a0b0b46a74c4b",
+    "contrib/horizon_k4/mlp_mixed_trace.py": "212f6155d2a710bf5c9f31f04dfe3549f5061398cff79d110d51e6f3f94375cf",
+    "contrib/horizon_k4/mlp_native_tasks.py": "6a6a11b0dc398317d1a70f4363ce8c055520853faa1a74dbfdc401be17b4b8ab",
+    "contrib/horizon_k4/mlp_pair_tasks.py": "982a0629170e9572147baf37689c27f922bda3c381372f5b5da8975662705c12",
+    "contrib/horizon_k4/mlp_prepare.py": "368da415d17e3f622b30361b7b31d7be6c5d7032048efd1cbd949c877f8fca2e",
+    "contrib/horizon_k4/mlp_schedule.py": "74cda92e15d4a12f35e80ca48eeba6619ed5dddd778f5212338f7569f01d00df",
+    "contrib/horizon_k4/mlp_static_plan.py": "d2724d238174901d56cb2e443634dbec74ced33985890b7650476af476454334",
+    "contrib/horizon_k4/mlp_up_fusion.py": "d87f041cd9ec5f500289f3eb9ff960684042f737edfefefd08dec94a00654b7f",
+    "contrib/horizon_k4/mlp_wide.py": "2867546b91edc87e1b446ff7bee2b7d92cf318acd0aa1f9ad080f20022648cf0",
+    "contrib/horizon_k4/mlp_wide_plan.py": "03e42339cb80b03839b7fe818a2d3b80f5b6ad70ce2c389e709255573cd3a36a",
+    "contrib/horizon_k4/pdl.py": "062d3c20b7d5f1a69921965356eceee5cfc28fb933b43aa239c0ca63a60a970a",
+    "contrib/horizon_k4/runtime.py": "efc7762e897836f3dcaab266f54cbd9a4ba649c8c9dd8f5ae1b69708774b23dd",
+    "contrib/horizon_k4/segment.py": "36151e5b7c231ee450271b17a297353f9ca09bd4502b30d3fb8443db622a7562",
+    "contrib/horizon_k4/selftest.py": "faa9e64c0c7375aa61061fffe269d4f9b5c6bd08304a7515a047232b4f00aa43",
+    "contrib/horizon_k4/silu_factor_table.py": "77a5139c0762db19ab957983df50a4d1acfd76134d2735e47c7c875da5d3cdef",
+    "contrib/horizon_k4/tasks.py": "c67701fce421c9ec8d9f0c66be4af6ce328f0a1b2ce7e3b7285e97b9918842db",
+    "guard_k4_mlp_v37_05-10-2026.sh": "cf3395301b48685fa3309661183ebee44707b2a2538de4510e999f26d160b453",
+    "lower_mlp_lut_05-10-2026.py": "b64fee3147b653ed817f13cebbb8b0e107891937f2bb85c93715be6cd43d398b",
+    "policy.json": "298b1b4ac8fd8ba17a486bf1bf12c4582f8bcd2ef93f092d40e5e7c79f986479",
+    "run_k4_mlp_v37_05-10-2026.sh": "6c509723c8b97bf02a8eb64e33f0075173338b702c69a266c2d62cce85520af4"
+  }
+}

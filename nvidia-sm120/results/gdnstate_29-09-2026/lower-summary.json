@@ -1,0 +1,163 @@
+[
+ {
+  "variant": "window_float32_vr32",
+  "dyn_smem_bytes": 8768,
+  "nvcc_rc": 0,
+  "ptxas_spill": "0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads",
+  "ptxas_usage": "ptxas info    : Used 79 registers, used 1 barriers"
+ },
+ {
+  "variant": "window_float32_vr64",
+  "dyn_smem_bytes": 9280,
+  "nvcc_rc": 0,
+  "ptxas_spill": "0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads",
+  "ptxas_usage": "ptxas info    : Used 93 registers, used 1 barriers"
+ },
+ {
+  "variant": "window_float32_vr128",
+  "dyn_smem_bytes": 10304,
+  "nvcc_rc": 0,
+  "ptxas_spill": "0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads",
+  "ptxas_usage": "ptxas info    : Used 94 registers, used 1 barriers"
+ },
+ {
+  "variant": "window_bfloat16_vr32",
+  "dyn_smem_bytes": 8768,
+  "nvcc_rc": 0,
+  "ptxas_spill": "0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads",
+  "ptxas_usage": "ptxas info    : Used 78 registers, used 1 barriers"
+ },
+ {
+  "variant": "window_bfloat16_vr64",
+  "dyn_smem_bytes": 9280,
+  "nvcc_rc": 0,
+  "ptxas_spill": "0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads",
+  "ptxas_usage": "ptxas info    : Used 95 registers, used 1 barriers"
+ },
+ {
+  "variant": "window_bfloat16_vr128",
+  "dyn_smem_bytes": 10304,
+  "nvcc_rc": 0,
+  "ptxas_spill": "0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads",
+  "ptxas_usage": "ptxas info    : Used 95 registers, used 1 barriers"
+ },
+ {
+  "variant": "window_float16_vr32",
+  "dyn_smem_bytes": 8768,
+  "nvcc_rc": 0,
+  "ptxas_spill": "0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads",
+  "ptxas_usage": "ptxas info    : Used 79 registers, used 1 barriers"
+ },
+ {
+  "variant": "window_float16_vr64",
+  "dyn_smem_bytes": 9280,
+  "nvcc_rc": 0,
+  "ptxas_spill": "0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads",
+  "ptxas_usage": "ptxas info    : Used 95 registers, used 1 barriers"
+ },
+ {
+  "variant": "window_float16_vr128",
+  "dyn_smem_bytes": 10304,
+  "nvcc_rc": 0,
+  "ptxas_spill": "0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads",
+  "ptxas_usage": "ptxas info    : Used 95 registers, used 1 barriers"
+ },
+ {
+  "variant": "replay_float32_vr32_half16",
+  "dyn_smem_bytes": 19072,
+  "nvcc_rc": 0,
+  "ptxas_spill": "0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads",
+  "ptxas_usage": "ptxas info    : Used 96 registers, used 1 barriers"
+ },
+ {
+  "variant": "replay_float32_vr32_half32",
+  "dyn_smem_bytes": 29376,
+  "nvcc_rc": 0,
+  "ptxas_spill": "0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads",
+  "ptxas_usage": "ptxas info    : Used 96 registers, used 1 barriers"
+ },
+ {
+  "variant": "replay_float32_vr64_half16",
+  "dyn_smem_bytes": 21632,
+  "nvcc_rc": 0,
+  "ptxas_spill": "0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads",
+  "ptxas_usage": "ptxas info    : Used 124 registers, used 1 barriers"
+ },
+ {
+  "variant": "replay_float32_vr64_half32",
+  "dyn_smem_bytes": 33984,
+  "nvcc_rc": 0,
+  "ptxas_spill": "0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads",
+  "ptxas_usage": "ptxas info    : Used 124 registers, used 1 barriers"
+ },
+ {
+  "variant": "replay_bfloat16_vr32_half16",
+  "dyn_smem_bytes": 19072,
+  "nvcc_rc": 0,
+  "ptxas_spill": "0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads",
+  "ptxas_usage": "ptxas info    : Used 96 registers, used 1 barriers"
+ },
+ {
+  "variant": "replay_bfloat16_vr32_half32",
+  "dyn_smem_bytes": 29376,
+  "nvcc_rc": 0,
+  "ptxas_spill": "0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads",
+  "ptxas_usage": "ptxas info    : Used 96 registers, used 1 barriers"
+ },
+ {
+  "variant": "replay_bfloat16_vr64_half16",
+  "dyn_smem_bytes": 21632,
+  "nvcc_rc": 0,
+  "ptxas_spill": "0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads",
+  "ptxas_usage": "ptxas info    : Used 126 registers, used 1 barriers"
+ },
+ {
+  "variant": "replay_bfloat16_vr64_half32",
+  "dyn_smem_bytes": 33984,
+  "nvcc_rc": 0,
+  "ptxas_spill": "0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads",
+  "ptxas_usage": "ptxas info    : Used 126 registers, used 1 barriers"
+ },
+ {
+  "variant": "replay_float16_vr32_half16",
+  "dyn_smem_bytes": 19072,
+  "nvcc_rc": 0,
+  "ptxas_spill": "0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads",
+  "ptxas_usage": "ptxas info    : Used 96 registers, used 1 barriers"
+ },
+ {
+  "variant": "replay_float16_vr32_half32",
+  "dyn_smem_bytes": 29376,
+  "nvcc_rc": 0,
+  "ptxas_spill": "0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads",
+  "ptxas_usage": "ptxas info    : Used 96 registers, used 1 barriers"
+ },
+ {
+  "variant": "replay_float16_vr64_half16",
+  "dyn_smem_bytes": 21632,
+  "nvcc_rc": 0,
+  "ptxas_spill": "0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads",
+  "ptxas_usage": "ptxas info    : Used 126 registers, used 1 barriers"
+ },
+ {
+  "variant": "replay_float16_vr64_half32",
+  "dyn_smem_bytes": 33984,
+  "nvcc_rc": 0,
+  "ptxas_spill": "0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads",
+  "ptxas_usage": "ptxas info    : Used 126 registers, used 1 barriers"
+ },
+ {
+  "variant": "materialize_float32_vr32_half16",
+  "dyn_smem_bytes": 0,
+  "nvcc_rc": 0,
+  "ptxas_spill": "0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads",
+  "ptxas_usage": "ptxas info    : Used 92 registers, used 1 barriers"
+ },
+ {
+  "variant": "materialize_bfloat16_vr32_half16",
+  "dyn_smem_bytes": 0,
+  "nvcc_rc": 0,
+  "ptxas_spill": "0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads",
+  "ptxas_usage": "ptxas info    : Used 95 registers, used 1 barriers"
+ }
+]

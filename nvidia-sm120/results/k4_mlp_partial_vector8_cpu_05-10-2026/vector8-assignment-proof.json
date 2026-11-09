@@ -1,0 +1,10 @@
+{
+  "decision": "PASS",
+  "cases": 30,
+  "packed_loads_checked": 1405440,
+  "actual_assignment_checked": true,
+  "aligned_32_bytes": true,
+  "output_coverage_once": true,
+  "first_split_then_ascending_additions": true,
+  "full_output": "{\"decision\": \"PASS\", \"cases\": 30, \"packed_loads_checked\": 1405440, \"actual_assignment_checked\": true, \"aligned_32_bytes\": true, \"output_coverage_once\": true, \"first_split_then_ascending_additions\": true}\nVECTOR8_BIT_REINTERPRETATION_AND_DEFAULT_FORWARDING_PASS\n"
+}

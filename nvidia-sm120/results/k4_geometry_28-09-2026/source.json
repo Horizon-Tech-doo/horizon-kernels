@@ -1,0 +1,9 @@
+{
+  "kernel_commit": "91f3ef55",
+  "standalone_reference_commit": "c59ee469",
+  "sha256": {
+    "segment.py": "5e84db500ef4195853799f16a1d269099bfb959267cc5681c7506d65f7fc8247",
+    "tasks.py": "68e5954f202b08f9b75932c5f4239c83e626be8398285d0c0913a0c9f03ba1b3",
+    "add_rmsnorm.py": "477285978f071755b9ac8e4eaec5342154d7614903e32113bc648dc57c895c66"
+  }
+}

@@ -1,0 +1,237 @@
+[ROCm] Keep fp16 tiles held across a loop in registers
+
+uint2 and uint4 are structs in HIP, so a vector copy is a memcpy. SROA leaves a
+local array that is only copied to and from memory on the stack, so a tile of
+global loads held across a loop in a fragment landed in scratch memory: an fp16
+fragment holding 2 rows of K and V per thread took 80 bytes of scratch per lane on
+clang 18. Accessed as extended vectors, the same array is promoted to registers:
+ScratchSize 0 on clang 22, and on clang 18 a reported 16 bytes with no private
+memory instruction in the assembly. The accessors go through
+tl::RegVec, which keeps the type's natural alignment, so LDS stores stay
+ds_write_b128. Generated C changes for fp16 vector accesses, except on arrays read
+as matrix core operands; scalar and fp32 accesses do not change.
+
+Operands stay plain because they are read with GEMM's K loop index. Promoted on
+clang 22, such an array leaves the K loop not unrolled and every read becomes a
+chain of selects: a paged decode kernel went from 1198 to 4290 instructions and
+ran 8.6 to 10.3 times slower with the same output. Clang 18 is not affected.
+
+This makes register staging expressible in TileLang: T.copy from global memory to
+a fragment before the V GEMM, T.copy from the fragment to shared memory at the top
+of the next K step, with a T.Fragment layout that gives each thread 2 rows.
+Measured on MI250X, ROCm 7.2.3, flash attention d256 L=8192, 768 threads, same
+process: this form reads 95 TF against 82 for T.copy straight into shared memory.
+
+diff --git a/src/rocm/codegen/codegen_hip.cc b/src/rocm/codegen/codegen_hip.cc
+index aba936c..097e425 100644
+--- a/src/rocm/codegen/codegen_hip.cc
++++ b/src/rocm/codegen/codegen_hip.cc
+@@ -1428,6 +1428,46 @@ void CodeGenTileLangHIP::PrintCallExtern(Type ret_type, String global_symbol,
+ }
+ 
+ // Print a reference expression to a buffer.
++namespace {
++
++// uint2 and uint4 are structs in HIP, so copying one is a memcpy, and SROA
++// leaves a local array that is only ever copied to and from memory on the
++// stack: a tile of loads held across a loop lands in scratch memory. Accessed
++// as extended vectors, the same array is promoted to registers. Not for an
++// array that GEMM reads: see CollectMfmaOperands.
++const char *RegisterVectorType(DataType t) {
++  if (!t.is_float16()) {
++    return nullptr;
++  }
++  if (t.lanes() == 4)
++    return "tl::RegVec<uint2>";
++  if (t.lanes() == 8)
++    return "tl::RegVec<uint4>";
++  return nullptr;
++}
++
++// Arrays read as matrix core operands keep plain accesses. They are read with
++// GEMM's K loop index: when clang 22 promotes such an array, the K loop is no
++// longer unrolled and every read of the array becomes a chain of selects.
++class CollectMfmaOperands : public tirx::StmtExprVisitor {
++public:
++  std::unordered_set<const VarNode *> operands;
++
++private:
++  void VisitExpr_(const CallNode *op) final {
++    if (op->op.same_as(tl::tvm_mfma())) {
++      for (int i : {6, 8}) {
++        if (const auto *v = op->args[i].as<VarNode>()) {
++          operands.insert(v);
++        }
++      }
++    }
++    StmtExprVisitor::VisitExpr_(op);
++  }
++};
++
++} // namespace
++
+ std::string CodeGenTileLangHIP::GetBufferRef(DataType t,
+                                              const BufferNode *buffer,
+                                              PrimExpr index) {
+@@ -1507,6 +1547,10 @@ std::string CodeGenTileLangHIP::GetBufferRef(DataType t,
+        << " / " << div_factor << ")";
+   } else if (t == buffer_element_dtype) {
+     os << buffer_str << "[" << index_str << "]";
++  } else if (const char *reg_vec = mfma_operands_.count(buffer_var_node)
++                                        ? nullptr
++                                        : RegisterVectorType(t)) {
++    os << "*(" << reg_vec << "*)(" << buffer_str << " + " << index_str << ")";
+   } else {
+     os << "*" << ptr_cast(t) << "(" << buffer_str << " + " << index_str << ")";
+   }
+@@ -2605,6 +2649,10 @@ void CodeGenTileLangHIP::AddFunction(const PrimFunc &f) {
+   // reserve keywords
+   ReserveKeywordsAsUnique();
+ 
++  CollectMfmaOperands mfma_operands;
++  mfma_operands(f->body);
++  mfma_operands_ = std::move(mfma_operands.operands);
++
+   auto global_symbol = f->GetAttr<String>(tvm::attr::kGlobalSymbol);
+   ICHECK(global_symbol.has_value())
+       << "CodeGenC: Expect PrimFunc to have the global_symbol attribute";
+diff --git a/src/rocm/codegen/codegen_hip.h b/src/rocm/codegen/codegen_hip.h
+index 810b2c2..fce1e82 100644
+--- a/src/rocm/codegen/codegen_hip.h
++++ b/src/rocm/codegen/codegen_hip.h
+@@ -13,6 +13,7 @@
+ 
+ #include <string>
+ #include <unordered_map>
++#include <unordered_set>
+ 
+ #include "backend/common/codegen/codegen_c_base.h"
+ 
+@@ -90,6 +91,8 @@ private:
+   bool enable_fp4_{false};
+   // Map from FP4 buffer Var to packed buffer variable name (gfx950)
+   std::unordered_map<Var, std::string> fp4_packed_buffers_;
++  // Arrays read as matrix core operands; see CollectMfmaOperands.
++  std::unordered_set<const VarNode *> mfma_operands_;
+   // The size of the barrier array in shared memory
+   int barrier_count_ = -1;
+   // whether need mma.h
+diff --git a/src/tl_templates/hip/common.h b/src/tl_templates/hip/common.h
+index 799f9ea..9f0e7cb 100644
+--- a/src/tl_templates/hip/common.h
++++ b/src/tl_templates/hip/common.h
+@@ -27,6 +27,32 @@
+ #define TL_DEVICE __forceinline__ __device__
+ #define TL_DEVICE_NOINLINE __noinline__ __device__
+ 
++namespace tl {
++
++// See RegisterVectorType in codegen_hip.cc.
++template <class S> struct RegVec;
++template <int N> struct RegVecBase {
++  typedef uint Vec __attribute__((ext_vector_type(N)));
++  Vec v;
++};
++#define TL_DEFINE_REG_VEC(S, N)                                                \
++  template <> struct RegVec<S> : RegVecBase<N> {                               \
++    TL_DEVICE operator S() const { return __builtin_bit_cast(S, v); }          \
++    TL_DEVICE RegVec &operator=(const S &x) {                                  \
++      v = __builtin_bit_cast(Vec, x);                                          \
++      return *this;                                                            \
++    }                                                                          \
++    TL_DEVICE RegVec &operator=(const RegVec &x) {                             \
++      v = x.v;                                                                 \
++      return *this;                                                            \
++    }                                                                          \
++  };
++TL_DEFINE_REG_VEC(uint2, 2)
++TL_DEFINE_REG_VEC(uint4, 4)
++#undef TL_DEFINE_REG_VEC
++
++} // namespace tl
++
+ #define TILELANG_CHECK(stmt)                                                   \
+   do {                                                                         \
+     hipError_t __err = (stmt);                                                 \
+diff --git a/testing/python/amd/test_tilelang_hip_stage_registers.py b/testing/python/amd/test_tilelang_hip_stage_registers.py
+new file mode 100644
+index 0000000..a194e54
+--- /dev/null
++++ b/testing/python/amd/test_tilelang_hip_stage_registers.py
+@@ -0,0 +1,76 @@
++"""A tile of fp16 loads held across a loop in a fragment stays in registers."""
++
++import pytest
++import tilelang
++import tilelang.rocm.language as T
++import tilelang.testing
++import torch
++from tilelang.tileop.base import GemmWarpPolicy
++
++
++def _make(M, N, D, steps, threads):
++    per_row = D // 8
++
++    @T.prim_func
++    def main(
++        A: T.Tensor((M, D), T.float16),
++        B: T.Tensor((steps * N, D), T.float16),
++        out: T.Tensor((M, N), T.float32),
++    ):
++        with T.Kernel(1, threads=threads):
++            A_s = T.alloc_shared((M, D), T.float16)
++            B_s = T.alloc_shared((N, D), T.float16)
++            B_r = T.alloc_fragment((N, D), T.float16)
++            s = T.alloc_fragment((M, N), T.float32)
++            T.annotate_layout({B_r: T.Fragment((N, D), forward_fn=lambda i, j: ((i // 2) * per_row + j // 8, (i % 2) * 8 + j % 8))})
++            T.copy(A[0, 0], A_s)
++            T.clear(s)
++            T.copy(B[0:N, :], B_r)
++            for k in T.serial(steps):
++                T.copy(B_r, B_s)
++                T.gemm(A_s, B_s, s, transpose_B=True, policy=GemmWarpPolicy.FullRow)
++                if k + 1 < steps:
++                    T.copy(B[(k + 1) * N : (k + 2) * N, :], B_r)
++            T.copy(s, out[0, 0])
++
++    return main
++
++
++@tilelang.testing.requires_rocm
++@pytest.mark.parametrize(("M", "N", "D", "threads"), [(64, 32, 128, 256), (64, 32, 64, 128)])
++def test_staged_tile_uses_no_scratch(M, N, D, threads):
++    steps = 3
++    kernel = tilelang.compile(_make(M, N, D, steps, threads), out_idx=[-1], target="hip")
++    assert kernel.get_kernel_source().count("tl::RegVec<uint4>") > 0
++    usage = next(iter(dict(kernel.resource_usage).values()))
++    assert usage.scratch_bytes == 0
++    A = torch.randn(M, D, dtype=torch.float16, device="cuda")
++    B = torch.randn(steps * N, D, dtype=torch.float16, device="cuda")
++    out = kernel(A, B)
++    ref = sum(A.float() @ B[k * N : (k + 1) * N].float().T for k in range(steps))
++    assert (out - ref).abs().max() <= 1e-2 * ref.abs().max()
++
++
++def test_gemm_operand_keeps_plain_access():
++    """A fragment that GEMM reads with the K loop index stays a plain array: on clang 22 a promoted one keeps the K loop and reads it through selects."""
++    M, N, D = 16, 32, 128
++
++    @T.prim_func
++    def main(A: T.Tensor((M, D), T.float16), B: T.Tensor((N, D), T.float16), out: T.Tensor((M, N), T.float32)):
++        with T.Kernel(1, threads=64):
++            A_f = T.alloc_fragment((M, D), T.float16)
++            B_s = T.alloc_shared((N, D), T.float16)
++            s = T.alloc_fragment((M, N), T.float32)
++            T.copy(A, A_f)
++            T.copy(B, B_s)
++            T.gemm(A_f, B_s, s, transpose_B=True, clear_accum=True, policy=GemmWarpPolicy.FullRow)
++            T.copy(s, out)
++
++    src = tilelang.compile(main, out_idx=[2], target="hip").get_kernel_source()
++    assert "float16x" in src
++    assert "RegVec<uint2>*)(A_f" not in src
++    assert "RegVec<uint4>*)(A_f" not in src
++
++
++if __name__ == "__main__":
++    tilelang.testing.main()

@@ -1,0 +1,10 @@
+# accepted md5 of each fork file the K4 phase-1 overlay replaces, in production's TileLang prefix (any listed value):
+#   git 07ee3f21 versions, and tl-pkgs-natpf-07ee3f21's decode files (without the nat=1 evaluation path; nat=0 code
+#   and generated kernels identical). ABSENT = the file must not exist there.
+tilelang/contrib/horizon_fused/add_rmsnorm.py f789067d50c1443a10b370757970a308
+tilelang/contrib/horizon_fused/silu_mul.py ABSENT
+tilelang/contrib/horizon_fused/skinny_bf16.py ae7b48d66345e7e75d9c409a042bd5e6
+tilelang/contrib/sm120_nvfp4/decode_regfrag.py 4bfff9544000a071c8a4520eb68c241a 777344e9b1c11e2ea32f7306433fee4a
+tilelang/contrib/sm120_nvfp4/decode_regfrag_xl.py 16e3be2fb3fba0f8a22d4240c12e6b5e 258a1c2e3fc04dbe7b9a2d365b0dbcb9
+tilelang/contrib/sm120_nvfp4/prefill_rs.py 8eeb5b26e5440bbd25d98ec95ff71191
+tilelang/contrib/horizon_k4/pdl.py ABSENT

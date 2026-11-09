@@ -1,0 +1,11 @@
+{
+  "decision": "PASS",
+  "asymmetric_cases": 72,
+  "same_width_cases": 48,
+  "orders": [
+    "forward",
+    "reverse",
+    "seeded_shuffle"
+  ],
+  "paired_partial_alignment_proof": "v51 30geometries/2810880addresses"
+}

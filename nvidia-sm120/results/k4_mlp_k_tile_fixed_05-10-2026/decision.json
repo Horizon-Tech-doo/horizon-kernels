@@ -1,0 +1,135 @@
+{
+  "eligible": [],
+  "decision": "NO_SPEED_WIN",
+  "eager_candidates": 42,
+  "graph_candidates": 42,
+  "numerical_mismatches": 0,
+  "primary_rows": [
+    1,
+    4,
+    8,
+    16,
+    32
+  ],
+  "kernel_branch": "horizon/k4-mlp-0410",
+  "candidate_manifest_sha256": "636182f6d657a98f47e4e1bd9fec863dbb6406196a3a9f139311ecd47bce6472",
+  "kernel_source_hashes": {
+    "contrib/horizon_k4/__init__.py": "00dc94ecbf81da75bff2eef399148d177088b49bc6eab467992b509a2e0c62f0",
+    "contrib/horizon_k4/hkt.py": "a7065e6c3ae14133d28d1b76a17a4a28a41b9c2404467c13064b5c7a6523a1fb",
+    "contrib/horizon_k4/mlp.py": "5c729d7d0c476fe67703ee04cfe354149b7a4c7c838a6a2da9c455a7c5fe3e4e",
+    "contrib/horizon_k4/mlp_native_tasks.py": "aaa97969dcca66e8102361ce748d07c2d216237dad6655e505869f154e20c95a",
+    "contrib/horizon_k4/mlp_pair_tasks.py": "982a0629170e9572147baf37689c27f922bda3c381372f5b5da8975662705c12",
+    "contrib/horizon_k4/mlp_prepare.py": "368da415d17e3f622b30361b7b31d7be6c5d7032048efd1cbd949c877f8fca2e",
+    "contrib/horizon_k4/mlp_schedule.py": "74cda92e15d4a12f35e80ca48eeba6619ed5dddd778f5212338f7569f01d00df",
+    "contrib/horizon_k4/mlp_static_plan.py": "d2724d238174901d56cb2e443634dbec74ced33985890b7650476af476454334",
+    "contrib/horizon_k4/mlp_up_fusion.py": "a483b4941bd4d62b136efd48aff39cd54787ab169d9a7174a6a71e087b564243",
+    "contrib/horizon_k4/pdl.py": "062d3c20b7d5f1a69921965356eceee5cfc28fb933b43aa239c0ca63a60a970a",
+    "contrib/horizon_k4/runtime.py": "efc7762e897836f3dcaab266f54cbd9a4ba649c8c9dd8f5ae1b69708774b23dd",
+    "contrib/horizon_k4/segment.py": "36151e5b7c231ee450271b17a297353f9ca09bd4502b30d3fb8443db622a7562",
+    "contrib/horizon_k4/selftest.py": "faa9e64c0c7375aa61061fffe269d4f9b5c6bd08304a7515a047232b4f00aa43",
+    "contrib/horizon_k4/tasks.py": "f55e5af9d3d86f6695b0038fc439ac07e4c337199ea1aad9d8b28fbc9f48148a"
+  },
+  "best_by_bucket": [
+    {
+      "rows": 1,
+      "name": "k128-up1-static1-hw1-stages3-grid376-operation",
+      "baseline_us": [
+        107.00800269842148,
+        107.00800269842148,
+        107.00800269842148
+      ],
+      "candidate_us": [
+        105.47199845314026,
+        105.98400235176086,
+        105.98400235176086
+      ],
+      "ratios": [
+        1.0145631472600156,
+        1.0096618388052752,
+        1.0096618388052752
+      ],
+      "conservative_latency_increase_pct": -0.9569380988696086
+    },
+    {
+      "rows": 4,
+      "name": "k128-up1-static1-hw1-stages3-grid376-operation",
+      "baseline_us": [
+        107.00800269842148,
+        107.00800269842148,
+        107.00800269842148
+      ],
+      "candidate_us": [
+        106.49599879980087,
+        107.00800269842148,
+        107.00400173664093
+      ],
+      "ratios": [
+        1.0048077289700161,
+        1.0,
+        1.0000373907677809
+      ],
+      "conservative_latency_increase_pct": 0.0
+    },
+    {
+      "rows": 8,
+      "name": "k128-up0-static1-hw1-stages3-grid376-operation",
+      "baseline_us": [
+        107.51999914646149,
+        107.77600109577179,
+        108.03200304508209
+      ],
+      "candidate_us": [
+        107.26400092244148,
+        107.51999914646149,
+        108.03200304508209
+      ],
+      "ratios": [
+        1.0023866182672516,
+        1.0023809705295996,
+        1.0
+      ],
+      "conservative_latency_increase_pct": 0.0
+    },
+    {
+      "rows": 16,
+      "name": "k128-up0-static1-hw1-stages3-grid376-operation",
+      "baseline_us": [
+        109.31200161576271,
+        109.56799983978271,
+        109.56799983978271
+      ],
+      "candidate_us": [
+        110.59200018644333,
+        111.10399663448334,
+        111.10399663448334
+      ],
+      "ratios": [
+        0.9884259388696948,
+        0.9861751436381372,
+        0.9861751436381372
+      ],
+      "conservative_latency_increase_pct": 1.4018662355310463
+    },
+    {
+      "rows": 32,
+      "name": "k64-up0-static1-hw1-stages4-grid376-operation",
+      "baseline_us": [
+        115.7120019197464,
+        117.25600063800812,
+        118.53600293397903
+      ],
+      "candidate_us": [
+        120.31999975442886,
+        124.92799758911133,
+        126.98400020599365
+      ],
+      "ratios": [
+        0.9617021455777318,
+        0.938588650269282,
+        0.9334719550627617
+      ],
+      "conservative_latency_increase_pct": 7.126946297252745
+    }
+  ],
+  "limitation": "Exploratory synthetic MLP only; per-bucket best is descriptive, not a fixed deployable policy."
+}

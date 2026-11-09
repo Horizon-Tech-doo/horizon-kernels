@@ -1,0 +1,62 @@
+[
+  {
+    "file": "mlp_schedule.py",
+    "ast_equivalent": true,
+    "byte_identical": true,
+    "sha256": "d1321ee41e4f88ccdacb46ceaa6f9c3efefdd8675b6f5056dfd8ce563e7eb4fd"
+  },
+  {
+    "file": "tasks.py",
+    "ast_equivalent": true,
+    "byte_identical": true,
+    "sha256": "eb72bb7e57b2438919f3fa82540ef759bf807ca1915c92f3236ae0cc685c15d3"
+  },
+  {
+    "file": "pdl.py",
+    "ast_equivalent": true,
+    "byte_identical": true,
+    "sha256": "062d3c20b7d5f1a69921965356eceee5cfc28fb933b43aa239c0ca63a60a970a"
+  },
+  {
+    "file": "mlp_native_tasks.py",
+    "ast_equivalent": true,
+    "byte_identical": false,
+    "sha256": "aaa97969dcca66e8102361ce748d07c2d216237dad6655e505869f154e20c95a"
+  },
+  {
+    "file": "__init__.py",
+    "ast_equivalent": true,
+    "byte_identical": true,
+    "sha256": "00dc94ecbf81da75bff2eef399148d177088b49bc6eab467992b509a2e0c62f0"
+  },
+  {
+    "file": "mlp.py",
+    "ast_equivalent": true,
+    "byte_identical": true,
+    "sha256": "5c729d7d0c476fe67703ee04cfe354149b7a4c7c838a6a2da9c455a7c5fe3e4e"
+  },
+  {
+    "file": "runtime.py",
+    "ast_equivalent": true,
+    "byte_identical": true,
+    "sha256": "efc7762e897836f3dcaab266f54cbd9a4ba649c8c9dd8f5ae1b69708774b23dd"
+  },
+  {
+    "file": "mlp_prepare.py",
+    "ast_equivalent": true,
+    "byte_identical": true,
+    "sha256": "368da415d17e3f622b30361b7b31d7be6c5d7032048efd1cbd949c877f8fca2e"
+  },
+  {
+    "file": "hkt.py",
+    "ast_equivalent": true,
+    "byte_identical": true,
+    "sha256": "a7065e6c3ae14133d28d1b76a17a4a28a41b9c2404467c13064b5c7a6523a1fb"
+  },
+  {
+    "file": "mlp_pair_tasks.py",
+    "ast_equivalent": true,
+    "byte_identical": false,
+    "sha256": "982a0629170e9572147baf37689c27f922bda3c381372f5b5da8975662705c12"
+  }
+]
