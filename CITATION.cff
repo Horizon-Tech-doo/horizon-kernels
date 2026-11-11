@@ -4,6 +4,14 @@ title: "horizon-kernels: GPU kernels, benchmark harness and evidence for AMD MI2
 type: software
 version: "1.0.0"
 date-released: "2026-11-11"
+doi: "10.5281/zenodo.24139083"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.24139083"
+    description: "All versions (always resolves to the latest release)"
+  - type: doi
+    value: "10.5281/zenodo.24139084"
+    description: "Version 1.0.0"
 abstract: "TileLang GPU kernels for LLM inference on AMD Instinct MI250X and NVIDIA SM120, the plugins that run them inside a served model, the benchmark harness, a 32-item checklist for benchmarking a kernel against a vendor library, and the evidence behind the paper named under preferred-citation. Results are reported with their limits, including losses and ties."
 authors:
   - family-names: Abdagic
