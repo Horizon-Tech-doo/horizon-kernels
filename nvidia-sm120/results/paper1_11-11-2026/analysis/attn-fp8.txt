@@ -1,0 +1,103 @@
+
+=== attn_fp8 ===
+job forward seed 988: 1 block(s), 28 cells done, 0 cell errors; cycles per arm min 9; noise bound (max |ctl/new-1|) 4.39%; ws 513 MiB; graph replay True; idle 105.1 W
+job reverse seed 988: 1 block(s), 28 cells done, 0 cell errors; cycles per arm min 9; noise bound (max |ctl/new-1|) 9.77%; ws 513 MiB; graph replay True; idle 101.2 W
+
+-- xqa time / new time (higher: ours faster); per job: ratio (net, ctl, cyc min..max) verdict
+ B1_L1024_Q4                  fwd  0.391 (net n/a, ctl -0.19%, cyc 0.391..0.392) L | rev  0.391 (net n/a, ctl +0.02%, cyc 0.391..0.392) L  range 0.391..0.391  BOTH-LOSE > noise
+ B1_L1024_Q1                  fwd  0.315 (net n/a, ctl +0.00%, cyc 0.315..0.315) L | rev  0.315 (net n/a, ctl -0.02%, cyc 0.315..0.315) L  range 0.315..0.315  BOTH-LOSE > noise
+ B1_L4096_Q4                  fwd  0.490 (net n/a, ctl +0.03%, cyc 0.490..0.490) L | rev  0.489 (net n/a, ctl -0.05%, cyc 0.488..0.489) L  range 0.489..0.490  BOTH-LOSE > noise
+ B1_L4096_Q1                  fwd  0.406 (net n/a, ctl +0.00%, cyc 0.405..0.406) L | rev  0.405 (net n/a, ctl -0.01%, cyc 0.405..0.405) L  range 0.405..0.406  BOTH-LOSE > noise
+ B1_L16384_Q4                 fwd  0.805 (net n/a, ctl +0.00%, cyc 0.804..0.806) L | rev  0.804 (net n/a, ctl +0.00%, cyc 0.804..0.805) L  range 0.804..0.805  BOTH-LOSE > noise
+ B1_L16384_Q1                 fwd  0.751 (net n/a, ctl +0.01%, cyc 0.750..0.751) L | rev  0.750 (net n/a, ctl +0.02%, cyc 0.750..0.751) L  range 0.750..0.751  BOTH-LOSE > noise
+ B1_L32768_Q4                 fwd  0.739 (net n/a, ctl -0.10%, cyc 0.738..0.740) L | rev  0.740 (net n/a, ctl +0.01%, cyc 0.739..0.772) L  range 0.739..0.740  BOTH-LOSE > noise
+ B1_L32768_Q1                 fwd  0.742 (net n/a, ctl -0.02%, cyc 0.739..0.742) L | rev  0.741 (net n/a, ctl -0.02%, cyc 0.740..0.745) L  range 0.741..0.742  BOTH-LOSE > noise
+ B1_L131072_Q4                fwd  0.710 (net n/a, ctl -0.66%, cyc 0.665..0.727) L | rev  0.723 (net n/a, ctl +0.62%, cyc 0.718..0.782) L  range 0.710..0.723  BOTH-LOSE > noise
+ B1_L131072_Q1                fwd  0.763 (net n/a, ctl -0.00%, cyc 0.747..0.764) L | rev  0.764 (net n/a, ctl +0.01%, cyc 0.762..0.798) L  range 0.763..0.764  BOTH-LOSE > noise
+ B8_L1024_Q4                  fwd  0.587 (net n/a, ctl -0.03%, cyc 0.586..0.588) L | rev  0.586 (net n/a, ctl -0.02%, cyc 0.586..0.593) L  range 0.586..0.587  BOTH-LOSE > noise
+ B8_L1024_Q1                  fwd  0.606 (net n/a, ctl +0.02%, cyc 0.605..0.607) L | rev  0.605 (net n/a, ctl +0.00%, cyc 0.605..0.606) L  range 0.605..0.606  BOTH-LOSE > noise
+ B8_L4096_Q4                  fwd  0.655 (net n/a, ctl -0.06%, cyc 0.651..0.677) L | rev  0.656 (net n/a, ctl +0.02%, cyc 0.655..0.718) L  range 0.655..0.656  BOTH-LOSE > noise
+ B8_L4096_Q1                  fwd  0.709 (net n/a, ctl +0.01%, cyc 0.700..0.710) L | rev  0.709 (net n/a, ctl +0.01%, cyc 0.708..0.763) L  range 0.709..0.709  BOTH-LOSE > noise
+ B8_L16384_Q4                 fwd  0.620 (net n/a, ctl -1.71%, cyc 0.580..0.664) L | rev  0.641 (net n/a, ctl +1.71%, cyc 0.638..0.724) L  range 0.620..0.641  BOTH-LOSE > noise
+ B8_L16384_Q1                 fwd  0.689 (net n/a, ctl -0.17%, cyc 0.662..0.715) L | rev  0.692 (net n/a, ctl +0.28%, cyc 0.690..0.744) L  range 0.689..0.692  BOTH-LOSE > noise
+ B8_L32768_Q4                 fwd  0.587 (net n/a, ctl -4.39%, cyc 0.568..0.655) L | rev  0.697 (net n/a, ctl +8.66%, cyc 0.675..0.750) L  range 0.587..0.697  BOTH-LOSE > noise
+ B8_L32768_Q1                 fwd  0.671 (net n/a, ctl -2.47%, cyc 0.627..0.713) L | rev  0.718 (net n/a, ctl +3.61%, cyc 0.713..0.803) L  range 0.671..0.718  BOTH-LOSE > noise
+ B8_L131072_Q4                fwd  0.567 (net n/a, ctl +0.11%, cyc 0.560..0.660) L | rev  0.706 (net n/a, ctl +7.23%, cyc 0.659..0.716) L  range 0.567..0.706  BOTH-LOSE > noise
+ B8_L131072_Q1                fwd  0.618 (net n/a, ctl +0.07%, cyc 0.615..0.717) L | rev  0.792 (net n/a, ctl +9.77%, cyc 0.718..0.797) L  range 0.618..0.792  BOTH-LOSE > noise
+ B32_L1024_Q4                 fwd  0.500 (net n/a, ctl -0.01%, cyc 0.499..0.526) L | rev  0.500 (net n/a, ctl -0.02%, cyc 0.499..0.564) L  range 0.500..0.500  BOTH-LOSE > noise
+ B32_L1024_Q1                 fwd  0.550 (net n/a, ctl +0.00%, cyc 0.550..0.562) L | rev  0.550 (net n/a, ctl -0.00%, cyc 0.550..0.590) L  range 0.550..0.550  BOTH-LOSE > noise
+ B32_L4096_Q4                 fwd  0.514 (net n/a, ctl -0.18%, cyc 0.504..0.561) L | rev  0.521 (net n/a, ctl +0.16%, cyc 0.518..0.580) L  range 0.514..0.521  BOTH-LOSE > noise
+ B32_L4096_Q1                 fwd  0.559 (net n/a, ctl -0.02%, cyc 0.558..0.586) L | rev  0.560 (net n/a, ctl -0.00%, cyc 0.558..0.632) L  range 0.559..0.560  BOTH-LOSE > noise
+ B32_L16384_Q4                fwd  0.513 (net n/a, ctl -0.23%, cyc 0.498..0.568) L | rev  0.548 (net n/a, ctl +0.51%, cyc 0.545..0.591) L  range 0.513..0.548  BOTH-LOSE > noise
+ B32_L16384_Q1                fwd  0.560 (net n/a, ctl -0.03%, cyc 0.556..0.617) L | rev  0.570 (net n/a, ctl -0.00%, cyc 0.569..0.640) L  range 0.560..0.570  BOTH-LOSE > noise
+ B32_L32768_Q4                fwd  0.496 (net n/a, ctl -0.17%, cyc 0.491..0.580) L | rev  0.597 (net n/a, ctl +4.12%, cyc 0.579..0.612) L  range 0.496..0.597  BOTH-LOSE > noise
+ B32_L32768_Q1                fwd  0.546 (net n/a, ctl +0.01%, cyc 0.541..0.637) L | rev  0.632 (net n/a, ctl +1.83%, cyc 0.629..0.659) L  range 0.546..0.632  BOTH-LOSE > noise
+ summary xqa/new: 28 cells, ratio 0.315..0.805, median 0.618; BOTH-LOSE > noise: 28
+
+-- xqa time / nopipe time (higher: ours faster); per job: ratio (net, ctl, cyc min..max) verdict
+ B1_L1024_Q4                  fwd  0.154 (net n/a, ctl -0.19%, cyc 0.153..0.154) L | rev  0.154 (net n/a, ctl +0.02%, cyc 0.154..0.154) L  range 0.154..0.154  BOTH-LOSE > noise
+ B1_L1024_Q1                  fwd  0.113 (net n/a, ctl +0.00%, cyc 0.113..0.113) L | rev  0.114 (net n/a, ctl -0.02%, cyc 0.114..0.114) L  range 0.113..0.114  BOTH-LOSE > noise
+ B1_L4096_Q4                  fwd  0.196 (net n/a, ctl +0.03%, cyc 0.196..0.196) L | rev  0.195 (net n/a, ctl -0.05%, cyc 0.195..0.195) L  range 0.195..0.196  BOTH-LOSE > noise
+ B1_L4096_Q1                  fwd  0.150 (net n/a, ctl +0.00%, cyc 0.150..0.150) L | rev  0.150 (net n/a, ctl -0.01%, cyc 0.150..0.150) L  range 0.150..0.150  BOTH-LOSE > noise
+ B1_L16384_Q4                 fwd  0.303 (net n/a, ctl +0.00%, cyc 0.303..0.304) L | rev  0.302 (net n/a, ctl +0.00%, cyc 0.302..0.303) L  range 0.302..0.303  BOTH-LOSE > noise
+ B1_L16384_Q1                 fwd  0.260 (net n/a, ctl +0.01%, cyc 0.260..0.260) L | rev  0.260 (net n/a, ctl +0.02%, cyc 0.259..0.260) L  range 0.260..0.260  BOTH-LOSE > noise
+ B1_L32768_Q4                 fwd  0.264 (net n/a, ctl -0.10%, cyc 0.264..0.267) L | rev  0.264 (net n/a, ctl +0.01%, cyc 0.263..0.277) L  range 0.264..0.264  BOTH-LOSE > noise
+ B1_L32768_Q1                 fwd  0.240 (net n/a, ctl -0.02%, cyc 0.240..0.241) L | rev  0.240 (net n/a, ctl -0.02%, cyc 0.240..0.242) L  range 0.240..0.240  BOTH-LOSE > noise
+ B1_L131072_Q4                fwd  0.221 (net n/a, ctl -0.66%, cyc 0.221..0.247) L | rev  0.222 (net n/a, ctl +0.62%, cyc 0.221..0.247) L  range 0.221..0.222  BOTH-LOSE > noise
+ B1_L131072_Q1                fwd  0.213 (net n/a, ctl -0.00%, cyc 0.213..0.228) L | rev  0.213 (net n/a, ctl +0.01%, cyc 0.213..0.233) L  range 0.213..0.213  BOTH-LOSE > noise
+ B8_L1024_Q4                  fwd  0.211 (net n/a, ctl -0.03%, cyc 0.211..0.211) L | rev  0.210 (net n/a, ctl -0.02%, cyc 0.210..0.212) L  range 0.210..0.211  BOTH-LOSE > noise
+ B8_L1024_Q1                  fwd  0.190 (net n/a, ctl +0.02%, cyc 0.190..0.190) L | rev  0.190 (net n/a, ctl +0.00%, cyc 0.190..0.190) L  range 0.190..0.190  BOTH-LOSE > noise
+ B8_L4096_Q4                  fwd  0.203 (net n/a, ctl -0.06%, cyc 0.203..0.223) L | rev  0.203 (net n/a, ctl +0.02%, cyc 0.203..0.230) L  range 0.203..0.203  BOTH-LOSE > noise
+ B8_L4096_Q1                  fwd  0.194 (net n/a, ctl +0.01%, cyc 0.194..0.198) L | rev  0.194 (net n/a, ctl +0.01%, cyc 0.194..0.210) L  range 0.194..0.194  BOTH-LOSE > noise
+ B8_L16384_Q4                 fwd  0.180 (net n/a, ctl -1.71%, cyc 0.180..0.210) L | rev  0.182 (net n/a, ctl +1.71%, cyc 0.181..0.209) L  range 0.180..0.182  BOTH-LOSE > noise
+ B8_L16384_Q1                 fwd  0.176 (net n/a, ctl -0.17%, cyc 0.176..0.200) L | rev  0.176 (net n/a, ctl +0.28%, cyc 0.176..0.200) L  range 0.176..0.176  BOTH-LOSE > noise
+ B8_L32768_Q4                 fwd  0.181 (net n/a, ctl -4.39%, cyc 0.181..0.209) L | rev  0.197 (net n/a, ctl +8.66%, cyc 0.195..0.213) L  range 0.181..0.197  BOTH-LOSE > noise
+ B8_L32768_Q1                 fwd  0.176 (net n/a, ctl -2.47%, cyc 0.176..0.202) L | rev  0.181 (net n/a, ctl +3.61%, cyc 0.180..0.205) L  range 0.176..0.181  BOTH-LOSE > noise
+ B8_L131072_Q4                fwd  0.181 (net n/a, ctl +0.11%, cyc 0.181..0.213) L | rev  0.209 (net n/a, ctl +7.23%, cyc 0.208..0.213) L  range 0.181..0.209  BOTH-LOSE > noise
+ B8_L131072_Q1                fwd  0.175 (net n/a, ctl +0.07%, cyc 0.175..0.206) L | rev  0.203 (net n/a, ctl +9.77%, cyc 0.202..0.206) L  range 0.175..0.203  BOTH-LOSE > noise
+ B32_L1024_Q4                 fwd  0.149 (net n/a, ctl -0.01%, cyc 0.149..0.160) L | rev  0.149 (net n/a, ctl -0.02%, cyc 0.149..0.169) L  range 0.149..0.149  BOTH-LOSE > noise
+ B32_L1024_Q1                 fwd  0.144 (net n/a, ctl +0.00%, cyc 0.144..0.148) L | rev  0.144 (net n/a, ctl -0.00%, cyc 0.144..0.154) L  range 0.144..0.144  BOTH-LOSE > noise
+ B32_L4096_Q4                 fwd  0.145 (net n/a, ctl -0.18%, cyc 0.145..0.166) L | rev  0.146 (net n/a, ctl +0.16%, cyc 0.145..0.169) L  range 0.145..0.146  BOTH-LOSE > noise
+ B32_L4096_Q1                 fwd  0.141 (net n/a, ctl -0.02%, cyc 0.140..0.152) L | rev  0.140 (net n/a, ctl -0.00%, cyc 0.140..0.160) L  range 0.140..0.141  BOTH-LOSE > noise
+ B32_L16384_Q4                fwd  0.143 (net n/a, ctl -0.23%, cyc 0.143..0.167) L | rev  0.151 (net n/a, ctl +0.51%, cyc 0.151..0.169) L  range 0.143..0.151  BOTH-LOSE > noise
+ B32_L16384_Q1                fwd  0.139 (net n/a, ctl -0.03%, cyc 0.139..0.158) L | rev  0.141 (net n/a, ctl -0.00%, cyc 0.141..0.162) L  range 0.139..0.141  BOTH-LOSE > noise
+ B32_L32768_Q4                fwd  0.144 (net n/a, ctl -0.17%, cyc 0.143..0.170) L | rev  0.165 (net n/a, ctl +4.12%, cyc 0.164..0.169) L  range 0.144..0.165  BOTH-LOSE > noise
+ B32_L32768_Q1                fwd  0.139 (net n/a, ctl +0.01%, cyc 0.139..0.165) L | rev  0.156 (net n/a, ctl +1.83%, cyc 0.155..0.164) L  range 0.139..0.156  BOTH-LOSE > noise
+ summary xqa/nopipe: 28 cells, ratio 0.113..0.303, median 0.185; BOTH-LOSE > noise: 28
+
+-- energy per call (separate tight-loop pass; whole-GPU power, co-resident process included)
+   cell / job / arm: J per call, average W, calls/s, net J per call (idle subtracted, derived), source
+ B1_L1024_Q1                  fwd new          3.9315 mJ    121.9 W     30385.4 /s  net 0.5547 mJ  counter
+ B1_L1024_Q1                  fwd ctl          3.9380 mJ    126.2 W     30396.3 /s  net 0.6956 mJ  counter
+ B1_L1024_Q1                  fwd xqa          1.5412 mJ    147.0 W     96483.0 /s  net 0.4344 mJ  counter
+ B1_L1024_Q1                  fwd energy noise |ctl/new-1| 0.17%; xqa J / new J = 0.392
+ B1_L1024_Q1                  rev new          3.9726 mJ    125.6 W     30356.9 /s  net 0.8019 mJ  counter
+ B1_L1024_Q1                  rev ctl          4.0410 mJ    121.2 W     30350.3 /s  net 0.6581 mJ  counter
+ B1_L1024_Q1                  rev xqa          1.5382 mJ    144.2 W     96319.3 /s  net 0.4461 mJ  counter
+ B1_L1024_Q1                  rev energy noise |ctl/new-1| 1.72%; xqa J / new J = 0.387
+ B1_L131072_Q1                fwd new         75.9408 mJ    295.5 W      3891.3 /s  net 48.9405 mJ  counter
+ B1_L131072_Q1                fwd ctl         76.0819 mJ    300.0 W      3857.5 /s  net 50.5312 mJ  counter
+ B1_L131072_Q1                fwd xqa         61.3926 mJ    300.0 W      4949.1 /s  net 39.3842 mJ  counter
+ B1_L131072_Q1                fwd energy noise |ctl/new-1| 0.19%; xqa J / new J = 0.808
+ B1_L131072_Q1                rev new         76.2116 mJ    300.0 W      3862.2 /s  net 51.4719 mJ  counter
+ B1_L131072_Q1                rev ctl         76.4489 mJ    296.1 W      3895.6 /s  net 50.0129 mJ  counter
+ B1_L131072_Q1                rev xqa         59.7385 mJ    300.0 W      4953.3 /s  net 40.1277 mJ  counter
+ B1_L131072_Q1                rev energy noise |ctl/new-1| 0.31%; xqa J / new J = 0.784
+ B8_L16384_Q4                 fwd new         95.5666 mJ    300.0 W      3072.0 /s  net 63.4475 mJ  counter
+ B8_L16384_Q4                 fwd ctl         95.7659 mJ    296.2 W      3083.5 /s  net 61.9936 mJ  counter
+ B8_L16384_Q4                 fwd xqa         64.5191 mJ    300.0 W      4620.0 /s  net 42.1918 mJ  counter
+ B8_L16384_Q4                 fwd energy noise |ctl/new-1| 0.21%; xqa J / new J = 0.675
+ B8_L16384_Q4                 rev new         95.6695 mJ    295.4 W      3089.0 /s  net 62.8672 mJ  counter
+ B8_L16384_Q4                 rev ctl         97.0960 mJ    299.4 W      3075.9 /s  net 64.4410 mJ  counter
+ B8_L16384_Q4                 rev xqa         64.2346 mJ    300.0 W      4640.9 /s  net 42.8287 mJ  counter
+ B8_L16384_Q4                 rev energy noise |ctl/new-1| 1.49%; xqa J / new J = 0.671
+ B32_L32768_Q4                fwd new        879.1843 mJ    300.2 W       340.5 /s  net 573.0167 mJ  counter
+ B32_L32768_Q4                fwd ctl        874.1795 mJ    292.9 W       341.5 /s  net 549.9589 mJ  counter
+ B32_L32768_Q4                fwd xqa        511.7665 mJ    300.4 W       591.5 /s  net 330.2450 mJ  counter
+ B32_L32768_Q4                fwd energy noise |ctl/new-1| 0.57%; xqa J / new J = 0.582
+ B32_L32768_Q4                rev new        868.9466 mJ    291.5 W       343.2 /s  net 554.4822 mJ  counter
+ B32_L32768_Q4                rev ctl        877.0638 mJ    299.7 W       341.6 /s  net 581.1209 mJ  counter
+ B32_L32768_Q4                rev xqa        501.8391 mJ    300.0 W       592.6 /s  net 335.4480 mJ  counter
+ B32_L32768_Q4                rev energy noise |ctl/new-1| 0.93%; xqa J / new J = 0.578
+ job forward: energy noise bound (max |J(ctl)/J(new)-1| over 4 cells) 0.57%
+ job reverse: energy noise bound (max |J(ctl)/J(new)-1| over 4 cells) 1.72%

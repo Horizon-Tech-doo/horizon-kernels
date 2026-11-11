@@ -1,0 +1,41 @@
+
+=== prefill ===
+job forward seed 989: 1 block(s), 5 cells done, 0 cell errors; cycles per arm min 9; noise bound (max |ctl/new-1|) 0.02%; ws 513 MiB; graph replay True; idle 105.7 W
+job reverse seed 989: 1 block(s), 5 cells done, 0 cell errors; cycles per arm min 9; noise bound (max |ctl/new-1|) 0.01%; ws 513 MiB; graph replay True; idle 114.5 W
+
+-- fa2 time / new time (higher: ours faster); per job: ratio (net, ctl, cyc min..max) verdict
+ q1024_k1024                  fwd  0.416 (net n/a, ctl +0.02%, cyc 0.415..0.416) L | rev  0.417 (net n/a, ctl -0.01%, cyc 0.416..0.417) L  range 0.416..0.417  BOTH-LOSE > noise
+ q1024_k4096                  fwd  0.430 (net n/a, ctl +0.01%, cyc 0.428..0.435) L | rev  0.436 (net n/a, ctl -0.01%, cyc 0.435..0.437) L  range 0.430..0.436  BOTH-LOSE > noise
+ q4096_k4096                  fwd  0.492 (net n/a, ctl -0.00%, cyc 0.487..0.501) L | rev  0.499 (net n/a, ctl -0.00%, cyc 0.497..0.501) L  range 0.492..0.499  BOTH-LOSE > noise
+ q8192_k8192                  fwd  0.534 (net n/a, ctl -0.02%, cyc 0.533..0.534) L | rev  0.532 (net n/a, ctl +0.01%, cyc 0.531..0.533) L  range 0.532..0.534  BOTH-LOSE > noise
+ q8192_k16384                 fwd  0.533 (net n/a, ctl -0.00%, cyc 0.531..0.534) L | rev  0.532 (net n/a, ctl -0.01%, cyc 0.532..0.532) L  range 0.532..0.533  BOTH-LOSE > noise
+ summary fa2/new: 5 cells, ratio 0.416..0.534, median 0.495; BOTH-LOSE > noise: 5
+
+-- fa2 time / q4w4 time (higher: ours faster); per job: ratio (net, ctl, cyc min..max) verdict
+ q1024_k1024                  fwd  0.393 (net n/a, ctl +0.02%, cyc 0.392..0.393) L | rev  0.393 (net n/a, ctl -0.01%, cyc 0.393..0.394) L  range 0.393..0.393  BOTH-LOSE > noise
+ q1024_k4096                  fwd  0.362 (net n/a, ctl +0.01%, cyc 0.360..0.367) L | rev  0.367 (net n/a, ctl -0.01%, cyc 0.366..0.368) L  range 0.362..0.367  BOTH-LOSE > noise
+ q4096_k4096                  fwd  0.352 (net n/a, ctl -0.00%, cyc 0.348..0.358) L | rev  0.357 (net n/a, ctl -0.00%, cyc 0.355..0.358) L  range 0.352..0.357  BOTH-LOSE > noise
+ q8192_k8192                  fwd  0.358 (net n/a, ctl -0.02%, cyc 0.357..0.358) L | rev  0.357 (net n/a, ctl +0.01%, cyc 0.356..0.358) L  range 0.357..0.358  BOTH-LOSE > noise
+ q8192_k16384                 fwd  0.349 (net n/a, ctl -0.00%, cyc 0.348..0.350) L | rev  0.348 (net n/a, ctl -0.01%, cyc 0.348..0.348) L  range 0.348..0.349  BOTH-LOSE > noise
+ summary fa2/q4w4: 5 cells, ratio 0.348..0.393, median 0.357; BOTH-LOSE > noise: 5
+
+-- fa2 time / q8w8 time (higher: ours faster); per job: ratio (net, ctl, cyc min..max) verdict
+ q1024_k1024                  fwd  0.552 (net n/a, ctl +0.02%, cyc 0.552..0.552) L | rev  0.554 (net n/a, ctl -0.01%, cyc 0.552..0.554) L  range 0.552..0.554  BOTH-LOSE > noise
+ q1024_k4096                  fwd  0.579 (net n/a, ctl +0.01%, cyc 0.577..0.582) L | rev  0.574 (net n/a, ctl -0.01%, cyc 0.571..0.575) L  range 0.574..0.579  BOTH-LOSE > noise
+ q4096_k4096                  fwd  0.530 (net n/a, ctl -0.00%, cyc 0.528..0.536) L | rev  0.528 (net n/a, ctl -0.00%, cyc 0.528..0.530) L  range 0.528..0.530  BOTH-LOSE > noise
+ q8192_k8192                  fwd  0.534 (net n/a, ctl -0.02%, cyc 0.533..0.535) L | rev  0.534 (net n/a, ctl +0.01%, cyc 0.533..0.534) L  range 0.534..0.534  BOTH-LOSE > noise
+ q8192_k16384                 fwd  0.526 (net n/a, ctl -0.00%, cyc 0.525..0.528) L | rev  0.525 (net n/a, ctl -0.01%, cyc 0.525..0.526) L  range 0.525..0.526  BOTH-LOSE > noise
+ summary fa2/q8w8: 5 cells, ratio 0.525..0.579, median 0.534; BOTH-LOSE > noise: 5
+
+-- energy per call (separate tight-loop pass; whole-GPU power, co-resident process included)
+   cell / job / arm: J per call, average W, calls/s, net J per call (idle subtracted, derived), source
+ q1024_k4096                  fwd new        360.8990 mJ    237.1 W       652.3 /s  net 201.4255 mJ  counter
+ q1024_k4096                  fwd ctl        361.5861 mJ    244.9 W       652.3 /s  net 213.4297 mJ  counter
+ q1024_k4096                  fwd fa2        199.1747 mJ    294.9 W      1497.3 /s  net 126.3331 mJ  counter
+ q1024_k4096                  fwd energy noise |ctl/new-1| 0.19%; fa2 J / new J = 0.552
+ q1024_k4096                  rev new        380.6203 mJ    253.8 W       651.6 /s  net 213.8081 mJ  counter
+ q1024_k4096                  rev ctl        372.2433 mJ    246.6 W       651.6 /s  net 202.8090 mJ  counter
+ q1024_k4096                  rev fa2        201.3599 mJ    298.0 W      1470.8 /s  net 124.7425 mJ  counter
+ q1024_k4096                  rev energy noise |ctl/new-1| 2.20%; fa2 J / new J = 0.529
+ job forward: energy noise bound (max |J(ctl)/J(new)-1| over 1 cells) 0.19%
+ job reverse: energy noise bound (max |J(ctl)/J(new)-1| over 1 cells) 2.20%

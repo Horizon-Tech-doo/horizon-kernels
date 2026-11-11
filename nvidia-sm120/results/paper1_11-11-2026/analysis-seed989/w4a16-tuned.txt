@@ -1,0 +1,435 @@
+
+=== w4a16 ===
+job forward seed 989: 2 block(s), 160 cells done, 0 cell errors; cycles per arm min 9; noise bound (max |ctl/new-1|) 0.75%; ws 513 MiB; graph replay True; idle 110.7 W
+job reverse seed 989: 2 block(s), 160 cells done, 0 cell errors; cycles per arm min 9; noise bound (max |ctl/new-1|) 0.50%; ws 513 MiB; graph replay True; idle 110.0 W
+
+-- cublas time / new time (higher: ours faster); per job: ratio (net, ctl, cyc min..max) verdict
+ 16384x5120_M1                fwd  3.192 (net 3.254, ctl -0.25%, cyc 3.160..3.318) W | rev  3.190 (net 3.252, ctl -0.03%, cyc 3.154..3.288) W  range 3.190..3.192  KEEP: both-win > noise
+ 16384x5120_M4                fwd  3.029 (net 3.083, ctl -0.23%, cyc 3.003..3.357) W | rev  3.021 (net 3.075, ctl +0.18%, cyc 2.996..3.197) W  range 3.021..3.029  KEEP: both-win > noise
+ 16384x5120_M8                fwd  3.065 (net 3.119, ctl -0.13%, cyc 3.022..3.329) W | rev  3.056 (net 3.110, ctl -0.01%, cyc 3.018..3.174) W  range 3.056..3.065  KEEP: both-win > noise
+ 16384x5120_M16               fwd  3.124 (net 3.180, ctl -0.07%, cyc 3.074..3.348) W | rev  3.113 (net 3.169, ctl -0.13%, cyc 3.070..3.160) W  range 3.113..3.124  KEEP: both-win > noise
+ 16384x5120_M17               fwd  2.773 (net 2.815, ctl -0.26%, cyc 2.757..3.050) W | rev  2.778 (net 2.820, ctl -0.05%, cyc 2.750..2.811) W  range 2.773..2.778  KEEP: both-win > noise
+ 16384x5120_M24               fwd  2.774 (net 2.815, ctl -0.09%, cyc 2.755..3.027) W | rev  2.778 (net 2.820, ctl +0.07%, cyc 2.756..2.820) W  range 2.774..2.778  KEEP: both-win > noise
+ 16384x5120_M32               fwd  2.762 (net 2.802, ctl -0.08%, cyc 2.743..3.000) W | rev  2.763 (net 2.803, ctl -0.01%, cyc 2.713..2.808) W  range 2.762..2.763  KEEP: both-win > noise
+ 16384x5120_M33               fwd  2.314 (net 2.339, ctl +0.12%, cyc 2.298..2.491) W | rev  2.314 (net 2.340, ctl -0.02%, cyc 2.164..2.371) W  range 2.314..2.314  KEEP: both-win > noise
+ 16384x5120_M40               fwd  2.305 (net 2.330, ctl +0.08%, cyc 2.286..2.471) W | rev  2.306 (net 2.331, ctl -0.02%, cyc 2.159..2.347) W  range 2.305..2.306  KEEP: both-win > noise
+ 16384x5120_M48               fwd  2.336 (net 2.362, ctl -0.06%, cyc 2.323..2.506) W | rev  2.340 (net 2.366, ctl +0.10%, cyc 2.164..2.397) W  range 2.336..2.340  KEEP: both-win > noise
+ 16384x5120_M49               fwd  1.932 (net 1.947, ctl +0.12%, cyc 1.892..2.092) W | rev  1.934 (net 1.948, ctl +0.13%, cyc 1.762..1.942) W  range 1.932..1.934  KEEP: both-win > noise
+ 16384x5120_M56               fwd  1.936 (net 1.950, ctl +0.27%, cyc 1.893..2.106) W | rev  1.933 (net 1.947, ctl +0.13%, cyc 1.755..1.938) W  range 1.933..1.936  KEEP: both-win > noise
+ 16384x5120_M64               fwd  1.941 (net 1.956, ctl +0.09%, cyc 1.903..2.116) W | rev  1.943 (net 1.957, ctl +0.10%, cyc 1.762..1.949) W  range 1.941..1.943  KEEP: both-win > noise
+ 16384x5120_M72               fwd  1.836 (net 1.847, ctl +0.17%, cyc 1.827..2.073) W | rev  1.824 (net 1.834, ctl +0.12%, cyc 1.654..1.831) W  range 1.824..1.836  KEEP: both-win > noise
+ 16384x5120_M96               fwd  1.614 (net 1.621, ctl -0.15%, cyc 1.609..1.828) W | rev  1.604 (net 1.611, ctl +0.13%, cyc 1.479..1.609) W  range 1.604..1.614  KEEP: both-win > noise
+ 16384x5120_M104              fwd  1.454 (net 1.458, ctl -0.24%, cyc 1.448..1.626) W | rev  1.449 (net 1.453, ctl -0.23%, cyc 1.361..1.451) W  range 1.449..1.454  KEEP: both-win > noise
+ 16384x5120_M128              fwd  1.364 (net 1.367, ctl -0.25%, cyc 1.360..1.517) W | rev  1.359 (net 1.362, ctl +0.09%, cyc 1.292..1.361) W  range 1.359..1.364  KEEP: both-win > noise
+ 16384x5120_M144              fwd  1.730 (net 1.736, ctl -0.22%, cyc 1.723..1.887) W | rev  1.724 (net 1.730, ctl -0.06%, cyc 1.698..1.730) W  range 1.724..1.730  KEEP: both-win > noise
+ 16384x5120_M192              fwd  1.486 (net 1.490, ctl -0.27%, cyc 1.481..1.611) W | rev  1.481 (net 1.485, ctl -0.00%, cyc 1.478..1.487) W  range 1.481..1.486  KEEP: both-win > noise
+ 16384x5120_M208              fwd  1.274 (net 1.276, ctl -0.44%, cyc 1.272..1.365) W | rev  1.266 (net 1.268, ctl -0.26%, cyc 1.259..1.272) W  range 1.266..1.274  KEEP: both-win > noise
+ 16384x5120_M232              fwd  1.194 (net 1.195, ctl -0.14%, cyc 1.189..1.283) W | rev  1.185 (net 1.186, ctl -0.01%, cyc 1.179..1.193) W  range 1.185..1.194  KEEP: both-win > noise
+ 16384x5120_M256              fwd  1.140 (net 1.141, ctl -0.55%, cyc 1.134..1.204) W | rev  1.132 (net 1.133, ctl -0.33%, cyc 1.122..1.138) W  range 1.132..1.140  KEEP: both-win > noise
+ 16384x5120_M272              fwd  1.489 (net 1.491, ctl -0.11%, cyc 1.486..1.574) W | rev  1.481 (net 1.484, ctl +0.03%, cyc 1.459..1.486) W  range 1.481..1.489  KEEP: both-win > noise
+ 16384x5120_M304              fwd  1.372 (net 1.374, ctl +0.03%, cyc 1.368..1.437) W | rev  1.366 (net 1.368, ctl -0.03%, cyc 1.343..1.368) W  range 1.366..1.372  KEEP: both-win > noise
+ 16384x5120_M384              fwd  1.186 (net 1.187, ctl +0.14%, cyc 1.182..1.227) W | rev  1.181 (net 1.182, ctl +0.29%, cyc 1.165..1.186) W  range 1.181..1.186  KEEP: both-win > noise
+ 16384x5120_M416              fwd  1.233 (net 1.234, ctl -0.03%, cyc 1.232..1.274) W | rev  1.225 (net 1.226, ctl -0.07%, cyc 1.219..1.232) W  range 1.225..1.233  KEEP: both-win > noise
+ 16384x5120_M512              fwd  1.043 (net 1.043, ctl +0.14%, cyc 1.041..1.067) W | rev  1.039 (net 1.039, ctl +0.25%, cyc 1.035..1.044) W  range 1.039..1.043  KEEP: both-win > noise
+ 16384x5120_M544              fwd  1.115 (net 1.115, ctl -0.08%, cyc 1.114..1.133) W | rev  1.110 (net 1.110, ctl -0.03%, cyc 1.105..1.113) W  range 1.110..1.115  KEEP: both-win > noise
+ 16384x5120_M608              fwd  1.029 (net 1.029, ctl -0.03%, cyc 1.027..1.044) W | rev  1.026 (net 1.026, ctl -0.01%, cyc 1.021..1.029) W  range 1.026..1.029  KEEP: both-win > noise
+ 16384x5120_M768              fwd  1.078 (net 1.078, ctl +0.31%, cyc 1.076..1.089) W | rev  1.076 (net 1.076, ctl +0.35%, cyc 1.072..1.078) W  range 1.076..1.078  KEEP: both-win > noise
+ 16384x5120_M832              fwd  1.079 (net 1.079, ctl -0.09%, cyc 1.078..1.085) W | rev  1.077 (net 1.077, ctl -0.07%, cyc 1.076..1.078) W  range 1.077..1.079  KEEP: both-win > noise
+ 16384x5120_M1024             fwd  1.035 (net 1.035, ctl -0.05%, cyc 1.034..1.039) W | rev  1.035 (net 1.035, ctl -0.10%, cyc 1.031..1.038) W  range 1.035..1.035  KEEP: both-win > noise
+ 14336x5120_M1                fwd  3.078 (net 3.141, ctl -0.07%, cyc 3.012..3.119) W | rev  3.070 (net 3.132, ctl +0.25%, cyc 2.928..3.081) W  range 3.070..3.078  KEEP: both-win > noise
+ 14336x5120_M4                fwd  2.954 (net 3.011, ctl -0.23%, cyc 2.940..3.313) W | rev  2.946 (net 3.004, ctl +0.19%, cyc 2.928..3.143) W  range 2.946..2.954  KEEP: both-win > noise
+ 14336x5120_M8                fwd  2.933 (net 2.989, ctl -0.13%, cyc 2.888..3.183) W | rev  2.935 (net 2.992, ctl +0.13%, cyc 2.887..3.027) W  range 2.933..2.935  KEEP: both-win > noise
+ 14336x5120_M16               fwd  3.062 (net 3.122, ctl -0.06%, cyc 2.993..3.198) W | rev  3.052 (net 3.112, ctl +0.07%, cyc 2.997..3.063) W  range 3.052..3.062  KEEP: both-win > noise
+ 14336x5120_M17               fwd  2.665 (net 2.705, ctl +0.03%, cyc 2.658..2.901) W | rev  2.671 (net 2.712, ctl +0.12%, cyc 2.549..2.718) W  range 2.665..2.671  KEEP: both-win > noise
+ 14336x5120_M24               fwd  2.681 (net 2.722, ctl -0.04%, cyc 2.672..2.912) W | rev  2.673 (net 2.714, ctl +0.01%, cyc 2.546..2.727) W  range 2.673..2.681  KEEP: both-win > noise
+ 14336x5120_M32               fwd  2.672 (net 2.711, ctl +0.07%, cyc 2.656..2.884) W | rev  2.671 (net 2.711, ctl +0.01%, cyc 2.534..2.718) W  range 2.671..2.672  KEEP: both-win > noise
+ 14336x5120_M33               fwd  2.309 (net 2.338, ctl -0.05%, cyc 2.288..2.495) W | rev  2.311 (net 2.339, ctl +0.14%, cyc 2.148..2.368) W  range 2.309..2.311  KEEP: both-win > noise
+ 14336x5120_M40               fwd  2.325 (net 2.354, ctl +0.10%, cyc 2.299..2.508) W | rev  2.324 (net 2.353, ctl +0.10%, cyc 2.159..2.371) W  range 2.324..2.325  KEEP: both-win > noise
+ 14336x5120_M48               fwd  2.324 (net 2.352, ctl +0.05%, cyc 2.298..2.493) W | rev  2.325 (net 2.353, ctl +0.16%, cyc 2.142..2.393) W  range 2.324..2.325  KEEP: both-win > noise
+ 14336x5120_M49               fwd  1.971 (net 1.988, ctl +0.09%, cyc 1.927..2.175) W | rev  1.968 (net 1.985, ctl +0.33%, cyc 1.788..1.974) W  range 1.968..1.971  KEEP: both-win > noise
+ 14336x5120_M56               fwd  1.963 (net 1.980, ctl +0.03%, cyc 1.923..2.157) W | rev  1.961 (net 1.979, ctl +0.26%, cyc 1.777..1.966) W  range 1.961..1.963  KEEP: both-win > noise
+ 14336x5120_M64               fwd  1.966 (net 1.983, ctl -0.05%, cyc 1.920..2.176) W | rev  1.965 (net 1.982, ctl +0.37%, cyc 1.770..1.967) W  range 1.965..1.966  KEEP: both-win > noise
+ 14336x5120_M72               fwd  1.802 (net 1.814, ctl -0.05%, cyc 1.798..2.050) W | rev  1.793 (net 1.804, ctl +0.21%, cyc 1.598..1.794) W  range 1.793..1.802  KEEP: both-win > noise
+ 14336x5120_M96               fwd  1.613 (net 1.620, ctl -0.27%, cyc 1.610..1.825) W | rev  1.603 (net 1.611, ctl +0.10%, cyc 1.465..1.611) W  range 1.603..1.613  KEEP: both-win > noise
+ 14336x5120_M104              fwd  1.403 (net 1.407, ctl -0.46%, cyc 1.398..1.577) W | rev  1.395 (net 1.399, ctl -0.09%, cyc 1.316..1.403) W  range 1.395..1.403  KEEP: both-win > noise
+ 14336x5120_M128              fwd  1.361 (net 1.365, ctl -0.22%, cyc 1.357..1.526) W | rev  1.362 (net 1.365, ctl +0.07%, cyc 1.291..1.366) W  range 1.361..1.362  KEEP: both-win > noise
+ 14336x5120_M144              fwd  1.621 (net 1.627, ctl -0.52%, cyc 1.617..1.764) W | rev  1.612 (net 1.618, ctl -0.11%, cyc 1.584..1.623) W  range 1.612..1.621  KEEP: both-win > noise
+ 14336x5120_M192              fwd  1.464 (net 1.468, ctl -0.45%, cyc 1.463..1.572) W | rev  1.455 (net 1.458, ctl -0.03%, cyc 1.445..1.466) W  range 1.455..1.464  KEEP: both-win > noise
+ 14336x5120_M208              fwd  1.250 (net 1.252, ctl -0.03%, cyc 1.247..1.334) W | rev  1.240 (net 1.242, ctl +0.27%, cyc 1.239..1.248) W  range 1.240..1.250  KEEP: both-win > noise
+ 14336x5120_M232              fwd  1.197 (net 1.199, ctl -0.48%, cyc 1.193..1.271) W | rev  1.186 (net 1.187, ctl -0.21%, cyc 1.176..1.197) W  range 1.186..1.197  KEEP: both-win > noise
+ 14336x5120_M256              fwd  1.142 (net 1.143, ctl +0.15%, cyc 1.141..1.207) W | rev  1.134 (net 1.135, ctl +0.44%, cyc 1.112..1.143) W  range 1.134..1.142  KEEP: both-win > noise
+ 14336x5120_M272              fwd  1.384 (net 1.387, ctl -0.19%, cyc 1.382..1.457) W | rev  1.376 (net 1.378, ctl -0.03%, cyc 1.350..1.380) W  range 1.376..1.384  KEEP: both-win > noise
+ 14336x5120_M304              fwd  1.209 (net 1.210, ctl -0.02%, cyc 1.204..1.263) W | rev  1.201 (net 1.202, ctl +0.03%, cyc 1.165..1.205) W  range 1.201..1.209  KEEP: both-win > noise
+ 14336x5120_M384              fwd  1.094 (net 1.094, ctl -0.18%, cyc 1.091..1.134) W | rev  1.087 (net 1.087, ctl -0.08%, cyc 1.061..1.095) W  range 1.087..1.094  KEEP: both-win > noise
+ 14336x5120_M416              fwd  1.213 (net 1.214, ctl +0.08%, cyc 1.209..1.250) W | rev  1.205 (net 1.206, ctl +0.17%, cyc 1.197..1.212) W  range 1.205..1.213  KEEP: both-win > noise
+ 14336x5120_M512              fwd  1.072 (net 1.072, ctl -0.07%, cyc 1.071..1.098) W | rev  1.068 (net 1.068, ctl +0.01%, cyc 1.064..1.073) W  range 1.068..1.072  KEEP: both-win > noise
+ 14336x5120_M544              fwd  1.163 (net 1.163, ctl -0.04%, cyc 1.158..1.183) W | rev  1.155 (net 1.156, ctl -0.07%, cyc 1.150..1.164) W  range 1.155..1.163  KEEP: both-win > noise
+ 14336x5120_M608              fwd  1.085 (net 1.085, ctl -0.07%, cyc 1.083..1.103) W | rev  1.080 (net 1.080, ctl +0.04%, cyc 1.076..1.082) W  range 1.080..1.085  KEEP: both-win > noise
+ 14336x5120_M768              fwd  1.031 (net 1.031, ctl -0.20%, cyc 1.028..1.040) W | rev  1.028 (net 1.028, ctl -0.17%, cyc 1.025..1.032) W  range 1.028..1.031  KEEP: both-win > noise
+ 14336x5120_M832              fwd  1.071 (net 1.072, ctl +0.02%, cyc 1.070..1.077) W | rev  1.069 (net 1.069, ctl +0.10%, cyc 1.067..1.071) W  range 1.069..1.071  KEEP: both-win > noise
+ 14336x5120_M1024             fwd  1.031 (net 1.031, ctl -0.14%, cyc 1.029..1.034) W | rev  1.029 (net 1.029, ctl -0.11%, cyc 1.028..1.031) W  range 1.029..1.031  KEEP: both-win > noise
+ 5120x6144_M1                 fwd  2.896 (net 3.014, ctl -0.41%, cyc 2.845..2.946) W | rev  2.886 (net 3.000, ctl -0.17%, cyc 2.812..2.903) W  range 2.886..2.896  KEEP: both-win > noise
+ 5120x6144_M4                 fwd  2.880 (net 2.998, ctl -0.35%, cyc 2.835..2.907) W | rev  2.864 (net 2.981, ctl +0.12%, cyc 2.781..2.881) W  range 2.864..2.880  KEEP: both-win > noise
+ 5120x6144_M8                 fwd  2.880 (net 2.995, ctl -0.26%, cyc 2.826..2.909) W | rev  2.870 (net 2.983, ctl -0.01%, cyc 2.730..2.884) W  range 2.870..2.880  KEEP: both-win > noise
+ 5120x6144_M16                fwd  2.923 (net 3.039, ctl -0.05%, cyc 2.769..2.932) W | rev  2.915 (net 3.031, ctl +0.15%, cyc 2.675..2.931) W  range 2.915..2.923  KEEP: both-win > noise
+ 5120x6144_M17                fwd  2.627 (net 2.711, ctl -0.06%, cyc 2.615..2.768) W | rev  2.630 (net 2.715, ctl +0.14%, cyc 2.528..2.667) W  range 2.627..2.630  KEEP: both-win > noise
+ 5120x6144_M24                fwd  2.611 (net 2.695, ctl -0.11%, cyc 2.599..2.739) W | rev  2.607 (net 2.688, ctl +0.00%, cyc 2.493..2.645) W  range 2.607..2.611  KEEP: both-win > noise
+ 5120x6144_M32                fwd  2.586 (net 2.667, ctl +0.13%, cyc 2.571..2.706) W | rev  2.586 (net 2.665, ctl -0.02%, cyc 2.468..2.614) W  range 2.586..2.586  KEEP: both-win > noise
+ 5120x6144_M33                fwd  2.440 (net 2.499, ctl +0.14%, cyc 2.381..2.620) W | rev  2.432 (net 2.491, ctl +0.39%, cyc 2.144..2.439) W  range 2.432..2.440  KEEP: both-win > noise
+ 5120x6144_M40                fwd  2.447 (net 2.506, ctl +0.08%, cyc 2.390..2.631) W | rev  2.437 (net 2.495, ctl +0.35%, cyc 2.138..2.440) W  range 2.437..2.447  KEEP: both-win > noise
+ 5120x6144_M48                fwd  2.437 (net 2.495, ctl +0.10%, cyc 2.384..2.645) W | rev  2.433 (net 2.491, ctl +0.38%, cyc 2.128..2.437) W  range 2.433..2.437  KEEP: both-win > noise
+ 5120x6144_M49                fwd  2.068 (net 2.105, ctl +0.09%, cyc 2.047..2.314) W | rev  2.058 (net 2.094, ctl +0.34%, cyc 1.806..2.060) W  range 2.058..2.068  KEEP: both-win > noise
+ 5120x6144_M56                fwd  2.067 (net 2.102, ctl +0.03%, cyc 2.047..2.312) W | rev  2.050 (net 2.085, ctl +0.36%, cyc 1.801..2.061) W  range 2.050..2.067  KEEP: both-win > noise
+ 5120x6144_M64                fwd  2.066 (net 2.102, ctl +0.12%, cyc 2.051..2.318) W | rev  2.051 (net 2.087, ctl +0.45%, cyc 1.797..2.057) W  range 2.051..2.066  KEEP: both-win > noise
+ 5120x6144_M72                fwd  1.461 (net 1.472, ctl -0.21%, cyc 1.452..1.641) W | rev  1.446 (net 1.457, ctl +0.15%, cyc 1.323..1.459) W  range 1.446..1.461  KEEP: both-win > noise
+ 5120x6144_M96                fwd  1.355 (net 1.363, ctl -0.56%, cyc 1.353..1.532) W | rev  1.345 (net 1.353, ctl -0.00%, cyc 1.265..1.355) W  range 1.345..1.355  KEEP: both-win > noise
+ 5120x6144_M104               fwd  1.213 (net 1.217, ctl -0.59%, cyc 1.205..1.340) W | rev  1.206 (net 1.210, ctl -0.11%, cyc 1.146..1.214) W  range 1.206..1.213  KEEP: both-win > noise
+ 5120x6144_M128               fwd  1.259 (net 1.264, ctl -0.65%, cyc 1.256..1.391) W | rev  1.254 (net 1.259, ctl -0.08%, cyc 1.194..1.262) W  range 1.254..1.259  KEEP: both-win > noise
+ 5120x6144_M144               fwd  1.341 (net 1.346, ctl -0.54%, cyc 1.339..1.496) W | rev  1.337 (net 1.342, ctl +0.02%, cyc 1.335..1.343) W  range 1.337..1.341  KEEP: both-win > noise
+ 5120x6144_M192               fwd  1.519 (net 1.527, ctl -0.67%, cyc 1.518..1.653) W | rev  1.507 (net 1.515, ctl +0.04%, cyc 1.503..1.522) W  range 1.507..1.519  KEEP: both-win > noise
+ 5120x6144_M208               fwd  1.155 (net 1.157, ctl -0.31%, cyc 1.153..1.226) W | rev  1.151 (net 1.153, ctl +0.00%, cyc 1.137..1.155) W  range 1.151..1.155  KEEP: both-win > noise
+ 5120x6144_M232               fwd  1.154 (net 1.155, ctl -0.29%, cyc 1.151..1.215) W | rev  1.144 (net 1.145, ctl -0.05%, cyc 1.134..1.150) W  range 1.144..1.154  KEEP: both-win > noise
+ 5120x6144_M256               fwd  1.160 (net 1.162, ctl -0.57%, cyc 1.158..1.229) W | rev  1.151 (net 1.153, ctl -0.25%, cyc 1.138..1.158) W  range 1.151..1.160  KEEP: both-win > noise
+ 5120x6144_M272               fwd  1.200 (net 1.202, ctl -0.32%, cyc 1.197..1.254) W | rev  1.192 (net 1.194, ctl +0.01%, cyc 1.171..1.199) W  range 1.192..1.200  KEEP: both-win > noise
+ 5120x6144_M304               fwd  1.140 (net 1.141, ctl -0.22%, cyc 1.139..1.187) W | rev  1.132 (net 1.133, ctl +0.08%, cyc 1.112..1.139) W  range 1.132..1.140  KEEP: both-win > noise
+ 5120x6144_M384               fwd  1.030 (net 1.030, ctl -0.75%, cyc 1.029..1.063) W | rev  1.024 (net 1.024, ctl -0.44%, cyc 1.012..1.030) W  range 1.024..1.030  KEEP: both-win > noise
+ 5120x6144_M416               fwd  1.209 (net 1.211, ctl -0.27%, cyc 1.205..1.248) W | rev  1.201 (net 1.203, ctl -0.00%, cyc 1.197..1.211) W  range 1.201..1.209  KEEP: both-win > noise
+ 5120x6144_M512               fwd  1.085 (net 1.086, ctl -0.18%, cyc 1.085..1.118) W | rev  1.078 (net 1.079, ctl -0.00%, cyc 1.077..1.085) W  range 1.078..1.085  KEEP: both-win > noise
+ 5120x6144_M544               fwd  1.237 (net 1.238, ctl +0.14%, cyc 1.232..1.268) W | rev  1.225 (net 1.226, ctl -0.01%, cyc 1.220..1.232) W  range 1.225..1.237  KEEP: both-win > noise
+ 5120x6144_M608               fwd  1.086 (net 1.086, ctl +0.49%, cyc 1.084..1.100) W | rev  1.079 (net 1.079, ctl +0.45%, cyc 1.074..1.086) W  range 1.079..1.086  KEEP: both-win > noise
+ 5120x6144_M768               fwd  0.992 (net 0.992, ctl -0.08%, cyc 0.989..0.999) L | rev  0.986 (net 0.986, ctl -0.02%, cyc 0.982..0.991) L  range 0.986..0.992  BOTH-LOSE > noise
+ 5120x6144_M832               fwd  1.038 (net 1.038, ctl -0.19%, cyc 1.036..1.050) W | rev  1.034 (net 1.034, ctl +0.02%, cyc 1.032..1.037) W  range 1.034..1.038  KEEP: both-win > noise
+ 5120x6144_M1024              fwd  1.080 (net 1.080, ctl +0.00%, cyc 1.079..1.085) W | rev  1.075 (net 1.076, ctl +0.02%, cyc 1.074..1.080) W  range 1.075..1.080  KEEP: both-win > noise
+ 34816x5120_M1                fwd  3.283 (net 3.323, ctl +0.02%, cyc 3.226..3.467) W | rev  3.273 (net 3.313, ctl -0.03%, cyc 3.231..3.293) W  range 3.273..3.283  KEEP: both-win > noise
+ 34816x5120_M4                fwd  3.138 (net 3.175, ctl -0.08%, cyc 3.085..3.322) W | rev  3.135 (net 3.173, ctl +0.27%, cyc 3.087..3.146) W  range 3.135..3.138  KEEP: both-win > noise
+ 34816x5120_M8                fwd  3.129 (net 3.165, ctl -0.02%, cyc 3.062..3.293) W | rev  3.115 (net 3.152, ctl +0.10%, cyc 3.053..3.126) W  range 3.115..3.129  KEEP: both-win > noise
+ 34816x5120_M16               fwd  3.136 (net 3.173, ctl -0.05%, cyc 3.081..3.275) W | rev  3.127 (net 3.163, ctl +0.01%, cyc 3.062..3.136) W  range 3.127..3.136  KEEP: both-win > noise
+ 34816x5120_M17               fwd  3.245 (net 3.281, ctl +0.05%, cyc 3.208..3.313) W | rev  3.243 (net 3.279, ctl -0.05%, cyc 2.951..3.301) W  range 3.243..3.245  KEEP: both-win > noise
+ 34816x5120_M24               fwd  3.292 (net 3.328, ctl +0.23%, cyc 3.239..3.347) W | rev  3.279 (net 3.314, ctl -0.07%, cyc 2.976..3.323) W  range 3.279..3.292  KEEP: both-win > noise
+ 34816x5120_M32               fwd  3.300 (net 3.336, ctl -0.16%, cyc 3.263..3.358) W | rev  3.299 (net 3.335, ctl +0.02%, cyc 2.962..3.362) W  range 3.299..3.300  KEEP: both-win > noise
+ 34816x5120_M33               fwd  2.415 (net 2.433, ctl +0.23%, cyc 2.406..2.588) W | rev  2.417 (net 2.435, ctl +0.14%, cyc 2.276..2.489) W  range 2.415..2.417  KEEP: both-win > noise
+ 34816x5120_M40               fwd  2.418 (net 2.436, ctl +0.30%, cyc 2.413..2.589) W | rev  2.420 (net 2.439, ctl +0.35%, cyc 2.274..2.488) W  range 2.418..2.420  KEEP: both-win > noise
+ 34816x5120_M48               fwd  2.426 (net 2.445, ctl +0.24%, cyc 2.416..2.594) W | rev  2.421 (net 2.439, ctl -0.05%, cyc 2.268..2.485) W  range 2.421..2.426  KEEP: both-win > noise
+ 34816x5120_M49               fwd  2.037 (net 2.049, ctl +0.17%, cyc 1.995..2.217) W | rev  2.037 (net 2.048, ctl +0.17%, cyc 1.857..2.048) W  range 2.037..2.037  KEEP: both-win > noise
+ 34816x5120_M56               fwd  2.051 (net 2.062, ctl +0.38%, cyc 2.003..2.225) W | rev  2.044 (net 2.055, ctl +0.26%, cyc 1.855..2.063) W  range 2.044..2.051  KEEP: both-win > noise
+ 34816x5120_M64               fwd  2.023 (net 2.034, ctl -0.09%, cyc 1.987..2.206) W | rev  2.025 (net 2.036, ctl -0.14%, cyc 1.834..2.036) W  range 2.023..2.025  KEEP: both-win > noise
+ 34816x5120_M72               fwd  2.028 (net 2.037, ctl +0.25%, cyc 2.015..2.306) W | rev  2.018 (net 2.027, ctl +0.12%, cyc 1.768..2.022) W  range 2.018..2.028  KEEP: both-win > noise
+ 34816x5120_M96               fwd  1.787 (net 1.793, ctl +0.31%, cyc 1.782..2.051) W | rev  1.781 (net 1.787, ctl +0.35%, cyc 1.593..1.784) W  range 1.781..1.787  KEEP: both-win > noise
+ 34816x5120_M104              fwd  1.598 (net 1.603, ctl +0.24%, cyc 1.591..1.822) W | rev  1.591 (net 1.595, ctl +0.19%, cyc 1.459..1.596) W  range 1.591..1.598  KEEP: both-win > noise
+ 34816x5120_M128              fwd  1.508 (net 1.511, ctl +0.09%, cyc 1.502..1.692) W | rev  1.500 (net 1.503, ctl +0.07%, cyc 1.396..1.507) W  range 1.500..1.508  KEEP: both-win > noise
+ 34816x5120_M144              fwd  1.629 (net 1.633, ctl +0.05%, cyc 1.621..1.798) W | rev  1.616 (net 1.619, ctl +0.00%, cyc 1.597..1.622) W  range 1.616..1.629  KEEP: both-win > noise
+ 34816x5120_M192              fwd  1.457 (net 1.459, ctl -0.02%, cyc 1.446..1.579) W | rev  1.447 (net 1.449, ctl +0.10%, cyc 1.437..1.456) W  range 1.447..1.457  KEEP: both-win > noise
+ 34816x5120_M208              fwd  1.241 (net 1.242, ctl -0.15%, cyc 1.237..1.335) W | rev  1.230 (net 1.231, ctl -0.08%, cyc 1.216..1.234) W  range 1.230..1.241  KEEP: both-win > noise
+ 34816x5120_M232              fwd  1.190 (net 1.190, ctl -0.09%, cyc 1.180..1.275) W | rev  1.179 (net 1.180, ctl -0.03%, cyc 1.154..1.188) W  range 1.179..1.190  KEEP: both-win > noise
+ 34816x5120_M256              fwd  1.179 (net 1.180, ctl +0.04%, cyc 1.173..1.252) W | rev  1.173 (net 1.174, ctl -0.11%, cyc 1.135..1.175) W  range 1.173..1.179  KEEP: both-win > noise
+ 34816x5120_M272              fwd  1.406 (net 1.407, ctl -0.23%, cyc 1.403..1.481) W | rev  1.404 (net 1.405, ctl +0.07%, cyc 1.366..1.407) W  range 1.404..1.406  KEEP: both-win > noise
+ 34816x5120_M304              fwd  1.309 (net 1.310, ctl -0.14%, cyc 1.305..1.368) W | rev  1.304 (net 1.305, ctl -0.16%, cyc 1.272..1.307) W  range 1.304..1.309  KEEP: both-win > noise
+ 34816x5120_M384              fwd  1.142 (net 1.142, ctl +0.04%, cyc 1.140..1.178) W | rev  1.134 (net 1.134, ctl +0.14%, cyc 1.113..1.139) W  range 1.134..1.142  KEEP: both-win > noise
+ 34816x5120_M416              fwd  1.143 (net 1.143, ctl -0.05%, cyc 1.139..1.176) W | rev  1.136 (net 1.137, ctl -0.05%, cyc 1.126..1.140) W  range 1.136..1.143  KEEP: both-win > noise
+ 34816x5120_M512              fwd  1.096 (net 1.097, ctl -0.09%, cyc 1.095..1.121) W | rev  1.093 (net 1.093, ctl -0.01%, cyc 1.085..1.097) W  range 1.093..1.096  KEEP: both-win > noise
+ 34816x5120_M544              fwd  1.098 (net 1.098, ctl +0.12%, cyc 1.097..1.115) W | rev  1.095 (net 1.096, ctl +0.08%, cyc 1.091..1.097) W  range 1.095..1.098  KEEP: both-win > noise
+ 34816x5120_M608              fwd  1.053 (net 1.053, ctl -0.14%, cyc 1.051..1.064) W | rev  1.051 (net 1.051, ctl -0.14%, cyc 1.045..1.054) W  range 1.051..1.053  KEEP: both-win > noise
+ 34816x5120_M768              fwd  1.081 (net 1.081, ctl -0.14%, cyc 1.078..1.094) W | rev  1.081 (net 1.081, ctl -0.11%, cyc 1.076..1.085) W  range 1.081..1.081  KEEP: both-win > noise
+ 34816x5120_M832              fwd  1.128 (net 1.128, ctl +0.15%, cyc 1.122..1.134) W | rev  1.124 (net 1.124, ctl -0.28%, cyc 1.120..1.128) W  range 1.124..1.128  KEEP: both-win > noise
+ 34816x5120_M1024             fwd  1.036 (net 1.036, ctl -0.01%, cyc 1.033..1.041) W | rev  1.034 (net 1.034, ctl -0.04%, cyc 1.032..1.037) W  range 1.034..1.036  KEEP: both-win > noise
+ 5120x17408_M1                fwd  3.067 (net 3.123, ctl -0.26%, cyc 3.011..3.148) W | rev  3.059 (net 3.114, ctl +0.14%, cyc 2.993..3.072) W  range 3.059..3.067  KEEP: both-win > noise
+ 5120x17408_M4                fwd  3.015 (net 3.069, ctl -0.34%, cyc 2.957..3.178) W | rev  3.010 (net 3.064, ctl +0.18%, cyc 2.957..3.022) W  range 3.010..3.015  KEEP: both-win > noise
+ 5120x17408_M8                fwd  3.029 (net 3.083, ctl -0.33%, cyc 2.978..3.163) W | rev  3.026 (net 3.080, ctl +0.06%, cyc 2.982..3.035) W  range 3.026..3.029  KEEP: both-win > noise
+ 5120x17408_M16               fwd  3.242 (net 3.304, ctl -0.38%, cyc 3.193..3.319) W | rev  3.238 (net 3.300, ctl +0.01%, cyc 3.122..3.248) W  range 3.238..3.242  KEEP: both-win > noise
+ 5120x17408_M17               fwd  2.741 (net 2.783, ctl -0.19%, cyc 2.698..2.941) W | rev  2.733 (net 2.775, ctl +0.02%, cyc 2.687..2.760) W  range 2.733..2.741  KEEP: both-win > noise
+ 5120x17408_M24               fwd  2.755 (net 2.797, ctl -0.01%, cyc 2.710..2.945) W | rev  2.755 (net 2.797, ctl -0.01%, cyc 2.695..2.787) W  range 2.755..2.755  KEEP: both-win > noise
+ 5120x17408_M32               fwd  2.759 (net 2.801, ctl +0.06%, cyc 2.721..2.925) W | rev  2.754 (net 2.795, ctl +0.00%, cyc 2.654..2.789) W  range 2.754..2.759  KEEP: both-win > noise
+ 5120x17408_M33               fwd  2.545 (net 2.574, ctl +0.12%, cyc 2.512..2.677) W | rev  2.546 (net 2.575, ctl +0.02%, cyc 2.228..2.588) W  range 2.545..2.546  KEEP: both-win > noise
+ 5120x17408_M40               fwd  2.564 (net 2.594, ctl +0.04%, cyc 2.522..2.662) W | rev  2.563 (net 2.593, ctl +0.10%, cyc 2.243..2.599) W  range 2.563..2.564  KEEP: both-win > noise
+ 5120x17408_M48               fwd  2.626 (net 2.657, ctl +0.04%, cyc 2.573..2.765) W | rev  2.621 (net 2.652, ctl +0.14%, cyc 2.279..2.670) W  range 2.621..2.626  KEEP: both-win > noise
+ 5120x17408_M49               fwd  2.172 (net 2.191, ctl +0.01%, cyc 2.132..2.380) W | rev  2.164 (net 2.182, ctl +0.11%, cyc 1.876..2.170) W  range 2.164..2.172  KEEP: both-win > noise
+ 5120x17408_M56               fwd  2.177 (net 2.195, ctl -0.02%, cyc 2.142..2.389) W | rev  2.172 (net 2.190, ctl +0.13%, cyc 1.880..2.176) W  range 2.172..2.177  KEEP: both-win > noise
+ 5120x17408_M64               fwd  2.057 (net 2.073, ctl -0.03%, cyc 2.034..2.290) W | rev  2.050 (net 2.066, ctl +0.13%, cyc 1.879..2.055) W  range 2.050..2.057  KEEP: both-win > noise
+ 5120x17408_M72               fwd  1.740 (net 1.749, ctl +0.04%, cyc 1.732..1.971) W | rev  1.730 (net 1.739, ctl +0.03%, cyc 1.522..1.732) W  range 1.730..1.740  KEEP: both-win > noise
+ 5120x17408_M96               fwd  1.619 (net 1.626, ctl -0.19%, cyc 1.617..1.830) W | rev  1.614 (net 1.621, ctl +0.12%, cyc 1.440..1.620) W  range 1.614..1.619  KEEP: both-win > noise
+ 5120x17408_M104              fwd  1.404 (net 1.408, ctl -0.42%, cyc 1.399..1.572) W | rev  1.401 (net 1.405, ctl -0.14%, cyc 1.341..1.406) W  range 1.401..1.404  KEEP: both-win > noise
+ 5120x17408_M128              fwd  1.451 (net 1.455, ctl -0.20%, cyc 1.447..1.619) W | rev  1.446 (net 1.450, ctl +0.03%, cyc 1.385..1.450) W  range 1.446..1.451  KEEP: both-win > noise
+ 5120x17408_M144              fwd  1.640 (net 1.645, ctl -0.27%, cyc 1.634..1.779) W | rev  1.635 (net 1.640, ctl -0.03%, cyc 1.591..1.639) W  range 1.635..1.640  KEEP: both-win > noise
+ 5120x17408_M192              fwd  1.432 (net 1.435, ctl -0.27%, cyc 1.431..1.552) W | rev  1.428 (net 1.430, ctl +0.03%, cyc 1.423..1.435) W  range 1.428..1.432  KEEP: both-win > noise
+ 5120x17408_M208              fwd  1.270 (net 1.271, ctl -0.19%, cyc 1.268..1.360) W | rev  1.261 (net 1.263, ctl -0.06%, cyc 1.258..1.268) W  range 1.261..1.270  KEEP: both-win > noise
+ 5120x17408_M232              fwd  1.219 (net 1.220, ctl -0.08%, cyc 1.216..1.307) W | rev  1.213 (net 1.214, ctl -0.00%, cyc 1.203..1.217) W  range 1.213..1.219  KEEP: both-win > noise
+ 5120x17408_M256              fwd  1.137 (net 1.138, ctl +0.32%, cyc 1.134..1.213) W | rev  1.133 (net 1.134, ctl +0.50%, cyc 1.121..1.137) W  range 1.133..1.137  KEEP: both-win > noise
+ 5120x17408_M272              fwd  1.338 (net 1.340, ctl -0.16%, cyc 1.330..1.415) W | rev  1.325 (net 1.326, ctl +0.00%, cyc 1.304..1.329) W  range 1.325..1.338  KEEP: both-win > noise
+ 5120x17408_M304              fwd  1.227 (net 1.228, ctl -0.17%, cyc 1.225..1.290) W | rev  1.222 (net 1.223, ctl +0.03%, cyc 1.198..1.227) W  range 1.222..1.227  KEEP: both-win > noise
+ 5120x17408_M384              fwd  1.085 (net 1.085, ctl +0.07%, cyc 1.079..1.126) W | rev  1.077 (net 1.078, ctl +0.13%, cyc 1.046..1.087) W  range 1.077..1.085  KEEP: both-win > noise
+ 5120x17408_M416              fwd  1.211 (net 1.212, ctl -0.21%, cyc 1.209..1.247) W | rev  1.205 (net 1.206, ctl -0.28%, cyc 1.193..1.212) W  range 1.205..1.211  KEEP: both-win > noise
+ 5120x17408_M512              fwd  1.109 (net 1.110, ctl -0.05%, cyc 1.106..1.136) W | rev  1.103 (net 1.103, ctl +0.05%, cyc 1.092..1.110) W  range 1.103..1.109  KEEP: both-win > noise
+ 5120x17408_M544              fwd  1.141 (net 1.141, ctl -0.07%, cyc 1.139..1.163) W | rev  1.139 (net 1.139, ctl -0.10%, cyc 1.136..1.141) W  range 1.139..1.141  KEEP: both-win > noise
+ 5120x17408_M608              fwd  1.115 (net 1.115, ctl +0.03%, cyc 1.113..1.137) W | rev  1.112 (net 1.113, ctl +0.06%, cyc 1.109..1.116) W  range 1.112..1.115  KEEP: both-win > noise
+ 5120x17408_M768              fwd  1.078 (net 1.078, ctl -0.06%, cyc 1.076..1.089) W | rev  1.077 (net 1.077, ctl -0.03%, cyc 1.074..1.080) W  range 1.077..1.078  KEEP: both-win > noise
+ 5120x17408_M832              fwd  1.050 (net 1.050, ctl -0.02%, cyc 1.047..1.060) W | rev  1.046 (net 1.046, ctl -0.02%, cyc 1.044..1.049) W  range 1.046..1.050  KEEP: both-win > noise
+ 5120x17408_M1024             fwd  1.056 (net 1.056, ctl -0.03%, cyc 1.055..1.060) W | rev  1.055 (net 1.055, ctl +0.01%, cyc 1.052..1.057) W  range 1.055..1.056  KEEP: both-win > noise
+ summary cublas/new: 160 cells, ratio 0.986..3.300, median 1.494; KEEP: 159, BOTH-LOSE > noise: 1
+
+-- marlin time / new time (higher: ours faster); per job: ratio (net, ctl, cyc min..max) verdict
+ 16384x5120_M1                fwd  0.981 (net 0.980, ctl -0.25%, cyc 0.977..1.022) L | rev  0.983 (net 0.983, ctl -0.03%, cyc 0.977..1.012) L  range 0.981..0.983  BOTH-LOSE > noise
+ 16384x5120_M4                fwd  0.948 (net 0.947, ctl -0.23%, cyc 0.947..1.015) L | rev  0.946 (net 0.945, ctl +0.18%, cyc 0.940..0.967) L  range 0.946..0.948  BOTH-LOSE > noise
+ 16384x5120_M8                fwd  0.949 (net 0.948, ctl -0.13%, cyc 0.946..1.006) L | rev  0.946 (net 0.945, ctl -0.01%, cyc 0.940..0.959) L  range 0.946..0.949  BOTH-LOSE > noise
+ 16384x5120_M16               fwd  1.001 (net 1.001, ctl -0.07%, cyc 0.998..1.027) - | rev  1.001 (net 1.001, ctl -0.13%, cyc 0.970..1.013) -  range 1.001..1.001  inside noise / mixed
+ 16384x5120_M17               fwd  1.031 (net 1.032, ctl -0.26%, cyc 1.029..1.053) W | rev  1.030 (net 1.031, ctl -0.05%, cyc 0.961..1.046) W  range 1.030..1.031  KEEP: both-win > noise
+ 16384x5120_M24               fwd  1.034 (net 1.035, ctl -0.09%, cyc 1.030..1.051) W | rev  1.032 (net 1.032, ctl +0.07%, cyc 0.971..1.047) W  range 1.032..1.034  KEEP: both-win > noise
+ 16384x5120_M32               fwd  1.028 (net 1.029, ctl -0.08%, cyc 1.025..1.047) W | rev  1.027 (net 1.028, ctl -0.01%, cyc 0.958..1.044) W  range 1.027..1.028  KEEP: both-win > noise
+ 16384x5120_M33               fwd  0.994 (net 0.994, ctl +0.12%, cyc 0.992..1.011) - | rev  0.994 (net 0.994, ctl -0.02%, cyc 0.906..1.006) L  range 0.994..0.994  inside noise / mixed
+ 16384x5120_M40               fwd  0.989 (net 0.989, ctl +0.08%, cyc 0.988..1.005) L | rev  0.989 (net 0.989, ctl -0.02%, cyc 0.913..0.995) L  range 0.989..0.989  BOTH-LOSE > noise
+ 16384x5120_M48               fwd  1.000 (net 1.000, ctl -0.06%, cyc 0.997..1.016) - | rev  1.001 (net 1.001, ctl +0.10%, cyc 0.912..1.008) -  range 1.000..1.001  inside noise / mixed
+ 16384x5120_M49               fwd  0.989 (net 0.988, ctl +0.12%, cyc 0.978..1.004) L | rev  0.987 (net 0.987, ctl +0.13%, cyc 0.922..0.990) L  range 0.987..0.989  BOTH-LOSE > noise
+ 16384x5120_M56               fwd  0.986 (net 0.985, ctl +0.27%, cyc 0.972..1.004) L | rev  0.983 (net 0.983, ctl +0.13%, cyc 0.923..0.987) L  range 0.983..0.986  BOTH-LOSE > noise
+ 16384x5120_M64               fwd  0.986 (net 0.986, ctl +0.09%, cyc 0.975..1.003) L | rev  0.984 (net 0.984, ctl +0.10%, cyc 0.928..0.988) L  range 0.984..0.986  BOTH-LOSE > noise
+ 16384x5120_M72               fwd  1.052 (net 1.053, ctl +0.17%, cyc 1.037..1.100) W | rev  1.046 (net 1.047, ctl +0.12%, cyc 1.039..1.052) W  range 1.046..1.052  KEEP: both-win > noise
+ 16384x5120_M96               fwd  1.053 (net 1.053, ctl -0.15%, cyc 1.045..1.137) W | rev  1.051 (net 1.051, ctl +0.13%, cyc 1.047..1.055) W  range 1.051..1.053  KEEP: both-win > noise
+ 16384x5120_M104              fwd  1.047 (net 1.048, ctl -0.24%, cyc 1.042..1.143) W | rev  1.046 (net 1.046, ctl -0.23%, cyc 1.042..1.056) W  range 1.046..1.047  KEEP: both-win > noise
+ 16384x5120_M128              fwd  0.963 (net 0.963, ctl -0.25%, cyc 0.961..1.054) L | rev  0.962 (net 0.961, ctl +0.09%, cyc 0.959..0.971) L  range 0.962..0.963  BOTH-LOSE > noise
+ 16384x5120_M144              fwd  1.001 (net 1.001, ctl -0.22%, cyc 0.998..1.108) - | rev  1.001 (net 1.001, ctl -0.06%, cyc 0.993..1.002) -  range 1.001..1.001  inside noise / mixed
+ 16384x5120_M192              fwd  0.981 (net 0.981, ctl -0.27%, cyc 0.979..1.071) L | rev  0.980 (net 0.980, ctl -0.00%, cyc 0.969..0.981) L  range 0.980..0.981  BOTH-LOSE > noise
+ 16384x5120_M208              fwd  1.001 (net 1.001, ctl -0.44%, cyc 0.998..1.072) - | rev  1.000 (net 1.000, ctl -0.26%, cyc 0.988..1.002) -  range 1.000..1.001  inside noise / mixed
+ 16384x5120_M232              fwd  1.030 (net 1.030, ctl -0.14%, cyc 1.015..1.099) W | rev  1.028 (net 1.029, ctl -0.01%, cyc 1.022..1.029) W  range 1.028..1.030  KEEP: both-win > noise
+ 16384x5120_M256              fwd  0.981 (net 0.981, ctl -0.55%, cyc 0.980..1.030) L | rev  0.980 (net 0.980, ctl -0.33%, cyc 0.974..0.981) L  range 0.980..0.981  BOTH-LOSE > noise
+ 16384x5120_M272              fwd  1.011 (net 1.011, ctl -0.11%, cyc 1.011..1.061) W | rev  1.011 (net 1.011, ctl +0.03%, cyc 1.009..1.011) W  range 1.011..1.011  KEEP: both-win > noise
+ 16384x5120_M304              fwd  1.015 (net 1.015, ctl +0.03%, cyc 1.006..1.058) W | rev  1.014 (net 1.014, ctl -0.03%, cyc 1.011..1.015) W  range 1.014..1.015  KEEP: both-win > noise
+ 16384x5120_M384              fwd  1.000 (net 1.000, ctl +0.14%, cyc 0.998..1.032) - | rev  1.000 (net 1.000, ctl +0.29%, cyc 0.998..1.001) -  range 1.000..1.000  inside noise / mixed
+ 16384x5120_M416              fwd  0.980 (net 0.980, ctl -0.03%, cyc 0.979..1.011) L | rev  0.979 (net 0.979, ctl -0.07%, cyc 0.978..0.981) L  range 0.979..0.980  BOTH-LOSE > noise
+ 16384x5120_M512              fwd  0.988 (net 0.988, ctl +0.14%, cyc 0.988..1.010) L | rev  0.987 (net 0.987, ctl +0.25%, cyc 0.987..0.988) L  range 0.987..0.988  BOTH-LOSE > noise
+ 16384x5120_M544              fwd  0.964 (net 0.964, ctl -0.08%, cyc 0.963..0.980) L | rev  0.963 (net 0.963, ctl -0.03%, cyc 0.962..0.964) L  range 0.963..0.964  BOTH-LOSE > noise
+ 16384x5120_M608              fwd  0.986 (net 0.986, ctl -0.03%, cyc 0.985..0.999) L | rev  0.986 (net 0.986, ctl -0.01%, cyc 0.985..0.986) L  range 0.986..0.986  BOTH-LOSE > noise
+ 16384x5120_M768              fwd  1.003 (net 1.003, ctl +0.31%, cyc 1.002..1.010) - | rev  1.002 (net 1.002, ctl +0.35%, cyc 1.001..1.003) -  range 1.002..1.003  inside noise / mixed
+ 16384x5120_M832              fwd  0.956 (net 0.955, ctl -0.09%, cyc 0.955..0.961) L | rev  0.955 (net 0.955, ctl -0.07%, cyc 0.954..0.956) L  range 0.955..0.956  BOTH-LOSE > noise
+ 16384x5120_M1024             fwd  1.041 (net 1.041, ctl -0.05%, cyc 1.039..1.046) W | rev  1.043 (net 1.043, ctl -0.10%, cyc 1.040..1.045) W  range 1.041..1.043  KEEP: both-win > noise
+ 14336x5120_M1                fwd  0.966 (net 0.965, ctl -0.07%, cyc 0.964..1.000) L | rev  0.965 (net 0.964, ctl +0.25%, cyc 0.960..0.973) L  range 0.965..0.966  BOTH-LOSE > noise
+ 14336x5120_M4                fwd  0.942 (net 0.940, ctl -0.23%, cyc 0.939..0.999) L | rev  0.940 (net 0.939, ctl +0.19%, cyc 0.930..0.948) L  range 0.940..0.942  BOTH-LOSE > noise
+ 14336x5120_M8                fwd  0.939 (net 0.938, ctl -0.13%, cyc 0.938..0.994) L | rev  0.939 (net 0.937, ctl +0.13%, cyc 0.934..0.945) L  range 0.939..0.939  BOTH-LOSE > noise
+ 14336x5120_M16               fwd  1.013 (net 1.013, ctl -0.06%, cyc 1.011..1.027) W | rev  1.012 (net 1.012, ctl +0.07%, cyc 0.972..1.022) W  range 1.012..1.013  KEEP: both-win > noise
+ 14336x5120_M17               fwd  0.999 (net 0.999, ctl +0.03%, cyc 0.998..1.019) - | rev  1.001 (net 1.001, ctl +0.12%, cyc 0.914..1.013) -  range 0.999..1.001  inside noise / mixed
+ 14336x5120_M24               fwd  1.002 (net 1.002, ctl -0.04%, cyc 1.000..1.018) - | rev  1.000 (net 1.000, ctl +0.01%, cyc 0.912..1.012) -  range 1.000..1.002  inside noise / mixed
+ 14336x5120_M32               fwd  0.995 (net 0.995, ctl +0.07%, cyc 0.994..1.013) - | rev  0.996 (net 0.996, ctl +0.01%, cyc 0.907..1.006) -  range 0.995..0.996  inside noise / mixed
+ 14336x5120_M33               fwd  1.021 (net 1.022, ctl -0.05%, cyc 1.019..1.039) W | rev  1.022 (net 1.023, ctl +0.14%, cyc 0.931..1.033) W  range 1.021..1.022  KEEP: both-win > noise
+ 14336x5120_M40               fwd  1.027 (net 1.028, ctl +0.10%, cyc 1.023..1.041) W | rev  1.025 (net 1.025, ctl +0.10%, cyc 0.945..1.035) W  range 1.025..1.027  KEEP: both-win > noise
+ 14336x5120_M48               fwd  1.024 (net 1.025, ctl +0.05%, cyc 1.023..1.042) W | rev  1.025 (net 1.026, ctl +0.16%, cyc 0.932..1.036) W  range 1.024..1.025  KEEP: both-win > noise
+ 14336x5120_M49               fwd  1.030 (net 1.031, ctl +0.09%, cyc 1.016..1.049) W | rev  1.029 (net 1.029, ctl +0.33%, cyc 0.961..1.032) W  range 1.029..1.030  KEEP: both-win > noise
+ 14336x5120_M56               fwd  1.022 (net 1.022, ctl +0.03%, cyc 1.007..1.038) W | rev  1.018 (net 1.018, ctl +0.26%, cyc 0.955..1.019) W  range 1.018..1.022  KEEP: both-win > noise
+ 14336x5120_M64               fwd  1.018 (net 1.018, ctl -0.05%, cyc 1.002..1.040) W | rev  1.017 (net 1.018, ctl +0.37%, cyc 0.957..1.020) W  range 1.017..1.018  KEEP: both-win > noise
+ 14336x5120_M72               fwd  1.046 (net 1.046, ctl -0.05%, cyc 1.032..1.113) W | rev  1.042 (net 1.042, ctl +0.21%, cyc 1.034..1.046) W  range 1.042..1.046  KEEP: both-win > noise
+ 14336x5120_M96               fwd  1.074 (net 1.075, ctl -0.27%, cyc 1.069..1.176) W | rev  1.073 (net 1.074, ctl +0.10%, cyc 1.070..1.084) W  range 1.073..1.074  KEEP: both-win > noise
+ 14336x5120_M104              fwd  1.036 (net 1.037, ctl -0.46%, cyc 1.033..1.150) W | rev  1.035 (net 1.035, ctl -0.09%, cyc 1.033..1.045) W  range 1.035..1.036  KEEP: both-win > noise
+ 14336x5120_M128              fwd  0.944 (net 0.944, ctl -0.22%, cyc 0.942..1.047) L | rev  0.943 (net 0.943, ctl +0.07%, cyc 0.939..0.949) L  range 0.943..0.944  BOTH-LOSE > noise
+ 14336x5120_M144              fwd  0.979 (net 0.978, ctl -0.52%, cyc 0.975..1.087) L | rev  0.976 (net 0.976, ctl -0.11%, cyc 0.967..0.981) L  range 0.976..0.979  BOTH-LOSE > noise
+ 14336x5120_M192              fwd  0.994 (net 0.994, ctl -0.45%, cyc 0.992..1.085) - | rev  0.992 (net 0.992, ctl -0.03%, cyc 0.979..0.996) L  range 0.992..0.994  inside noise / mixed
+ 14336x5120_M208              fwd  0.987 (net 0.986, ctl -0.03%, cyc 0.986..1.053) L | rev  0.984 (net 0.984, ctl +0.27%, cyc 0.975..0.986) L  range 0.984..0.987  BOTH-LOSE > noise
+ 14336x5120_M232              fwd  1.027 (net 1.028, ctl -0.48%, cyc 1.026..1.087) W | rev  1.026 (net 1.027, ctl -0.21%, cyc 1.020..1.028) W  range 1.026..1.027  KEEP: both-win > noise
+ 14336x5120_M256              fwd  0.953 (net 0.953, ctl +0.15%, cyc 0.952..1.000) L | rev  0.952 (net 0.952, ctl +0.44%, cyc 0.946..0.953) L  range 0.952..0.953  BOTH-LOSE > noise
+ 14336x5120_M272              fwd  0.983 (net 0.983, ctl -0.19%, cyc 0.982..1.026) L | rev  0.982 (net 0.982, ctl -0.03%, cyc 0.978..0.983) L  range 0.982..0.983  BOTH-LOSE > noise
+ 14336x5120_M304              fwd  0.999 (net 0.999, ctl -0.02%, cyc 0.997..1.039) - | rev  0.997 (net 0.997, ctl +0.03%, cyc 0.995..0.998) -  range 0.997..0.999  inside noise / mixed
+ 14336x5120_M384              fwd  1.037 (net 1.037, ctl -0.18%, cyc 1.035..1.071) W | rev  1.036 (net 1.036, ctl -0.08%, cyc 1.034..1.036) W  range 1.036..1.037  KEEP: both-win > noise
+ 14336x5120_M416              fwd  0.970 (net 0.969, ctl +0.08%, cyc 0.969..0.997) L | rev  0.969 (net 0.968, ctl +0.17%, cyc 0.967..0.969) L  range 0.969..0.970  BOTH-LOSE > noise
+ 14336x5120_M512              fwd  0.982 (net 0.982, ctl -0.07%, cyc 0.980..1.003) L | rev  0.984 (net 0.984, ctl +0.01%, cyc 0.983..0.984) L  range 0.982..0.984  BOTH-LOSE > noise
+ 14336x5120_M544              fwd  0.977 (net 0.977, ctl -0.04%, cyc 0.972..0.993) L | rev  0.976 (net 0.976, ctl -0.07%, cyc 0.972..0.979) L  range 0.976..0.977  BOTH-LOSE > noise
+ 14336x5120_M608              fwd  0.991 (net 0.991, ctl -0.07%, cyc 0.991..1.007) L | rev  0.991 (net 0.991, ctl +0.04%, cyc 0.991..0.992) L  range 0.991..0.991  BOTH-LOSE > noise
+ 14336x5120_M768              fwd  1.020 (net 1.020, ctl -0.20%, cyc 1.018..1.028) W | rev  1.018 (net 1.018, ctl -0.17%, cyc 1.018..1.019) W  range 1.018..1.020  KEEP: both-win > noise
+ 14336x5120_M832              fwd  0.944 (net 0.944, ctl +0.02%, cyc 0.943..0.949) L | rev  0.944 (net 0.944, ctl +0.10%, cyc 0.943..0.944) L  range 0.944..0.944  BOTH-LOSE > noise
+ 14336x5120_M1024             fwd  1.020 (net 1.020, ctl -0.14%, cyc 1.019..1.023) W | rev  1.019 (net 1.019, ctl -0.11%, cyc 1.019..1.020) W  range 1.019..1.020  KEEP: both-win > noise
+ 5120x6144_M1                 fwd  1.019 (net 1.021, ctl -0.41%, cyc 1.015..1.073) W | rev  1.013 (net 1.014, ctl -0.17%, cyc 1.011..1.036) W  range 1.013..1.019  KEEP: both-win > noise
+ 5120x6144_M4                 fwd  1.021 (net 1.023, ctl -0.35%, cyc 1.018..1.061) W | rev  1.015 (net 1.016, ctl +0.12%, cyc 1.012..1.025) W  range 1.015..1.021  KEEP: both-win > noise
+ 5120x6144_M8                 fwd  1.012 (net 1.012, ctl -0.26%, cyc 1.007..1.038) W | rev  1.010 (net 1.010, ctl -0.01%, cyc 1.003..1.019) W  range 1.010..1.012  KEEP: both-win > noise
+ 5120x6144_M16                fwd  1.081 (net 1.086, ctl -0.05%, cyc 1.050..1.089) W | rev  1.082 (net 1.087, ctl +0.15%, cyc 1.018..1.088) W  range 1.081..1.082  KEEP: both-win > noise
+ 5120x6144_M17                fwd  1.062 (net 1.065, ctl -0.06%, cyc 1.045..1.074) W | rev  1.061 (net 1.065, ctl +0.14%, cyc 0.975..1.070) W  range 1.061..1.062  KEEP: both-win > noise
+ 5120x6144_M24                fwd  1.070 (net 1.074, ctl -0.11%, cyc 1.050..1.075) W | rev  1.068 (net 1.071, ctl +0.00%, cyc 0.978..1.079) W  range 1.068..1.070  KEEP: both-win > noise
+ 5120x6144_M32                fwd  1.067 (net 1.070, ctl +0.13%, cyc 1.047..1.073) W | rev  1.066 (net 1.069, ctl -0.02%, cyc 0.984..1.072) W  range 1.066..1.067  KEEP: both-win > noise
+ 5120x6144_M33                fwd  1.063 (net 1.065, ctl +0.14%, cyc 1.050..1.068) W | rev  1.057 (net 1.059, ctl +0.39%, cyc 0.991..1.060) W  range 1.057..1.063  KEEP: both-win > noise
+ 5120x6144_M40                fwd  1.072 (net 1.075, ctl +0.08%, cyc 1.058..1.079) W | rev  1.068 (net 1.071, ctl +0.35%, cyc 1.005..1.070) W  range 1.068..1.072  KEEP: both-win > noise
+ 5120x6144_M48                fwd  1.080 (net 1.084, ctl +0.10%, cyc 1.064..1.095) W | rev  1.077 (net 1.080, ctl +0.38%, cyc 1.012..1.079) W  range 1.077..1.080  KEEP: both-win > noise
+ 5120x6144_M49                fwd  1.074 (net 1.076, ctl +0.09%, cyc 1.051..1.104) W | rev  1.062 (net 1.064, ctl +0.34%, cyc 1.029..1.067) W  range 1.062..1.074  KEEP: both-win > noise
+ 5120x6144_M56                fwd  1.077 (net 1.080, ctl +0.03%, cyc 1.057..1.112) W | rev  1.068 (net 1.071, ctl +0.36%, cyc 1.039..1.072) W  range 1.068..1.077  KEEP: both-win > noise
+ 5120x6144_M64                fwd  1.090 (net 1.093, ctl +0.12%, cyc 1.066..1.128) W | rev  1.082 (net 1.084, ctl +0.45%, cyc 1.051..1.086) W  range 1.082..1.090  KEEP: both-win > noise
+ 5120x6144_M72                fwd  1.066 (net 1.067, ctl -0.21%, cyc 1.062..1.167) W | rev  1.059 (net 1.060, ctl +0.15%, cyc 1.055..1.066) W  range 1.059..1.066  KEEP: both-win > noise
+ 5120x6144_M96                fwd  1.099 (net 1.102, ctl -0.56%, cyc 1.097..1.238) W | rev  1.095 (net 1.098, ctl -0.00%, cyc 1.092..1.102) W  range 1.095..1.099  KEEP: both-win > noise
+ 5120x6144_M104               fwd  1.113 (net 1.116, ctl -0.59%, cyc 1.111..1.249) W | rev  1.107 (net 1.109, ctl -0.11%, cyc 1.104..1.114) W  range 1.107..1.113  KEEP: both-win > noise
+ 5120x6144_M128               fwd  1.106 (net 1.108, ctl -0.65%, cyc 1.103..1.235) W | rev  1.100 (net 1.102, ctl -0.08%, cyc 1.097..1.108) W  range 1.100..1.106  KEEP: both-win > noise
+ 5120x6144_M144               fwd  1.066 (net 1.067, ctl -0.54%, cyc 1.065..1.188) W | rev  1.063 (net 1.064, ctl +0.02%, cyc 1.050..1.066) W  range 1.063..1.066  KEEP: both-win > noise
+ 5120x6144_M192               fwd  1.082 (net 1.084, ctl -0.67%, cyc 1.081..1.183) W | rev  1.081 (net 1.082, ctl +0.04%, cyc 1.068..1.083) W  range 1.081..1.082  KEEP: both-win > noise
+ 5120x6144_M208               fwd  0.992 (net 0.992, ctl -0.31%, cyc 0.991..1.040) L | rev  0.990 (net 0.990, ctl +0.00%, cyc 0.985..0.991) L  range 0.990..0.992  BOTH-LOSE > noise
+ 5120x6144_M232               fwd  1.071 (net 1.072, ctl -0.29%, cyc 1.069..1.120) W | rev  1.068 (net 1.069, ctl -0.05%, cyc 1.064..1.070) W  range 1.068..1.071  KEEP: both-win > noise
+ 5120x6144_M256               fwd  0.974 (net 0.974, ctl -0.57%, cyc 0.973..1.024) L | rev  0.972 (net 0.972, ctl -0.25%, cyc 0.968..0.973) L  range 0.972..0.974  BOTH-LOSE > noise
+ 5120x6144_M272               fwd  1.001 (net 1.001, ctl -0.32%, cyc 0.998..1.040) - | rev  1.002 (net 1.002, ctl +0.01%, cyc 0.998..1.003) -  range 1.001..1.002  inside noise / mixed
+ 5120x6144_M304               fwd  1.024 (net 1.024, ctl -0.22%, cyc 1.023..1.060) W | rev  1.023 (net 1.023, ctl +0.08%, cyc 1.021..1.024) W  range 1.023..1.024  KEEP: both-win > noise
+ 5120x6144_M384               fwd  0.988 (net 0.988, ctl -0.75%, cyc 0.988..1.021) L | rev  0.989 (net 0.989, ctl -0.44%, cyc 0.987..0.990) L  range 0.988..0.989  BOTH-LOSE > noise
+ 5120x6144_M416               fwd  0.985 (net 0.985, ctl -0.27%, cyc 0.983..1.013) L | rev  0.985 (net 0.985, ctl -0.00%, cyc 0.984..0.986) L  range 0.985..0.985  BOTH-LOSE > noise
+ 5120x6144_M512               fwd  0.963 (net 0.963, ctl -0.18%, cyc 0.963..0.992) L | rev  0.963 (net 0.963, ctl -0.00%, cyc 0.961..0.964) L  range 0.963..0.963  BOTH-LOSE > noise
+ 5120x6144_M544               fwd  1.015 (net 1.015, ctl +0.14%, cyc 1.013..1.040) W | rev  1.014 (net 1.014, ctl -0.01%, cyc 1.011..1.014) W  range 1.014..1.015  KEEP: both-win > noise
+ 5120x6144_M608               fwd  0.969 (net 0.969, ctl +0.49%, cyc 0.967..0.984) L | rev  0.969 (net 0.969, ctl +0.45%, cyc 0.966..0.971) L  range 0.969..0.969  BOTH-LOSE > noise
+ 5120x6144_M768               fwd  0.979 (net 0.979, ctl -0.08%, cyc 0.977..0.987) L | rev  0.978 (net 0.978, ctl -0.02%, cyc 0.976..0.978) L  range 0.978..0.979  BOTH-LOSE > noise
+ 5120x6144_M832               fwd  0.966 (net 0.966, ctl -0.19%, cyc 0.965..0.975) L | rev  0.966 (net 0.966, ctl +0.02%, cyc 0.964..0.967) L  range 0.966..0.966  BOTH-LOSE > noise
+ 5120x6144_M1024              fwd  1.004 (net 1.004, ctl +0.00%, cyc 1.003..1.010) - | rev  1.005 (net 1.005, ctl +0.02%, cyc 1.003..1.006) -  range 1.004..1.005  inside noise / mixed
+ 34816x5120_M1                fwd  0.973 (net 0.972, ctl +0.02%, cyc 0.970..1.016) L | rev  0.969 (net 0.968, ctl -0.03%, cyc 0.963..0.977) L  range 0.969..0.973  BOTH-LOSE > noise
+ 34816x5120_M4                fwd  0.970 (net 0.970, ctl -0.08%, cyc 0.969..1.010) L | rev  0.970 (net 0.969, ctl +0.27%, cyc 0.957..0.975) L  range 0.970..0.970  BOTH-LOSE > noise
+ 34816x5120_M8                fwd  0.970 (net 0.970, ctl -0.02%, cyc 0.967..1.001) L | rev  0.969 (net 0.969, ctl +0.10%, cyc 0.945..0.977) L  range 0.969..0.970  BOTH-LOSE > noise
+ 34816x5120_M16               fwd  1.026 (net 1.027, ctl -0.05%, cyc 1.024..1.043) W | rev  1.026 (net 1.027, ctl +0.01%, cyc 0.971..1.038) W  range 1.026..1.026  KEEP: both-win > noise
+ 34816x5120_M17               fwd  1.019 (net 1.019, ctl +0.05%, cyc 1.018..1.040) W | rev  1.008 (net 1.008, ctl -0.05%, cyc 0.941..1.024) W  range 1.008..1.019  KEEP: both-win > noise
+ 34816x5120_M24               fwd  1.030 (net 1.031, ctl +0.23%, cyc 1.025..1.050) W | rev  1.025 (net 1.025, ctl -0.07%, cyc 0.948..1.041) W  range 1.025..1.030  KEEP: both-win > noise
+ 34816x5120_M32               fwd  1.032 (net 1.033, ctl -0.16%, cyc 1.030..1.055) W | rev  1.034 (net 1.034, ctl +0.02%, cyc 0.960..1.053) W  range 1.032..1.034  KEEP: both-win > noise
+ 34816x5120_M33               fwd  0.945 (net 0.944, ctl +0.23%, cyc 0.943..0.965) L | rev  0.946 (net 0.945, ctl +0.14%, cyc 0.869..0.963) L  range 0.945..0.946  BOTH-LOSE > noise
+ 34816x5120_M40               fwd  0.947 (net 0.947, ctl +0.30%, cyc 0.945..0.962) L | rev  0.947 (net 0.947, ctl +0.35%, cyc 0.870..0.962) L  range 0.947..0.947  BOTH-LOSE > noise
+ 34816x5120_M48               fwd  0.951 (net 0.951, ctl +0.24%, cyc 0.948..0.969) L | rev  0.949 (net 0.948, ctl -0.05%, cyc 0.872..0.964) L  range 0.949..0.951  BOTH-LOSE > noise
+ 34816x5120_M49               fwd  0.956 (net 0.955, ctl +0.17%, cyc 0.950..0.964) L | rev  0.956 (net 0.956, ctl +0.17%, cyc 0.882..0.958) L  range 0.956..0.956  BOTH-LOSE > noise
+ 34816x5120_M56               fwd  0.960 (net 0.959, ctl +0.38%, cyc 0.952..0.965) L | rev  0.959 (net 0.958, ctl +0.26%, cyc 0.892..0.961) L  range 0.959..0.960  BOTH-LOSE > noise
+ 34816x5120_M64               fwd  0.948 (net 0.948, ctl -0.09%, cyc 0.942..0.957) L | rev  0.947 (net 0.947, ctl -0.14%, cyc 0.879..0.949) L  range 0.947..0.948  BOTH-LOSE > noise
+ 34816x5120_M72               fwd  1.045 (net 1.045, ctl +0.25%, cyc 1.024..1.087) W | rev  1.042 (net 1.042, ctl +0.12%, cyc 1.025..1.043) W  range 1.042..1.045  KEEP: both-win > noise
+ 34816x5120_M96               fwd  1.034 (net 1.034, ctl +0.31%, cyc 1.022..1.113) W | rev  1.034 (net 1.034, ctl +0.35%, cyc 1.029..1.040) W  range 1.034..1.034  KEEP: both-win > noise
+ 34816x5120_M104              fwd  1.000 (net 1.000, ctl +0.24%, cyc 0.995..1.104) - | rev  0.999 (net 0.999, ctl +0.19%, cyc 0.995..1.012) -  range 0.999..1.000  inside noise / mixed
+ 34816x5120_M128              fwd  0.993 (net 0.993, ctl +0.09%, cyc 0.990..1.105) - | rev  0.991 (net 0.991, ctl +0.07%, cyc 0.988..1.004) L  range 0.991..0.993  inside noise / mixed
+ 34816x5120_M144              fwd  0.973 (net 0.973, ctl +0.05%, cyc 0.971..1.098) L | rev  0.970 (net 0.969, ctl +0.00%, cyc 0.962..0.971) L  range 0.970..0.973  BOTH-LOSE > noise
+ 34816x5120_M192              fwd  0.961 (net 0.960, ctl -0.02%, cyc 0.959..1.062) L | rev  0.960 (net 0.960, ctl +0.10%, cyc 0.949..0.961) L  range 0.960..0.961  BOTH-LOSE > noise
+ 34816x5120_M208              fwd  0.971 (net 0.971, ctl -0.15%, cyc 0.971..1.048) L | rev  0.971 (net 0.971, ctl -0.08%, cyc 0.963..0.972) L  range 0.971..0.971  BOTH-LOSE > noise
+ 34816x5120_M232              fwd  0.996 (net 0.996, ctl -0.09%, cyc 0.995..1.060) - | rev  0.994 (net 0.994, ctl -0.03%, cyc 0.988..0.996) L  range 0.994..0.996  inside noise / mixed
+ 34816x5120_M256              fwd  0.995 (net 0.995, ctl +0.04%, cyc 0.994..1.049) - | rev  0.993 (net 0.993, ctl -0.11%, cyc 0.988..0.994) L  range 0.993..0.995  inside noise / mixed
+ 34816x5120_M272              fwd  0.980 (net 0.980, ctl -0.23%, cyc 0.980..1.025) L | rev  0.980 (net 0.980, ctl +0.07%, cyc 0.979..0.981) L  range 0.980..0.980  BOTH-LOSE > noise
+ 34816x5120_M304              fwd  0.965 (net 0.965, ctl -0.14%, cyc 0.964..1.006) L | rev  0.964 (net 0.964, ctl -0.16%, cyc 0.963..0.965) L  range 0.964..0.965  BOTH-LOSE > noise
+ 34816x5120_M384              fwd  0.989 (net 0.989, ctl +0.04%, cyc 0.987..1.022) L | rev  0.987 (net 0.987, ctl +0.14%, cyc 0.985..0.988) L  range 0.987..0.989  BOTH-LOSE > noise
+ 34816x5120_M416              fwd  0.966 (net 0.966, ctl -0.05%, cyc 0.965..0.992) L | rev  0.965 (net 0.965, ctl -0.05%, cyc 0.963..0.966) L  range 0.965..0.966  BOTH-LOSE > noise
+ 34816x5120_M512              fwd  1.059 (net 1.059, ctl -0.09%, cyc 1.059..1.083) W | rev  1.059 (net 1.059, ctl -0.01%, cyc 1.058..1.059) W  range 1.059..1.059  KEEP: both-win > noise
+ 34816x5120_M544              fwd  0.937 (net 0.937, ctl +0.12%, cyc 0.936..0.951) L | rev  0.937 (net 0.937, ctl +0.08%, cyc 0.935..0.937) L  range 0.937..0.937  BOTH-LOSE > noise
+ 34816x5120_M608              fwd  0.986 (net 0.986, ctl -0.14%, cyc 0.986..0.998) L | rev  0.985 (net 0.985, ctl -0.14%, cyc 0.985..0.986) L  range 0.985..0.986  BOTH-LOSE > noise
+ 34816x5120_M768              fwd  1.021 (net 1.021, ctl -0.14%, cyc 1.017..1.031) W | rev  1.020 (net 1.020, ctl -0.11%, cyc 1.020..1.021) W  range 1.020..1.021  KEEP: both-win > noise
+ 34816x5120_M832              fwd  0.962 (net 0.962, ctl +0.15%, cyc 0.958..0.968) L | rev  0.962 (net 0.962, ctl -0.28%, cyc 0.961..0.964) L  range 0.962..0.962  BOTH-LOSE > noise
+ 34816x5120_M1024             fwd  1.059 (net 1.059, ctl -0.01%, cyc 1.058..1.063) W | rev  1.058 (net 1.059, ctl -0.04%, cyc 1.058..1.060) W  range 1.058..1.059  KEEP: both-win > noise
+ 5120x17408_M1                fwd  0.923 (net 0.921, ctl -0.26%, cyc 0.922..0.997) L | rev  0.924 (net 0.922, ctl +0.14%, cyc 0.915..0.948) L  range 0.923..0.924  BOTH-LOSE > noise
+ 5120x17408_M4                fwd  0.936 (net 0.934, ctl -0.34%, cyc 0.933..1.002) L | rev  0.931 (net 0.929, ctl +0.18%, cyc 0.921..0.951) L  range 0.931..0.936  BOTH-LOSE > noise
+ 5120x17408_M8                fwd  0.935 (net 0.934, ctl -0.33%, cyc 0.934..0.989) L | rev  0.935 (net 0.934, ctl +0.06%, cyc 0.931..0.943) L  range 0.935..0.935  BOTH-LOSE > noise
+ 5120x17408_M16               fwd  1.058 (net 1.060, ctl -0.38%, cyc 1.045..1.073) W | rev  1.060 (net 1.061, ctl +0.01%, cyc 1.010..1.068) W  range 1.058..1.060  KEEP: both-win > noise
+ 5120x17408_M17               fwd  1.013 (net 1.014, ctl -0.19%, cyc 1.011..1.028) W | rev  1.011 (net 1.011, ctl +0.02%, cyc 0.934..1.028) W  range 1.011..1.013  KEEP: both-win > noise
+ 5120x17408_M24               fwd  1.033 (net 1.033, ctl -0.01%, cyc 1.032..1.049) W | rev  1.034 (net 1.035, ctl -0.01%, cyc 0.957..1.048) W  range 1.033..1.034  KEEP: both-win > noise
+ 5120x17408_M32               fwd  1.046 (net 1.047, ctl +0.06%, cyc 1.044..1.063) W | rev  1.048 (net 1.049, ctl +0.00%, cyc 0.959..1.062) W  range 1.046..1.048  KEEP: both-win > noise
+ 5120x17408_M33               fwd  0.997 (net 0.997, ctl +0.12%, cyc 0.992..1.001) - | rev  0.994 (net 0.994, ctl +0.02%, cyc 0.909..0.996) L  range 0.994..0.997  inside noise / mixed
+ 5120x17408_M40               fwd  1.016 (net 1.016, ctl +0.04%, cyc 1.010..1.023) W | rev  1.015 (net 1.015, ctl +0.10%, cyc 0.934..1.019) W  range 1.015..1.016  KEEP: both-win > noise
+ 5120x17408_M48               fwd  1.045 (net 1.045, ctl +0.04%, cyc 1.036..1.047) W | rev  1.044 (net 1.045, ctl +0.14%, cyc 0.954..1.046) W  range 1.044..1.045  KEEP: both-win > noise
+ 5120x17408_M49               fwd  1.027 (net 1.027, ctl +0.01%, cyc 1.009..1.031) W | rev  1.024 (net 1.024, ctl +0.11%, cyc 0.979..1.029) W  range 1.024..1.027  KEEP: both-win > noise
+ 5120x17408_M56               fwd  1.040 (net 1.041, ctl -0.02%, cyc 1.024..1.044) W | rev  1.038 (net 1.038, ctl +0.13%, cyc 0.988..1.040) W  range 1.038..1.040  KEEP: both-win > noise
+ 5120x17408_M64               fwd  1.061 (net 1.062, ctl -0.03%, cyc 1.042..1.063) W | rev  1.058 (net 1.059, ctl +0.13%, cyc 1.008..1.060) W  range 1.058..1.061  KEEP: both-win > noise
+ 5120x17408_M72               fwd  1.112 (net 1.113, ctl +0.04%, cyc 1.096..1.173) W | rev  1.107 (net 1.108, ctl +0.03%, cyc 1.100..1.109) W  range 1.107..1.112  KEEP: both-win > noise
+ 5120x17408_M96               fwd  1.156 (net 1.157, ctl -0.19%, cyc 1.146..1.244) W | rev  1.155 (net 1.156, ctl +0.12%, cyc 1.149..1.164) W  range 1.155..1.156  KEEP: both-win > noise
+ 5120x17408_M104              fwd  1.040 (net 1.041, ctl -0.42%, cyc 1.037..1.152) W | rev  1.039 (net 1.040, ctl -0.14%, cyc 1.037..1.049) W  range 1.039..1.040  KEEP: both-win > noise
+ 5120x17408_M128              fwd  1.125 (net 1.126, ctl -0.20%, cyc 1.123..1.243) W | rev  1.124 (net 1.125, ctl +0.03%, cyc 1.121..1.130) W  range 1.124..1.125  KEEP: both-win > noise
+ 5120x17408_M144              fwd  1.168 (net 1.170, ctl -0.27%, cyc 1.166..1.294) W | rev  1.167 (net 1.168, ctl -0.03%, cyc 1.156..1.169) W  range 1.167..1.168  KEEP: both-win > noise
+ 5120x17408_M192              fwd  0.983 (net 0.983, ctl -0.27%, cyc 0.981..1.079) L | rev  0.982 (net 0.982, ctl +0.03%, cyc 0.970..0.984) L  range 0.982..0.983  BOTH-LOSE > noise
+ 5120x17408_M208              fwd  1.023 (net 1.023, ctl -0.19%, cyc 1.021..1.095) W | rev  1.022 (net 1.022, ctl -0.06%, cyc 1.013..1.023) W  range 1.022..1.023  KEEP: both-win > noise
+ 5120x17408_M232              fwd  1.073 (net 1.073, ctl -0.08%, cyc 1.071..1.141) W | rev  1.071 (net 1.072, ctl -0.00%, cyc 1.064..1.072) W  range 1.071..1.073  KEEP: both-win > noise
+ 5120x17408_M256              fwd  0.969 (net 0.969, ctl +0.32%, cyc 0.968..1.026) L | rev  0.968 (net 0.967, ctl +0.50%, cyc 0.962..0.969) L  range 0.968..0.969  BOTH-LOSE > noise
+ 5120x17408_M272              fwd  1.038 (net 1.039, ctl -0.16%, cyc 1.038..1.090) W | rev  1.038 (net 1.038, ctl +0.00%, cyc 1.036..1.039) W  range 1.038..1.038  KEEP: both-win > noise
+ 5120x17408_M304              fwd  1.029 (net 1.029, ctl -0.17%, cyc 1.029..1.074) W | rev  1.029 (net 1.029, ctl +0.03%, cyc 1.026..1.030) W  range 1.029..1.029  KEEP: both-win > noise
+ 5120x17408_M384              fwd  1.007 (net 1.007, ctl +0.07%, cyc 1.001..1.044) - | rev  1.005 (net 1.005, ctl +0.13%, cyc 1.003..1.006) W  range 1.005..1.007  inside noise / mixed
+ 5120x17408_M416              fwd  1.000 (net 1.000, ctl -0.21%, cyc 0.998..1.027) - | rev  0.999 (net 0.999, ctl -0.28%, cyc 0.996..0.999) -  range 0.999..1.000  inside noise / mixed
+ 5120x17408_M512              fwd  1.031 (net 1.031, ctl -0.05%, cyc 1.029..1.056) W | rev  1.030 (net 1.030, ctl +0.05%, cyc 1.028..1.032) W  range 1.030..1.031  KEEP: both-win > noise
+ 5120x17408_M544              fwd  0.963 (net 0.963, ctl -0.07%, cyc 0.962..0.983) L | rev  0.967 (net 0.967, ctl -0.10%, cyc 0.964..0.968) L  range 0.963..0.967  BOTH-LOSE > noise
+ 5120x17408_M608              fwd  1.035 (net 1.036, ctl +0.03%, cyc 1.035..1.052) W | rev  1.036 (net 1.036, ctl +0.06%, cyc 1.035..1.038) W  range 1.035..1.036  KEEP: both-win > noise
+ 5120x17408_M768              fwd  1.037 (net 1.037, ctl -0.06%, cyc 1.036..1.047) W | rev  1.037 (net 1.037, ctl -0.03%, cyc 1.036..1.037) W  range 1.037..1.037  KEEP: both-win > noise
+ 5120x17408_M832              fwd  0.987 (net 0.987, ctl -0.02%, cyc 0.987..0.995) L | rev  0.987 (net 0.987, ctl -0.02%, cyc 0.987..0.991) L  range 0.987..0.987  BOTH-LOSE > noise
+ 5120x17408_M1024             fwd  1.042 (net 1.042, ctl -0.03%, cyc 1.041..1.046) W | rev  1.042 (net 1.042, ctl +0.01%, cyc 1.041..1.042) W  range 1.042..1.042  KEEP: both-win > noise
+ summary marlin/new: 160 cells, ratio 0.923..1.168, median 1.002; BOTH-LOSE > noise: 62, inside noise / mixed: 21, KEEP: 77
+
+-- energy per call (separate tight-loop pass; whole-GPU power, co-resident process included)
+   cell / job / arm: J per call, average W, calls/s, net J per call (idle subtracted, derived), source
+ 16384x5120_M1                fwd new         11.2747 mJ    299.2 W     26441.1 /s  net 7.1307 mJ  counter
+ 16384x5120_M1                fwd ctl         11.3936 mJ    300.0 W     26118.8 /s  net 7.2482 mJ  counter
+ 16384x5120_M1                fwd cublas      36.4131 mJ    300.0 W      8232.1 /s  net 22.9979 mJ  counter
+ 16384x5120_M1                fwd marlin      11.1304 mJ    300.0 W     26756.2 /s  net 7.0756 mJ  counter
+ 16384x5120_M1                fwd energy noise |ctl/new-1| 1.05%; cublas J / new J = 3.230; marlin J / new J = 0.987
+ 16384x5120_M1                rev new         11.2137 mJ    300.0 W     26266.6 /s  net 7.2338 mJ  counter
+ 16384x5120_M1                rev ctl         11.1340 mJ    297.6 W     26548.0 /s  net 7.0688 mJ  counter
+ 16384x5120_M1                rev cublas      35.6795 mJ    299.5 W      8276.4 /s  net 22.8992 mJ  counter
+ 16384x5120_M1                rev marlin      11.0879 mJ    299.6 W     26726.3 /s  net 7.0960 mJ  counter
+ 16384x5120_M1                rev energy noise |ctl/new-1| 0.71%; cublas J / new J = 3.182; marlin J / new J = 0.989
+ 16384x5120_M32               fwd new         13.8033 mJ    299.7 W     21631.0 /s  net 8.7368 mJ  counter
+ 16384x5120_M32               fwd ctl         13.7481 mJ    300.0 W     21667.3 /s  net 8.7379 mJ  counter
+ 16384x5120_M32               fwd cublas      38.1701 mJ    299.3 W      7830.4 /s  net 24.0850 mJ  counter
+ 16384x5120_M32               fwd marlin      14.2145 mJ    300.0 W     20979.4 /s  net 9.0236 mJ  counter
+ 16384x5120_M32               fwd energy noise |ctl/new-1| 0.40%; cublas J / new J = 2.765; marlin J / new J = 1.030
+ 16384x5120_M32               rev new         13.6178 mJ    300.0 W     21725.0 /s  net 8.7468 mJ  counter
+ 16384x5120_M32               rev ctl         13.5886 mJ    300.0 W     21666.0 /s  net 8.7698 mJ  counter
+ 16384x5120_M32               rev cublas      37.9448 mJ    300.1 W      7795.9 /s  net 24.3812 mJ  counter
+ 16384x5120_M32               rev marlin      14.0639 mJ    300.3 W     21082.3 /s  net 9.0267 mJ  counter
+ 16384x5120_M32               rev energy noise |ctl/new-1| 0.21%; cublas J / new J = 2.786; marlin J / new J = 1.033
+ 14336x5120_M1                fwd new         10.4354 mJ    298.7 W     28411.6 /s  net 6.6167 mJ  counter
+ 14336x5120_M1                fwd ctl         10.4129 mJ    300.0 W     28371.4 /s  net 6.6725 mJ  counter
+ 14336x5120_M1                fwd cublas      32.0724 mJ    300.0 W      9259.5 /s  net 20.4498 mJ  counter
+ 14336x5120_M1                fwd marlin      10.0506 mJ    300.0 W     29404.7 /s  net 6.4389 mJ  counter
+ 14336x5120_M1                fwd energy noise |ctl/new-1| 0.22%; cublas J / new J = 3.073; marlin J / new J = 0.963
+ 14336x5120_M1                rev new         10.3048 mJ    300.1 W     28381.6 /s  net 6.6996 mJ  counter
+ 14336x5120_M1                rev ctl         10.3282 mJ    298.9 W     28422.4 /s  net 6.6486 mJ  counter
+ 14336x5120_M1                rev cublas      31.5979 mJ    300.0 W      9272.5 /s  net 20.4951 mJ  counter
+ 14336x5120_M1                rev marlin      10.1476 mJ    300.0 W     29416.4 /s  net 6.4594 mJ  counter
+ 14336x5120_M1                rev energy noise |ctl/new-1| 0.23%; cublas J / new J = 3.066; marlin J / new J = 0.985
+ 14336x5120_M32               fwd new         13.1319 mJ    300.0 W     22554.8 /s  net 8.3935 mJ  counter
+ 14336x5120_M32               fwd ctl         13.1086 mJ    300.4 W     22572.0 /s  net 8.4074 mJ  counter
+ 14336x5120_M32               fwd cublas      34.9495 mJ    300.0 W      8443.1 /s  net 22.4178 mJ  counter
+ 14336x5120_M32               fwd marlin      12.9673 mJ    299.6 W     22707.1 /s  net 8.3192 mJ  counter
+ 14336x5120_M32               fwd energy noise |ctl/new-1| 0.18%; cublas J / new J = 2.661; marlin J / new J = 0.987
+ 14336x5120_M32               rev new         12.9749 mJ    300.0 W     22570.6 /s  net 8.4197 mJ  counter
+ 14336x5120_M32               rev ctl         12.9925 mJ    300.0 W     22573.3 /s  net 8.4173 mJ  counter
+ 14336x5120_M32               rev cublas      35.3059 mJ    300.1 W      8445.1 /s  net 22.5133 mJ  counter
+ 14336x5120_M32               rev marlin      12.8845 mJ    300.3 W     22756.6 /s  net 8.3617 mJ  counter
+ 14336x5120_M32               rev energy noise |ctl/new-1| 0.14%; cublas J / new J = 2.721; marlin J / new J = 0.993
+ 5120x6144_M1                 fwd new          4.8851 mJ    298.6 W     60076.0 /s  net 3.1279 mJ  counter
+ 5120x6144_M1                 fwd ctl          4.9653 mJ    300.0 W     60036.5 /s  net 3.1532 mJ  counter
+ 5120x6144_M1                 fwd cublas      14.0933 mJ    300.2 W     20705.4 /s  net 9.1512 mJ  counter
+ 5120x6144_M1                 fwd marlin       5.0700 mJ    300.0 W     59094.2 /s  net 3.2034 mJ  counter
+ 5120x6144_M1                 fwd energy noise |ctl/new-1| 1.64%; cublas J / new J = 2.885; marlin J / new J = 1.038
+ 5120x6144_M1                 rev new          5.0337 mJ    300.0 W     60080.5 /s  net 3.1627 mJ  counter
+ 5120x6144_M1                 rev ctl          4.9459 mJ    299.1 W     60060.5 /s  net 3.1494 mJ  counter
+ 5120x6144_M1                 rev cublas      14.6057 mJ    300.0 W     20720.6 /s  net 9.1722 mJ  counter
+ 5120x6144_M1                 rev marlin       5.0158 mJ    300.0 W     59342.7 /s  net 3.2026 mJ  counter
+ 5120x6144_M1                 rev energy noise |ctl/new-1| 1.74%; cublas J / new J = 2.902; marlin J / new J = 0.996
+ 5120x6144_M32                fwd new          5.8848 mJ    300.0 W     49651.4 /s  net 3.8128 mJ  counter
+ 5120x6144_M32                fwd ctl          5.9076 mJ    300.0 W     49705.0 /s  net 3.8089 mJ  counter
+ 5120x6144_M32                fwd cublas      15.5040 mJ    300.1 W     19219.2 /s  net 9.8536 mJ  counter
+ 5120x6144_M32                fwd marlin       6.3718 mJ    300.0 W     46488.8 /s  net 4.0727 mJ  counter
+ 5120x6144_M32                fwd energy noise |ctl/new-1| 0.39%; cublas J / new J = 2.635; marlin J / new J = 1.083
+ 5120x6144_M32                rev new          5.9795 mJ    300.0 W     49694.0 /s  net 3.8234 mJ  counter
+ 5120x6144_M32                rev ctl          5.9635 mJ    300.0 W     49661.3 /s  net 3.8262 mJ  counter
+ 5120x6144_M32                rev cublas      15.4830 mJ    300.0 W     19170.6 /s  net 9.9128 mJ  counter
+ 5120x6144_M32                rev marlin       6.3732 mJ    300.4 W     46560.3 /s  net 4.0888 mJ  counter
+ 5120x6144_M32                rev energy noise |ctl/new-1| 0.27%; cublas J / new J = 2.589; marlin J / new J = 1.066
+ 34816x5120_M1                fwd new         23.4738 mJ    300.0 W     12584.9 /s  net 15.0436 mJ  counter
+ 34816x5120_M1                fwd ctl         23.3889 mJ    300.0 W     12611.6 /s  net 15.0107 mJ  counter
+ 34816x5120_M1                fwd cublas      76.8995 mJ    300.0 W      3847.9 /s  net 49.1988 mJ  counter
+ 34816x5120_M1                fwd marlin      22.7824 mJ    298.9 W     12996.4 /s  net 14.4859 mJ  counter
+ 34816x5120_M1                fwd energy noise |ctl/new-1| 0.36%; cublas J / new J = 3.276; marlin J / new J = 0.971
+ 34816x5120_M1                rev new         23.6327 mJ    300.0 W     12608.0 /s  net 15.0708 mJ  counter
+ 34816x5120_M1                rev ctl         23.2604 mJ    300.0 W     12588.2 /s  net 15.0938 mJ  counter
+ 34816x5120_M1                rev cublas      76.2320 mJ    298.4 W      3846.5 /s  net 48.9916 mJ  counter
+ 34816x5120_M1                rev marlin      22.5701 mJ    300.1 W     12986.8 /s  net 14.6428 mJ  counter
+ 34816x5120_M1                rev energy noise |ctl/new-1| 1.58%; cublas J / new J = 3.226; marlin J / new J = 0.955
+ 34816x5120_M32               fwd new         26.4645 mJ    300.0 W     11185.0 /s  net 16.9294 mJ  counter
+ 34816x5120_M32               fwd ctl         26.4755 mJ    299.8 W     11175.4 /s  net 16.9191 mJ  counter
+ 34816x5120_M32               fwd cublas      88.8765 mJ    300.0 W      3375.6 /s  net 56.0820 mJ  counter
+ 34816x5120_M32               fwd marlin      27.2421 mJ    300.0 W     10829.1 /s  net 17.4818 mJ  counter
+ 34816x5120_M32               fwd energy noise |ctl/new-1| 0.04%; cublas J / new J = 3.358; marlin J / new J = 1.029
+ 34816x5120_M32               rev new         26.2593 mJ    298.5 W     11184.1 /s  net 16.8600 mJ  counter
+ 34816x5120_M32               rev ctl         26.7458 mJ    300.0 W     11166.5 /s  net 17.0147 mJ  counter
+ 34816x5120_M32               rev cublas      88.0879 mJ    300.1 W      3381.5 /s  net 56.2368 mJ  counter
+ 34816x5120_M32               rev marlin      28.0816 mJ    300.0 W     10803.4 /s  net 17.5865 mJ  counter
+ 34816x5120_M32               rev energy noise |ctl/new-1| 1.85%; cublas J / new J = 3.355; marlin J / new J = 1.069
+ 5120x17408_M1                fwd new         12.8495 mJ    300.0 W     23234.1 /s  net 8.1483 mJ  counter
+ 5120x17408_M1                fwd ctl         12.7994 mJ    300.0 W     23243.9 /s  net 8.1443 mJ  counter
+ 5120x17408_M1                fwd cublas      39.1983 mJ    299.7 W      7610.5 /s  net 24.8367 mJ  counter
+ 5120x17408_M1                fwd marlin      11.8089 mJ    298.9 W     25147.4 /s  net 7.4848 mJ  counter
+ 5120x17408_M1                fwd energy noise |ctl/new-1| 0.39%; cublas J / new J = 3.051; marlin J / new J = 0.919
+ 5120x17408_M1                rev new         13.0232 mJ    300.4 W     23232.8 /s  net 8.1951 mJ  counter
+ 5120x17408_M1                rev ctl         12.7630 mJ    299.8 W     23233.7 /s  net 8.1715 mJ  counter
+ 5120x17408_M1                rev cublas      39.1421 mJ    298.8 W      7587.3 /s  net 24.8875 mJ  counter
+ 5120x17408_M1                rev marlin      11.8190 mJ    300.0 W     25141.5 /s  net 7.5578 mJ  counter
+ 5120x17408_M1                rev energy noise |ctl/new-1| 2.00%; cublas J / new J = 3.006; marlin J / new J = 0.908
+ 5120x17408_M32               fwd new         14.4809 mJ    300.0 W     20662.0 /s  net 9.1631 mJ  counter
+ 5120x17408_M32               fwd ctl         14.4049 mJ    298.3 W     20630.6 /s  net 9.0935 mJ  counter
+ 5120x17408_M32               fwd cublas      40.5220 mJ    300.5 W      7464.0 /s  net 25.4338 mJ  counter
+ 5120x17408_M32               fwd marlin      15.0961 mJ    300.0 W     19699.1 /s  net 9.6103 mJ  counter
+ 5120x17408_M32               fwd energy noise |ctl/new-1| 0.53%; cublas J / new J = 2.798; marlin J / new J = 1.042
+ 5120x17408_M32               rev new         14.3928 mJ    300.5 W     20660.3 /s  net 9.2208 mJ  counter
+ 5120x17408_M32               rev ctl         14.3809 mJ    300.0 W     20664.9 /s  net 9.1966 mJ  counter
+ 5120x17408_M32               rev cublas      39.4215 mJ    300.0 W      7484.0 /s  net 25.3901 mJ  counter
+ 5120x17408_M32               rev marlin      15.0588 mJ    300.0 W     19720.0 /s  net 9.6347 mJ  counter
+ 5120x17408_M32               rev energy noise |ctl/new-1| 0.08%; cublas J / new J = 2.739; marlin J / new J = 1.046
+ job forward: energy noise bound (max |J(ctl)/J(new)-1| over 10 cells) 1.64%
+ job reverse: energy noise bound (max |J(ctl)/J(new)-1| over 10 cells) 2.00%

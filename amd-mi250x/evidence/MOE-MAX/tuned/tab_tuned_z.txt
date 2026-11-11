@@ -1,0 +1,147 @@
+job0: cells 66  rounds per arm [6]  noise 1.05%  (ours same/ship max 0.68%, vLLM vllm2/vllm max 1.05%)
+job0: worst rel err vs fp32 / vs fp64 / non-finite per arm: same 3.804e-04 / 3.804e-04 / 0; ship 3.804e-04 / 3.804e-04 / 0; vllm 6.020e-04 / 6.020e-04 / 0; vllm2 6.020e-04 / 6.020e-04 / 0; vllmt 6.020e-04 / 6.020e-04 / 0; vllmz 6.017e-04 / 6.018e-04 / 0
+job0: tuned vs default output over 66 cases: max abs diff 4.883e-04, max rel L2 7.980e-05, min bitwise-equal share 0.9605
+job0: cfgcheck ok=True file_name_matches=True loaded_keys=[1, 2, 3, 4, 8, 16, 24, 1024, 2048, 2700, 4096] mismatch_T=[]
+job1: cells 66  rounds per arm [6]  noise 0.90%  (ours same/ship max 0.87%, vLLM vllm2/vllm max 0.90%)
+job1: worst rel err vs fp32 / vs fp64 / non-finite per arm: same 3.804e-04 / 3.804e-04 / 0; ship 3.804e-04 / 3.804e-04 / 0; vllm 6.020e-04 / 6.020e-04 / 0; vllm2 6.020e-04 / 6.020e-04 / 0; vllmt 6.020e-04 / 6.020e-04 / 0; vllmz 6.017e-04 / 6.018e-04 / 0
+job1: tuned vs default output over 66 cases: max abs diff 4.883e-04, max rel L2 7.980e-05, min bitwise-equal share 0.9605
+job1: cfgcheck ok=True file_name_matches=True loaded_keys=[1, 2, 3, 4, 8, 16, 24, 1024, 2048, 2700, 4096] mismatch_T=[]
+
+per cell (jobs in argv order)
+seed     T route   | ours/vllm-def j0 j1 | ours/vllm-tuned j0 j1 | tuned/def j0 j1 | same/ship j0 j1 | vllm2/vllm j0 j1 | us ours def tuned (j0)
+s7       1 uniform | 0.851 0.856         | 0.858 0.858           | 0.992 0.998     | 0.997 1.000     | 1.000 0.999      |      59.5      69.9      69.4
+s8       1 uniform | 0.845 0.883         | 0.858 0.850           | 0.985 1.038     | 1.003 1.003     | 0.999 1.002      |      59.4      70.3      69.3
+s7       1 zipf1   | 0.850 0.865         | 0.862 0.865           | 0.986 1.000     | 0.997 1.003     | 0.999 0.998      |      59.0      69.4      68.5
+s8       1 zipf1   | 0.845 0.889         | 0.857 0.856           | 0.986 1.038     | 1.001 0.999     | 0.999 0.998      |      59.4      70.2      69.3
+s7       1 zipf2   | 0.851 0.864         | 0.860 0.863           | 0.989 1.001     | 0.995 0.999     | 1.000 0.994      |      59.2      69.6      68.8
+s8       1 zipf2   | 0.845 0.896         | 0.853 0.861           | 0.991 1.041     | 1.003 0.999     | 1.000 1.000      |      59.4      70.2      69.6
+s7       2 uniform | 0.850 0.836         | 0.829 0.829           | 1.024 1.009     | 1.002 0.999     | 1.002 0.995      |      91.8     108.1     110.7
+s8       2 uniform | 0.852 0.848         | 0.871 0.872           | 0.978 0.972     | 0.999 0.999     | 0.999 0.997      |      96.3     113.0     110.6
+s7       2 zipf1   | 0.854 0.847         | 0.864 0.865           | 0.988 0.980     | 1.002 1.000     | 1.006 1.007      |      95.8     112.2     110.9
+s8       2 zipf1   | 0.850 0.843         | 0.790 0.787           | 1.076 1.071     | 0.998 0.998     | 1.004 0.999      |      87.4     102.7     110.6
+s7       2 zipf2   | 0.785 0.772         | 0.676 0.671           | 1.161 1.150     | 0.999 1.002     | 1.000 1.007      |      74.6      95.1     110.4
+s8       2 zipf2   | 0.824 0.803         | 0.679 0.680           | 1.212 1.181     | 1.002 0.999     | 1.003 0.997      |      75.0      91.1     110.5
+s7       3 uniform | 0.835 0.838         | 0.916 0.918           | 0.911 0.912     | 1.001 0.999     | 1.000 0.999      |     135.2     162.0     147.6
+s8       3 uniform | 0.837 0.847         | 0.904 0.921           | 0.925 0.919     | 1.000 1.000     | 0.998 1.000      |     135.2     161.6     149.5
+s7       3 zipf1   | 0.825 0.830         | 0.868 0.870           | 0.951 0.955     | 0.999 0.999     | 0.997 1.002      |     127.0     153.9     146.4
+s8       3 zipf1   | 0.803 0.824         | 0.851 0.874           | 0.943 0.943     | 1.004 1.001     | 0.994 1.002      |     119.2     148.5     140.0
+s7       3 zipf2   | 0.787 0.790         | 0.759 0.756           | 1.038 1.044     | 0.999 1.002     | 0.997 0.999      |      99.0     125.8     130.6
+s8       3 zipf2   | 0.799 0.825         | 0.745 0.759           | 1.074 1.088     | 1.001 1.000     | 0.999 1.006      |      95.6     119.6     128.4
+s7       4 uniform | 0.844 0.837         | 0.915 0.907           | 0.923 0.922     | 1.000 0.998     | 0.993 0.998      |     167.3     198.2     182.9
+s8       4 uniform | 0.865 0.857         | 0.910 0.912           | 0.951 0.939     | 1.005 1.004     | 1.007 1.001      |     166.7     192.7     183.2
+s7       4 zipf1   | 0.830 0.820         | 0.782 0.774           | 1.061 1.060     | 1.004 0.999     | 1.003 1.001      |     142.2     171.3     181.8
+s8       4 zipf1   | 0.795 0.797         | 0.825 0.828           | 0.964 0.962     | 1.006 1.001     | 1.008 1.007      |     151.1     190.0     183.1
+s7       4 zipf2   | 0.730 0.715         | 0.573 0.569           | 1.275 1.256     | 1.005 0.994     | 1.003 1.001      |     104.5     143.0     182.3
+s8       4 zipf2   | 0.738 0.733         | 0.604 0.612           | 1.221 1.199     | 1.004 1.001     | 1.002 1.001      |     108.4     146.9     179.4
+s7       8 uniform | 0.846 0.843         | 0.949 0.955           | 0.892 0.883     | 1.001 0.996     | 1.000 1.002      |     317.4     375.3     334.6
+s8       8 uniform | 0.870 0.863         | 0.967 0.964           | 0.900 0.896     | 1.001 1.001     | 0.999 1.001      |     317.5     364.8     328.3
+s7       8 zipf1   | 0.697 0.698         | 0.767 0.774           | 0.908 0.901     | 1.002 0.997     | 0.998 1.003      |     248.8     357.2     324.3
+s8       8 zipf1   | 0.615 0.607         | 0.678 0.676           | 0.907 0.898     | 1.001 0.993     | 1.000 0.993      |     206.2     335.2     303.9
+s7       8 zipf2   | 0.476 0.474         | 0.473 0.477           | 1.007 0.994     | 1.005 0.991     | 0.990 1.002      |     138.3     290.4     292.5
+s8       8 zipf2   | 0.631 0.623         | 0.645 0.642           | 0.979 0.970     | 1.003 1.000     | 1.000 0.998      |     186.0     294.7     288.5
+s7      16 uniform | 0.916 0.925         | 1.046 1.046           | 0.876 0.884     | 0.999 1.003     | 1.001 1.003      |     533.0     581.7     509.4
+s8      16 uniform | 0.933 0.936         | 1.064 1.071           | 0.877 0.874     | 1.000 0.997     | 0.999 1.003      |     579.7     621.5     545.0
+s7      16 zipf1   | 0.948 0.956         | 1.037 1.028           | 0.914 0.930     | 0.993 0.992     | 0.999 1.002      |     391.0     412.6     377.1
+s8      16 zipf1   | 0.940 0.943         | 1.057 1.066           | 0.890 0.884     | 1.001 1.003     | 1.002 1.001      |     374.7     398.6     354.6
+s7      16 zipf2   | 0.941 0.960         | 0.973 0.968           | 0.967 0.991     | 0.999 0.999     | 0.999 1.009      |     195.7     207.9     201.1
+s8      16 zipf2   | 0.938 0.937         | 0.991 1.005           | 0.946 0.932     | 0.994 1.000     | 0.997 1.000      |     219.2     233.7     221.1
+s7      24 uniform | 0.867 0.877         | 0.982 0.988           | 0.884 0.888     | 0.999 1.001     | 0.999 0.999      |     666.2     768.1     678.7
+s8      24 uniform | 0.881 0.885         | 0.992 0.987           | 0.889 0.897     | 1.000 1.000     | 1.000 1.005      |     692.6     785.8     698.2
+s7      24 zipf1   | 0.882 0.893         | 0.966 0.974           | 0.913 0.917     | 0.998 1.001     | 0.999 1.001      |     444.3     504.0     460.2
+s8      24 zipf1   | 0.892 0.889         | 0.978 0.974           | 0.912 0.913     | 1.000 1.000     | 1.001 0.998      |     437.4     490.3     447.0
+s7      24 zipf2   | 0.897 0.915         | 0.931 0.945           | 0.963 0.968     | 1.000 0.997     | 1.001 1.008      |     249.0     277.8     267.4
+s8      24 zipf2   | 0.923 0.944         | 0.951 0.945           | 0.971 0.998     | 1.000 0.999     | 0.998 0.995      |     241.9     262.2     254.5
+s7    1024 uniform | 0.753 0.766         | 1.087 1.105           | 0.693 0.693     | 1.000 0.999     | 1.000 1.000      |    1688.1    2241.5    1553.4
+s8    1024 uniform | 0.752 0.763         | 1.086 1.103           | 0.692 0.692     | 1.000 1.008     | 1.000 1.000      |    1686.5    2242.2    1552.2
+s7    1024 zipf1   | 0.860 0.872         | 1.128 1.140           | 0.762 0.765     | 1.000 1.001     | 1.000 1.000      |    1950.7    2269.1    1729.4
+s8    1024 zipf1   | 0.856 0.866         | 1.130 1.146           | 0.757 0.755     | 1.000 1.000     | 1.000 0.996      |    1948.7    2277.4    1724.9
+s7    1024 zipf2   | 0.942 0.939         | 1.127 1.132           | 0.835 0.830     | 1.000 1.003     | 1.000 0.999      |    1770.7    1880.4    1570.9
+s8    1024 zipf2   | 0.928 0.934         | 1.119 1.129           | 0.829 0.828     | 1.000 1.000     | 1.001 1.000      |    1718.0    1851.8    1535.9
+s7    2048 uniform | 0.906 0.912         | 1.125 1.091           | 0.805 0.836     | 1.000 1.005     | 1.000 0.999      |    2353.3    2598.1    2092.7
+s8    2048 uniform | 0.907 0.913         | 1.129 1.096           | 0.803 0.833     | 1.000 1.001     | 1.000 0.998      |    2354.0    2595.4    2084.7
+s7    2048 zipf1   | 0.884 0.889         | 1.095 1.092           | 0.807 0.814     | 1.000 1.002     | 1.000 1.005      |    2460.0    2783.1    2245.8
+s8    2048 zipf1   | 0.893 0.895         | 1.103 1.094           | 0.810 0.818     | 1.000 1.002     | 1.000 0.997      |    2498.3    2796.3    2265.4
+s7    2048 zipf2   | 0.940 0.940         | 1.059 1.059           | 0.887 0.887     | 1.000 1.000     | 1.000 1.000      |    2531.9    2694.4    2391.0
+s8    2048 zipf2   | 0.944 0.947         | 1.054 1.052           | 0.896 0.901     | 1.000 1.000     | 1.000 0.997      |    2423.5    2566.0    2300.2
+s7    2700 uniform | 0.992 1.015         | 1.175 1.177           | 0.844 0.863     | 1.000 0.998     | 0.999 0.997      |    2795.5    2819.3    2378.3
+s8    2700 uniform | 0.993 1.017         | 1.175 1.179           | 0.845 0.863     | 1.000 1.000     | 1.000 0.997      |    2792.5    2812.3    2376.2
+s7    2700 zipf1   | 0.896 0.901         | 0.942 0.949           | 0.951 0.949     | 1.000 1.002     | 1.000 1.000      |    2826.7    3155.1    3001.1
+s8    2700 zipf1   | 0.905 0.908         | 0.960 0.970           | 0.943 0.937     | 1.000 1.001     | 1.000 0.998      |    2838.2    3134.6    2955.1
+s7    2700 zipf2   | 0.937 0.940         | 0.926 0.937           | 1.012 1.003     | 1.000 1.000     | 1.000 1.000      |    2995.7    3196.7    3233.6
+s8    2700 zipf2   | 0.944 0.947         | 0.939 0.950           | 1.006 0.997     | 1.000 1.000     | 1.000 1.001      |    2969.1    3143.7    3161.7
+s7    4096 uniform | 0.892 0.913         | 0.989 0.991           | 0.902 0.921     | 1.000 1.004     | 1.001 1.001      |    3450.4    3867.7    3489.6
+s8    4096 uniform | 0.894 0.917         | 0.991 0.988           | 0.902 0.929     | 1.000 1.000     | 1.000 0.999      |    3441.2    3850.3    3473.1
+s7    4096 zipf1   | 0.923 0.923         | 1.009 1.003           | 0.915 0.920     | 1.000 1.004     | 1.000 1.000      |    3593.2    3891.6    3560.2
+s8    4096 zipf1   | 0.931 0.933         | 1.013 1.012           | 0.919 0.921     | 0.999 1.000     | 1.000 0.999      |    3606.7    3875.0    3562.0
+s7    4096 zipf2   | 0.952 0.954         | 1.000 1.005           | 0.952 0.950     | 1.000 1.001     | 1.000 0.999      |    3886.5    4080.7    3885.6
+s8    4096 zipf2   | 0.958 0.962         | 1.001 1.007           | 0.958 0.956     | 0.999 1.000     | 1.000 1.000      |    3881.6    4049.9    3879.1
+
+ranges over 2 seeds x 2 jobs; verdict by the rule
+    1 uniform | def 0.845-0.883 LEAD     | tuned 0.850-0.858 LEAD     | ztuned 0.849-0.889 | best 0.860-0.889 LEAD     | tuned/def 0.985-1.038 | same 0.997-1.003 | vllm2 0.999-1.002
+    1 zipf1   | def 0.845-0.889 LEAD     | tuned 0.856-0.865 LEAD     | ztuned 0.851-0.892 | best 0.861-0.892 LEAD     | tuned/def 0.986-1.038 | same 0.997-1.003 | vllm2 0.998-0.999
+    1 zipf2   | def 0.845-0.896 LEAD     | tuned 0.853-0.863 LEAD     | ztuned 0.855-0.894 | best 0.859-0.896 LEAD     | tuned/def 0.989-1.041 | same 0.995-1.003 | vllm2 0.994-1.000
+    2 uniform | def 0.836-0.852 LEAD     | tuned 0.829-0.872 LEAD     | ztuned 0.846-0.860 | best 0.846-0.872 LEAD     | tuned/def 0.972-1.024 | same 0.999-1.002 | vllm2 0.995-1.002
+    2 zipf1   | def 0.843-0.854 LEAD     | tuned 0.787-0.865 LEAD     | ztuned 0.836-0.861 | best 0.843-0.865 LEAD     | tuned/def 0.980-1.076 | same 0.998-1.002 | vllm2 0.999-1.007
+    2 zipf2   | def 0.772-0.824 LEAD     | tuned 0.671-0.680 LEAD     | ztuned 0.756-0.818 | best 0.772-0.824 LEAD     | tuned/def 1.150-1.212 | same 0.999-1.002 | vllm2 0.997-1.007
+    3 uniform | def 0.835-0.847 LEAD     | tuned 0.904-0.921 LEAD     | ztuned 0.847-0.855 | best 0.904-0.921 LEAD     | tuned/def 0.911-0.925 | same 0.999-1.001 | vllm2 0.998-1.000
+    3 zipf1   | def 0.803-0.830 LEAD     | tuned 0.851-0.874 LEAD     | ztuned 0.814-0.846 | best 0.851-0.874 LEAD     | tuned/def 0.943-0.955 | same 0.999-1.004 | vllm2 0.994-1.002
+    3 zipf2   | def 0.787-0.825 LEAD     | tuned 0.745-0.759 LEAD     | ztuned 0.797-0.809 | best 0.797-0.825 LEAD     | tuned/def 1.038-1.088 | same 0.999-1.002 | vllm2 0.997-1.006
+    4 uniform | def 0.837-0.865 LEAD     | tuned 0.907-0.915 LEAD     | ztuned 0.829-0.852 | best 0.907-0.915 LEAD     | tuned/def 0.922-0.951 | same 0.998-1.005 | vllm2 0.993-1.007
+    4 zipf1   | def 0.795-0.830 LEAD     | tuned 0.774-0.828 LEAD     | ztuned 0.773-0.817 | best 0.820-0.830 LEAD     | tuned/def 0.962-1.061 | same 0.999-1.006 | vllm2 1.001-1.008
+    4 zipf2   | def 0.715-0.738 LEAD     | tuned 0.569-0.612 LEAD     | ztuned 0.713-0.730 | best 0.715-0.738 LEAD     | tuned/def 1.199-1.275 | same 0.994-1.005 | vllm2 1.001-1.003
+    8 uniform | def 0.843-0.870 LEAD     | tuned 0.949-0.967 LEAD     | ztuned 0.821-0.851 | best 0.949-0.967 LEAD     | tuned/def 0.883-0.900 | same 0.996-1.001 | vllm2 0.999-1.002
+    8 zipf1   | def 0.607-0.698 LEAD     | tuned 0.676-0.774 LEAD     | ztuned 0.643-0.698 | best 0.676-0.774 LEAD     | tuned/def 0.898-0.908 | same 0.993-1.002 | vllm2 0.993-1.003
+    8 zipf2   | def 0.474-0.631 LEAD     | tuned 0.473-0.645 LEAD     | ztuned 0.490-0.626 | best 0.490-0.645 LEAD     | tuned/def 0.970-1.007 | same 0.991-1.005 | vllm2 0.990-1.002
+   16 uniform | def 0.916-0.936 LEAD     | tuned 1.046-1.071 REVERSED | ztuned 1.044-1.070 | best 1.046-1.071 REVERSED | tuned/def 0.874-0.884 | same 0.997-1.003 | vllm2 0.999-1.003
+   16 zipf1   | def 0.940-0.956 LEAD     | tuned 1.028-1.066 REVERSED | ztuned 1.029-1.065 | best 1.029-1.066 REVERSED | tuned/def 0.884-0.930 | same 0.992-1.003 | vllm2 0.999-1.002
+   16 zipf2   | def 0.937-0.960 LEAD     | tuned 0.968-1.005 TIE      | ztuned 0.966-1.006 | best 0.968-1.006 TIE      | tuned/def 0.932-0.991 | same 0.994-1.000 | vllm2 0.997-1.009
+   24 uniform | def 0.867-0.885 LEAD     | tuned 0.982-0.992 TIE      | ztuned 0.961-0.978 | best 0.982-0.992 TIE      | tuned/def 0.884-0.897 | same 0.999-1.001 | vllm2 0.999-1.005
+   24 zipf1   | def 0.882-0.893 LEAD     | tuned 0.966-0.978 LEAD     | ztuned 0.943-0.970 | best 0.966-0.978 LEAD     | tuned/def 0.912-0.917 | same 0.998-1.001 | vllm2 0.998-1.001
+   24 zipf2   | def 0.897-0.944 LEAD     | tuned 0.931-0.951 LEAD     | ztuned 0.897-0.987 | best 0.931-0.987 LEAD     | tuned/def 0.963-0.998 | same 0.997-1.000 | vllm2 0.995-1.008
+ 1024 uniform | def 0.752-0.766 LEAD     | tuned 1.086-1.105 REVERSED | ztuned -           | best 1.086-1.105 REVERSED | tuned/def 0.692-0.693 | same 0.999-1.008 | vllm2 1.000-1.000
+ 1024 zipf1   | def 0.856-0.872 LEAD     | tuned 1.128-1.146 REVERSED | ztuned -           | best 1.128-1.146 REVERSED | tuned/def 0.755-0.765 | same 1.000-1.001 | vllm2 0.996-1.000
+ 1024 zipf2   | def 0.928-0.942 LEAD     | tuned 1.119-1.132 REVERSED | ztuned -           | best 1.119-1.132 REVERSED | tuned/def 0.828-0.835 | same 1.000-1.003 | vllm2 0.999-1.001
+ 2048 uniform | def 0.906-0.913 LEAD     | tuned 1.091-1.129 REVERSED | ztuned -           | best 1.091-1.129 REVERSED | tuned/def 0.803-0.836 | same 1.000-1.005 | vllm2 0.998-1.000
+ 2048 zipf1   | def 0.884-0.895 LEAD     | tuned 1.092-1.103 REVERSED | ztuned -           | best 1.092-1.103 REVERSED | tuned/def 0.807-0.818 | same 1.000-1.002 | vllm2 0.997-1.005
+ 2048 zipf2   | def 0.940-0.947 LEAD     | tuned 1.052-1.059 REVERSED | ztuned -           | best 1.052-1.059 REVERSED | tuned/def 0.887-0.901 | same 1.000-1.000 | vllm2 0.997-1.000
+ 2700 uniform | def 0.992-1.017 TIE      | tuned 1.175-1.179 REVERSED | ztuned 0.863-0.914 | best 1.175-1.179 REVERSED | tuned/def 0.844-0.863 | same 0.998-1.000 | vllm2 0.997-1.000
+ 2700 zipf1   | def 0.896-0.908 LEAD     | tuned 0.942-0.970 LEAD     | ztuned 1.058-1.061 | best 1.058-1.061 REVERSED | tuned/def 0.937-0.951 | same 1.000-1.002 | vllm2 0.998-1.000
+ 2700 zipf2   | def 0.937-0.947 LEAD     | tuned 0.926-0.950 LEAD     | ztuned 1.039-1.054 | best 1.039-1.054 REVERSED | tuned/def 0.997-1.012 | same 1.000-1.000 | vllm2 1.000-1.001
+ 4096 uniform | def 0.892-0.917 LEAD     | tuned 0.988-0.991 TIE      | ztuned 0.964-0.972 | best 0.988-0.991 TIE      | tuned/def 0.902-0.929 | same 1.000-1.004 | vllm2 0.999-1.001
+ 4096 zipf1   | def 0.923-0.933 LEAD     | tuned 1.003-1.013 TIE      | ztuned 1.000-1.009 | best 1.003-1.013 TIE      | tuned/def 0.915-0.921 | same 0.999-1.004 | vllm2 0.999-1.000
+ 4096 zipf2   | def 0.952-0.962 LEAD     | tuned 1.000-1.007 TIE      | ztuned 1.002-1.017 | best 1.002-1.017 TIE      | tuned/def 0.950-0.958 | same 0.999-1.001 | vllm2 0.999-1.000
+
+vLLM configs used (job0)
+T=    1 default {"BLOCK_SIZE_M": 16, "BLOCK_SIZE_N": 64, "BLOCK_SIZE_K": 128, "GROUP_SIZE_M": 1, "SPLIT_K": 1, "num_warps": 4, "num_stages": 2}
+        tuned   {"BLOCK_SIZE_M": 16, "BLOCK_SIZE_N": 64, "BLOCK_SIZE_K": 128, "GROUP_SIZE_M": 1, "num_warps": 4, "num_stages": 2, "waves_per_eu": 4, "matrix_instr_nonkdim": 16, "kpack": 1}
+        ztuned  {"BLOCK_SIZE_M": 16, "BLOCK_SIZE_N": 64, "BLOCK_SIZE_K": 128, "GROUP_SIZE_M": 1, "num_warps": 4, "num_stages": 2, "waves_per_eu": 0, "matrix_instr_nonkdim": 16, "kpack": 2}
+T=    2 default {"BLOCK_SIZE_M": 16, "BLOCK_SIZE_N": 64, "BLOCK_SIZE_K": 128, "GROUP_SIZE_M": 1, "SPLIT_K": 1, "num_warps": 4, "num_stages": 2}
+        tuned   {"BLOCK_SIZE_M": 16, "BLOCK_SIZE_N": 16, "BLOCK_SIZE_K": 256, "GROUP_SIZE_M": 1, "num_warps": 2, "num_stages": 2, "waves_per_eu": 2, "matrix_instr_nonkdim": 16, "kpack": 1}
+        ztuned  {"BLOCK_SIZE_M": 16, "BLOCK_SIZE_N": 64, "BLOCK_SIZE_K": 128, "GROUP_SIZE_M": 1, "num_warps": 4, "num_stages": 2, "waves_per_eu": 4, "matrix_instr_nonkdim": 16, "kpack": 2}
+T=    3 default {"BLOCK_SIZE_M": 16, "BLOCK_SIZE_N": 64, "BLOCK_SIZE_K": 128, "GROUP_SIZE_M": 1, "SPLIT_K": 1, "num_warps": 4, "num_stages": 2}
+        tuned   {"BLOCK_SIZE_M": 32, "BLOCK_SIZE_N": 64, "BLOCK_SIZE_K": 128, "GROUP_SIZE_M": 1, "num_warps": 8, "num_stages": 2, "waves_per_eu": 4, "matrix_instr_nonkdim": 16, "kpack": 1}
+        ztuned  {"BLOCK_SIZE_M": 16, "BLOCK_SIZE_N": 64, "BLOCK_SIZE_K": 128, "GROUP_SIZE_M": 1, "num_warps": 4, "num_stages": 2, "waves_per_eu": 0, "matrix_instr_nonkdim": 16, "kpack": 2}
+T=    4 default {"BLOCK_SIZE_M": 16, "BLOCK_SIZE_N": 64, "BLOCK_SIZE_K": 128, "GROUP_SIZE_M": 1, "SPLIT_K": 1, "num_warps": 4, "num_stages": 2}
+        tuned   {"BLOCK_SIZE_M": 16, "BLOCK_SIZE_N": 32, "BLOCK_SIZE_K": 256, "GROUP_SIZE_M": 1, "num_warps": 2, "num_stages": 2, "waves_per_eu": 0, "matrix_instr_nonkdim": 16, "kpack": 2}
+        ztuned  {"BLOCK_SIZE_M": 16, "BLOCK_SIZE_N": 64, "BLOCK_SIZE_K": 128, "GROUP_SIZE_M": 1, "num_warps": 2, "num_stages": 2, "waves_per_eu": 2, "matrix_instr_nonkdim": 16, "kpack": 2}
+T=    8 default {"BLOCK_SIZE_M": 16, "BLOCK_SIZE_N": 64, "BLOCK_SIZE_K": 128, "GROUP_SIZE_M": 1, "SPLIT_K": 1, "num_warps": 4, "num_stages": 2}
+        tuned   {"BLOCK_SIZE_M": 16, "BLOCK_SIZE_N": 128, "BLOCK_SIZE_K": 128, "GROUP_SIZE_M": 1, "num_warps": 8, "num_stages": 2, "waves_per_eu": 1, "matrix_instr_nonkdim": 16, "kpack": 1}
+        ztuned  {"BLOCK_SIZE_M": 16, "BLOCK_SIZE_N": 64, "BLOCK_SIZE_K": 128, "GROUP_SIZE_M": 4, "num_warps": 1, "num_stages": 2, "waves_per_eu": 1, "matrix_instr_nonkdim": 16, "kpack": 1}
+T=   16 default {"BLOCK_SIZE_M": 16, "BLOCK_SIZE_N": 64, "BLOCK_SIZE_K": 128, "GROUP_SIZE_M": 1, "SPLIT_K": 1, "num_warps": 4, "num_stages": 2}
+        tuned   {"BLOCK_SIZE_M": 16, "BLOCK_SIZE_N": 128, "BLOCK_SIZE_K": 128, "GROUP_SIZE_M": 1, "num_warps": 8, "num_stages": 2, "waves_per_eu": 0, "matrix_instr_nonkdim": 16, "kpack": 2}
+        ztuned  {"BLOCK_SIZE_M": 16, "BLOCK_SIZE_N": 128, "BLOCK_SIZE_K": 128, "GROUP_SIZE_M": 1, "num_warps": 8, "num_stages": 2, "waves_per_eu": 0, "matrix_instr_nonkdim": 16, "kpack": 1}
+T=   24 default {"BLOCK_SIZE_M": 16, "BLOCK_SIZE_N": 64, "BLOCK_SIZE_K": 128, "GROUP_SIZE_M": 1, "SPLIT_K": 1, "num_warps": 4, "num_stages": 2}
+        tuned   {"BLOCK_SIZE_M": 16, "BLOCK_SIZE_N": 128, "BLOCK_SIZE_K": 128, "GROUP_SIZE_M": 1, "num_warps": 8, "num_stages": 2, "waves_per_eu": 2, "matrix_instr_nonkdim": 16, "kpack": 1}
+        ztuned  {"BLOCK_SIZE_M": 32, "BLOCK_SIZE_N": 64, "BLOCK_SIZE_K": 128, "GROUP_SIZE_M": 1, "num_warps": 2, "num_stages": 2, "waves_per_eu": 1, "matrix_instr_nonkdim": 32, "kpack": 2}
+T= 1024 default {"BLOCK_SIZE_M": 128, "BLOCK_SIZE_N": 128, "BLOCK_SIZE_K": 64, "GROUP_SIZE_M": 1, "SPLIT_K": 1, "num_warps": 8, "num_stages": 2}
+        tuned   {"BLOCK_SIZE_M": 64, "BLOCK_SIZE_N": 128, "BLOCK_SIZE_K": 128, "GROUP_SIZE_M": 1, "num_warps": 8, "num_stages": 2, "waves_per_eu": 1, "matrix_instr_nonkdim": 16, "kpack": 1}
+        ztuned  null
+T= 2048 default {"BLOCK_SIZE_M": 128, "BLOCK_SIZE_N": 128, "BLOCK_SIZE_K": 64, "GROUP_SIZE_M": 1, "SPLIT_K": 1, "num_warps": 8, "num_stages": 2}
+        tuned   {"BLOCK_SIZE_M": 64, "BLOCK_SIZE_N": 128, "BLOCK_SIZE_K": 128, "GROUP_SIZE_M": 1, "num_warps": 8, "num_stages": 2, "waves_per_eu": 0, "matrix_instr_nonkdim": 16, "kpack": 1}
+        ztuned  null
+T= 2700 default {"BLOCK_SIZE_M": 128, "BLOCK_SIZE_N": 128, "BLOCK_SIZE_K": 64, "GROUP_SIZE_M": 1, "SPLIT_K": 1, "num_warps": 8, "num_stages": 2}
+        tuned   {"BLOCK_SIZE_M": 128, "BLOCK_SIZE_N": 128, "BLOCK_SIZE_K": 128, "GROUP_SIZE_M": 1, "num_warps": 8, "num_stages": 2, "waves_per_eu": 1, "matrix_instr_nonkdim": 16, "kpack": 1}
+        ztuned  {"BLOCK_SIZE_M": 64, "BLOCK_SIZE_N": 128, "BLOCK_SIZE_K": 128, "GROUP_SIZE_M": 32, "num_warps": 8, "num_stages": 2, "waves_per_eu": 0, "matrix_instr_nonkdim": 16, "kpack": 1}
+T= 4096 default {"BLOCK_SIZE_M": 128, "BLOCK_SIZE_N": 128, "BLOCK_SIZE_K": 64, "GROUP_SIZE_M": 1, "SPLIT_K": 1, "num_warps": 8, "num_stages": 2}
+        tuned   {"BLOCK_SIZE_M": 64, "BLOCK_SIZE_N": 128, "BLOCK_SIZE_K": 128, "GROUP_SIZE_M": 1, "num_warps": 8, "num_stages": 2, "waves_per_eu": 0, "matrix_instr_nonkdim": 16, "kpack": 1}
+        ztuned  {"BLOCK_SIZE_M": 64, "BLOCK_SIZE_N": 128, "BLOCK_SIZE_K": 128, "GROUP_SIZE_M": 32, "num_warps": 8, "num_stages": 2, "waves_per_eu": 1, "matrix_instr_nonkdim": 16, "kpack": 1}

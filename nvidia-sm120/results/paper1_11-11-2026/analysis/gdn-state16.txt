@@ -1,0 +1,87 @@
+
+=== gdn_state16 ===
+job forward seed 988: 1 block(s), 6 cells done, 0 cell errors; cycles per arm min 9; noise bound (max |ctl/new-1|) 0.24%; ws 513 MiB; graph replay True; idle 109.7 W
+job reverse seed 988: 1 block(s), 6 cells done, 0 cell errors; cycles per arm min 9; noise bound (max |ctl/new-1|) 0.27%; ws 513 MiB; graph replay True; idle 111.3 W
+
+-- vbf16 time / new time (higher: ours faster); per job: ratio (net, ctl, cyc min..max) verdict
+ nr1_ql2                      fwd  1.194 (net n/a, ctl -0.06%, cyc 1.194..1.195) W | rev  1.196 (net n/a, ctl -0.00%, cyc 1.194..1.196) W  range 1.194..1.196  KEEP: both-win > noise
+ nr1_ql4                      fwd  1.357 (net n/a, ctl -0.02%, cyc 1.339..1.392) W | rev  1.353 (net n/a, ctl +0.18%, cyc 1.335..1.386) W  range 1.353..1.357  KEEP: both-win > noise
+ nr8_ql2                      fwd  1.036 (net n/a, ctl +0.24%, cyc 1.011..1.068) W | rev  1.037 (net n/a, ctl -0.27%, cyc 1.023..1.066) W  range 1.036..1.037  KEEP: both-win > noise
+ nr8_ql4                      fwd  1.093 (net n/a, ctl +0.10%, cyc 1.090..1.159) W | rev  1.089 (net n/a, ctl -0.10%, cyc 1.086..1.115) W  range 1.089..1.093  KEEP: both-win > noise
+ nr32_ql2                     fwd  1.001 (net n/a, ctl -0.13%, cyc 0.991..1.032) - | rev  1.001 (net n/a, ctl +0.10%, cyc 0.984..1.018) -  range 1.001..1.001  inside noise / mixed
+ nr32_ql4                     fwd  0.995 (net n/a, ctl -0.00%, cyc 0.992..1.022) L | rev  0.996 (net n/a, ctl +0.07%, cyc 0.974..1.003) L  range 0.995..0.996  BOTH-LOSE > noise
+ summary vbf16/new: 6 cells, ratio 0.995..1.357, median 1.064; KEEP: 4, inside noise / mixed: 1, BOTH-LOSE > noise: 1
+
+-- vendor time / new time (higher: ours faster); per job: ratio (net, ctl, cyc min..max) verdict
+ nr1_ql2                      fwd  1.425 (net n/a, ctl -0.06%, cyc 1.423..1.426) W | rev  1.422 (net n/a, ctl -0.00%, cyc 1.421..1.423) W  range 1.422..1.425  KEEP: both-win > noise
+ nr1_ql4                      fwd  1.557 (net n/a, ctl -0.02%, cyc 1.554..1.588) W | rev  1.549 (net n/a, ctl +0.18%, cyc 1.538..1.582) W  range 1.549..1.557  KEEP: both-win > noise
+ nr8_ql2                      fwd  2.016 (net n/a, ctl +0.24%, cyc 2.009..2.144) W | rev  2.022 (net n/a, ctl -0.27%, cyc 2.011..2.136) W  range 2.016..2.022  KEEP: both-win > noise
+ nr8_ql4                      fwd  1.976 (net n/a, ctl +0.10%, cyc 1.966..2.173) W | rev  1.974 (net n/a, ctl -0.10%, cyc 1.970..2.088) W  range 1.974..1.976  KEEP: both-win > noise
+ nr32_ql2                     fwd  1.975 (net n/a, ctl -0.13%, cyc 1.963..2.058) W | rev  1.978 (net n/a, ctl +0.10%, cyc 1.973..2.050) W  range 1.975..1.978  KEEP: both-win > noise
+ nr32_ql4                     fwd  1.883 (net n/a, ctl -0.00%, cyc 1.877..1.949) W | rev  1.880 (net n/a, ctl +0.07%, cyc 1.877..1.896) W  range 1.880..1.883  KEEP: both-win > noise
+ summary vendor/new: 6 cells, ratio 1.422..2.022, median 1.928; KEEP: 6
+
+-- energy per call (separate tight-loop pass; whole-GPU power, co-resident process included)
+   cell / job / arm: J per call, average W, calls/s, net J per call (idle subtracted, derived), source
+ nr1_ql2                      fwd new          1.9619 mJ    300.2 W    151122.4 /s  net 1.2608 mJ  counter
+ nr1_ql2                      fwd ctl          1.9656 mJ    289.6 W    151173.7 /s  net 1.1906 mJ  counter
+ nr1_ql2                      fwd vbf16        1.9224 mJ    251.2 W    126674.3 /s  net 1.1171 mJ  counter
+ nr1_ql2                      fwd vendor       2.6334 mJ    276.3 W    106202.7 /s  net 1.5695 mJ  counter
+ nr1_ql2                      fwd energy noise |ctl/new-1| 0.19%; vbf16 J / new J = 0.980; vendor J / new J = 1.342
+ nr1_ql2                      rev new          1.9473 mJ    297.2 W    151500.4 /s  net 1.2271 mJ  counter
+ nr1_ql2                      rev ctl          1.9401 mJ    299.7 W    151412.5 /s  net 1.2446 mJ  counter
+ nr1_ql2                      rev vbf16        1.9328 mJ    245.4 W    126525.2 /s  net 1.0602 mJ  counter
+ nr1_ql2                      rev vendor       2.6012 mJ    276.8 W    106509.3 /s  net 1.5545 mJ  counter
+ nr1_ql2                      rev energy noise |ctl/new-1| 0.37%; vbf16 J / new J = 0.993; vendor J / new J = 1.336
+ nr1_ql4                      fwd new          2.5683 mJ    300.0 W    115444.6 /s  net 1.6489 mJ  counter
+ nr1_ql4                      fwd ctl          2.6177 mJ    295.7 W    115631.3 /s  net 1.6090 mJ  counter
+ nr1_ql4                      fwd vbf16        3.1017 mJ    274.9 W     86432.8 /s  net 1.9119 mJ  counter
+ nr1_ql4                      fwd vendor       4.0976 mJ    300.0 W     73670.1 /s  net 2.5838 mJ  counter
+ nr1_ql4                      fwd energy noise |ctl/new-1| 1.92%; vbf16 J / new J = 1.208; vendor J / new J = 1.595
+ nr1_ql4                      rev new          2.5417 mJ    300.0 W    115237.3 /s  net 1.6377 mJ  counter
+ nr1_ql4                      rev ctl          2.5540 mJ    300.0 W    115083.4 /s  net 1.6399 mJ  counter
+ nr1_ql4                      rev vbf16        3.1093 mJ    277.4 W     86479.5 /s  net 1.9206 mJ  counter
+ nr1_ql4                      rev vendor       3.9901 mJ    300.5 W     73848.1 /s  net 2.5628 mJ  counter
+ nr1_ql4                      rev energy noise |ctl/new-1| 0.48%; vbf16 J / new J = 1.223; vendor J / new J = 1.570
+ nr8_ql2                      fwd new          8.0390 mJ    300.0 W     36890.8 /s  net 5.1593 mJ  counter
+ nr8_ql2                      fwd ctl          8.0333 mJ    295.4 W     36925.4 /s  net 5.0290 mJ  counter
+ nr8_ql2                      fwd vbf16        8.3745 mJ    300.0 W     35397.3 /s  net 5.3763 mJ  counter
+ nr8_ql2                      fwd vendor      16.2179 mJ    300.0 W     18201.9 /s  net 10.4595 mJ  counter
+ nr8_ql2                      fwd energy noise |ctl/new-1| 0.07%; vbf16 J / new J = 1.042; vendor J / new J = 2.017
+ nr8_ql2                      rev new          7.9725 mJ    295.8 W     36902.6 /s  net 5.0002 mJ  counter
+ nr8_ql2                      rev ctl          8.0178 mJ    300.0 W     36836.5 /s  net 5.1234 mJ  counter
+ nr8_ql2                      rev vbf16        8.2826 mJ    300.0 W     35365.6 /s  net 5.3363 mJ  counter
+ nr8_ql2                      rev vendor      16.4545 mJ    300.0 W     18174.5 /s  net 10.3841 mJ  counter
+ nr8_ql2                      rev energy noise |ctl/new-1| 0.57%; vbf16 J / new J = 1.039; vendor J / new J = 2.064
+ nr8_ql4                      fwd new         13.8709 mJ    300.3 W     21332.2 /s  net 8.9350 mJ  counter
+ nr8_ql4                      fwd ctl         13.8862 mJ    300.0 W     21257.3 /s  net 8.9535 mJ  counter
+ nr8_ql4                      fwd vbf16       15.0681 mJ    300.0 W     19526.1 /s  net 9.7488 mJ  counter
+ nr8_ql4                      fwd vendor      27.4279 mJ    300.0 W     10782.6 /s  net 17.6534 mJ  counter
+ nr8_ql4                      fwd energy noise |ctl/new-1| 0.11%; vbf16 J / new J = 1.086; vendor J / new J = 1.977
+ nr8_ql4                      rev new         13.8734 mJ    300.0 W     21229.9 /s  net 8.8886 mJ  counter
+ nr8_ql4                      rev ctl         13.7837 mJ    299.6 W     21298.9 /s  net 8.8429 mJ  counter
+ nr8_ql4                      rev vbf16       15.0650 mJ    299.7 W     19553.0 /s  net 9.6366 mJ  counter
+ nr8_ql4                      rev vendor      27.1939 mJ    300.0 W     10787.4 /s  net 17.4959 mJ  counter
+ nr8_ql4                      rev energy noise |ctl/new-1| 0.65%; vbf16 J / new J = 1.086; vendor J / new J = 1.960
+ nr32_ql2                     fwd new         33.6528 mJ    300.0 W      8931.9 /s  net 21.3086 mJ  counter
+ nr32_ql2                     fwd ctl         32.9080 mJ    299.7 W      8931.2 /s  net 21.2789 mJ  counter
+ nr32_ql2                     fwd vbf16       33.0831 mJ    300.0 W      8942.3 /s  net 21.2841 mJ  counter
+ nr32_ql2                     fwd vendor      65.1750 mJ    296.9 W      4526.3 /s  net 41.3637 mJ  counter
+ nr32_ql2                     fwd energy noise |ctl/new-1| 2.21%; vbf16 J / new J = 0.983; vendor J / new J = 1.937
+ nr32_ql2                     rev new         32.8812 mJ    300.0 W      8934.2 /s  net 21.1219 mJ  counter
+ nr32_ql2                     rev ctl         33.0919 mJ    300.0 W      8929.9 /s  net 21.1339 mJ  counter
+ nr32_ql2                     rev vbf16       32.7862 mJ    297.7 W      8942.8 /s  net 20.8442 mJ  counter
+ nr32_ql2                     rev vendor      64.7693 mJ    300.0 W      4529.8 /s  net 41.6655 mJ  counter
+ nr32_ql2                     rev energy noise |ctl/new-1| 0.64%; vbf16 J / new J = 0.997; vendor J / new J = 1.970
+ nr32_ql4                     fwd new         58.9049 mJ    300.0 W      4992.2 /s  net 38.1265 mJ  counter
+ nr32_ql4                     fwd ctl         59.0582 mJ    300.0 W      4993.8 /s  net 38.1161 mJ  counter
+ nr32_ql4                     fwd vbf16       58.7297 mJ    300.0 W      5014.5 /s  net 37.9606 mJ  counter
+ nr32_ql4                     fwd vendor     110.6739 mJ    300.0 W      2653.4 /s  net 71.7501 mJ  counter
+ nr32_ql4                     fwd energy noise |ctl/new-1| 0.26%; vbf16 J / new J = 0.997; vendor J / new J = 1.879
+ nr32_ql4                     rev new         59.4261 mJ    300.0 W      4997.9 /s  net 37.7590 mJ  counter
+ nr32_ql4                     rev ctl         60.6179 mJ    300.0 W      4996.3 /s  net 37.7829 mJ  counter
+ nr32_ql4                     rev vbf16       59.2923 mJ    300.0 W      5015.4 /s  net 37.6292 mJ  counter
+ nr32_ql4                     rev vendor     112.7145 mJ    300.0 W      2653.6 /s  net 71.1332 mJ  counter
+ nr32_ql4                     rev energy noise |ctl/new-1| 2.01%; vbf16 J / new J = 0.998; vendor J / new J = 1.897
+ job forward: energy noise bound (max |J(ctl)/J(new)-1| over 6 cells) 2.21%
+ job reverse: energy noise bound (max |J(ctl)/J(new)-1| over 6 cells) 2.01%

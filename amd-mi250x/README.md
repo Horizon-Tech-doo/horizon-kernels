@@ -1,7 +1,7 @@
 # horizon-kernels-gfx90a
 
 TileLang attention, mixture-of-experts and GEMM kernels for AMD Instinct MI250X (gfx90a), with the benchmark harness,
-vendor baselines, experiment source and the research log from our study on LUMI-G. Apache-2.0 (see `../LICENSE`, `../NOTICE`
+vendor baselines, vLLM plugins, experiment source, served-model evidence and the research log from our study on LUMI-G. Apache-2.0 (see `../LICENSE`, `../NOTICE`
 and `../REUSE.toml`). Copyright 2026 Horizon Tech d.o.o.; author Hamza Abdagic.
 
 TileLang compiler fixes are in `tilelang-patches/`, prepared against upstream main 6e8f599e; see
@@ -11,13 +11,14 @@ TileLang compiler fixes are in `tilelang-patches/`, prepared against upstream ma
 
 | Folder | Contents |
 |---|---|
-| `kernels/` | `gqa_fa.py` GQA prefill attention; `gqa_decode.py` flash-decoding, contiguous and paged KV on vLLM's layouts, simulated FP8 KV; `moe_fused.py` fused MoE (GPU alignment, gate/up+SiLU, down); `gemm_prefetch.py` dense and split-K GEMM; `bench_gemm.py` |
+| `kernels/` | `gqa_fa.py` GQA prefill attention; `gqa_decode.py` flash-decoding, contiguous and paged KV on vLLM's layouts, simulated FP8 KV; `moe_fused.py` fused MoE (GPU alignment, gate/up+SiLU, down); `gemm_prefetch.py` dense and split-K GEMM; `bench_gemm.py`; `gemm_bf16.py` the hand-written GEMM on the bf16 matrix-core instruction with its tile table per row count and layer shape; `gqa_fa_ps.py` prefill attention with the weights scaled before the fp16 cast; `gqa_fa_qw.py` the query-window form for prefill chunks with a cached prefix |
 | `baselines/` | PyTorch SDPA, Composable Kernel flash-attention (prefill and decode), vLLM paged / Triton unified attention, vLLM fused MoE |
 | `diagnostics/` | the four experiments that showed the upstream TileLang example's fp16 reference was wrong, not the kernel |
 | `scaling/` | RCCL all-reduce / all-to-all, an expert-parallel MoE layer, 1 GCD to 4 nodes, and vLLM TP=4 across nodes with a hand-written OFI adapter (Slurm scripts) |
-| `vllm-integration/` | LUMI overlay that runs the decode kernels in a live vLLM, with its client and analysis; research only |
+| `vllm-integration/` | vLLM general plugins in `overlay/` (`horizon_lumi_decode`: decode attention; `horizon_lumi_gemm`: dense linear calls of prefill steps on `gemm_bf16.py`; `horizon_lumi_prefill`: prefill attention; `horizon_lumi_profile`: where a serving step's time goes, changes no result), with the clients, analysis, check and precompile scripts and the Slurm scripts of tracks V1, P1, PROFILE, G1 to G3 and QW (jobs named g4); research only, every plugin is off unless its switch is set |
+| `evidence/` | write-ups, result tables and frozen source of the served-model tracks (E2E, PROFILE, P1, G1, G2, QW), the tuned vLLM fused-MoE baseline with its configuration file in vLLM's format, and the reproduction of a slow small-row GEMM path in stock vLLM (see `evidence/README.md`) |
 | `lumi/` | reproducible TileLang 0.1.15 setup in the LUMI PyTorch container, including the gfx90a hipcc shim, `install.sh`, the GPU smoke test and the vLLM image pull |
-| `results/RESEARCH-LOG.md` | every kernel, baseline, scaling and compiler experiment with setup, numbers, job IDs and conclusions, including negative results and later corrections |
+| `results/RESEARCH-LOG.md` | every kernel, baseline, scaling, compiler and served-model experiment with setup, numbers, job IDs and conclusions, including negative results and later corrections |
 | `experiments/` | working source behind the MB, E1, E2, E3, K1, N1, N3, N4, N5, C1, C2P, S5, D128, TRI3D, SMALLM, MOESWEEP and JPORT log entries, as run (see `experiments/README.md`) |
 | `tilelang-patches/` | patches 0001–0009 for TileLang |
 
@@ -31,6 +32,10 @@ Details, job IDs and limits are in `results/RESEARCH-LOG.md`.
 - **Fused MoE** vs vLLM 0.30 `fused_experts`, time, same process on vLLM's stack, compiler output: at most 0.964× from 2 to 2049 tokens; 0.892–0.998× at 14 sampled counts in 2049–4096 on quiet jobs, **but a fine sweep (`experiments/moesweep`, two opposite-order pairs, two routing seeds) puts about 2600–2875 tokens at parity, up to 2.5% over in the worst read, with the sign depending on seed and job; the band's lower edge is unmeasured.** Grid kernels are correct on every count from 1 to 4096; landed kernels on sampled counts. Real routing 0.858–0.966× at 1280–4096, 0.976–0.991× from 6144. Uniform 7168 reads 1.009–1.013×, 12288 and 16384 1.001–1.007×. Weight bandwidth at decode size 53–77% of HBM at T ≥ 4, under 50% at T = 1, 2. Each new token count costs 20–30 s of compile, excluded from these ratios.
 - **Dense GEMM**, hand-written asm launched by TileLang, not compiler output: at the 500 W cap through the script, placed 1.016–1.075× hipBLASLt at 3072³, 6144³, 12288³; unplaced 1.005–1.069×. Earlier placed table at 8 shapes 1.016–1.093×. 7168×3584×4096, 2816³ and 1024×7680×2048 stay below 1. Compiled forms 0.77–1.08×.
 - **Small-M GEMM**, hand asm on one allocation, explicit entries: 0.988–1.037× on N 17408; 0.979–1.037× on N 5120. Experimental, not landed (`experiments/smallm`): 1.015× at 16×17408×5120, 1.137–1.141× at 64×5120×5120. Compiled alone misses 0.8× at 16×17408×5120 (0.786–0.798×).
+- **Served model, decode** (`evidence/E2E/`), a public 27B hybrid model, BF16, tensor parallel 2 on one card, vLLM 0.30: with our decode attention the decode token rate is 1.19–1.78× vLLM's default attention backend on 8k-token prompts and card energy per token 0.78–0.82 at 1–8 streams. Stock vLLM with `--attention-backend TRITON_ATTN` gives the same or more, and on that backend our kernel is 0.3–2.4% slower. So the result is that vLLM's default attention path is slow on long contexts on this GPU, not that our decode kernel beats the best stock configuration. Synthetic prompts, two prompt lengths, two jobs; greedy outputs are not identical to stock (7 to 9 of 12 fixed prompts match, and the two stock backends match each other no better) and no quality benchmark was run.
+- **Served model, time to first token** (`evidence/PROFILE/`, `G1/`, `G2/`, `QW/`, `P1/`), same server, plugin over stock time, lower is better. Dense GEMMs are 63–74% of a prefill step (profiling plugin, one job per setting on shared cards, shares computed inside one arm). The pairs below are two whole-node jobs each, in mirrored arm order. At vLLM's defaults the bf16 GEMM plugin reads 0.964–0.971 of stock from 2.9k prompt tokens, and with the query-window prefill attention 0.888–0.893 at 14.2k tokens (0.941–0.951 at 5.7k and 7.7k, no further gain for prompts of one or two chunks). With `--max-num-batched-tokens 16384` in every arm, stock included, GEMM plus attention reads 0.870–0.873 at 14.2k. Card energy per prefill at 14.2k tokens is 0.88–0.92 of stock. **Limits: synthetic prompts, one model, one accelerator type, 8 output tokens per request; decode steps run stock code and are unchanged; greedy outputs are not identical to stock (6 to 10 of 12 fixed prompts match, stock repeats itself 12 of 12) and no quality benchmark was run; prompts above 14,201 tokens, real prompts and batches of fresh prompts in one step were not tested.**
+- **Two findings from that work.** The fp16 matrix-core instruction of gfx90a returns zero for subnormal fp16 operands, in hipBLASLt and in our kernels alike (`evidence/P1/RESULTS.md`, `vllm-integration/p1_subnormal.py`); on 12 calls dumped from the server (the worse calls, not a sample; activations of the model on synthetic prompts) it made our fp16 attention kernel 2 to 6 times less accurate than vLLM's, while random inputs showed nothing, and `gqa_fa_ps.py` is the fix. Stock vLLM 0.30 sends dense linear calls of 1 to 5 rows to its own small-row kernel, which is 2.1–8.2× slower than hipBLASLt at 5 rows on this GPU (`evidence/UPSTREAM/`); nothing has been filed upstream yet.
+- **Fused MoE against a tuned vLLM** (`evidence/MOE-MAX/tuned/`): with vLLM's Triton fused-MoE configuration tuned for MI250X, our lead holds on every routing only at 1–8 tokens; at 16 tokens on uniform routing we are 3–8% slower, at 1,024–2,048 tokens we are 5–15% slower on every routing, at 2,700 tokens 15–18% slower on uniform routing, at 4,096 tokens tied. Above 8 tokens the tuning was staged, not exhaustive, so a tie or a remaining lead could still move against us. The tuned configuration is in `evidence/MOE-MAX/tuned/vllm-config/` and vLLM loads it unchanged. The MoE bullet above is against vLLM's default configuration.
 - **Scaling**, landed MoE, clang 18, synthetic routing: 76.4–76.7% weak-scaling efficiency at 8 GCDs, 39.4–39.7% at 16, 25.8–26.6% at 32, with more throughput than the old kernels' 99%, 56%, 38%. vLLM TP=4 across two nodes: 0.19–0.23× of one node on prefill over the image's sockets, 0.65–0.87× through a hand-written OFI adapter (`scaling/ofi_v6_adapter.c`, not a vendor result), and it hangs intermittently on both.
 
 The log has the full tables, the method and what did not work.
@@ -84,6 +89,40 @@ with correctness against a float64 or float32 reference and timings.
 | Expert-parallel MoE | `EP_WORLDS="1 8 16 32" sbatch -A $PROJ --nodes=4 --gpus-per-node=8 --ntasks-per-node=8 $TL_ROOT/scaling/ep.sbatch` (fill the cache first; see the script header) |
 | vLLM TP=4, one node vs two | `ARMS="one two" MODEL=... sbatch -A $PROJ $TL_ROOT/scaling/vllm_mn.sbatch` |
 | Decode kernels in a running vLLM | `ARMS="s_rocm i_rocm s_tri i_tri" GSM8K_JSONL=... MODEL=... sbatch -A $PROJ $TL_ROOT/exp/V1/vi/v1.sbatch` |
+| fp16 subnormal test | `vllm-integration/p1_subnormal.py` on one GCD in the vLLM image, with `kernels/gemm_prefetch.py` on `PYTHONPATH` for the hand-kernel arm (`p1_subnormal.sbatch` shows how it ran) |
+| Slow small-row GEMM path in stock vLLM | `$V python3 evidence/UPSTREAM/vllm-rocm-wvsplitk-5-rows/repro_wvsplitk.py` (vLLM and torch only) |
+
+## Reproducing the served-model numbers
+
+The job scripts are kept as they ran, so they expect a staging directory on LUMI rather than this tree's layout. For
+the time-to-first-token pairs (`vllm-integration/g4.sbatch`, which also covers the arms of `g1`, `g2` and `g3`):
+
+1. Pull the vLLM image (`lumi/pull.sbatch`, `TAG=v0.30.0`), set up TileLang (`lumi/setup.sh`) and download the public
+   27B model; set `MODEL` and `VLLM_SIF` if they are not at the defaults the scripts print near their top.
+2. Make the staging directory `VI` (default `$TL_ROOT/exp/G1/vi5`) with: `overlay/` (copy of
+   `vllm-integration/overlay/`); `gm-src/` with `kernels/gemm_prefetch.py` and `kernels/gemm_bf16.py`; `hld-src/` with
+   `kernels/gqa_fa.py`, `gqa_fa_ps.py` and `gqa_fa_qw.py`; and, next to them, `p1_client.py`, `eq_client.py`,
+   `g1_precompile.py`, `p1_precompile.py`, `qw_precompile.py`, `g4.sbatch` from `vllm-integration/` and `e2e_power.py`
+   from `evidence/E2E/src/`. The scripts name numbered copies of this directory (`vi`, `vi2` to `vi5`), one per plugin
+   version; their docstrings and md5 lists use the working paths, where `tilelang/<file>` is `kernels/<file>` here.
+3. Submit the four jobs of a setting pair as `vllm-integration/g4_submit.sh` does (put your project in place of
+   `project_XXXXXXXXX`): whole nodes on `standard-g` with `E2E_USE=0:1`, so the server sees the two GCDs of one card
+   and no other job shares the node; vLLM's defaults and `MNBT=16384`, each in two mirrored arm orders. Arms: `s_rocm`
+   stock, `g_rocm` with the GEMM plugin, `fgw_rocm` with GEMM and query-window prefill attention.
+4. Build the tables from the job folders: `g2_analyse.py <raw dir> <job>` per job and `qw_analyse.py <raw dir> <job a>
+   <job b> <label>` per pair (`evidence/QW/RESULTS.md` has the exact lines). A reading counts only when the ratio is
+   outside the larger repetition spread of its two arms in both jobs.
+
+The same pattern holds for the other tracks: `p1.sbatch` (prefill attention alone), `pf.sbatch` with
+`pf_analyse.py` and `pf_report.py` (the step profile), `g1.sbatch` to `g3.sbatch` (earlier GEMM tables and the scaled
+attention kernel), `gm_*.py` and `g2_check.py`, `g2_forms.py`, `g2_land.py` (the one-GCD GEMM races behind the tile
+table), `p1_check.py`, `p1_ps_check.py`, `p1_qw_check.py` (one-GCD attention gates; the last two read activations
+dumped from a server with `HLP_DUMP`, which are not included), and `evidence/E2E/src/e2e.sbatch` (decode token rate
+and energy). Each `evidence/<track>/RESULTS.md` names the jobs, arms and script versions it used. Expect different
+absolute times on other nodes; ratios are taken inside one job.
+
+What cannot be reproduced bit for bit from this tree: the raw per-job output is not included, the prompts are
+synthetic and regenerated by the clients, and greedy outputs differ between arms and between nodes.
 
 `$TL_SRC` is the upstream TileLang v0.1.15 source checkout that `setup.sh` creates. Same-process vendor comparisons
 put the TileLang venv on the vLLM image's path:

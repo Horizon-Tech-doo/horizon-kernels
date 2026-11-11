@@ -3,7 +3,7 @@
 Inference-speed work for vLLM on one NVIDIA RTX PRO 6000 Blackwell (SM120, 96 GB), mostly with a hybrid
 Qwen3.8 27B model (Gated DeltaNet plus attention layers, MTP speculative decoding). The approach is model-agnostic by
 design: NVFP4 weights for every model, kernels that calibrate themselves for new layer shapes, and engine-level
-changes. Dates in file names and logs are dd-mm-yyyy (September to October 2026). Apache-2.0; see `../LICENSE`,
+changes. Dates in file names and logs are dd-mm-yyyy (September to November 2026). Apache-2.0; see `../LICENSE`,
 `../NOTICE` and `../REUSE.toml`.
 
 This release does not state which checkpoint each result used. The runs used checkpoints of the Qwen3.8 27B
@@ -50,6 +50,27 @@ running them through the bootstrap on an unmodified TileLang has not been tested
 reading the TileLang sources, not from a run. An optional TileLang change that speeds up the register-operand prefill
 GEMM without changing its output is proposed upstream as PR #3286.
 
+## Re-measurement of 11 November 2026
+
+The kernel races listed in the results file below were run again on 11 November 2026 under the method of the AMD part: one process, the vendor kernel
+vLLM dispatches as the baseline, an identical-code control arm, two input seeds each in a forward and a reverse arm
+order, a float64 reference per cell. [`results/paper1_11-11-2026/RESULTS.md`](results/paper1_11-11-2026/RESULTS.md) has
+the table. Vendor time over ours, range over the four jobs:
+
+- 4-bit (W4A16 NVFP4) decode GEMM against Marlin: parity. 0.923-1.170 on the tuned shapes (median 1.00; 72 cells ahead,
+  55 behind, 33 inside the noise bound) and 0.746-1.156 on shapes the tuning never saw (median 0.97).
+- Decode attention on an FP8 cache against FlashInfer XQA: behind in all 28 cells (0.314-0.805). With a 4-bit cache: ahead
+  in 14 cells and behind in 14 (0.423-1.638). Prefill attention against FlashInfer FA2: behind in all 7 cells.
+- Ahead: gated-delta decode with a 16-bit state (1.42-2.06 against the vendor kernel's fp32 state; 0.995-1.39
+  against the same vendor kernel with a BF16 state, 4 of 6 cells ahead, so most of that gain needs no new kernel), an FP8 output projection against
+  BF16 cuBLAS (1.03-1.91, a different weight format) and a fused MoE routing block (1.04-2.03, 3 of 8 cells not
+  certified).
+
+Limits: kernel level only, no served model was measured in this run; synthetic weights, caches and states; a shared
+machine behind a time-slicing layer; no hardware counters; the vendor's native FP4 GEMMs do not load on this driver, so
+the 4-bit GEMM baseline is Marlin. Older results in `results/` and `docs/` are single jobs taken before this method
+existed; where they differ from the table of 11 November, the table holds.
+
 ## What is here
 
 | Path | Contents |
@@ -64,6 +85,7 @@ GEMM without changing its output is proposed upstream as PR #3286.
 | [`scripts/models/`](scripts/models/) | MTP draft-head recipe (data generation, draft vocabulary, trainer), NVFP4 and FP8 quantization, and pruning/calibration tools in `flashnext/` |
 | [`scripts/training/`](scripts/training/) | LoRA context-length measurement |
 | [`results/`](results/README.md) | kernel-level measurements (kernel races, microbenchmarks, ISA and tile sweeps), one folder per experiment; serving-level measurements are not included |
+| [`scripts/kernels/paper1/`](scripts/kernels/paper1/README.md), [`results/paper1_11-11-2026/`](results/paper1_11-11-2026/RESULTS.md) | the kernel-level re-measurement of 11 November 2026 (four jobs per race, identical-code control, float64 reference): measurement kit, results summary and per-cell analysis output (the per-cell records are available on request) |
 | [`docs/`](docs/README.md) | kernel design notes and result write-ups; [`docs/upstream/`](docs/upstream/) holds our PR and issue drafts for vLLM, flash-linear-attention and TileLang |
 
 ## Running things

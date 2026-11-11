@@ -43,6 +43,10 @@ Third-party material
 - amd-mi250x/kernels/gqa_fa.py embeds HIP source (the form J/JTP templates) that the TileLang compiler (MIT,
   Copyright (c) Tile-AI) generated from our kernel and that was then edited by hand; it also carries the RegVec
   helper of TileLang patch 0007.
+- amd-mi250x/evidence/MOE-MAX/tuned/scripts/tune_moe.py follows the measurement sequence of benchmark_config in
+  vLLM's benchmarks/kernels/benchmark_moe.py (Apache-2.0, Copyright contributors to the vLLM project) and merges the
+  pruned search spaces as that script's prune_rocm_search_space does; the search space, the pruning and the sort
+  are imported from vLLM at run time. The tuned files in vllm-config*/ use vLLM's configuration format.
 - amd-mi250x/experiments/e2/e2run.py follows the call sequence of fused_experts_impl in vLLM's fused_moe.py
   (Apache-2.0, Copyright contributors to the vLLM project); experiments/e2/e2k.py and kernels/moe_fused.py
   re-implement vLLM's two-block MoE alignment idea in TileLang.

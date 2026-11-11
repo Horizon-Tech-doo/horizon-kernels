@@ -1,0 +1,700 @@
+[
+ {
+  "target": "moe_block",
+  "cell": "M1",
+  "ours": "new",
+  "vendor": "stock",
+  "job": "forward",
+  "ratio": 1.9234433689685064,
+  "net_ratio": null,
+  "ours_us": 27.688,
+  "vendor_us": 53.2563,
+  "noise": 0.002883271775426244,
+  "verdict": "W",
+  "cycle_ratio_min": 1.921288989848284,
+  "cycle_ratio_max": 1.9243201854975314,
+  "flags": []
+ },
+ {
+  "target": "moe_block",
+  "cell": "M1",
+  "ours": "new",
+  "vendor": "stock",
+  "job": "reverse",
+  "ratio": 1.9226865930382901,
+  "net_ratio": null,
+  "ours_us": 27.6886,
+  "vendor_us": 53.2365,
+  "noise": 0.0026675453019018303,
+  "verdict": "W",
+  "cycle_ratio_min": 1.9198851529488246,
+  "cycle_ratio_max": 1.9253527488211595,
+  "flags": []
+ },
+ {
+  "target": "moe_block",
+  "cell": "M2",
+  "ours": "new",
+  "vendor": "stock",
+  "job": "forward",
+  "ratio": 2.032147756158132,
+  "net_ratio": null,
+  "ours_us": 30.7642,
+  "vendor_us": 62.5174,
+  "noise": 0.002883271775426244,
+  "verdict": "W",
+  "cycle_ratio_min": 2.0149874782036945,
+  "cycle_ratio_max": 2.0337088140525936,
+  "flags": []
+ },
+ {
+  "target": "moe_block",
+  "cell": "M2",
+  "ours": "new",
+  "vendor": "stock",
+  "job": "reverse",
+  "ratio": 2.0316937119675456,
+  "net_ratio": null,
+  "ours_us": 30.7632,
+  "vendor_us": 62.5014,
+  "noise": 0.0026675453019018303,
+  "verdict": "W",
+  "cycle_ratio_min": 2.029252842043091,
+  "cycle_ratio_max": 2.0333024375172775,
+  "flags": []
+ },
+ {
+  "target": "moe_block",
+  "cell": "M4",
+  "ours": "new",
+  "vendor": "stock",
+  "job": "forward",
+  "ratio": 1.830665925029675,
+  "net_ratio": null,
+  "ours_us": 34.8778,
+  "vendor_us": 63.8496,
+  "noise": 0.002883271775426244,
+  "verdict": "W",
+  "cycle_ratio_min": 1.8280682841234253,
+  "cycle_ratio_max": 1.846773730836317,
+  "flags": []
+ },
+ {
+  "target": "moe_block",
+  "cell": "M4",
+  "ours": "new",
+  "vendor": "stock",
+  "job": "reverse",
+  "ratio": 1.8271346960302925,
+  "net_ratio": null,
+  "ours_us": 34.8867,
+  "vendor_us": 63.7427,
+  "noise": 0.0026675453019018303,
+  "verdict": "W",
+  "cycle_ratio_min": 1.8244402546719467,
+  "cycle_ratio_max": 1.8416385909424278,
+  "flags": []
+ },
+ {
+  "target": "moe_block",
+  "cell": "M8",
+  "ours": "new",
+  "vendor": "stock",
+  "job": "forward",
+  "ratio": 1.3459696518424729,
+  "net_ratio": null,
+  "ours_us": 91.4586,
+  "vendor_us": 123.1005,
+  "noise": 0.002883271775426244,
+  "verdict": "W",
+  "cycle_ratio_min": 1.3414428891706116,
+  "cycle_ratio_max": 1.3485581982740475,
+  "flags": []
+ },
+ {
+  "target": "moe_block",
+  "cell": "M8",
+  "ours": "new",
+  "vendor": "stock",
+  "job": "reverse",
+  "ratio": 1.344702495054949,
+  "net_ratio": null,
+  "ours_us": 91.6573,
+  "vendor_us": 123.2518,
+  "noise": 0.0026675453019018303,
+  "verdict": "W",
+  "cycle_ratio_min": 1.3345146458980464,
+  "cycle_ratio_max": 1.3482711205090647,
+  "flags": []
+ },
+ {
+  "target": "moe_block",
+  "cell": "M16",
+  "ours": "new",
+  "vendor": "stock",
+  "job": "forward",
+  "ratio": 1.1760868853149407,
+  "net_ratio": null,
+  "ours_us": 149.5949,
+  "vendor_us": 175.9366,
+  "noise": 0.002883271775426244,
+  "verdict": "W",
+  "cycle_ratio_min": 1.1569441411381103,
+  "cycle_ratio_max": 1.228512095300841,
+  "flags": []
+ },
+ {
+  "target": "moe_block",
+  "cell": "M16",
+  "ours": "new",
+  "vendor": "stock",
+  "job": "reverse",
+  "ratio": 1.1645520653999304,
+  "net_ratio": null,
+  "ours_us": 151.4864,
+  "vendor_us": 176.4138,
+  "noise": 0.0026675453019018303,
+  "verdict": "W",
+  "cycle_ratio_min": 1.151628446367282,
+  "cycle_ratio_max": 1.2288198777040986,
+  "flags": []
+ },
+ {
+  "target": "moe_block",
+  "cell": "M32",
+  "ours": "new",
+  "vendor": "stock",
+  "job": "forward",
+  "ratio": 1.092544609530111,
+  "net_ratio": null,
+  "ours_us": 232.1421,
+  "vendor_us": 253.6256,
+  "noise": 0.002883271775426244,
+  "verdict": "W",
+  "cycle_ratio_min": 1.0906396249633028,
+  "cycle_ratio_max": 1.1520551723620316,
+  "flags": [
+   "gate"
+  ]
+ },
+ {
+  "target": "moe_block",
+  "cell": "M32",
+  "ours": "new",
+  "vendor": "stock",
+  "job": "reverse",
+  "ratio": 1.089397041432253,
+  "net_ratio": null,
+  "ours_us": 234.0592,
+  "vendor_us": 254.9834,
+  "noise": 0.0026675453019018303,
+  "verdict": "W",
+  "cycle_ratio_min": 1.089397041432253,
+  "cycle_ratio_max": 1.149824480055829,
+  "flags": [
+   "gate",
+   "gate"
+  ]
+ },
+ {
+  "target": "moe_block",
+  "cell": "M64",
+  "ours": "new",
+  "vendor": "stock",
+  "job": "forward",
+  "ratio": 1.071760970392105,
+  "net_ratio": null,
+  "ours_us": 308.7082,
+  "vendor_us": 330.8614,
+  "noise": 0.002883271775426244,
+  "verdict": "W",
+  "cycle_ratio_min": 1.0711480467114787,
+  "cycle_ratio_max": 1.1271302590925878,
+  "flags": []
+ },
+ {
+  "target": "moe_block",
+  "cell": "M64",
+  "ours": "new",
+  "vendor": "stock",
+  "job": "reverse",
+  "ratio": 1.0716338914115493,
+  "net_ratio": null,
+  "ours_us": 310.3866,
+  "vendor_us": 332.6208,
+  "noise": 0.0026675453019018303,
+  "verdict": "W",
+  "cycle_ratio_min": 1.0663285330138577,
+  "cycle_ratio_max": 1.1049359238481613,
+  "flags": []
+ },
+ {
+  "target": "moe_block",
+  "cell": "M128",
+  "ours": "new",
+  "vendor": "stock",
+  "job": "forward",
+  "ratio": 1.0385139179189682,
+  "net_ratio": null,
+  "ours_us": 365.2342,
+  "vendor_us": 379.3008,
+  "noise": 0.002883271775426244,
+  "verdict": "W",
+  "cycle_ratio_min": 1.0384912270528335,
+  "cycle_ratio_max": 1.0848323067537997,
+  "flags": [
+   "gate"
+  ]
+ },
+ {
+  "target": "moe_block",
+  "cell": "M128",
+  "ours": "new",
+  "vendor": "stock",
+  "job": "reverse",
+  "ratio": 1.0381249182757266,
+  "net_ratio": null,
+  "ours_us": 367.088,
+  "vendor_us": 381.0832,
+  "noise": 0.0026675453019018303,
+  "verdict": "W",
+  "cycle_ratio_min": 1.0141866714164725,
+  "cycle_ratio_max": 1.0467772639990924,
+  "flags": [
+   "gate",
+   "gate"
+  ]
+ },
+ {
+  "target": "moe_block",
+  "cell": "M1",
+  "job": "forward",
+  "arm": "new",
+  "energy": {
+   "j_per_call": 0.0058024853494608826,
+   "watts": 192.604,
+   "calls_per_s": 36119.42678332968,
+   "wall_s": 5.0173,
+   "calls": 181222,
+   "source": "counter",
+   "moved": false,
+   "n_samples": 100
+  },
+  "net_j_per_call": 0.002609025347088102,
+  "idle_watts": 98.3675
+ },
+ {
+  "target": "moe_block",
+  "cell": "M1",
+  "job": "forward",
+  "arm": "ctl",
+  "energy": {
+   "j_per_call": 0.0058693922371456,
+   "watts": 206.559,
+   "calls_per_s": 36115.10791366907,
+   "wall_s": 5.0179,
+   "calls": 181222,
+   "source": "counter",
+   "moved": false,
+   "n_samples": 100
+  },
+  "net_j_per_call": 0.002995740737051792,
+  "idle_watts": 98.3675
+ },
+ {
+  "target": "moe_block",
+  "cell": "M1",
+  "job": "forward",
+  "arm": "stock",
+  "energy": {
+   "j_per_call": 0.008519003055767761,
+   "watts": 168.883,
+   "calls_per_s": 18803.343774315184,
+   "wall_s": 5.0123,
+   "calls": 94248,
+   "source": "counter",
+   "moved": false,
+   "n_samples": 100
+  },
+  "net_j_per_call": 0.003750157463818861,
+  "idle_watts": 98.3675
+ },
+ {
+  "target": "moe_block",
+  "cell": "M1",
+  "job": "reverse",
+  "arm": "new",
+  "energy": {
+   "j_per_call": 0.006323211309885113,
+   "watts": 221.591,
+   "calls_per_s": 36123.74668606853,
+   "wall_s": 5.0167,
+   "calls": 181222,
+   "source": "counter",
+   "moved": false,
+   "n_samples": 100
+  },
+  "net_j_per_call": 0.0033279493692818757,
+  "idle_watts": 101.37299999999999
+ },
+ {
+  "target": "moe_block",
+  "cell": "M1",
+  "job": "reverse",
+  "arm": "ctl",
+  "energy": {
+   "j_per_call": 0.006087710101422565,
+   "watts": 202.816,
+   "calls_per_s": 36101.438304314914,
+   "wall_s": 5.0198,
+   "calls": 181222,
+   "source": "counter",
+   "moved": false,
+   "n_samples": 100
+  },
+  "net_j_per_call": 0.002809943447263578,
+  "idle_watts": 101.37299999999999
+ },
+ {
+  "target": "moe_block",
+  "cell": "M1",
+  "job": "reverse",
+  "arm": "stock",
+  "energy": {
+   "j_per_call": 0.008890194669315803,
+   "watts": 177.944,
+   "calls_per_s": 18886.626746506987,
+   "wall_s": 5.01,
+   "calls": 94622,
+   "source": "counter",
+   "moved": false,
+   "n_samples": 100
+  },
+  "net_j_per_call": 0.0040542443617763305,
+  "idle_watts": 101.37299999999999
+ },
+ {
+  "target": "moe_block",
+  "cell": "M4",
+  "job": "forward",
+  "arm": "new",
+  "energy": {
+   "j_per_call": 0.01103386126585279,
+   "watts": 299.999,
+   "calls_per_s": 26984.36812857314,
+   "wall_s": 5.0026,
+   "calls": 134992,
+   "source": "counter",
+   "moved": false,
+   "n_samples": 100
+  },
+  "net_j_per_call": 0.007472159401297856,
+  "idle_watts": 98.3675
+ },
+ {
+  "target": "moe_block",
+  "cell": "M4",
+  "job": "forward",
+  "arm": "ctl",
+  "energy": {
+   "j_per_call": 0.011044089876368358,
+   "watts": 276.199,
+   "calls_per_s": 27024.16075273104,
+   "wall_s": 5.0164,
+   "calls": 135564,
+   "source": "counter",
+   "moved": false,
+   "n_samples": 100
+  },
+  "net_j_per_call": 0.006580463372281727,
+  "idle_watts": 98.3675
+ },
+ {
+  "target": "moe_block",
+  "cell": "M4",
+  "job": "forward",
+  "arm": "stock",
+  "energy": {
+   "j_per_call": 0.01542937271062271,
+   "watts": 252.919,
+   "calls_per_s": 15703.756965666007,
+   "wall_s": 5.0067,
+   "calls": 78624,
+   "source": "counter",
+   "moved": false,
+   "n_samples": 100
+  },
+  "net_j_per_call": 0.009841689497481685,
+  "idle_watts": 98.3675
+ },
+ {
+  "target": "moe_block",
+  "cell": "M4",
+  "job": "reverse",
+  "arm": "new",
+  "energy": {
+   "j_per_call": 0.011083067995833954,
+   "watts": 277.945,
+   "calls_per_s": 26818.562706994933,
+   "wall_s": 5.0122,
+   "calls": 134420,
+   "source": "counter",
+   "moved": false,
+   "n_samples": 100
+  },
+  "net_j_per_call": 0.006583947168576105,
+  "idle_watts": 101.37299999999999
+ },
+ {
+  "target": "moe_block",
+  "cell": "M4",
+  "job": "reverse",
+  "arm": "ctl",
+  "energy": {
+   "j_per_call": 0.011076205845436615,
+   "watts": 300.061,
+   "calls_per_s": 26670.91760486201,
+   "wall_s": 5.0185,
+   "calls": 133848,
+   "source": "counter",
+   "moved": false,
+   "n_samples": 100
+  },
+  "net_j_per_call": 0.007449612455920148,
+  "idle_watts": 101.37299999999999
+ },
+ {
+  "target": "moe_block",
+  "cell": "M4",
+  "job": "reverse",
+  "arm": "stock",
+  "energy": {
+   "j_per_call": 0.015674481560935743,
+   "watts": 256.695,
+   "calls_per_s": 15649.56735476909,
+   "wall_s": 5.0041,
+   "calls": 78312,
+   "source": "counter",
+   "moved": false,
+   "n_samples": 100
+  },
+  "net_j_per_call": 0.009925002811829604,
+  "idle_watts": 101.37299999999999
+ },
+ {
+  "target": "moe_block",
+  "cell": "M32",
+  "job": "forward",
+  "arm": "new",
+  "energy": {
+   "j_per_call": 0.06973809077269318,
+   "watts": 300.115,
+   "calls_per_s": 4264.150188935762,
+   "wall_s": 5.0017,
+   "calls": 21328,
+   "source": "counter",
+   "moved": false,
+   "n_samples": 100
+  },
+  "net_j_per_call": 0.04731247518520255,
+  "idle_watts": 98.3675
+ },
+ {
+  "target": "moe_block",
+  "cell": "M32",
+  "job": "forward",
+  "arm": "ctl",
+  "energy": {
+   "j_per_call": 0.06917386046511628,
+   "watts": 295.454,
+   "calls_per_s": 4287.309563691473,
+   "wall_s": 5.0148,
+   "calls": 21500,
+   "source": "counter",
+   "moved": false,
+   "n_samples": 100
+  },
+  "net_j_per_call": 0.04596973861395349,
+  "idle_watts": 98.3675
+ },
+ {
+  "target": "moe_block",
+  "cell": "M32",
+  "job": "forward",
+  "arm": "stock",
+  "energy": {
+   "j_per_call": 0.07568107058943713,
+   "watts": 300.018,
+   "calls_per_s": 3901.010221770578,
+   "wall_s": 5.0187,
+   "calls": 19578,
+   "source": "counter",
+   "moved": false,
+   "n_samples": 100
+  },
+  "net_j_per_call": 0.051691866602819485,
+  "idle_watts": 98.3675
+ },
+ {
+  "target": "moe_block",
+  "cell": "M32",
+  "job": "reverse",
+  "arm": "new",
+  "energy": {
+   "j_per_call": 0.0696164596273292,
+   "watts": 295.415,
+   "calls_per_s": 4245.305633240112,
+   "wall_s": 5.006,
+   "calls": 21252,
+   "source": "counter",
+   "moved": false,
+   "n_samples": 100
+  },
+  "net_j_per_call": 0.045707427630340684,
+  "idle_watts": 101.37299999999999
+ },
+ {
+  "target": "moe_block",
+  "cell": "M32",
+  "job": "reverse",
+  "arm": "ctl",
+  "energy": {
+   "j_per_call": 0.06972172030867684,
+   "watts": 299.633,
+   "calls_per_s": 4249.465117674112,
+   "wall_s": 5.0011,
+   "calls": 21252,
+   "source": "counter",
+   "moved": false,
+   "n_samples": 100
+  },
+  "net_j_per_call": 0.046655283549783544,
+  "idle_watts": 101.37299999999999
+ },
+ {
+  "target": "moe_block",
+  "cell": "M32",
+  "job": "reverse",
+  "arm": "stock",
+  "energy": {
+   "j_per_call": 0.07586803624755432,
+   "watts": 300.001,
+   "calls_per_s": 3883.157389635317,
+   "wall_s": 5.0016,
+   "calls": 19422,
+   "source": "counter",
+   "moved": false,
+   "n_samples": 100
+  },
+  "net_j_per_call": 0.05115115872721655,
+  "idle_watts": 101.37299999999999
+ },
+ {
+  "target": "moe_block",
+  "cell": "M128",
+  "job": "forward",
+  "arm": "new",
+  "energy": {
+   "j_per_call": 0.10854179475918606,
+   "watts": 299.813,
+   "calls_per_s": 2721.5681587282616,
+   "wall_s": 5.0199,
+   "calls": 13662,
+   "source": "counter",
+   "moved": false,
+   "n_samples": 100
+  },
+  "net_j_per_call": 0.07401817196969697,
+  "idle_watts": 98.3675
+ },
+ {
+  "target": "moe_block",
+  "cell": "M128",
+  "job": "forward",
+  "arm": "ctl",
+  "energy": {
+   "j_per_call": 0.10836854047723612,
+   "watts": 299.999,
+   "calls_per_s": 2732.0175175475433,
+   "wall_s": 5.0007,
+   "calls": 13662,
+   "source": "counter",
+   "moved": false,
+   "n_samples": 100
+  },
+  "net_j_per_call": 0.07380315049407116,
+  "idle_watts": 98.3675
+ },
+ {
+  "target": "moe_block",
+  "cell": "M128",
+  "job": "forward",
+  "arm": "stock",
+  "energy": {
+   "j_per_call": 0.11292216479173,
+   "watts": 299.552,
+   "calls_per_s": 2629.727352682498,
+   "wall_s": 5.0028,
+   "calls": 13156,
+   "source": "counter",
+   "moved": false,
+   "n_samples": 100
+  },
+  "net_j_per_call": 0.07650393862876255,
+  "idle_watts": 98.3675
+ },
+ {
+  "target": "moe_block",
+  "cell": "M128",
+  "job": "reverse",
+  "arm": "new",
+  "energy": {
+   "j_per_call": 0.10899114652501107,
+   "watts": 300.048,
+   "calls_per_s": 2710.691572337106,
+   "wall_s": 5.0002,
+   "calls": 13554,
+   "source": "counter",
+   "moved": false,
+   "n_samples": 100
+  },
+  "net_j_per_call": 0.073293104249668,
+  "idle_watts": 101.37299999999999
+ },
+ {
+  "target": "moe_block",
+  "cell": "M128",
+  "job": "reverse",
+  "arm": "ctl",
+  "energy": {
+   "j_per_call": 0.10826678471299986,
+   "watts": 299.995,
+   "calls_per_s": 2703.9320126877733,
+   "wall_s": 5.0127,
+   "calls": 13554,
+   "source": "counter",
+   "moved": false,
+   "n_samples": 100
+  },
+  "net_j_per_call": 0.07345672859672421,
+  "idle_watts": 101.37299999999999
+ },
+ {
+  "target": "moe_block",
+  "cell": "M128",
+  "job": "reverse",
+  "arm": "stock",
+  "energy": {
+   "j_per_call": 0.11291307997557998,
+   "watts": 299.837,
+   "calls_per_s": 2616.038809366952,
+   "wall_s": 5.0091,
+   "calls": 13104,
+   "source": "counter",
+   "moved": false,
+   "n_samples": 100
+  },
+  "net_j_per_call": 0.07586431794871795,
+  "idle_watts": 101.37299999999999
+ }
+]

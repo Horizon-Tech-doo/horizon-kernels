@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use the checklist, the kernels or the results, please cite the paper below."
+title: "Benchmarking TileLang Kernels Against Vendor Libraries on AMD MI250X: Method, Checklist and Findings"
+type: software
+authors:
+  - family-names: Abdagic
+    given-names: Hamza
+    orcid: "https://orcid.org/0009-0002-4078-4922"
+    affiliation: "Horizon Tech d.o.o."
+repository-code: "https://github.com/Horizon-Tech-doo/horizon-kernels"
+license: Apache-2.0
+keywords:
+  - benchmarking methodology
+  - GPU kernels
+  - vendor libraries
+  - AMD MI250X
+  - TileLang
+  - LLM serving
+preferred-citation:
+  type: article
+  title: "Benchmarking TileLang Kernels Against Vendor Libraries on AMD MI250X: Method, Checklist and Findings"
+  authors:
+    - family-names: Abdagic
+      given-names: Hamza
+      orcid: "https://orcid.org/0009-0002-4078-4922"
+      affiliation: "Horizon Tech d.o.o."
+  year: 2026
+  journal: "arXiv preprint"
+  # TODO(arXiv id): replace both lines once the paper is posted, e.g. number "arXiv:XXXX.XXXXX"
+  # number: "TODO-arXiv-id"
+  # url: "TODO-https://arxiv.org/abs/XXXX.XXXXX"
+  # TODO(doi): add the DOI (arXiv DOI 10.48550/arXiv.XXXX.XXXXX or a Zenodo DOI) and uncomment
+  # doi: "TODO-doi"

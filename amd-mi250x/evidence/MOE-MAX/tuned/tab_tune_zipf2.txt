@@ -1,0 +1,11 @@
+wrote config_zipf2/E=256,N=512,device_name=AMD_INSTINCT_MI200_(MCM)_OAM_LC_MBA_HPE_C2.json
+    T mode   pruned  timed  skip fail | default us  tuned us  ratio | tuned config  [source file]
+    1 staged    704    145     0    0 |      70.16     68.82  0.981 | 16x64x128 G1 w4 st2 wpe0 nk16 kp2  [tune_T1_zipf2_23586487.jsonl]
+    2 staged    704    145     0    0 |      92.49     91.17  0.986 | 16x64x128 G1 w4 st2 wpe4 nk16 kp2  [tune_T2_zipf2_23586486.jsonl]
+    3 staged   1408    233     0    0 |     119.00    117.59  0.988 | 16x64x128 G1 w4 st2 wpe0 nk16 kp2  [tune_T3_zipf2_23586486.jsonl]
+    4 staged   2656    337     0    0 |     152.11    150.53  0.990 | 16x64x128 G1 w2 st2 wpe2 nk16 kp2  [tune_T4_zipf2_23586486.jsonl]
+    8 staged   4992    461     6    0 |     293.14    283.80  0.968 | 16x64x128 G4 w1 st2 wpe1 nk16 kp1  [tune_T8_zipf2_23586486.jsonl]
+   16 staged   7808    608    15    1 |     208.00    205.25  0.987 | 16x128x128 G1 w8 st2 wpe0 nk16 kp1  [tune_T16_zipf2_23586487.jsonl]
+   24 staged   7808    624    19    1 |     261.02    242.17  0.928 | 32x64x128 G1 w2 st2 wpe1 nk32 kp2  [tune_T24_zipf2_23586487.jsonl]
+ 2700 staged  25760   1032    98    1 |    3189.60   2854.91  0.895 | 64x128x128 G32 w8 st2 wpe0 nk16 kp1  [tune_T2700_zipf2_23586598.jsonl]
+ 4096 staged  25760   1032   112    1 |    4124.23   3898.14  0.945 | 64x128x128 G32 w8 st2 wpe1 nk16 kp1  [tune_T4096_zipf2_23586598.jsonl]

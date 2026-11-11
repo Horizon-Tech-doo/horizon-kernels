@@ -1,0 +1,2 @@
+[vllm.general_plugins]
+horizon_lumi_profile = horizon_lumi_profile:register

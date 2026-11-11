@@ -112,6 +112,12 @@ SPDX-FileCopyrightText = ["2026 Horizon Tech d.o.o.", "Tile-AI"]
 SPDX-License-Identifier = "Apache-2.0 AND MIT"
 
 [[annotations]]
+path = "amd-mi250x/evidence/MOE-MAX/tuned/scripts/tune_moe.py"
+precedence = "override"
+SPDX-FileCopyrightText = ["2026 Horizon Tech d.o.o.", "contributors to the vLLM project"]
+SPDX-License-Identifier = "Apache-2.0"
+
+[[annotations]]
 path = "amd-mi250x/experiments/e2/e2run.py"
 precedence = "override"
 SPDX-FileCopyrightText = ["2026 Horizon Tech d.o.o.", "contributors to the vLLM project"]

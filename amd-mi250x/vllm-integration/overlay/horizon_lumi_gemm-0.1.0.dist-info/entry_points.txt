@@ -1,0 +1,2 @@
+[vllm.general_plugins]
+horizon_lumi_gemm = horizon_lumi_gemm:register

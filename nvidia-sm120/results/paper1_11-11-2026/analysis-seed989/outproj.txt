@@ -1,0 +1,46 @@
+
+=== outproj ===
+job forward seed 989: 1 block(s), 10 cells done, 0 cell errors; cycles per arm min 9; noise bound (max |ctl/new-1|) 0.27%; ws 513 MiB; graph replay True; idle 114.8 W
+job reverse seed 989: 1 block(s), 10 cells done, 0 cell errors; cycles per arm min 9; noise bound (max |ctl/new-1|) 0.15%; ws 513 MiB; graph replay True; idle 110.4 W
+
+-- cublas time / new time (higher: ours faster); per job: ratio (net, ctl, cyc min..max) verdict
+ M1                           fwd  1.731 (net 1.733, ctl +0.27%, cyc 1.711..1.942) W | rev  1.724 (net 1.726, ctl -0.08%, cyc 1.706..1.732) W  range 1.724..1.731  KEEP: both-win > noise
+ M4                           fwd  1.849 (net 1.851, ctl -0.07%, cyc 1.826..2.032) W | rev  1.844 (net 1.847, ctl +0.12%, cyc 1.791..1.849) W  range 1.844..1.849  KEEP: both-win > noise
+ M8                           fwd  1.871 (net 1.873, ctl -0.10%, cyc 1.858..2.069) W | rev  1.868 (net 1.871, ctl -0.03%, cyc 1.818..1.871) W  range 1.868..1.871  KEEP: both-win > noise
+ M16                          fwd  1.913 (net 1.916, ctl +0.05%, cyc 1.895..2.110) W | rev  1.908 (net 1.911, ctl +0.04%, cyc 1.852..1.914) W  range 1.908..1.913  KEEP: both-win > noise
+ M17                          fwd  1.738 (net 1.740, ctl +0.13%, cyc 1.722..1.988) W | rev  1.731 (net 1.734, ctl -0.10%, cyc 1.704..1.737) W  range 1.731..1.738  KEEP: both-win > noise
+ M32                          fwd  1.748 (net 1.750, ctl +0.02%, cyc 1.732..1.995) W | rev  1.743 (net 1.745, ctl -0.15%, cyc 1.714..1.748) W  range 1.743..1.748  KEEP: both-win > noise
+ M33                          fwd  1.324 (net 1.324, ctl -0.09%, cyc 1.319..1.356) W | rev  1.322 (net 1.323, ctl +0.05%, cyc 1.317..1.324) W  range 1.322..1.324  KEEP: both-win > noise
+ M64                          fwd  1.344 (net 1.345, ctl -0.10%, cyc 1.341..1.374) W | rev  1.341 (net 1.342, ctl -0.03%, cyc 1.338..1.344) W  range 1.341..1.344  KEEP: both-win > noise
+ M65                          fwd  1.031 (net 1.031, ctl -0.15%, cyc 1.029..1.174) W | rev  1.031 (net 1.031, ctl +0.10%, cyc 1.018..1.033) W  range 1.031..1.031  KEEP: both-win > noise
+ M128                         fwd  1.054 (net 1.054, ctl -0.00%, cyc 1.052..1.183) W | rev  1.053 (net 1.053, ctl +0.10%, cyc 1.050..1.055) W  range 1.053..1.054  KEEP: both-win > noise
+ summary cublas/new: 10 cells, ratio 1.031..1.913, median 1.731; KEEP: 10
+
+-- energy per call (separate tight-loop pass; whole-GPU power, co-resident process included)
+   cell / job / arm: J per call, average W, calls/s, net J per call (idle subtracted, derived), source
+ M1                           fwd new        280.5516 mJ    300.0 W      1056.3 /s  net 175.3318 mJ  counter
+ M1                           fwd ctl        283.0865 mJ    300.0 W      1049.1 /s  net 176.5281 mJ  counter
+ M1                           fwd cublas     488.7598 mJ    300.0 W       607.2 /s  net 305.0744 mJ  counter
+ M1                           fwd energy noise |ctl/new-1| 0.90%; cublas J / new J = 1.742
+ M1                           rev new        280.0307 mJ    300.0 W      1050.2 /s  net 180.5105 mJ  counter
+ M1                           rev ctl        279.7889 mJ    300.0 W      1055.1 /s  net 179.7035 mJ  counter
+ M1                           rev cublas     495.3051 mJ    300.0 W       607.3 /s  net 312.1879 mJ  counter
+ M1                           rev energy noise |ctl/new-1| 0.09%; cublas J / new J = 1.769
+ M32                          fwd new        307.0487 mJ    299.7 W       964.5 /s  net 191.7042 mJ  counter
+ M32                          fwd ctl        307.5723 mJ    299.8 W       963.0 /s  net 192.1704 mJ  counter
+ M32                          fwd cublas     546.7664 mJ    300.0 W       550.0 /s  net 336.7578 mJ  counter
+ M32                          fwd energy noise |ctl/new-1| 0.17%; cublas J / new J = 1.781
+ M32                          rev new        305.2551 mJ    300.0 W       964.6 /s  net 196.5215 mJ  counter
+ M32                          rev ctl        304.4134 mJ    300.0 W       966.9 /s  net 196.0490 mJ  counter
+ M32                          rev cublas     534.2448 mJ    300.0 W       550.9 /s  net 344.0946 mJ  counter
+ M32                          rev energy noise |ctl/new-1| 0.28%; cublas J / new J = 1.750
+ M128                         fwd new        615.1455 mJ    300.0 W       481.3 /s  net 384.8451 mJ  counter
+ M128                         fwd ctl        616.4653 mJ    300.0 W       479.9 /s  net 385.9538 mJ  counter
+ M128                         fwd cublas     650.4156 mJ    300.0 W       456.7 /s  net 405.5883 mJ  counter
+ M128                         fwd energy noise |ctl/new-1| 0.21%; cublas J / new J = 1.057
+ M128                         rev new        626.2971 mJ    300.0 W       479.6 /s  net 395.2512 mJ  counter
+ M128                         rev ctl        610.0867 mJ    300.0 W       481.3 /s  net 393.8409 mJ  counter
+ M128                         rev cublas     643.7303 mJ    300.1 W       457.5 /s  net 414.4914 mJ  counter
+ M128                         rev energy noise |ctl/new-1| 2.59%; cublas J / new J = 1.028
+ job forward: energy noise bound (max |J(ctl)/J(new)-1| over 3 cells) 0.90%
+ job reverse: energy noise bound (max |J(ctl)/J(new)-1| over 3 cells) 2.59%
