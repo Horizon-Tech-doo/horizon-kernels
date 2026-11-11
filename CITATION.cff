@@ -1,7 +1,10 @@
 cff-version: 1.2.0
 message: "If you use the checklist, the kernels or the results, please cite the paper below."
-title: "Benchmarking TileLang Kernels Against Vendor Libraries on AMD MI250X: Method, Checklist and Findings"
+title: "horizon-kernels: GPU kernels, benchmark harness and evidence for AMD MI250X and NVIDIA SM120"
 type: software
+version: "1.0.0"
+date-released: "2026-11-11"
+abstract: "TileLang GPU kernels for LLM inference on AMD Instinct MI250X and NVIDIA SM120, the plugins that run them inside a served model, the benchmark harness, a 32-item checklist for benchmarking a kernel against a vendor library, and the evidence behind the paper named under preferred-citation. Results are reported with their limits, including losses and ties."
 authors:
   - family-names: Abdagic
     given-names: Hamza
